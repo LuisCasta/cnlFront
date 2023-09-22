@@ -1,0 +1,144 @@
+{
+  "alumnos": [
+    {
+      "matricula": "A001",
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "carrera": "Ingeniería Informática",
+      "semestre": 5
+    },
+    {
+      "matricula": "A002",
+      "nombre": "María",
+      "apellido": "Gómez",
+      "carrera": "Psicología",
+      "semestre": 3
+    },
+    {
+      "matricula": "A003",
+      "nombre": "Carlos",
+      "apellido": "Martínez",
+      "carrera": "Derecho",
+      "semestre": 4
+    },
+    {
+      "matricula": "A004",
+      "nombre": "Ana",
+      "apellido": "López",
+      "carrera": "Medicina",
+      "semestre": 6
+    },
+    {
+      "matricula": "A005",
+      "nombre": "Pedro",
+      "apellido": "Ramírez",
+      "carrera": "Arquitectura",
+      "semestre": 2
+    },
+    {
+      "matricula": "A006",
+      "nombre": "Laura",
+      "apellido": "Fernández",
+      "carrera": "Contabilidad",
+      "semestre": 4
+    },
+    {
+      "matricula": "A007",
+      "nombre": "José",
+      "apellido": "García",
+      "carrera": "Ingeniería Civil",
+      "semestre": 5
+    },
+    {
+      "matricula": "A008",
+      "nombre": "Elena",
+      "apellido": "Hernández",
+      "carrera": "Historia",
+      "semestre": 3
+    },
+    {
+      "matricula": "A009",
+      "nombre": "Miguel",
+      "apellido": "Pérez",
+      "carrera": "Educación",
+      "semestre": 2
+    },
+    {
+      "matricula": "A010",
+      "nombre": "Isabel",
+      "apellido": "López",
+      "carrera": "Ciencias Políticas",
+      "semestre": 4
+    },
+    {
+      "matricula": "A011",
+      "nombre": "David",
+      "apellido": "Martínez",
+      "carrera": "Economía",
+      "semestre": 6
+    },
+    {
+      "matricula": "A012",
+      "nombre": "Carmen",
+      "apellido": "Ramírez",
+      "carrera": "Ingeniería Química",
+      "semestre": 3
+    },
+    {
+      "matricula": "A013",
+      "nombre": "Roberto",
+      "apellido": "Fernández",
+      "carrera": "Enfermería",
+      "semestre": 5
+    },
+    {
+      "matricula": "A014",
+      "nombre": "Luis",
+      "apellido": "González",
+      "carrera": "Arte",
+      "semestre": 4
+    },
+    {
+      "matricula": "A015",
+      "nombre": "Sofía",
+      "apellido": "Torres",
+      "carrera": "Psicología",
+      "semestre": 2
+    },
+    {
+      "matricula": "A016",
+      "nombre": "Fernando",
+      "apellido": "Sánchez",
+      "carrera": "Ingeniería Eléctrica",
+      "semestre": 5
+    },
+    {
+      "matricula": "A017",
+      "nombre": "Lucía",
+      "apellido": "Ruíz",
+      "carrera": "Diseño Gráfico",
+      "semestre": 3
+    },
+    {
+      "matricula": "A018",
+      "nombre": "Hugo",
+      "apellido": "Mendoza",
+      "carrera": "Filosofía",
+      "semestre": 4
+    },
+    {
+      "matricula": "A019",
+      "nombre": "Patricia",
+      "apellido": "Díaz",
+      "carrera": "Ciencias Ambientales",
+      "semestre": 6
+    },
+    {
+      "matricula": "A020",
+      "nombre": "Javier",
+      "apellido": "Luna",
+      "carrera": "Medicina",
+      "semestre": 2
+    }
+  ]
+}

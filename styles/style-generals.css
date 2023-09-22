@@ -1,0 +1,30 @@
+:root {
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --tooltip-bk: #101828;
+    --input-border: 2px solid #D0D5DD;
+    --input--padding: 10px 14px;
+    --input-bor-rad: 8px;
+    --font-size-input: 16px;
+    --primary-color: #7F56D9;
+}
+
+input {
+    border: var(--input-border);
+    outline: none;
+    padding: var(--input--padding);
+    font-size: var(--font-size-input);
+    border-radius: var(--input-bor-rad);
+    font-style: italic;
+}
+
+button {
+    outline: none;
+    padding: var(--input--padding);
+    font-size: var(--font-size-input);
+    border-radius: var(--input-bor-rad);
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+
+}

@@ -2,9 +2,100 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/vista.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vista 1</title>
-    <h1>Bienvenidos</h1>
+    <title>Fetch Post</title>
   </head>
-  <body></body>
+  <body onload="obtenerDatos()">
+    <!-- sidenav -->
+
+    <div class="sidenav-cln">
+      <div class="sidenav-content">
+        <div class="perfil">
+          <img src="src/perfil.prueba" alt="" />
+          <h5>Juan Pérez</h5>
+          <p>Dirección</p>
+        </div>
+        <div class="navegacion-vista">
+        <ul>
+          <li>
+            <i class="bx bx-group bx-md"></i>
+            <p class="tooltip">Alumnos</p>
+          </li>
+          <li>
+            <i class="bx bxs-graduation bx-md"></i>
+            <p class="tooltip">Maestros</p>
+          </li>
+          <li>
+            <i class="bx bx-run bx-md"></i>
+            <p class="tooltip">Carreras</p>
+          </li>
+          <li>
+            <i class="bx bx-line-chart bx-md"></i>
+            <p class="tooltip">Admon</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- BUSCAR ELEMENTOS EN LA TABLA -->
+    <section>
+      <div class="finder">
+        <input type="text" id="find" placeholder="Busca por Nombre" />
+        <button class="buscar" id="buscar">Buscar</button>
+      </div>
+    </section>
+    <!-- Cargar tabla -->
+    <table class="table">
+      <thead>
+        <caption>
+          <div class="caption">
+            <p id="tableTitle">Todos los alumnos</p>
+            <span id="spanTitle">100 Alumnos</span>
+          </div>
+        </caption>
+        <tr>
+          <th>matrícula</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Carrera</th>
+          <th>Semestre</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody class="datos" id="datos">
+        <!-- <tr>
+            <td>Contenido 1</td>
+         </tr>  -->
+      </tbody>
+    <!-- </table>
+    <span>Busca un dispositivo</span> <br />
+    <input type="text" id="buscarMovil" /> <br />
+    <button id="buscar">consultar dispositivo</button> <br />
+    <textarea></textarea><br />
+    <textarea></textarea><br />
+    <textarea></textarea><br />
+    <textarea></textarea><br />
+    <textarea></textarea><br />
+    <button id="modificar">Modificar</button>
+    <button id eliminar>eliminar</button>
+
+    <br />
+    <input type="text" /> <br />
+    <input type="text" /> <br />
+    <input type="text" /> <br />
+    <input type="text" /> <br />
+    <input type="text" /> <br />
+    <button>Agregar dospositivo</button> -->
+  </body>
+  <script src="js/post.js"></script>
 </html>

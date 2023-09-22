@@ -1,0 +1,177 @@
+@import url('../styles/style-generals.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+}
+
+table {
+    width: 80%;
+    /* min-width: 350px; */
+    margin: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid;
+    box-shadow: var(--box-shadow);
+}
+
+tbody th,
+td {
+    padding: 16px 24px;
+    text-align: left;
+    border-bottom: 1px solid #EAECF0;
+}
+
+tr {
+    border-bottom: 1px solid;
+}
+
+tbody tr {
+    font-size: 14px;
+    color: #667085;
+    border-top: 1px solid #efefef;
+}
+
+.table thead tr {
+    background-color: #F9FAFB;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.table thead tr th {
+    font-size: 12px;
+    color: #667085;
+    padding: 16px 24px;
+    text-align: left;
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+}
+
+.actions button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #667085;
+}
+
+caption {
+    text-align: left;
+    background-color: #F9FAFB;
+}
+
+.caption {
+    display: flex;
+    position: relative;
+    padding: 16px 24px;
+    text-align: left;
+    align-items: center;
+    border-bottom: none;
+    border-bottom: 1px solid #EAECF0;
+    width: 250px;
+}
+
+.caption p {
+    font-size: 16px;
+    color: #101828;
+    font-weight: 500;
+}
+
+.caption span {
+    position: absolute;
+    right: -10px;
+    font-size: 12px;
+    color: #6941C6;
+    background-color: #6941C610;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+
+/* ESTILOS PARA EL BUSCARDOR*/
+
+.finder {
+    display: flex;
+    justify-content: right;
+    margin: auto;
+    width: 80%;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.filter {
+    display: none;
+}
+
+
+.sidenav-content {
+    box-shadow: var(--box-shadow);
+    /* width: 20px; */
+    top: 3%;
+    height: 95vh;
+    position: fixed;
+    background-color: #fff;
+    z-index: 10;
+    transition: .2s ease-in-out;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+/* .navegacion-vista ul {
+    width: 200px;
+    overflow: hidden;
+} */
+
+.navegacion-vista ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    /* margin-top: 20px; */
+}
+
+.tooltip {
+    position: absolute;
+    right: -50px;
+    visibility: hidden;
+    text-align: left;
+    transition: .2s ease-in-out;
+    background-color: var(--tooltip-bk);
+    padding: 8px 12px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.navegacion-vista ul li:hover .tooltip {
+    transform: translateX(20px);
+    visibility: visible;
+}
+
+.navegacion-vista ul li i {
+    background-color: #6941C610;
+    color: #6941C6;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.finder {
+    margin-bottom: 15px;
+}
+
+/* 
+.sidenav-content:hover {
+    width: 300px;
+} */
