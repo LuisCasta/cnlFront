@@ -8,6 +8,9 @@
     --primary-color: #22387d;
     --color-bk-opacity: #22387d10;
     --bk-color-caption: #ececec;
+    --border-top: 5px solid var(--primary-color);
+    --icon-advice-color: #D92D20;
+    --icon-advice-bk: #FEE4E2;
 }
 
 * {
@@ -22,7 +25,8 @@ body {
     position: relative;
 }
 
-input {
+input,
+select {
     border: var(--input-border);
     outline: none;
     padding: var(--input--padding);

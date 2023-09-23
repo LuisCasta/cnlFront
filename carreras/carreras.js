@@ -17,6 +17,7 @@ function cargarCarreras() {
                 <td>${elemento.id}</td>
                 <td>${elemento.licenciatura}</td>
                 <td>${elemento.descripcion}</td>
+                <td>${elemento.status ? "activo" : "inactivo"}</td>
                 <td> 
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
@@ -63,15 +64,53 @@ const postData = async () => {
       const jsonResponse = await response.json();
       console.log(jsonResponse);
       const { id, carrera, descripcion } = jsonResponse;
-      succesPost.textContent = `Se actualizaron los siquientes datos
-      ${id}, ${carrera},${descripcion}`;
+      succesPost.textContent = `Se agregó la Carrera de ${carrera}
+      con éxito`;
     }
   } catch (error) {
     console.error("Ocurrió un error", error);
   }
 };
 
-btnCarrera.addEventListener("click", async (e) => {
+btnCarrera.addEventListener("click", (e) => {
   e.preventDefault();
-  await postData();
+  //   await postData();
+  succesPost.innerHTML = `
+    <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+    <p>Carrera Creada con éxito</p>
+  `;
+  succesPost.classList.add("aviso-click");
 });
+
+// EDITAR  CARRERA
+
+const editarCarrera = document.getElementById("editar");
+const modifyCarrera = document.getElementById("modify-carrera");
+const aceptButton = document.getElementById("aceptModify");
+editarCarrera.addEventListener("click", modificar);
+function modificar() {
+  modifyCarrera.classList.add("opacityModificar");
+}
+
+aceptButton.addEventListener("click", ocultarModificarCarrera);
+
+function ocultarModificarCarrera() {
+  modifyCarrera.classList.remove("opacityModificar");
+}
+
+// BORRAR CARRERA
+
+const abrirDelete = document.getElementById("eliminar");
+const ModalDelCarrera = document.getElementById("ModaldelCarrera");
+const deleteButton = document.getElementById("decDelete");
+const aceptButtonDelete = document.getElementById("aceptDelete");
+abrirDelete.addEventListener("click", eliminarLic);
+function eliminarLic() {
+  ModalDelCarrera.classList.add("opacityModificar");
+}
+
+deleteButton.addEventListener("click", aceptDeleteModal);
+
+function aceptDeleteModal() {
+  ModalDelCarrera.classList.remove("opacityModificar");
+}

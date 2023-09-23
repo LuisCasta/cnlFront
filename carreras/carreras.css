@@ -10,6 +10,7 @@
     padding: 26px;
     margin: 15px auto;
     box-shadow: var(--box-shadow);
+    position: relative;
 }
 
 .heading {
@@ -20,4 +21,95 @@
     width: 90%;
     margin: 15px auto;
     text-align: right;
+}
+
+.aviso-click {
+    margin: 20px;
+    padding: 10px;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    border-left: 5px solid #039855;
+    transition: .2s ease-in-out;
+    transform: translateX(10px);
+    background-color: #fff;
+}
+
+.container-Table {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.ModalCarrera {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 26px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    border-top: var(--border-top);
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+    z-index: -20;
+    opacity: 0;
+}
+
+.opacityModificar {
+    z-index: 99;
+    transform: translateY(-10px);
+    opacity: 1;
+}
+
+.ModalCarrera .bx-edit {
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--color-bk-opacity);
+}
+
+.ModalCarrera .bx-info-square {
+    color: var(--icon-advice-color);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--icon-advice-bk);
+}
+
+.content-Modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content-Modal button {
+    display: flex;
+    justify-content: center;
+    text-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.select-status {
+    width: 100%;
+}
+
+.select-status p {
+    font-size: 12px;
+    padding: 8px;
+    font-weight: 600;
+}
+
+.select-status select {
+    width: 100%;
 }

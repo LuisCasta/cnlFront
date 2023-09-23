@@ -28,7 +28,7 @@
         <div class="navegacion-vista">
           <ul class="ul-navigate">
             <li>
-              <i class="bx bx-group bx-sm"></i>
+              <a href="../index.html"><i class="bx bx-group bx-sm"></i></a>
               <p class="tooltip">Alumnos</p>
             </li>
             <li>
@@ -93,7 +93,7 @@
           />
         </div>
       </section>
-      <div>
+      <div class="container-Table">
         <table>
           <thead>
             <caption>
@@ -106,11 +106,66 @@
               <th>ID</th>
               <th>Licenciatura</th>
               <th>Descripción</th>
+              <th>Status</th>
               <th></th>
             </tr>
           </thead>
+          <tbody>
+            <tr>
+              <td>11</td>
+              <td>Sistemas</td>
+              <td>Ciencias de Datos</td>
+              <td>activo</td>
+              <td>
+                <div class="actions">
+                  <button class="eliminar" id="eliminar">
+                    <i class="bx bx-trash"></i>
+                  </button>
+                  <button class="editar" id="editar">
+                    <i class="bx bx-edit"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
           <tbody id="carreras"></tbody>
         </table>
+
+        <!-- ACEPTAR O DECLINAR BORRAR CARRERA -->
+        <div class="ModalCarrera" id="ModaldelCarrera">
+          <i class="bx bx-info-square"></i>
+          <h3>¿Seguro que quieres eliminar esta Carrera?</h3>
+          <div class="acept-decline">
+            <button id="aceptDelete" class="aceptDelete">Aceptar</button>
+            <button id="decDelete" class="decDelete">cancelar</button>
+          </div>
+        </div>
+        <!-- MODIFICAR CARRERA -->
+        <div class="ModalCarrera" id="modify-carrera">
+          <i class="bx bx-edit"></i>
+          <h3>Modificar Carrera</h3>
+          <div class="content-Modal">
+            <input type="text" placeholder="id" />
+            <input type="text" placeholder="Licenciatura" name="" id="" />
+            <input
+              type="text"
+              placeholder="Descripción"
+              name="descripcion"
+              id="descripcionCarrera"
+            />
+            <div class="select-status">
+                <p>Estatus:</p>
+            <select name="" id="">
+                <option value="activo">activo</option>
+                <option value="activo">inactivo</option>
+            </select>
+            </option>
+            </div>
+            <button id="aceptModify">
+              <i class="bx bx-check-circle"></i><span>Aceptar</span>
+            </button>
+          </div>
+        </div>
       </div>
     </main>
     <script src="carreras.js"></script>
