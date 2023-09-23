@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="carreras.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carreras</title>
+  </head>
+  <body onload="cargarCarreras()">
+    <div class="sidenav-cln">
+      <div class="sidenav-content">
+        <!-- LOGO NUEVA LAGUNA -->
+        <div class="downNav">
+          <img
+            src="https://universidadnuevalaguna.edu.mx/wp-content/uploads/2023/08/escudo.png"
+            alt=""
+          />
+        </div>
+        <!-- NAVEGACIÓN -->
+        <div class="navegacion-vista">
+          <ul class="ul-navigate">
+            <li>
+              <i class="bx bx-group bx-sm"></i>
+              <p class="tooltip">Alumnos</p>
+            </li>
+            <li>
+              <i class="bx bxs-graduation bx-sm"></i>
+              <p class="tooltip">Maestros</p>
+            </li>
+            <li>
+              <i class="bx bx-run bx-sm"></i>
+              <p class="tooltip">Carreras</p>
+            </li>
+            <li>
+              <i class="bx bx-line-chart bx-sm"></i>
+              <p class="tooltip">Admon</p>
+            </li>
+          </ul>
+        </div>
+        <!-- PERFIL -->
+        <div class="perfil">
+          <i class="bx bx-log-out"></i>
+          <i class="bx bx-cog"></i>
+          <img src="../src/prueba.png" alt="" />
+          <h5 id="userName">Margarita López</h5>
+          <!-- <p id="job">Dirección</p> -->
+        </div>
+      </div>
+    </div>
+    <main>
+      <!-- BUSCAR ELEMENTOS EN LA TABLA -->
+      <section>
+        <div class="card-carreras">
+          <div class="heading">
+            <h2>Agregar Carrera</h2>
+          </div>
+          <div class="content-input">
+            <input type="text" name="" id="id" placeholder="id" />
+            <input
+              type="text"
+              name=""
+              id="NameCarrera"
+              placeholder="Licenciatura"
+            />
+            <input type="text" id="descripcion" placeholder="Descripción" />
+            <button type="submit"><i class="bx bx-plus-circle"></i></button>
+          </div>
+        </div>
+        <div class="finder">
+          <input
+            type="search"
+            onkeyup="filterSearch()"
+            id="buscar"
+            placeholder="Busca matrícula, nombre, etc"
+          />
+        </div>
+      </section>
+      <div>
+        <table>
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Todos las carreras</p>
+                <span id="spanTitle"></span>
+              </div>
+            </caption>
+            <tr>
+              <th>ID</th>
+              <th>Licenciatura</th>
+              <th>Descripción</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="carreras"></tbody>
+        </table>
+      </div>
+    </main>
+    <script src="carreras.js"></script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+@import url('style-generals.css');
+
+main {
+    margin-left: 116px;
+    width: 90%;
+}
+
+/* ESTILOS DEL SIDE NAV */
+
+.sidenav-cln {
+    position: fixed;
+    height: 100vh;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    padding: 16px;
+    top: 0;
+    width: 116px;
+    z-index: 100;
+    border-bottom: 7px solid var(--primary-color);
+}
+
+.sidenav-content {
+    height: 95vh;
+    transition: .2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navegacion-vista ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    right: 0;
+    left: 0;
+    visibility: hidden;
+    text-align: left;
+    transition: .5s ease-out;
+    background-color: var(--tooltip-bk);
+    padding: 8px 12px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-wrap: nowrap;
+    text-align: center;
+    opacity: 0;
+}
+
+.navegacion-vista ul li:hover .tooltip {
+    transform: translateX(77px);
+    visibility: visible;
+    opacity: 1;
+}
+
+/* .ul-navigate {
+    margin-top: 100px;
+} */
+
+.navegacion-vista ul li i {
+    background-color: #6941C610;
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.color {
+    color: #E02B20;
+    background-color: #E02B2010;
+}
+
+/* PERFIL */
+
+.perfil {
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.perfil img {
+    width: 60px;
+    border-radius: 200px;
+}
+
+.perfil h5 {
+    font-size: 14px;
+}
+
+.perfil p {
+    font-size: 12px;
+}
+
+.downNav {
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid red; */
+}
+
+.downNav img {
+    width: 40px;
+}

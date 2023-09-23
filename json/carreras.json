@@ -1,0 +1,54 @@
+{
+  "carreras": [
+    {
+      "id": 1,
+      "licenciatura": "Informática",
+      "descripcion": "Carrera técnica"
+    },
+    {
+      "id": 2,
+      "licenciatura": "Medicina",
+      "descripcion": "Carrera de salud"
+    },
+    {
+      "id": 3,
+      "licenciatura": "Derecho",
+      "descripcion": "Carrera legal"
+    },
+    {
+      "id": 4,
+      "licenciatura": "Psicología",
+      "descripcion": "Carrera de la mente"
+    },
+    {
+      "id": 5,
+      "licenciatura": "Ingeniería Civil",
+      "descripcion": "Construcción y diseño"
+    },
+    {
+      "id": 6,
+      "licenciatura": "Arquitectura",
+      "descripcion": "Diseño de edificios"
+    },
+    {
+      "id": 7,
+      "licenciatura": "Biología",
+      "descripcion": "Estudio de la vida"
+    },
+    {
+      "id": 8,
+      "licenciatura": "Economía",
+      "descripcion": "Ciencias económicas"
+    },
+    {
+      "id": 9,
+      "licenciatura": "Historia",
+      "descripcion": "Estudio del pasado"
+    },
+    {
+      "id": 10,
+      "licenciatura": "Química",
+      "descripcion": "Ciencia de las sustancias"
+    }
+  ]
+}

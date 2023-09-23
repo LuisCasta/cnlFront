@@ -1,0 +1,23 @@
+@import url('../styles/style-generals.css');
+@import url('../styles/sidenav.css');
+
+.card-carreras {
+    width: 90%;
+    border-top: 5px solid var(--primary-color);
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 26px;
+    margin: 15px auto;
+    box-shadow: var(--box-shadow);
+}
+
+.heading {
+    margin-bottom: 20px;
+}
+
+.finder {
+    width: 90%;
+    margin: 15px auto;
+    text-align: right;
+}
