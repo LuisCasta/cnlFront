@@ -37,3 +37,41 @@ function cargarCarreras() {
     }
   });
 }
+
+// Agregar una carrera
+
+const succesPost = document.getElementById("succes-post");
+const formCarrera = document.getElementById("form-Carreras");
+const btnCarrera = document.getElementById("enviarBtn");
+
+const getData = () => {
+  const datos = new FormData(formCarrera);
+  const datosProcesados = Object.fromEntries(datos.entries());
+  formCarrera.reset();
+  return datosProcesados;
+};
+
+const postData = async () => {
+  const newCarrera = getData();
+  try {
+    const response = await fetch("../json/carreras.json", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newCarrera),
+    });
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      console.log(jsonResponse);
+      const { id, carrera, descripcion } = jsonResponse;
+      succesPost.textContent = `Se actualizaron los siquientes datos
+      ${id}, ${carrera},${descripcion}`;
+    }
+  } catch (error) {
+    console.error("Ocurrió un error", error);
+  }
+};
+
+btnCarrera.addEventListener("click", async (e) => {
+  e.preventDefault();
+  await postData();
+});

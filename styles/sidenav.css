@@ -100,6 +100,10 @@ main {
     font-size: 14px;
 }
 
+.perfil>i {
+    color: var(--primary-color);
+}
+
 .perfil p {
     font-size: 12px;
 }

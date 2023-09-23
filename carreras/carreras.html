@@ -63,16 +63,26 @@
             <h2>Agregar Carrera</h2>
           </div>
           <div class="content-input">
-            <input type="text" name="" id="id" placeholder="id" />
-            <input
-              type="text"
-              name=""
-              id="NameCarrera"
-              placeholder="Licenciatura"
-            />
-            <input type="text" id="descripcion" placeholder="Descripción" />
-            <button type="submit"><i class="bx bx-plus-circle"></i></button>
+            <form id="form-Carreras">
+              <input type="text" name="id" id="idCarrera" placeholder="id" />
+              <input
+                type="text"
+                name="carrera"
+                id="nameCarrera"
+                placeholder="Licenciatura"
+              />
+              <input
+                type="text"
+                name="descripcion"
+                id="descripcionCarrera"
+                placeholder="Descripción"
+              />
+              <button id="enviarBtn">
+                <i class="bx bx-plus-circle"></i>Agregar
+              </button>
+            </form>
           </div>
+          <div class="aviso" id="succes-post"></div>
         </div>
         <div class="finder">
           <input
