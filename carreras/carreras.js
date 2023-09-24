@@ -2,21 +2,18 @@
 let salida = "";
 const tbody = document.getElementById("carreras");
 
-async function loadCareers () {
+async function loadCareers() {
+  const outputCareers = "";
+  const careers = await getAll();
 
-  const outputCareers = '';
-  const careers = await getAll()
-
-  if(careers.code != 200){
-
-    alert(`Error ${newCareer.message}`)
-
-  }else{
-
-    careers.data.map( carrer => {
-
+  if (careers.code != 200) {
+    alert(`Error ${newCareer.message}`);
+  } else {
+    careers.data.map((carrer) => {
       const { id, name, description, active, code } = carrer;
-      console.log(`Id Carrera ${id} - name ${name} - description ${description}`)
+      console.log(
+        `Id Carrera ${id} - name ${name} - description ${description}`
+      );
 
       salida += `
               <tr>
@@ -33,7 +30,7 @@ async function loadCareers () {
                 </td>
               </tr>
             `;
-    })
+    });
 
     tbody.innerHTML = salida;
   }
@@ -112,17 +109,17 @@ const postData = async () => {
 };
 
 /**
- * 
+ *
  * Btn create carrer
- * 
+ *
  **/
 btnCarrera.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const code = document.getElementById("idCarrera").value;
+  const name = document.getElementById("nameCarrera").value;
+  const description = document.getElementById("descripcionCarrera").value;
 
-  const code = document.getElementById('idCarrera').value;
-  const name = document.getElementById('nameCarrera').value;
-  const description = document.getElementById('descripcionCarrera').value;
-
-  const data = { code, name, description}
+  const data = { code, name, description };
 
   succesPost.innerHTML = `
     <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
@@ -131,11 +128,9 @@ btnCarrera.addEventListener("click", async (e) => {
   succesPost.classList.add("aviso-click");
   const newCareer = await create(data);
 
-
-  if(newCareer.code != 200)
-    alert(`Error ${newCareer.message}`)
-  else{
-    alert(`ID de Carrera ${newCareer.data.id}`)
+  if (newCareer.code != 200) alert(`Error ${newCareer.message}`);
+  else {
+    alert(`ID de Carrera ${newCareer.data.id}`);
     succesPost.innerHTML = `
     <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
     <p>Carrera Creada con éxito</p>
