@@ -14,52 +14,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alumnos</title>
   </head>
-  <body onload="obtenerDatos()">
+  <body onload="obtenerDatos(), cargarSideNav()">
     <!-- sidenav -->
-    <div class="sidenav-cln">
-      <div class="sidenav-content">
-        <!-- LOGO NUEVA LAGUNA -->
-        <div class="downNav">
-          <img
-            src="https://universidadnuevalaguna.edu.mx/wp-content/uploads/2023/08/escudo.png"
-            alt=""
-          />
-        </div>
-        <!-- NAVEGACIÓN -->
-        <div class="navegacion-vista">
-          <ul class="ul-navigate">
-            <li>
-              <a href="index.html"><i class="bx bx-group bx-sm"></i></a>
-              <p class="tooltip">Alumnos</p>
-            </li>
-            <li>
-              <i class="bx bxs-graduation bx-sm"></i>
-              <p class="tooltip">Maestros</p>
-            </li>
-            <li>
-              <a href="carreras/carreras.html"
-                ><i class="bx bx-run bx-sm"></i
-              ></a>
-              <p class="tooltip">Carreras</p>
-            </li>
-            <li>
-              <i class="bx bx-line-chart bx-sm"></i>
-              <p class="tooltip">Admon</p>
-            </li>
-          </ul>
-        </div>
-        <!-- PERFIL -->
-        <div class="perfil">
-          <i class="bx bx-log-out"></i>
-          <i class="bx bx-cog"></i>
-          <img src="../src/prueba.png" alt="" />
-          <h5 id="userName">Margarita López</h5>
-          <!-- <p id="job">Dirección</p> -->
-        </div>
-      </div>
-    </div>
+    <div class="sidenav-cln" id="sidenavInsert"></div>
 
     <main>
+      <div class="breadcumbs">
+        <p>Alumnos</p>
+      </div>
+      <div class="card-header">
+        <div class="heading">
+          <h2>Alumnos</h2>
+          <p>Agrega alumnos, consulta y configúralos</p>
+        </div>
+        <!-- <div class="config-period">
+          <input type="text" placeholder="Nombre de periodo" />
+          <input type="text" placeholder="Semestre" name="" id="semestre" />
+          <button class="" id="agregarPeriodo">
+            <i class="bx bx-plus-circle"></i>Agregar periodo
+          </button>
+        </div> -->
+      </div>
       <!-- BUSCAR ELEMENTOS EN LA TABLA -->
       <section>
         <div class="finder">
@@ -67,7 +42,7 @@
             type="search"
             onkeyup="filterSearch()"
             id="buscar"
-            placeholder="Busca matrícula, nombre, etc"
+            placeholder="Busca por nombre..."
           />
         </div>
       </section>
@@ -94,4 +69,5 @@
     </main>
   </body>
   <script src="js/post.js"></script>
+  <script src="js/sidenav.js"></script>
 </html>

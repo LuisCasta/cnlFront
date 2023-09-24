@@ -15,7 +15,7 @@
     <title>Carreras</title>
   </head>
   <body onload="cargarCarreras()">
-    <div class="sidenav-cln">
+    <div class="sidenav-cln" id="sidenavInsert">
       <div class="sidenav-content">
         <!-- LOGO NUEVA LAGUNA -->
         <div class="downNav">
@@ -56,11 +56,15 @@
       </div>
     </div>
     <main>
+      <div class="breadcumbs">
+        <p>Carreras</p>
+      </div>
       <!-- BUSCAR ELEMENTOS EN LA TABLA -->
       <section>
-        <div class="card-carreras">
+        <div class="card-header">
           <div class="heading">
             <h2>Agregar Carrera</h2>
+            <p>Agrega carreras, consulta y configura períodos</p>
           </div>
           <div class="content-input">
             <form id="form-Carreras">
@@ -89,7 +93,7 @@
             type="search"
             onkeyup="filterSearch()"
             id="buscar"
-            placeholder="Busca matrícula, nombre, etc"
+            placeholder="Busca por nombre..."
           />
         </div>
       </section>
@@ -124,6 +128,7 @@
                   <button class="editar" id="editar">
                     <i class="bx bx-edit"></i>
                   </button>
+                  <a href="periodo/periodo.html" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                 </div>
               </td>
             </tr>
@@ -145,8 +150,7 @@
           <i class="bx bx-edit"></i>
           <h3>Modificar Carrera</h3>
           <div class="content-Modal">
-            <input type="text" placeholder="id" />
-            <input type="text" placeholder="Licenciatura" name="" id="" />
+           <input type="text" placeholder="Licenciatura" name="" id="" />
             <input
               type="text"
               placeholder="Descripción"

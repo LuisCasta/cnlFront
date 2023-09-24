@@ -29,36 +29,6 @@
       "licenciatura": "Ingeniería Civil",
       "descripcion": "Construcción y diseño",
       "status": false
-    },
-    {
-      "id": 6,
-      "licenciatura": "Arquitectura",
-      "descripcion": "Diseño de edificios",
-      "status": true
-    },
-    {
-      "id": 7,
-      "licenciatura": "Biología",
-      "descripcion": "Estudio de la vida",
-      "status": true
-    },
-    {
-      "id": 8,
-      "licenciatura": "Economía",
-      "descripcion": "Ciencias económicas",
-      "status": false
-    },
-    {
-      "id": 9,
-      "licenciatura": "Historia",
-      "descripcion": "Estudio del pasado",
-      "status": false
-    },
-    {
-      "id": 10,
-      "licenciatura": "Química",
-      "descripcion": "Ciencia de las sustancias",
-      "status": true
     }
   ]
 }

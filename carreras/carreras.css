@@ -1,18 +1,6 @@
 @import url('../styles/style-generals.css');
 @import url('../styles/sidenav.css');
 
-.card-carreras {
-    width: 90%;
-    border-top: 5px solid var(--primary-color);
-    display: flex;
-    border-radius: 10px;
-    flex-direction: column;
-    padding: 26px;
-    margin: 15px auto;
-    box-shadow: var(--box-shadow);
-    position: relative;
-}
-
 .heading {
     margin-bottom: 20px;
 }
@@ -45,6 +33,8 @@
     margin: auto;
     display: flex;
     justify-content: center;
+    transition: .5s ease-in-out;
+    transform: translateY(10px);
 }
 
 .ModalCarrera {
