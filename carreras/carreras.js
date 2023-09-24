@@ -36,6 +36,28 @@ async function loadCareers() {
   }
 }
 
+
+async function getCareerById(id) {
+  
+  const career = await getById(id);
+
+  if(career.status != 200)
+    alert(`Error al obtener la carrera con el id ${id}`)
+  else{
+    const { name, code, description, active } = career.data;
+  
+  return {
+    name,
+    code,
+    description,
+    active
+  };
+  }
+  
+
+};
+
+
 function cargarCarreras() {
   return new Promise(async (resolve, reject) => {
     try {

@@ -38,3 +38,21 @@ const getAll = async () => {
 
     return {code : 200, data : career.data.data}
 }
+
+/**
+ * Obtiene todas las carreras
+ * 
+ * */
+const getById = async (id) => {
+
+	if(id == 0 || id == '' || id == undefined || id == ' ')
+		return {code : 400, message : `Error, el campo id es inválido`};
+
+
+	const career = await getApi(`career/about/${id}`);		
+
+	if(career.status != 200)
+    	return {code : 400, message : `Error al obtener carrera con el id: ${id}`, error: career.data.message};
+
+    return {code : 200, data : career.data.data}
+}
