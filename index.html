@@ -2,72 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles/vista.css" />
+    <link rel="stylesheet" href="login/login.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alumnos</title>
+    <title>Login</title>
   </head>
-  <body onload="obtenerDatos(), cargarSideNav()">
-    <!-- sidenav -->
-    <div class="sidenav-cln" id="sidenavInsert"></div>
-
-    <main>
-      <div class="breadcumbs">
-        <p>Alumnos</p>
-      </div>
-      <div class="card-header">
-        <div class="heading">
-          <h2>Alumnos</h2>
-          <p>Agrega alumnos, consulta y configúralos</p>
+  <body>
+    <div class="side-Nav"></div>
+    <div class="log-sidenav">
+      <div class="container-login">
+        <img
+          src="https://universidadnuevalaguna.edu.mx/wp-content/uploads/2023/08/escudo.png"
+          alt=""
+        />
+        <h2>Colegio Nueva Laguna</h2>
+        <div class="login-content">
+          <div class="text-login">
+            <i class="bx bx-user-circle bx-sm"></i>
+            <h2>Inicia sesión</h2>
+          </div>
+          <input type="email" id="correo" placeholder="Nombre" />
+          <input type="password" id="pw-login" placeholder="contraseña" />
+          <a id="Inicio-sesion"><button>Iniciar sesión</button></a>
+          <div class="forgotPw">
+            <i class="bx bx-info-circle"></i>
+            <a href="">Olvidé mi contraseña</a>
+          </div>
         </div>
-        <!-- <div class="config-period">
-          <input type="text" placeholder="Nombre de periodo" />
-          <input type="text" placeholder="Semestre" name="" id="semestre" />
-          <button class="" id="agregarPeriodo">
-            <i class="bx bx-plus-circle"></i>Agregar periodo
-          </button>
-        </div> -->
       </div>
-      <!-- BUSCAR ELEMENTOS EN LA TABLA -->
-      <section>
-        <div class="finder">
-          <input
-            type="search"
-            onkeyup="filterSearch()"
-            id="buscar"
-            placeholder="Busca por nombre..."
-          />
-        </div>
-      </section>
-      <!-- Cargar tabla -->
-      <table class="table" id="myTable">
-        <thead>
-          <caption>
-            <div class="caption">
-              <p id="tableTitle">Todos los alumnos</p>
-              <span id="spanTitle">100 Alumnos</span>
-            </div>
-          </caption>
-          <tr>
-            <th>Matrícula</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Carrera</th>
-            <th>Semestre</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody class="datos" id="datos"></tbody>
-      </table>
-    </main>
+    </div>
   </body>
-  <script src="js/post.js"></script>
-  <script src="js/sidenav.js"></script>
+  <script src="login/login.js"></script>
 </html>

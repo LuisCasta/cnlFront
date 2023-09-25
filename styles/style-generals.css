@@ -13,6 +13,7 @@
     --border-top: 5px solid var(--primary-color);
     --icon-advice-color: #D92D20;
     --icon-advice-bk: #FEE4E2;
+    --border-top: 1px solid #D0d5dd;
 }
 
 * {
@@ -146,7 +147,7 @@ caption {
     width: 90%;
     border-top: 5px solid var(--primary-color);
     display: flex;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     flex-direction: column;
     padding: 26px;
     margin: 15px auto;

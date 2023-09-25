@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/vista.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumnos</title>
+  </head>
+  <body onload="obtenerDatos(), cargarSideNav()">
+    <!-- sidenav -->
+    <div class="sidenav-cln" id="sidenavInsert"></div>
+
+    <main>
+      <div class="breadcumbs">
+        <p>Alumnos</p>
+      </div>
+      <div class="card-header">
+        <div class="heading">
+          <h2>Alumnos</h2>
+          <p>Agrega alumnos, consulta y configúralos</p>
+        </div>
+      </div>
+      <!-- BUSCAR ELEMENTOS EN LA TABLA -->
+      <section>
+        <div class="finder">
+          <input
+            type="search"
+            onkeyup="filterSearch()"
+            id="buscar"
+            placeholder="Busca por nombre..."
+          />
+        </div>
+      </section>
+      <!-- Cargar tabla -->
+      <table class="table" id="myTable">
+        <thead>
+          <caption>
+            <div class="caption">
+              <p id="tableTitle">Todos los alumnos</p>
+              <span id="spanTitle">100 Alumnos</span>
+            </div>
+          </caption>
+          <tr>
+            <th>Matrícula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Carrera</th>
+            <th>Semestre</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="datos" id="datos"></tbody>
+      </table>
+    </main>
+  </body>
+  <script src="js/post.js"></script>
+  <script src="js/sidenav.js"></script>
+</html>
