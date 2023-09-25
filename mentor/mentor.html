@@ -2,16 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="periodo.css" />
+    <link rel="stylesheet" href="maestros.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Periodo</title>
+    <title>Mentor</title>
   </head>
   <body>
-    <div class="sidenav-cln" id="">
+    <div class="sidenav-cln" id="sidenavInsert">
       <div class="sidenav-content">
         <!-- LOGO NUEVA LAGUNA -->
         <div class="downNav">
@@ -24,15 +24,17 @@
         <div class="navegacion-vista">
           <ul class="ul-navigate">
             <li>
-              <a href="../../alumnos.html"><i class="bx bx-group bx-sm"></i></a>
+              <a href="../student.html"><i class="bx bx-group bx-sm"></i></a>
               <p class="tooltip">Alumnos</p>
             </li>
             <li>
-              <i class="bx bxs-graduation bx-sm"></i>
+              <a href="mentor.html"><i class="bx bxs-graduation bx-sm"></i></a>
               <p class="tooltip">Maestros</p>
             </li>
             <li>
-              <a href="../carreras.html"><i class="bx bx-run bx-sm"></i></a>
+              <a href="../career/career.html"
+                ><i class="bx bx-run bx-sm"></i
+              ></a>
               <p class="tooltip">Carreras</p>
             </li>
             <li>
@@ -43,7 +45,7 @@
         </div>
         <!-- PERFIL -->
         <div class="perfil">
-          <i class="bx bx-log-out"></i>
+          <a href="../index.html"><i class="bx bx-log-out"></i></a>
           <i class="bx bx-cog"></i>
           <img
             src="https://plus.unsplash.com/premium_photo-1661686687486-2329be3e383f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80"
@@ -56,58 +58,63 @@
     </div>
     <main>
       <div class="breadcumbs">
-        <a href="../carreras.html">Carreras</a>
-        <i class="bx bx-right-arrow-alt"></i>
-        <a>Configurar periodo</a>
+        <p>Mentor</p>
       </div>
       <div class="card-header">
-        <div class="heading">
-          <h2>Licenciatura en Sistemas</h2>
-          <p>Agrega períodos a la carrera</p>
+        <div class="text-mentor">
+          <h2>Maestros</h2>
+          <p>Agregar un nuevo maestro, gestiónalo y asígnale materias</p>
         </div>
-        <div class="config-period">
-          <input type="text" placeholder="Nombre de periodo" />
-          <input type="text" placeholder="Semestre" name="" id="semestre" />
-          <button class="" id="agregarPeriodo">
-            <i class="bx bx-plus-circle"></i>Agregar periodo
-          </button>
+        <div form-mentor>
+          <input type="text" placeholder="Id" />
+          <input type="text" placeholder="Nombre docente" />
+          <button>Agregar maestro</button>
         </div>
       </div>
-      <div class="container-Table">
-        <table>
-          <thead>
-            <caption>
-              <div class="caption">
-                <p id="tableTitle">Todos los Periodos</p>
-                <span id="spanTitle"></span>
-              </div>
-            </caption>
-            <tr>
-              <th>Periodo</th>
-              <th>Semestre</th>
-              <th>Ajustar periodo</th>
-            </tr>
-          </thead>
-          <tbody id="periodo-table">
-            <td>Inicio Julio Diciembre</td>
-            <td>1er semestre</td>
+      <div class="finder">
+        <input type="search" placeholder="Buscar Maestro ..." />
+      </div>
+      <table class="table-mentors">
+        <thead>
+          <caption>
+            <div class="caption">
+              <p id="tableTitle">Todos los Maestros</p>
+              <span id="spanTitle"></span>
+            </div>
+          </caption>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Francisco</td>
+            <td>Preciado</td>
+            <td>activo</td>
             <td>
               <div class="actions">
-                <button class="eliminarPeriodo">
+                <button class="eliminar" id="eliminar">
                   <i class="bx bx-trash"></i>
                 </button>
-                <button class="editarPeriodo">
+                <button class="editar" id="editar">
                   <i class="bx bx-edit"></i>
                 </button>
-                <a href="materias/materias.html" class="gestionCarrera"
+                <a
+                  href="add-subject.html/addsubject.html"
+                  class="gestionCarrera"
                   ><button><i class="bx bx-cog"></i></button
                 ></a>
               </div>
             </td>
-          </tbody>
-        </table>
-      </div>
+          </tr>
+        </tbody>
+        <tbody id="carreras"></tbody>
+      </table>
     </main>
   </body>
-  <script src="periodo.js"></script>
 </html>

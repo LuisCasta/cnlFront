@@ -30,7 +30,6 @@ main {
 .navegacion-vista ul li {
     display: flex;
     align-items: center;
-    gap: 12px;
     width: 100%;
     text-align: center;
     justify-content: center;

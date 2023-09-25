@@ -12,15 +12,16 @@ function cargarSideNav() {
 <div class="navegacion-vista">
   <ul class="ul-navigate">
     <li>
-      <a href="index.html"><i class="bx bx-group bx-sm"></i></a>
+      <a href="student.html"><i class="bx bx-group bx-sm"></i></a>
       <p class="tooltip">Alumnos</p>
     </li>
     <li>
-      <i class="bx bxs-graduation bx-sm"></i>
+    <a href="mentor/mentor.html">
+    <i class="bx bxs-graduation bx-sm"></i></a>
       <p class="tooltip">Maestros</p>
     </li>
     <li>
-      <a href="carreras/carreras.html"
+      <a href="career/career.html"
         ><i class="bx bx-run bx-sm"></i
       ></a>
       <p class="tooltip">Carreras</p>
@@ -33,7 +34,7 @@ function cargarSideNav() {
 </div>
 <!-- PERFIL -->
 <div class="perfil">
-  <i class="bx bx-log-out"></i>
+<a href="../index.html"><i class="bx bx-log-out"></i></a>
   <i class="bx bx-cog"></i>
   <img src="https://plus.unsplash.com/premium_photo-1661686687486-2329be3e383f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80" alt="" />
   <h5 id="userName">Margarita López</h5>

@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="periodo.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="materias.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Materias</title>
+    <title>Periodo</title>
   </head>
   <body>
     <div class="sidenav-cln" id="">
@@ -24,19 +24,16 @@
         <div class="navegacion-vista">
           <ul class="ul-navigate">
             <li>
-              <a href="../../../alumnos.html"
-                ><i class="bx bx-group bx-sm"></i
-              ></a>
+              <a href="../../student.html"><i class="bx bx-group bx-sm"></i></a>
               <p class="tooltip">Alumnos</p>
             </li>
             <li>
-              <i class="bx bxs-graduation bx-sm"></i>
+              <a href="../../mentor/mentor.html"></a
+              ><i class="bx bxs-graduation bx-sm"></i>
               <p class="tooltip">Maestros</p>
             </li>
             <li>
-              <a href="../../../carreras/carreras.html"
-                ><i class="bx bx-run bx-sm"></i
-              ></a>
+              <a href="../career.html"><i class="bx bx-run bx-sm"></i></a>
               <p class="tooltip">Carreras</p>
             </li>
             <li>
@@ -47,7 +44,7 @@
         </div>
         <!-- PERFIL -->
         <div class="perfil">
-          <i class="bx bx-log-out"></i>
+          <a href="../../index.html"><i class="bx bx-log-out"></i></a>
           <i class="bx bx-cog"></i>
           <img
             src="https://plus.unsplash.com/premium_photo-1661686687486-2329be3e383f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80"
@@ -60,27 +57,20 @@
     </div>
     <main>
       <div class="breadcumbs">
-        <a href="../../carreras.html">Carreras</a>
+        <a href="../career.html">Carreras</a>
         <i class="bx bx-right-arrow-alt"></i>
-        <a href="../periodo.html">Configurar periodo</a>
-        <i class="bx bx-right-arrow-alt"></i>
-        <a>Configurar materias</a>
+        <a>Configurar periodo</a>
       </div>
       <div class="card-header">
         <div class="heading">
           <h2>Licenciatura en Sistemas</h2>
-          <p>Agrega materias a tus carreras</p>
+          <p>Agrega períodos a la carrera</p>
         </div>
         <div class="config-period">
-          <input type="text" id="idMateria" placeholder="Id de Materia" />
-          <input
-            type="text"
-            placeholder="Nombre de Materia"
-            name=""
-            id="nameMateria"
-          />
-          <button class="" id="agregarMateria">
-            <i class="bx bx-plus-circle"></i>Agregar Materia
+          <input type="text" placeholder="Nombre de periodo" />
+          <input type="text" placeholder="Semestre" name="" id="semestre" />
+          <button class="" id="agregarPeriodo">
+            <i class="bx bx-plus-circle"></i>Agregar periodo
           </button>
         </div>
       </div>
@@ -89,30 +79,30 @@
           <thead>
             <caption>
               <div class="caption">
-                <p id="tableTitle">Todos las Materias</p>
+                <p id="tableTitle">Todos los Periodos</p>
                 <span id="spanTitle"></span>
               </div>
             </caption>
             <tr>
-              <th>Id</th>
-              <th>Materia</th>
-              <th>Ajustar Materia</th>
+              <th>Periodo</th>
+              <th>Semestre</th>
+              <th>Ajustar periodo</th>
             </tr>
           </thead>
-          <tbody id="materias-table">
-            <td>1</td>
-            <td>Matemáticas 1</td>
+          <tbody id="periodo-table">
+            <td>Inicio Julio Diciembre</td>
+            <td>1er semestre</td>
             <td>
               <div class="actions">
-                <button class="eliminarMateria">
+                <button class="eliminarPeriodo">
                   <i class="bx bx-trash"></i>
                 </button>
-                <button class="editarMateria">
+                <button class="editarPeriodo">
                   <i class="bx bx-edit"></i>
                 </button>
-                <!-- <a href="materias/materias.html" class="gestionCarrera"
+                <a href="subject/subject.html" class="gestionCarrera"
                   ><button><i class="bx bx-cog"></i></button
-                ></a> -->
+                ></a>
               </div>
             </td>
           </tbody>
@@ -120,4 +110,5 @@
       </div>
     </main>
   </body>
+  <script src="periodo.js"></script>
 </html>

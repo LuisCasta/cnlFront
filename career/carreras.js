@@ -25,76 +25,31 @@ async function loadCareers() {
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                    <a href="https://cnlweb.onrender.com/carreras/periodo/periodo.html?idCarrera=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
               </tr>
             `;
     });
-
     tbody.innerHTML = salida;
   }
 }
 
-
 async function getCareerById(id) {
-  
   const career = await getById(id);
 
-  if(career.status != 200)
-    alert(`Error al obtener la carrera con el id ${id}`)
-  else{
+  if (career.status != 200)
+    alert(`Error al obtener la carrera con el id ${id}`);
+  else {
     const { name, code, description, active } = career.data;
-  
-  return {
-    name,
-    code,
-    description,
-    active
-  };
+
+    return {
+      name,
+      code,
+      description,
+      active,
+    };
   }
-  
-
-};
-
-
-function cargarCarreras() {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const respuesta = await fetch("../json/carreras.json", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await respuesta.json();
-      for (let elemento of data.carreras) {
-        salida += `
-              <tr>
-                <td>${elemento.id}</td>
-                <td>${elemento.licenciatura}</td>
-                <td>${elemento.descripcion}</td>
-                <td>${elemento.status ? "activo" : "inactivo"}</td>
-                <td> 
-                  <div class="actions">
-                    <button class="eliminar"><i class='bx bx-trash'></i></button>
-                    <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
-                  </div>
-                </td>
-              </tr>
-            `;
-      }
-      const datos = data.alumnos;
-      const spanTitle = document.getElementById("spanTitle");
-      spanTitle.textContent = `${data.carreras.length} carreras`;
-      tbody.innerHTML = salida;
-      resolve(datos); // Resuelve la promesa con los datos
-    } catch (error) {
-      console.error("Algo no salió bien", error);
-      reject(error); // Rechaza la promesa en caso de error
-    }
-  });
 }
 
 // Agregar una carrera
