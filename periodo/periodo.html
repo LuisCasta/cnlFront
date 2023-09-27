@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="periodo.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Periodo</title>
+  </head>
+  <body onload="loadPeriodo(), cargarSideNav()">
+    <div class="sidenav-cln" id="sidenavInsert"></div>
+    <main>
+      <div class="breadcumbs">
+        <a href="../career/career.html">Carreras</a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <a>Configurar periodo</a>
+      </div>
+      <div class="card-header">
+        <div class="heading">
+          <h2>Licenciatura en Sistemas</h2>
+          <p>Agrega períodos a la carrera</p>
+        </div>
+        <div class="config-period">
+          <form action="" id="form-periodos">
+            <input type="text" placeholder="Semestre" name="" id="id-career" />
+            <input
+              type="text"
+              id="name-period"
+              placeholder="Nombre de periodo"
+            />
+            <button class="" id="agregarPeriodo">
+              <i class="bx bx-plus-circle"></i>Agregar periodo
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="container-Table">
+        <table>
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Todos los Periodos</p>
+                <span id="spanTitle"></span>
+              </div>
+            </caption>
+            <tr>
+              <th>Periodo</th>
+              <th>Semestre</th>
+              <th>Ajustar periodo</th>
+            </tr>
+          </thead>
+          <tbody id="periodo-table">
+            <td>Inicio Julio Diciembre</td>
+            <td>1er semestre</td>
+            <td>
+              <div class="actions">
+                <button class="eliminarPeriodo">
+                  <i class="bx bx-trash"></i>
+                </button>
+                <button class="editarPeriodo">
+                  <i class="bx bx-edit"></i>
+                </button>
+                <a href="../subject/subject.html" class="gestionCarrera"
+                  ><button><i class="bx bx-cog"></i></button
+                ></a>
+              </div>
+            </td>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+  <script src="../../api/post.js"></script>
+  <script src="../../api/periodo.js"></script>
+  <script src="periodo.js"></script>
+  <script src="../js/sidenav.js"></script>
+</html>

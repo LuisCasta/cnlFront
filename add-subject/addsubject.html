@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="add.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Subject</title>
+  </head>
+  <body>
+    <div class="sidenav-cln" id="sidenavInsert"></div>
+    <main>
+      <div class="breadcumbs">
+        <a href="../mentor.html"><p>Mentor</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Asignar Materias</p>
+      </div>
+      <div class="card-header">
+        <div text-add>
+          <h2>Asignar Materias</h2>
+          <p>Asigna, gestiona y modifica las materias</p>
+        </div>
+        <div class="input-text">
+          <div class="select-div">
+            <p>Selecciona el Id de Materia</p>
+            <select name="" id="">
+              <option value="">id</option>
+            </select>
+          </div>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+    </main>
+    <script src="../api/post.js"></script>
+    <script src="../api/subject.js"></script>
+    <script src="add.js"></script>
+    <script src="../js/sidenav.js"></script>
+  </body>
+</html>

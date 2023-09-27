@@ -1,6 +1,7 @@
 "use strict";
 let salida = "";
 const tbody = document.getElementById("carreras");
+const succesPost = document.getElementById("succes-post");
 
 async function loadCareers() {
   const outputCareers = "";
@@ -25,7 +26,7 @@ async function loadCareers() {
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="https://cnlweb.onrender.com/carreras/periodo/periodo.html?idCarrera=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                    <a href="https://cnlweb.onrender.com/periodo/periodo.html?idCarrera=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
               </tr>
@@ -52,44 +53,12 @@ async function getCareerById(id) {
   }
 }
 
-// Agregar una carrera
-
-const succesPost = document.getElementById("succes-post");
-const formCarrera = document.getElementById("form-Carreras");
-const btnCarrera = document.getElementById("enviarBtn");
-
-const getData = () => {
-  const datos = new FormData(formCarrera);
-  const datosProcesados = Object.fromEntries(datos.entries());
-  formCarrera.reset();
-  return datosProcesados;
-};
-
-const postData = async () => {
-  const newCarrera = getData();
-  try {
-    const response = await fetch("../json/carreras.json", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newCarrera),
-    });
-    if (response.ok) {
-      const jsonResponse = await response.json();
-      console.log(jsonResponse);
-      const { id, carrera, descripcion } = jsonResponse;
-      succesPost.textContent = `Se agregó la Carrera de ${carrera}
-      con éxito`;
-    }
-  } catch (error) {
-    console.error("Ocurrió un error", error);
-  }
-};
-
 /**
  *
  * Btn create carrer
  *
  **/
+const btnCarrera = document.getElementById("enviarBtn");
 btnCarrera.addEventListener("click", async (e) => {
   e.preventDefault();
   const code = document.getElementById("idCarrera").value;

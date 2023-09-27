@@ -11,51 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carreras</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
-  <body onload="loadCareers()">
-    <div class="sidenav-cln" id="sidenavInsert">
-      <div class="sidenav-content">
-        <!-- LOGO NUEVA LAGUNA -->
-        <div class="downNav">
-          <img
-            src="https://universidadnuevalaguna.edu.mx/wp-content/uploads/2023/08/escudo.png"
-            alt=""
-          />
-        </div>
-        <!-- NAVEGACIÓN -->
-        <div class="navegacion-vista">
-          <ul class="ul-navigate">
-            <li>
-              <a href="../student.html"><i class="bx bx-group bx-sm"></i></a>
-              <p class="tooltip">Alumnos</p>
-            </li>
-            <li>
-              <a href="../mentor/mentor.html"><i class="bx bxs-graduation bx-sm"></i></a>
-              <p class="tooltip">Maestros</p>
-            </li>
-            <li>
-              <a href="career.html"></a><i class="bx bx-run bx-sm"></i>
-              <p class="tooltip">Carreras</p>
-            </li>
-            <li>
-              <i class="bx bx-line-chart bx-sm"></i>
-              <p class="tooltip">Admon</p>
-            </li>
-          </ul>
-        </div>
-        <!-- PERFIL -->
-        <div class="perfil">
-          <a href="../index.html"><i class="bx bx-log-out"></i></a>
-          <i class="bx bx-cog"></i>
-          <img src="https://plus.unsplash.com/premium_photo-1661686687486-2329be3e383f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80" alt="" />
-          <h5 id="userName">Margarita López</h5>
-          <!-- <p id="job">Dirección</p> -->
-        </div>
-      </div>
-    </div>
+  <body onload="loadCareers(), cargarSideNav()">
+    <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
         <p>Carreras</p>
@@ -126,7 +87,8 @@
                   <button class="editar" id="editar">
                     <i class="bx bx-edit"></i>
                   </button>
-                  <a href="periodo/periodo.html" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                  <a href="../periodo/periodo.html" class="gestionCarrera">
+                    <button><i class='bx bx-cog'></i></button></a>
                 </div>
               </td>
             </tr>
@@ -173,5 +135,6 @@
     <script src="../api/post.js"></script>
     <script src="../api/career.js"></script>
     <script src="carreras.js"></script>
+    <script src="../js/sidenav.js"></script>
   </body>
 </html>
