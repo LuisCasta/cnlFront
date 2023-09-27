@@ -52,8 +52,14 @@ const btnPeriod = document.getElementById("agregarPeriodo");
 
 btnPeriod.addEventListener("click", async (e) => {
   e.preventDefault();
+  /*console.log(window.location.search);
+  var url = new URL(window.location.search);
+  var cherry = url.searchParams.get("idCareer");
+  console.log(cherry);*/
+
+  const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const idCareer = urlParams.get("idCareer");
+  const idCareer = urlParams.get("idCarrera");
   const name = document.getElementById("name-period").value;
 
   const data = { idCareer, name };

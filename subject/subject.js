@@ -20,7 +20,6 @@ async function loadSubject() {
                 <td>${idPeriod}</td>
                 <td>${name}</td>
                 <td>${idCarrer}</td>
-                // <td>${active ? "activo" : "inactivo"}</td>
               </tr>
             `;
     });
@@ -54,22 +53,24 @@ const btnSubject = document.getElementById("agregarMateria");
 console.log(btnSubject);
 btnSubject.addEventListener("click", async (e) => {
   e.preventDefault();
+  const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const idCareer = urlParams.get("idCareer");
-  const urlParamsPeriod = new URLSearchParams(queryString);
-  const idPeriod = urlParamsPeriod.get("idPeriod");
-  const code = document.getElementById("idMateria").value;
+  //?idPeriod=1&idCareer=1
+  const idCareer = urlParams.get("idCarrera");
+  const idPeriod = urlParams.get("idPeriodo");
+  console.log(idPeriod, idCareer);
+  //   const code = document.getElementById("idMateria").value;
   const name = document.getElementById("nameMateria").value;
   //   const description = document.getElementById("descripcionCarrera").value;
 
-  const data = { code, name, idCareer, idPeriod };
+  const data = { name, idCareer, idPeriod };
 
   succesPost.innerHTML = `
     <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
     <p>Creando nueva carrera...</p>
   `;
   succesPost.classList.add("aviso-click");
-  const newCareer = await create(data);
+  const newSubject = await create(data);
 
   if (newSubject.code != 200) alert(`Error ${newSubject.message}`);
   else {

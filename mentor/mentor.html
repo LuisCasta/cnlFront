@@ -7,10 +7,16 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mentor</title>
   </head>
-  <body onload="cargarSideNav()">
+  <body onload="cargarSideNav(), loadMentors()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
@@ -22,10 +28,13 @@
           <p>Agregar un nuevo maestro, gestiónalo y asígnale materias</p>
         </div>
         <div form-mentor>
-          <input type="text" placeholder="Id" />
-          <input type="text" placeholder="Nombre docente" />
-          <button>Agregar maestro</button>
+          <input type="text" placeholder="Nombre" id="nameMentor" />
+          <input type="text" placeholder="Apellido" id="firstName" />
+          <input type="mail" placeholder="mail" id="mailMentor" />
+          <input type="text" placeholder="contraseña" id="contrasenaMentor" />
+          <button id="btnMentor">Agregar maestro</button>
         </div>
+        <div id="succes-post"></div>
       </div>
       <div class="finder">
         <input type="search" placeholder="Buscar Maestro ..." />
@@ -39,10 +48,10 @@
             </div>
           </caption>
           <tr>
-            <th>ID</th>
             <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Status</th>
+            <th>First Name</th>
+            <th>Mail</th>
+            <th>Password</th>
             <th></th>
           </tr>
         </thead>
@@ -73,5 +82,8 @@
       </table>
     </main>
   </body>
+  <script src="../api/post.js"></script>
+  <script src="../api/mentor.js"></script>
+  <script src="mentor.js"></script>
   <script src="../js/sidenav.js"></script>
 </html>
