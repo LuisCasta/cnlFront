@@ -5,8 +5,7 @@ const succesPost = document.getElementById("succes-post");
 
 async function loadSubject() {
   const outputSubject = "";
-  const subjects = await getAll();
-
+  const subjects = await getAll(id);
   if (subjects.code != 200) {
     alert(`Error ${newSubject.message}`);
   } else {

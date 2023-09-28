@@ -4,26 +4,27 @@ const succesPost = document.getElementById("succes-post");
 const tbody = document.getElementById("periodo-table");
 async function loadPeriodo() {
   const outputPeriods = "";
-  const periods = await getAll();
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idCareer = urlParams.get("idCarrera");
+  const periods = await getAll(idCareer);
   const countPeriods = document.getElementById("spanTitle");
   countPeriods.textContent = periods.data.length;
   if (periods.code != 200) {
     alert(`Error ${newPeriod.message}`);
   } else {
     periods.data.map((period) => {
-      const { idCareer, name, idPeriod } = period;
-      console.log(
-        `Id Carrera ${idCareer} - name ${name} id de Periodo: ${idPeriod}`
-      );
+      const { idCareer, name, id } = period;
+      console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
       salida += `
               <tr>
-                <td>${idPeriod}</td>
+                <td>${id}</td>
                 <td>${name}</td>
                 <td> 
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="https://cnlweb.onrender.com/add-subject/addsubject.html?idCarrera=${idCareer}?idPeriodo=${idPeriod}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                    <a href="https://cnlweb.onrender.com//add-subject/addsubject.html?idCarrera=${idCareer}?idPeriodo=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
               </tr>
@@ -71,7 +72,7 @@ btnPeriod.addEventListener("click", async (e) => {
   const newPeriod = await create(data);
   if (newPeriod.code != 200) alert(`Error ${newPeriod.message}`);
   else {
-    alert(`ID de Carrera ${newPeriod.data.id}`);
+    alert(`ID de Periodo ${newPeriod.data.id}`);
     succesPost.innerHTML = `
       <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
       <p>Periodo Creado con éxito</p>

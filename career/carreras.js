@@ -19,7 +19,6 @@ async function loadCareers() {
       const { id, name, description, active, code } = carrer;
       // console.log(
       //   `Id Carrera ${id} - name ${name} - description ${description}`);
-
       salida += `
               <tr>
                 <td>${id}</td>
@@ -28,8 +27,8 @@ async function loadCareers() {
                 <td>${active ? "activo" : "inactivo"}</td>
                 <td>
                   <div class="actions">
-                    <button class="eliminar"><i class='bx bx-trash'></i></button>
-                    <button class="editar"><i class='bx bx-edit' ></i></button>
+                    <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
+                    <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
                     <a href="https://cnlweb.onrender.com/periodo/periodo.html?idCarrera=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
@@ -90,6 +89,7 @@ btnCarrera.addEventListener("click", async (e) => {
 });
 
 // EDITAR  CARRERA
+
 async function modificarCarrera() {
   const data = await getAll();
   const { name, active, description } = data;

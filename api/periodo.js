@@ -33,8 +33,8 @@ const create = async (data) => {
  * Obtiene todas los periodos
  *
  * */
-const getAll = async () => {
-  const period = await getApi("period/all");
+const getAll = async (idCareer) => {
+  const period = await getApi(`period/all/${idCareer}`);
 
   if (period.status != 200)
     return {
