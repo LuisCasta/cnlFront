@@ -1,48 +1,4 @@
-"use strict";
-let body = document.getElementById("datos");
-let salida = "";
-
-function obtenerDatos() {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const respuesta = await fetch("../json/bdprueba.json", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await respuesta.json();
-      for (let elemento of data.alumnos) {
-        salida += `
-            <tr>
-              <td>${elemento.matricula}</td>
-              <td>${elemento.nombre}</td>
-              <td>${elemento.apellido}</td>
-              <td>${elemento.carrera}</td>
-              <td>${elemento.semestre}°</td>
-              <td> 
-                <div class="actions">
-                  <button class="eliminar"><i class='bx bx-trash'></i></button>
-                  <button class="editar"><i class='bx bx-edit' ></i></button>
-                </div>
-              </td>
-            </tr>
-          `;
-      }
-      const datos = data.alumnos;
-      const spanTitle = document.getElementById("spanTitle");
-      spanTitle.textContent = `${data.alumnos.length} Alumnos`;
-      body.innerHTML = salida;
-      resolve(datos); // Resuelve la promesa con los datos
-    } catch (error) {
-      console.error("Algo no salió bien", error);
-      reject(error); // Rechaza la promesa en caso de error
-    }
-  });
-}
-
 // Buscar en la Tabla
-
 function filterSearch() {
   let input,
     filter,

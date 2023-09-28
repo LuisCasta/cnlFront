@@ -27,7 +27,7 @@
           <h2>Maestros</h2>
           <p>Agregar un nuevo maestro, gestiónalo y asígnale materias</p>
         </div>
-        <div form-mentor>
+        <div class="form-header">
           <input type="text" placeholder="Nombre" id="nameMentor" />
           <input type="text" placeholder="Apellido" id="firstName" />
           <input type="mail" placeholder="mail" id="mailMentor" />
@@ -58,9 +58,12 @@
         <tbody id="mentors"></tbody>
       </table>
     </main>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
+    <script src="../api/post.js"></script>
+    <script src="../api/mentor.js"></script>
+    <script src="mentor.js"></script>
+    <script src="../js/sidenav.js"></script>
   </body>
-  <script src="../api/post.js"></script>
-  <script src="../api/mentor.js"></script>
-  <script src="mentor.js"></script>
-  <script src="../js/sidenav.js"></script>
 </html>

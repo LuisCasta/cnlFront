@@ -41,8 +41,8 @@ const create = async (data) => {
  * Obtiene todas las materias
  *
  * */
-const getAll = async (idPeriod) => {
-  const subject = await getApi(`subject/all/${idPeriod}`);
+const getAll = async (id) => {
+  const subject = await getApi(`subject/all/${id}`);
 
   if (subject.status != 200)
     return {

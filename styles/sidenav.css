@@ -9,7 +9,7 @@ main {
 
 .sidenav-cln {
     position: fixed;
-    height: 100vh;
+    height: 100%;
     box-shadow: var(--box-shadow);
     background-color: #fff;
     padding: 16px;
@@ -117,4 +117,37 @@ main {
 
 .downNav img {
     width: 40px;
+}
+
+.responsive {
+    border-radius: 200px;
+    position: fixed;
+    top: 20px;
+    padding: 9px 11px;
+    right: 20px;
+    opacity: 0;
+}
+
+@media (max-width:768px) {
+    .sidenav-cln {
+        margin-left: -116px;
+        transition: .3s ease-in-out;
+    }
+
+    .mostrar-sidenav {
+        margin-left: 0;
+    }
+
+    main {
+        margin-left: 0px;
+        width: auto;
+    }
+
+    .table {
+        margin: auto;
+    }
+
+    .responsive {
+        opacity: 1;
+    }
 }

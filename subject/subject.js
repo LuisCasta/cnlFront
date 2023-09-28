@@ -2,23 +2,26 @@
 let salida = "";
 const tbody = document.getElementById("materias-table");
 const succesPost = document.getElementById("succes-post");
-
 async function loadSubject() {
   const outputSubject = "";
-  const subjects = await getAll(id);
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  //?idPeriod=1&idCareer=1
+  const idPeriod = urlParams.get("idPeriodo");
+  const subjects = await getAll(idPeriod);
   if (subjects.code != 200) {
     alert(`Error ${newSubject.message}`);
   } else {
     subjects.data.map((subject) => {
-      const { idPeriod, name, idCarrer } = subject;
+      const { idPeriod, name, idCareer } = subject;
       console.log(
-        `Id Period ${idPeriod} - name ${name} - idCarrera ${idCarrer}`
+        `Id Period ${idPeriod} - name ${name} - idCarrera ${idCareer}`
       );
       salida += `
               <tr>
-                <td>${idPeriod}</td>
-                <td>${name}</td>
-                <td>${idCarrer}</td>
+                <td data-cell="ID">${idPeriod}</td>
+                <td data-cell="Name">${name}</td>
+                <td data-cell="Carrera">${idCareer}</td>
               </tr>
             `;
     });
@@ -57,11 +60,7 @@ btnSubject.addEventListener("click", async (e) => {
   //?idPeriod=1&idCareer=1
   const idCareer = urlParams.get("idCarrera");
   const idPeriod = urlParams.get("idPeriodo");
-  console.log(idPeriod, idCareer);
-  //   const code = document.getElementById("idMateria").value;
   const name = document.getElementById("nameMateria").value;
-  //   const description = document.getElementById("descripcionCarrera").value;
-
   const data = { name, idCareer, idPeriod };
 
   succesPost.innerHTML = `

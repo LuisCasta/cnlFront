@@ -11,10 +11,16 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alumnos</title>
   </head>
-  <body onload="cargarSideNav()">
+  <body onload="cargarSideNav(), loadStudents()">
     <!-- sidenav -->
     <div class="sidenav-cln" id="sidenavInsert"></div>
 
@@ -26,6 +32,13 @@
         <div class="heading">
           <h2>Alumnos</h2>
           <p>Agrega alumnos, consulta y configúralos</p>
+        </div>
+        <div class="form-header">
+          <input type="text" placeholder="Nombre" />
+          <input type="text" placeholder="Apellido" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Contraseña" />
+          <button id="agregar-alumno">Agregar Alumno</button>
         </div>
       </div>
       <!-- BUSCAR ELEMENTOS EN LA TABLA -->
@@ -40,27 +53,34 @@
         </div>
       </section>
       <!-- Cargar tabla -->
-      <table class="table" id="myTable">
-        <thead>
-          <caption>
-            <div class="caption">
-              <p id="tableTitle">Todos los alumnos</p>
-              <span id="spanTitle">100 Alumnos</span>
-            </div>
-          </caption>
-          <tr>
-            <th>Matrícula</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Carrera</th>
-            <th>Semestre</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody class="datos" id="datos"></tbody>
-      </table>
+      <div class="container-table">
+        <table class="table" id="myTable">
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Todos los alumnos</p>
+                <span id="spanTitle">100 Alumnos</span>
+              </div>
+            </caption>
+            <tr>
+              <th>Nbmbre</th>
+              <th>Apellido</th>
+              <th>Mail</th>
+              <th>Contraseña</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="datos" id="datos"></tbody>
+        </table>
+      </div>
     </main>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
   </body>
-  <script src="js/post.js"></script>
+  <script src="../api/post.js"></script>
+  <script src="../api/student.js"></script>
+  <script src="student.js"></script>
   <script src="../js/sidenav.js"></script>
+  <script src="../js/post.js"></script>
 </html>

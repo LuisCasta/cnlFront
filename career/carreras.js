@@ -21,15 +21,15 @@ async function loadCareers() {
       //   `Id Carrera ${id} - name ${name} - description ${description}`);
       salida += `
               <tr>
-                <td>${id}</td>
-                <td>${name}</td>
-                <td>${description}</td>
-                <td>${active ? "activo" : "inactivo"}</td>
-                <td>
+                <td data-cell="ID" >${id}</td>
+                <td data-cell="Name">${name}</td>
+                <td data-cell="Description">${description}</td>
+                <td data-cell="Estatus">${active ? "activo" : "inactivo"}</td>
+                <td data-cell="Actions">
                   <div class="actions">
                     <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                     <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="https://cnlweb.onrender.com/periodo/periodo.html?idCarrera=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                    <a href="../periodo/periodo.html?idCarrera=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
               </tr>

@@ -18,13 +18,13 @@ async function loadPeriodo() {
       console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
       salida += `
               <tr>
-                <td>${id}</td>
-                <td>${name}</td>
-                <td> 
+                <td data-cell="Id">${id}</td>
+                <td data-cell="Name">${name}</td>
+                <td data-cell="Actions"> 
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="https://cnlweb.onrender.com/add-subject/addsubject.html?idCarrera=${idCareer}?idPeriodo=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                    <a href="../subject/subject.html?idCarrera=${idCareer}?idPeriodo=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
               </tr>

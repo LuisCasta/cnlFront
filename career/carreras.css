@@ -122,3 +122,14 @@
 .select-status select {
     width: 100%;
 }
+
+@media(max-width:768px) {
+    .section-modificar {
+        width: 100%;
+        left: 0;
+    }
+
+    .ModalCarrera {
+        width: 90%;
+    }
+}

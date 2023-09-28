@@ -20,11 +20,11 @@ async function loadMentors() {
 
       salida += `
               <tr>
-                <td>${name}</td>
-                <td>${firstName}</td>
-                <td>${mail}</td>
-                <td>${password}</td>
-                <td> 
+                <td data-cell="Name" >${name}</td>
+                <td data-cell="FirstName">${firstName}</td>
+                <td data-cell="Mail">${mail}</td>
+                <td data-cell="PW">${password}</td>
+                <td data-cell="Actions"> 
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>

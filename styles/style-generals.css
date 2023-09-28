@@ -171,3 +171,45 @@ p {
     color: #101828;
     font-weight: 400;
 }
+
+.form-header {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit,
+            minmax(150px, 1fr));
+    gap: 10px;
+}
+
+@media(max-width:576px) {
+
+    .container-table {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        margin: auto;
+    }
+
+    th {
+        display: none;
+    }
+
+    td {
+        display: grid;
+        grid-template-columns: 15ch auto;
+        gap: 4px;
+        padding: 5px 5px;
+    }
+
+    td:last-child {
+        padding-bottom: 7px;
+    }
+
+    td::before {
+        content: attr(data-cell)": ";
+        font-weight: 600;
+    }
+
+    .table {
+        width: 100%;
+    }
+}

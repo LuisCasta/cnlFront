@@ -39,4 +39,12 @@ function cargarSideNav() {
       </div>`;
 
   sidenav.innerHTML = sideInnerHtml;
+
+  const btnResponsive = document.getElementById("btnResponsive");
+
+  btnResponsive.addEventListener("click", abrirSideNav);
+  function abrirSideNav() {
+    const sideNav = document.querySelector(".sidenav-cln");
+    sideNav.classList.toggle("mostrar-sidenav");
+  }
 }
