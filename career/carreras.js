@@ -6,10 +6,11 @@ const succesPost = document.getElementById("succes-post");
 async function loadCareers() {
   const outputCareers = "";
   const careers = await getAll();
-
   if (careers.code != 200) {
     alert(`Error ${newCareer.message}`);
   } else {
+    const countCareers = document.getElementById("spanTitle");
+    countCareers.textContent = careers.data.length;
     careers.data.map((carrer) => {
       const { id, name, description, active, code } = carrer;
       console.log(

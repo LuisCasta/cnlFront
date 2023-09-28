@@ -11,7 +11,9 @@ async function loadPeriodo() {
   } else {
     periods.data.map((period) => {
       const { idCareer, name, idPeriod } = period;
-      console.log(`Id Carrera ${idCareer} - name ${name}`);
+      console.log(
+        `Id Carrera ${idCareer} - name ${name} id de Periodo: ${idPeriod}`
+      );
       salida += `
               <tr>
                 <td>${idPeriod}</td>
@@ -52,11 +54,6 @@ const btnPeriod = document.getElementById("agregarPeriodo");
 
 btnPeriod.addEventListener("click", async (e) => {
   e.preventDefault();
-  /*console.log(window.location.search);
-  var url = new URL(window.location.search);
-  var cherry = url.searchParams.get("idCareer");
-  console.log(cherry);*/
-
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const idCareer = urlParams.get("idCarrera");

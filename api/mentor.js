@@ -36,7 +36,12 @@ const create = async (data) => {
   )
     return { code: 400, message: `Error, el campo password es inválido` };
 
-  const mentor = await postDataC("mentor/", { name, code, description });
+  const mentor = await postDataC("mentor/", {
+    name,
+    mail,
+    firstName,
+    password,
+  });
 
   if (mentor.status != 200)
     return {

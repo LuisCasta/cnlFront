@@ -11,7 +11,7 @@ async function loadSubject() {
     alert(`Error ${newSubject.message}`);
   } else {
     subjects.data.map((subject) => {
-      const { idPeriod, name, idCarrer, active } = subject;
+      const { idPeriod, name, idCarrer } = subject;
       console.log(
         `Id Period ${idPeriod} - name ${name} - idCarrera ${idCarrer}`
       );

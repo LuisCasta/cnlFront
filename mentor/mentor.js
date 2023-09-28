@@ -1,6 +1,6 @@
 "use strict";
 let salida = "";
-const tbody = document.getElementById("table-mentors");
+const tbody = document.getElementById("mentors");
 const succesPost = document.getElementById("succes-post");
 
 async function loadMentors() {
@@ -10,6 +10,8 @@ async function loadMentors() {
   if (mentors.code != 200) {
     alert(`Error ${newMentor.message}`);
   } else {
+    const countMentors = document.getElementById("spanTitle");
+    countMentors.textContent = mentors.data.length;
     mentors.data.map((mentor) => {
       const { firstName, name, mail, password } = mentor;
       console.log(
@@ -18,17 +20,14 @@ async function loadMentors() {
 
       salida += `
               <tr>
-                // <td>${id}</td>
                 <td>${name}</td>
                 <td>${firstName}</td>
                 <td>${mail}</td>
                 <td>${password}</td>
-                // <td>${active ? "activo" : "inactivo"}</td>
                 <td> 
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
-                    // <a href="https://cnlweb.onrender.com/periodo/periodo.html?idCarrera=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
               </tr>
