@@ -2,6 +2,10 @@
 let salida = "";
 const tbody = document.getElementById("carreras");
 const succesPost = document.getElementById("succes-post");
+const modifyCarrera = document.getElementById("modify-carrera");
+const aceptButton = document.getElementById("aceptModify");
+const modalDelete = document.getElementById("delete-carrera");
+const aceptDelete = document.getElementById("acept-delete");
 
 async function loadCareers() {
   const outputCareers = "";
@@ -13,9 +17,8 @@ async function loadCareers() {
     countCareers.textContent = careers.data.length;
     careers.data.map((carrer) => {
       const { id, name, description, active, code } = carrer;
-      console.log(
-        `Id Carrera ${id} - name ${name} - description ${description}`
-      );
+      // console.log(
+      //   `Id Carrera ${id} - name ${name} - description ${description}`);
 
       salida += `
               <tr>
@@ -23,7 +26,7 @@ async function loadCareers() {
                 <td>${name}</td>
                 <td>${description}</td>
                 <td>${active ? "activo" : "inactivo"}</td>
-                <td> 
+                <td>
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
@@ -87,34 +90,43 @@ btnCarrera.addEventListener("click", async (e) => {
 });
 
 // EDITAR  CARRERA
+async function modificarCarrera() {
+  const data = await getAll();
+  const { name, active, description } = data;
+  console.log(data);
+  const buttons = document.querySelectorAll(".editar");
+  console.log(buttons);
+  buttons.forEach((button) => {
+    button.addEventListener("click", modificar);
+    function modificar() {
+      modifyCarrera.classList.add("opacityModificar");
+      const div = document.createElement("div");
+      const h3 = document.createElement("h3");
+      h3.textContent = "Modificar Carrera";
+      // const input =
+    }
 
-const editarCarrera = document.getElementById("editar");
-const modifyCarrera = document.getElementById("modify-carrera");
-const aceptButton = document.getElementById("aceptModify");
-editarCarrera.addEventListener("click", modificar);
-function modificar() {
-  modifyCarrera.classList.add("opacityModificar");
+    aceptButton.addEventListener("click", ocultarModificarCarrera);
+    function ocultarModificarCarrera() {
+      modifyCarrera.classList.remove("opacityModificar");
+    }
+  });
 }
 
-aceptButton.addEventListener("click", ocultarModificarCarrera);
+// // BORRAR CARRERA
 
-function ocultarModificarCarrera() {
-  modifyCarrera.classList.remove("opacityModificar");
-}
+async function deleteCarrera() {
+  const data = await getAll();
+  const buttonsDelete = document.querySelectorAll(".eliminar");
 
-// BORRAR CARRERA
-
-const abrirDelete = document.getElementById("eliminar");
-const ModalDelCarrera = document.getElementById("ModaldelCarrera");
-const deleteButton = document.getElementById("decDelete");
-const aceptButtonDelete = document.getElementById("aceptDelete");
-abrirDelete.addEventListener("click", eliminarLic);
-function eliminarLic() {
-  ModalDelCarrera.classList.add("opacityModificar");
-}
-
-deleteButton.addEventListener("click", aceptDeleteModal);
-
-function aceptDeleteModal() {
-  ModalDelCarrera.classList.remove("opacityModificar");
+  buttonsDelete.forEach((button) => {
+    button.addEventListener("click", abrirDelete);
+    function abrirDelete() {
+      modalDelete.classList.add("opacityModificar");
+    }
+    aceptDelete.addEventListener("click", cerrarModalDelete);
+    function cerrarModalDelete() {
+      modalDelete.classList.remove("opacityModificar");
+    }
+  });
 }

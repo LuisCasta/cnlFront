@@ -5,7 +5,8 @@ const tbody = document.getElementById("periodo-table");
 async function loadPeriodo() {
   const outputPeriods = "";
   const periods = await getAll();
-
+  const countPeriods = document.getElementById("spanTitle");
+  countPeriods.textContent = periods.data.length;
   if (periods.code != 200) {
     alert(`Error ${newPeriod.message}`);
   } else {
@@ -66,8 +67,8 @@ btnPeriod.addEventListener("click", async (e) => {
       <p>Creando nuevo Periodo...</p>
     `;
   succesPost.classList.add("aviso-click");
-  const newPeriod = await create(data);
 
+  const newPeriod = await create(data);
   if (newPeriod.code != 200) alert(`Error ${newPeriod.message}`);
   else {
     alert(`ID de Carrera ${newPeriod.data.id}`);

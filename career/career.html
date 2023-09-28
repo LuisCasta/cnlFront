@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carreras</title>
   </head>
-  <body onload="loadCareers(), cargarSideNav()">
+  <body onload="loadCareers(), cargarSideNav(), modificarCarrera(), deleteCarrera()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
@@ -95,18 +95,22 @@
           </tbody>
           <tbody id="carreras"></tbody>
         </table>
-
+      </div>
         <!-- ACEPTAR O DECLINAR BORRAR CARRERA -->
-        <div class="ModalCarrera" id="ModaldelCarrera">
+        <section class="section-modificar" id="delete-carrera">
+        <div class="ModalCarrera">
           <i class="bx bx-info-square"></i>
           <h3>¿Seguro que quieres eliminar esta Carrera?</h3>
           <div class="acept-decline">
-            <button id="aceptDelete" class="aceptDelete">Aceptar</button>
-            <button id="decDelete" class="decDelete">cancelar</button>
+            <button id="acept-delete" class="aceptDelete">Aceptar</button>
+            <button class="decDelete">cancelar</button>
           </div>
         </div>
+        </section>
+      
         <!-- MODIFICAR CARRERA -->
-        <div class="ModalCarrera" id="modify-carrera">
+        <section class="section-modificar" id="modify-carrera">
+        <div class="ModalCarrera">
           <i class="bx bx-edit"></i>
           <h3>Modificar Carrera</h3>
           <div class="content-Modal">
@@ -130,7 +134,7 @@
             </button>
           </div>
         </div>
-      </div>
+        </section>
     </main>
     <script src="../api/post.js"></script>
     <script src="../api/career.js"></script>
