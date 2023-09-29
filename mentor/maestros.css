@@ -1,9 +1,2 @@
 @import url('../styles/style-generals.css');
 @import url('../styles/sidenav.css');
-
-.finder {
-    width: 90%;
-    display: flex;
-    margin: 15px auto;
-    justify-content: right;
-}

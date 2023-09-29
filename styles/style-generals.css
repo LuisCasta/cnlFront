@@ -180,6 +180,13 @@ p {
     gap: 10px;
 }
 
+.finder {
+    width: 90%;
+    display: flex;
+    margin: 15px auto;
+    justify-content: right;
+}
+
 @media(max-width:576px) {
 
     .container-table {
@@ -198,6 +205,7 @@ p {
         grid-template-columns: 15ch auto;
         gap: 4px;
         padding: 5px 5px;
+        align-items: center;
     }
 
     td:last-child {
@@ -211,5 +219,9 @@ p {
 
     .table {
         width: 100%;
+    }
+
+    .finder {
+        justify-content: center;
     }
 }
