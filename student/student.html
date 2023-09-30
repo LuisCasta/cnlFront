@@ -34,12 +34,18 @@
           <p>Agrega alumnos, consulta y configúralos</p>
         </div>
         <div class="form-header">
-          <input type="text" placeholder="Nombre" />
-          <input type="text" placeholder="Apellido" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Contraseña" />
+          <input type="text" placeholder="Nombre" id="nameStud" />
+          <input type="text" placeholder="Apellido Paterno" id="fnameStud" />
+          <input type="text" id="secondName" placeholder="Apellido Materno" />
+          <input type="text" id="birthDate" placeholder="Fecha de Nacimiento" />
+          <input type="text" id="mobile" placeholder="mobile" />
+          <input type="text" placeholder="Email" id="emailStud" />
+          <input type="text" placeholder="Contraseña" id="pwStud" />
+
           <button id="agregar-alumno">Agregar Alumno</button>
         </div>
+
+        <div id="succes-post" class="succes-post"></div>
       </div>
       <!-- BUSCAR ELEMENTOS EN LA TABLA -->
       <section>
@@ -59,7 +65,7 @@
             <caption>
               <div class="caption">
                 <p id="tableTitle">Todos los alumnos</p>
-                <span id="spanTitle">100 Alumnos</span>
+                <span id="spanTitle"></span>
               </div>
             </caption>
             <tr>

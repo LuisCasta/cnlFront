@@ -16,11 +16,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Subject</title>
   </head>
-  <body>
+  <body onload="cargarSideNav()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
-        <a href="../mentor.html"><p>Mentor</p></a>
+        <a href="../mentor/mentor.html"><p>Mentor</p></a>
         <i class="bx bx-right-arrow-alt"></i>
         <p>Asignar Materias</p>
       </div>
@@ -40,6 +40,9 @@
         </div>
       </div>
     </main>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
     <script src="../api/post.js"></script>
     <script src="../api/subject.js"></script>
     <script src="add.js"></script>

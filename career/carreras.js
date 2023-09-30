@@ -29,7 +29,7 @@ async function loadCareers() {
                   <div class="actions">
                     <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                     <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../periodo/periodo.html?idCarrera=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                    <a href="../periodo/periodo.html?idCarrera=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
               </tr>
@@ -68,23 +68,39 @@ btnCarrera.addEventListener("click", async (e) => {
   const name = document.getElementById("nameCarrera").value;
   const description = document.getElementById("descripcionCarrera").value;
 
-  const data = { code, name, description };
+  const data = { name, description, code };
 
-  succesPost.innerHTML = `
+  setTimeout(function () {
+    succesPost.classList.add("aviso-click");
+    succesPost.innerHTML = `
     <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
     <p>Creando nueva carrera...</p>
   `;
-  succesPost.classList.add("aviso-click");
+  }, 100);
+
+  setTimeout(function () {
+    succesPost.innerHTML = "";
+    succesPost.classList.remove("aviso-click");
+  }, 6500);
+
   const newCareer = await create(data);
 
   if (newCareer.code != 200) alert(`Error ${newCareer.message}`);
   else {
-    alert(`ID de Carrera ${newCareer.data.id}`);
-    succesPost.innerHTML = `
-    <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-    <p>Carrera Creada con éxito</p>
-  `;
-    succesPost.classList.add("aviso-click");
+    // alert(`ID de Carrera ${newCareer.data.id}`);
+
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+      <p>Carrera de ${newCareer.data.name} Creada con éxito</p>
+    `;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+
+    setTimeout(function () {
+      succesPost.innerHTML = "";
+      succesPost.classList.remove("aviso-click");
+    }, 6500);
   }
 });
 
@@ -95,7 +111,6 @@ async function modificarCarrera() {
   const { name, active, description } = data;
   console.log(data);
   const buttons = document.querySelectorAll(".editar");
-  console.log(buttons);
   buttons.forEach((button) => {
     button.addEventListener("click", modificar);
     function modificar() {

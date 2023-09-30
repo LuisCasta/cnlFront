@@ -187,6 +187,42 @@ p {
     justify-content: right;
 }
 
+.aviso-click {
+    display: flex;
+    width: 100%;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 20px;
+    border-radius: 5px;
+    border-left: 5px solid #039855;
+    animation: aviso 6s ease-in-out;
+    background-color: #fff;
+}
+
+@keyframes aviso {
+
+    0%,
+    25% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    26%,
+    85% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    86%,
+    100% {
+        transform: translate(-20px);
+        opacity: 0;
+    }
+}
+
 @media(max-width:576px) {
 
     .container-table {
@@ -215,6 +251,7 @@ p {
     td::before {
         content: attr(data-cell)": ";
         font-weight: 600;
+        padding-left: 10px;
     }
 
     .table {

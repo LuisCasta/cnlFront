@@ -4,14 +4,19 @@ const tbody = document.getElementById("materias-table");
 const succesPost = document.getElementById("succes-post");
 async function loadSubject() {
   const outputSubject = "";
+  //?idPeriod=1&idCareer=1
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  //?idPeriod=1&idCareer=1
   const idPeriod = urlParams.get("idPeriodo");
+  const nameCareer = urlParams.get("name");
   const subjects = await getAll(idPeriod);
+  const spanLength = document.getElementById("spanTitle");
+  spanLength.textContent = subjects.data.length;
+  const NameCareer = document.getElementById("nombreCarrera");
   if (subjects.code != 200) {
     alert(`Error ${newSubject.message}`);
   } else {
+    NameCareer.textContent = nameCareer;
     subjects.data.map((subject) => {
       const { idPeriod, name, idCareer } = subject;
       console.log(
@@ -22,6 +27,7 @@ async function loadSubject() {
                 <td data-cell="ID">${idPeriod}</td>
                 <td data-cell="Name">${name}</td>
                 <td data-cell="Carrera">${idCareer}</td>
+
               </tr>
             `;
     });
@@ -52,7 +58,6 @@ async function getSubjectById(id) {
  *
  **/
 const btnSubject = document.getElementById("agregarMateria");
-console.log(btnSubject);
 btnSubject.addEventListener("click", async (e) => {
   e.preventDefault();
   const queryString = window.location.search;
@@ -63,13 +68,17 @@ btnSubject.addEventListener("click", async (e) => {
   const name = document.getElementById("nameMateria").value;
   const data = { name, idCareer, idPeriod };
 
-  succesPost.innerHTML = `
+  setTimeout(function () {
+    succesPost.innerHTML = `
     <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-    <p>Creando nueva carrera...</p>
+    <p>Creando nueva Materia...</p>
   `;
-  succesPost.classList.add("aviso-click");
+  }, 1000);
+  setTimeout(function () {
+    succesPost.innerHTML = "";
+    succesPost.classList.remove("aviso-click");
+  }, 3000);
   const newSubject = await create(data);
-
   if (newSubject.code != 200) alert(`Error ${newSubject.message}`);
   else {
     alert(`ID de Carrera ${newSubject.data.id}`);

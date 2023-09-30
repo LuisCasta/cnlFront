@@ -7,12 +7,15 @@ async function loadPeriodo() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const idCareer = urlParams.get("idCarrera");
+  const nameCareer = urlParams.get("name");
   const periods = await getAll(idCareer);
   const countPeriods = document.getElementById("spanTitle");
   countPeriods.textContent = periods.data.length;
   if (periods.code != 200) {
     alert(`Error ${newPeriod.message}`);
   } else {
+    const NameCareer = document.getElementById("nombreCarrera");
+    NameCareer.textContent = nameCareer;
     periods.data.map((period) => {
       const { idCareer, name, id } = period;
       console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
@@ -24,7 +27,7 @@ async function loadPeriodo() {
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                    <a href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
               </tr>

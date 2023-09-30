@@ -34,14 +34,11 @@ function cargarSideNav() {
         <i style="color:#667085;cursor:pointer;" class="bx bx-cog"></i>
         <img src="https://plus.unsplash.com/premium_photo-1661686687486-2329be3e383f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80" alt="" />
         <h5 id="userName">Margarita López</h5>
-        <!-- <p id="job">Dirección</p> -->
       </div>
       </div>`;
 
   sidenav.innerHTML = sideInnerHtml;
-
   const btnResponsive = document.getElementById("btnResponsive");
-
   btnResponsive.addEventListener("click", abrirSideNav);
   function abrirSideNav() {
     const sideNav = document.querySelector(".sidenav-cln");
