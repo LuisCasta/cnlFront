@@ -29,8 +29,7 @@ async function loadCareers() {
                   <div class="actions">
                     <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                     <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../periodo/periodo.html?idCarrera=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
-                  </div>
+                    <a href="../periodo/periodo.html?idCarrera=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-calendar-plus'></i></button></a>                  </div>
                 </td>
               </tr>
             `;
@@ -69,29 +68,26 @@ btnCarrera.addEventListener("click", async (e) => {
   const description = document.getElementById("descripcionCarrera").value;
 
   const data = { name, description, code };
-
-  setTimeout(function () {
-    succesPost.classList.add("aviso-click");
-    succesPost.innerHTML = `
-    <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-    <p>Creando nueva carrera...</p>
-  `;
-  }, 100);
-
-  setTimeout(function () {
-    succesPost.innerHTML = "";
-    succesPost.classList.remove("aviso-click");
-  }, 6500);
-
   const newCareer = await create(data);
 
-  if (newCareer.code != 200) alert(`Error ${newCareer.message}`);
-  else {
+  if (newCareer.code != 200) {
+    setTimeout(function () {
+      succesPost.classList.add("aviso-click");
+      succesPost.innerHTML = `
+      <i class='bx bx-error' style="background-color:##FEE4E2;color:#D92D20;padding:10px;border-radius:8px"></i>
+      <p>${newCareer.message}</p>`;
+    }, 10);
+
+    setTimeout(function () {
+      succesPost.innerHTML = "";
+      succesPost.classList.remove("aviso-click");
+    }, 6500);
+  } else {
     // alert(`ID de Carrera ${newCareer.data.id}`);
 
     setTimeout(function () {
       succesPost.innerHTML = `
-      <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+      <i class='bx bx-check-circle' style="color:#039855;padding:10px;border-radius:8px"></i>
       <p>Carrera de ${newCareer.data.name} Creada con éxito</p>
     `;
       succesPost.classList.add("aviso-click");
@@ -109,7 +105,6 @@ btnCarrera.addEventListener("click", async (e) => {
 async function modificarCarrera() {
   const data = await getAll();
   const { name, active, description } = data;
-  console.log(data);
   const buttons = document.querySelectorAll(".editar");
   buttons.forEach((button) => {
     button.addEventListener("click", modificar);

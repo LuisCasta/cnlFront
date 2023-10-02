@@ -98,7 +98,8 @@ main {
 }
 
 .perfil h5 {
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 .perfil>i {

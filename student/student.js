@@ -60,7 +60,7 @@ btnStudent.addEventListener("click", async (e) => {
   const password = document.getElementById("pwStud").value;
   const secondName = document.getElementById("secondName").value;
   const birthdate = document.getElementById("birthDate").value;
-  const mobilePhone = document.getElementById("mobile");
+  const mobilePhone = document.getElementById("mobile").value;
 
   const data = {
     name,
@@ -72,20 +72,31 @@ btnStudent.addEventListener("click", async (e) => {
     password,
   };
 
-  succesPost.innerHTML = `
+  setTimeout(function () {
+    succesPost.innerHTML = `
     <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-    <p>Creando nueva carrera...</p>
-  `;
-  succesPost.classList.add("aviso-click");
+    <p>Creando nueva carrera...</p>`;
+    succesPost.classList.add("aviso-click");
+  }, 100);
+
+  setTimeout(function () {
+    succesPost.innerHTML = "";
+    succesPost.classList.remove("aviso-click");
+  }, 6500);
+
   const newStudent = await create(data);
 
   if (newStudent.code != 200) alert(`Error ${newStudent.message}`);
   else {
-    alert(`ID de Carrera ${newStudent.data.id}`);
-    succesPost.innerHTML = `
-    <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-    <p>Carrera Creada con éxito</p>
-  `;
-    succesPost.classList.add("aviso-click");
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+      <p>Estudiante cread0 con éxito</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+    setTimeout(function () {
+      succesPost.innerHTML = "";
+      succesPost.classList.remove("aviso-click");
+    }, 7000);
   }
 });

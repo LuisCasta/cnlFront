@@ -189,17 +189,24 @@ p {
 
 .aviso-click {
     display: flex;
-    width: 100%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
     margin: 20px;
     padding: 10px;
-    display: flex;
     align-items: center;
     gap: 10px;
     line-height: 20px;
     border-radius: 5px;
-    border-left: 5px solid #039855;
+    color: #fff;
     animation: aviso 6s ease-in-out;
-    background-color: #fff;
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+.aviso-click p {
+    color: #fff;
 }
 
 @keyframes aviso {

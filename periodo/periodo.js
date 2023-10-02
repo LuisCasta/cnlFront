@@ -3,7 +3,7 @@ let salida = "";
 const succesPost = document.getElementById("succes-post");
 const tbody = document.getElementById("periodo-table");
 async function loadPeriodo() {
-  const outputPeriods = "";
+  // const outputPeriods = "";
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const idCareer = urlParams.get("idCarrera");
@@ -27,8 +27,9 @@ async function loadPeriodo() {
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
-                  </div>
+                    <a href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-book-add' ></i></button></a>
+                    <a href="../groups/group.html?idPeriodo=${id}"><button><i class='bx bx-group'></i></button></a>
+                    </div>
                 </td>
               </tr>
             `;

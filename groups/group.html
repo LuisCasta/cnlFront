@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="group.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groups</title>
+  </head>
+  <body onload="cargarSideNav(),loadGroups()">
+    <div class="sidenav-cln" id="sidenavInsert"></div>
+    <main>
+      <div class="breadcumbs">
+        <a href="../career/career.html"> <p>Carreras</p></a>
+        <a href="../periodo/periodo.html"> <p>Periodos</p></a>
+        <p>Grupos</p>
+      </div>
+      <div class="card-header">
+        <div class="heading">
+          <h2 id="name-group">Agregar Grupo</h2>
+          <p>Agrega grupo, consulta y configúralos</p>
+        </div>
+        <div class="form-header">
+          <input type="text" placeholder="Nombre del grupo" />
+          <button id="agregar-grupo">Agregar Grupo</button>
+        </div>
+      </div>
+      <div class="container-Table">
+        <table>
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Todos las grupos</p>
+                <span id="spanTitle"></span>
+              </div>
+            </caption>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tbody id="tbody-grupos"></tbody>
+        </table>
+      </div>
+    </main>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
+    <script src="../api/post.js"></script>
+    <script src="../api/group.js"></script>
+    <script src="group.js"></script>
+    <script src="../js/sidenav.js"></script>
+  </body>
+</html>
