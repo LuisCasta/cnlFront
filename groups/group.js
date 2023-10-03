@@ -6,9 +6,7 @@ async function loadGroups() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const idPeriod = urlParams.get("idPeriodo");
-  console.log(idPeriod);
   const groups = await getAll(idPeriod);
-  console.log(groups.data);
   if (groups.code !== 200) {
     alert(` ${newGroup.message}`);
   } else {
@@ -53,8 +51,8 @@ btnGroup.addEventListener("click", async (e) => {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const idPeriod = urlParams.get("idPeriodo");
-  const name = document.getElementById("name-group").value;
-
+  const name = document.getElementById("name-group-form").value;
+  console.log(name);
   const data = { idPeriod, name };
 
   const newGroup = await create(data);
@@ -71,11 +69,11 @@ btnGroup.addEventListener("click", async (e) => {
       succesPost.classList.remove("aviso-click");
     }, 6500);
   } else {
-    alert(`ID de Periodo ${newGroup.data.id}`);
+    // alert(`ID de Periodo ${newGroup.data.id}`);
     setTimeout(function () {
       succesPost.innerHTML = `
         <i class='bx bx-check-circle' style="color:#039855;padding:10px;border-radius:8px"></i>
-        <p>Carrera de ${newGroup.data.name} Creada con éxito</p>
+        <p>Grupo ${newGroup.data.name} Creado con éxito</p>
       `;
       succesPost.classList.add("aviso-click");
     }, 100);
