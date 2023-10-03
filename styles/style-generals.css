@@ -200,7 +200,7 @@ p {
     line-height: 20px;
     border-radius: 5px;
     color: #fff;
-    animation: aviso 6s ease-in-out;
+    animation: aviso 6.5s ease-in-out;
     background-color: #000000;
     border-radius: 10px;
 }
@@ -213,19 +213,19 @@ p {
 
     0%,
     25% {
-        transform: translateX(-20px);
+        transform: translateY(20px);
         opacity: 0;
     }
 
     26%,
     85% {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
 
     86%,
     100% {
-        transform: translate(-20px);
+        transform: translateY(20px);
         opacity: 0;
     }
 }
