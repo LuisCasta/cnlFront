@@ -27,12 +27,6 @@ function cargarSideNav() {
             ></a>
             <p class="tooltip">Carreras</p>
           </li>
-          <li>
-          <a href="../courses/course.html">
-          <i class='bx bx-book'></i>
-          </a>
-          <p class="tooltip">Cursos</p>
-          </li>
         </ul>
       </div>
       <!-- PERFIL -->

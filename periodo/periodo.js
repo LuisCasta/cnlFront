@@ -28,7 +28,7 @@ async function loadPeriodo() {
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
                     <a href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-book-add' ></i></button></a>
-                    <a href="../groups/group.html?idPeriodo=${id}"><button><i class='bx bx-group'></i></button></a>
+                    <a href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}"><button><i class='bx bx-group'></i></button></a>
                     </div>
                 </td>
               </tr>

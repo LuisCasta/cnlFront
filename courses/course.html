@@ -14,14 +14,75 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <title>Courses</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Cursos</title>
   </head>
-  <body onload="cargarSideNav()">
+  <body onload="cargarSideNav(), loadCursos()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
-    <main></main>
+    <main>
+      <div class="breadcumbs">
+        <a href="../career/career.html"><p>Carreras</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <a href="../periodo/periodo.html"><p>Periodo</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <a href="../groups/group.html"><p>Grupos</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Cursos</p>
+      </div>
+      <div class="card-header">
+        <div class="heading">
+          <h2 id="name-group">Agregar Curso</h2>
+          <p>Agrega un curso, consulta y configúralo</p>
+        </div>
+        <div class="form-header">
+          <div form-select>
+            <p>Escoge materia</p>
+            <select name="Materia" id="form-header"></select>
+          </div>
+          <input
+            type="text"
+            id="name-curso-form"
+            placeholder="Nombre del Curso"
+          />
+          <input
+            type="text"
+            id="descripcion-curso"
+            placeholder="Descripción del Curso"
+          />
+          <button id="agregar-curso">Agregar Curso</button>
+        </div>
+      </div>
+      <div class="container-Table">
+        <table>
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Todos las Cursos</p>
+                <span id="spanTitle"></span>
+              </div>
+            </caption>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tbody id="tbody-cursos"></tbody>
+        </table>
+      </div>
+    </main>
+    <div id="succes-post"></div>
     <button class="responsive" id="btnResponsive">
       <i class="bx bx-menu"></i>
     </button>
+    <script src="../api/post.js"></script>
+    <script src="../api/course.js"></script>
     <script src="course.js"></script>
     <script src="../js/sidenav.js"></script>
   </body>

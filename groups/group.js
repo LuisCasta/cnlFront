@@ -6,6 +6,7 @@ async function loadGroups() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const idPeriod = urlParams.get("idPeriodo");
+  const idCareer = urlParams.get("idCarrera");
   const groups = await getAll(idPeriod);
   if (groups.code !== 200) {
     alert(` ${newGroup.message}`);
@@ -13,12 +14,15 @@ async function loadGroups() {
     groups.data.map((group) => {
       const { name, id } = group;
       salida += ` <tr>
-      <td data-cell="Name">${id}</td>
-      <td data-cell="FirstName">${name}</td>
+      <td data-cell="Id">${id}</td>
+      <td data-cell="Name">${name}</td>
       <td data-cell="Actions">
           <div class="actions">
           <button class="eliminar"><i class='bx bx-trash'></i></button>
-          <button class="editar"><i class='bx bx-edit' ></i></button>
+          <button class="editar"><i class='bx bx-edit' ></i>
+          <a href="../courses/course.html?idGroup=${id}&idCarrera=${idCareer}"><button
+          <i class='bx bx-book'></i></button>
+          </a>
           </div>
       </td>
      </tr>`;

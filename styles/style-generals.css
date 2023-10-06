@@ -154,7 +154,7 @@ caption {
     margin: 15px auto;
     box-shadow: var(--box-shadow);
     position: relative;
-    gap: 20px;
+    gap: 35px;
 }
 
 .breadcumbs {
@@ -192,7 +192,7 @@ p {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 200px;
+    width: 300px;
     margin: 20px;
     padding: 10px;
     align-items: center;
@@ -228,6 +228,33 @@ p {
         transform: translateY(20px);
         opacity: 0;
     }
+}
+
+.form-header {
+    position: relative;
+    width: 100%;
+}
+
+.form-header select {
+    width: 100%;
+}
+
+.form-header p {
+    font-size: 11px;
+    position: absolute;
+    font-weight: 600;
+    top: -18px;
+    left: 8px;
+    transition: .2s ease;
+}
+
+
+.form-header:hover p {
+    top: -20px;
+    color: var(--primary-color);
+    font-size: 10px;
+    left: 5px;
+    font-weight: normal;
 }
 
 @media(max-width:576px) {
