@@ -3,12 +3,11 @@ let salida = "";
 const tbody = document.getElementById("tbody-cursos");
 const succesPost = document.getElementById("succes-post");
 const fomSelect = document.getElementById("form-header");
+const formMentor = document.getElementById("form-mentor");
 
 // Params
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const idMentor = urlParams.get("idMentor");
-const idSubject = urlParams.get("idSubject");
 const idGroup = urlParams.get("idGroup");
 const idCareer = urlParams.get("idCarrera");
 async function loadCursos() {
@@ -17,13 +16,16 @@ async function loadCursos() {
   await buildSelectSubjects(infoId.data);
   const cursos = await getAll(idGroup);
 
+  //Obtener Mentores
+  await obtenerIdMentor();
+
   if (cursos.code != 200) {
     alert(`Error ${newCurso.message}`);
   } else {
     const countCursos = document.getElementById("spanTitle");
     countCursos.textContent = cursos.data.length;
     cursos.data.map((curso) => {
-      const { id, name, description } = cursos;
+      const { id, name, description } = curso;
       // console.log(
       //   `Id Carrera ${id} - name ${name} - description ${description}`);
       salida += `
@@ -31,14 +33,10 @@ async function loadCursos() {
                 <td data-cell="ID" >${id}</td>
                 <td data-cell="Name">${name}</td>
                 <td data-cell="Description">${description}</td>
-                <td data-cell="Más Info">
-                 <a href=""><button><i class='bx bx-plus-circle'></i></button></a>
-                </td>
                 <td data-cell="Actions">
                   <div class="actions">
                     <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                     <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../periodo/periodo.html?idCarrera=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-calendar-plus'></i></button></a>                  
                   </div>
                 </td>
               </tr>
@@ -52,12 +50,24 @@ async function buildSelectSubjects(subjects) {
   let select;
   subjects.forEach((subject) => {
     const { Id, Materia, Periodo } = subject;
-
     select += `
-    <option value="${Id}">${Materia}-${Periodo}</option>
+    <option value="${Id}">${Materia} / ${Periodo}</option>
     `;
   });
   fomSelect.innerHTML = select;
+}
+
+//Función para Obtner los ids Mentor
+async function obtenerIdMentor() {
+  let mentorSelect;
+  const mentores = await getAllMentor();
+  mentores.data.forEach((mentor) => {
+    const { id, name } = mentor;
+    mentorSelect += `
+        <option value=${id}>${name}</option>
+        `;
+  });
+  formMentor.innerHTML = mentorSelect;
 }
 
 async function getCourseById(id) {
@@ -88,13 +98,30 @@ btnCurso.addEventListener("click", async (e) => {
   const description = document.getElementById("descripcion-curso").value;
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const idMentor = urlParams.get("idMentor");
-  const idSubject = urlParams.get("idSubject");
   const idGroup = urlParams.get("idGroup");
 
-  const data = { name, description };
-  const newCurso = await create(data);
+  //   Obtner el id de Value de Subject
+  const idSubject = document.querySelector("#form-header").value;
 
+  //OBTENER EL ID DEL VALUE DEL MENTOR
+  const idMentor = document.getElementById("form-mentor").value;
+  // Envíamos valores en 0
+  const task = "0";
+  const exam = "0";
+  const project = "0";
+
+  const data = {
+    name,
+    description,
+    idMentor,
+    idSubject,
+    idGroup,
+    task,
+    exam,
+    project,
+  };
+  console.log(data);
+  const newCurso = await create(data);
   if (newCurso.code != 200) {
     setTimeout(function () {
       succesPost.classList.add("aviso-click");

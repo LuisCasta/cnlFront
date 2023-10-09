@@ -231,12 +231,15 @@ p {
 }
 
 .form-header {
-    position: relative;
     width: 100%;
 }
 
 .form-header select {
     width: 100%;
+}
+
+.form-select {
+    position: relative;
 }
 
 .form-header p {
@@ -249,12 +252,11 @@ p {
 }
 
 
-.form-header:hover p {
+.form-select:hover p {
     top: -20px;
     color: var(--primary-color);
     font-size: 10px;
     left: 5px;
-    font-weight: normal;
 }
 
 @media(max-width:576px) {
@@ -294,5 +296,9 @@ p {
 
     .finder {
         justify-content: center;
+    }
+
+    .form-select {
+        margin-bottom: 15px;
     }
 }

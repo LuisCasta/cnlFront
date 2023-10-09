@@ -73,7 +73,7 @@ const create = async (data) => {
  *
  * */
 const getAll = async (idGroup) => {
-  const curso = await getApi(`course/all/${idGroup}`);
+  const curso = await getApi(`course/allGroup/${idGroup}`);
 
   if (curso.status != 200)
     return {
@@ -96,6 +96,20 @@ const getInfo = async (idCareer) => {
       error: idsCurso.data.message,
     };
   return { code: 200, data: idsCurso.data.data };
+};
+
+//Get Mentor
+
+const getAllMentor = async () => {
+  const mentor = await getApi("mentor/all");
+  if (mentor.status != 200)
+    return {
+      code: 400,
+      message: `Error al crear al docente`,
+      error: mentor.data.message,
+    };
+
+  return { code: 200, data: mentor.data.data };
 };
 
 /**
