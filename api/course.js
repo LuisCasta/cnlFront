@@ -9,7 +9,7 @@ const create = async (data) => {
     description,
     task,
     exam,
-    project,
+    proyect,
     idMentor,
     idSubject,
     idGroup,
@@ -56,6 +56,9 @@ const create = async (data) => {
     idMentor,
     idSubject,
     description,
+    task,
+    proyect,
+    exam,
   });
 
   if (curso.status != 200)

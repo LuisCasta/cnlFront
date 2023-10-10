@@ -4,12 +4,7 @@
 // { name, code, description }
 
 const create = async (data) => {
-  const {
-	name
-	type
-	idCourse
-
-  } = data;
+  const { name, type, idCourse } = data;
 
   if (name == "" || name == null || name == undefined || name == " ")
     return { code: 400, message: `Error, el campo nombre es inválido` };
@@ -17,14 +12,9 @@ const create = async (data) => {
   //   if (code == "" || code == null || code == undefined || code == " ")
   //     return { code: 400, message: `Error, el campo nombre es inválido` };
 
-  if (
-    type == "" ||
-    type == null ||
-    type == undefined ||
-    type == " "
-  )
+  if (type == "" || type == null || type == undefined || type == " ")
     return { code: 400, message: `Error, el campo type es inválido` };
-  
+
   if (
     idCourse == "" ||
     idCourse == null ||
@@ -34,10 +24,10 @@ const create = async (data) => {
     return { code: 400, message: `Error, el campo Id course es inválido` };
 
   const unit = await postDataC("unit/", {
-	name
-	type
-	idCourse
-	active: 1
+    name,
+    type,
+    idCourse,
+    active: 1,
   });
 
   if (unit.status != 200)
@@ -55,20 +45,25 @@ const create = async (data) => {
  *
  * */
 const getAllByCourse = async (idCourse) => {
+  if (
+    idCourse == "" ||
+    idCourse == undefined ||
+    idCourse == null ||
+    idCourse == 0 ||
+    idCourse == " "
+  )
+    return { code: 400, message: `Error, el campo idCourse es inválido` };
 
-	if(idCourse == '' || idCourse == undefined || idCourse == null || idCourse == 0 || idCourse == ' ')
-		return { code: 400, message: `Error, el campo idCourse es inválido` };
+  const unit = await getApi(`unit/all/${idCourse}`);
 
-	  const unit = await getApi(`unit/all/${idCourse}`);
+  if (unit.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener las unidades de un curso`,
+      error: unit.data.message,
+    };
 
-	  if (unit.status != 200)
-	    return {
-	      code: 400,
-	      message: `Error al obtener las unidades de un curso`,
-	      error: unit.data.message,
-	    };
-
-	  return { code: 200, data: unit.data.data };
+  return { code: 200, data: unit.data.data };
 };
 
 /**

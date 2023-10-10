@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="course.css" />
+    <link rel="stylesheet" href="unit.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -14,10 +13,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <title>Cursos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad</title>
   </head>
-  <body onload="cargarSideNav(), loadCursos()">
-    <div class="sidenav-cln" id="sidenavInsert"></div>
+  <body onload="cargarSideNav(), loadUnit()">
+    <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <div class="breadcumbs">
         <a href="../career/career.html"><p>Carreras</p></a>
@@ -26,35 +26,28 @@
         <i class="bx bx-right-arrow-alt"></i>
         <a href="../groups/group.html"><p>Grupos</p></a>
         <i class="bx bx-right-arrow-alt"></i>
-        <p>Cursos</p>
+        <a href="../courses/course.html">Cursos</a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Unidad</p>
       </div>
+
+      <!-- FORMULARIO DEL HEADER -->
       <div class="card-header">
         <div class="heading">
-          <h2 id="name-group">Agregar Curso</h2>
-          <p>Agrega un curso, consulta y configúralo</p>
+          <h2 id="name-group">Agregar Unidad</h2>
+          <p>Agrega una unidad, consulta y configúrala</p>
         </div>
         <div class="form-header">
-          <div class="form-select">
-            <p>Escoge materia</p>
-            <select name="Materia" id="form-header"></select>
-          </div>
-          <div class="form-select">
-            <p>Escoge Mentor</p>
-            <select name="Mentor" id="form-mentor"></select>
-          </div>
           <input
             type="text"
-            id="name-curso-form"
-            placeholder="Nombre del Curso"
+            id="name-unit-form"
+            placeholder="Nombre de la Unidad"
           />
-          <input
-            type="text"
-            id="descripcion-curso"
-            placeholder="Descripción del Curso"
-          />
-          <button id="agregar-curso">Agregar Curso</button>
+          <input type="number" id="type-unit" placeholder="Tipo de Unidad" />
+          <button id="agregar-unidad">Agregar Unidad</button>
         </div>
       </div>
+      <!-- TABLA DE UNIDADES CREADAS -->
       <div class="container-Table">
         <table>
           <thead>
@@ -67,24 +60,20 @@
             <tr>
               <th>ID</th>
               <th>Nombre</th>
-              <th>Periodo</th>
-              <th>Unidad +</th>
               <th></th>
             </tr>
           </thead>
-          <tbody></tbody>
-          <tbody id="tbody-cursos"></tbody>
+          <tbody id="unit-table"></tbody>
         </table>
       </div>
+      <div id="succes-post"></div>
+      <button class="responsive" id="btnResponsive">
+        <i class="bx bx-menu"></i>
+      </button>
     </main>
-    <div id="succes-post"></div>
-    <button class="responsive" id="btnResponsive">
-      <i class="bx bx-menu"></i>
-    </button>
+    <script src="../api/unit.js"></script>
     <script src="../api/post.js"></script>
-    <script src="../api/course.js"></script>
-    <!-- <script src="../api/mentor.js"></script> -->
-    <script src="course.js"></script>
+    <script src="unit.js"></script>
     <script src="../js/sidenav.js"></script>
   </body>
 </html>

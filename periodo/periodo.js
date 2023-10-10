@@ -18,7 +18,7 @@ async function loadPeriodo() {
     NameCareer.textContent = nameCareer;
     periods.data.map((period) => {
       const { idCareer, name, id } = period;
-      console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
+      // console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
       salida += `
               <tr>
                 <td data-cell="Id">${id}</td>

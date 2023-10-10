@@ -1,5 +1,5 @@
 "use strict";
-let salida = "";
+let cursoHtml = "";
 const tbody = document.getElementById("tbody-cursos");
 const succesPost = document.getElementById("succes-post");
 const fomSelect = document.getElementById("form-header");
@@ -28,11 +28,14 @@ async function loadCursos() {
       const { id, name, description } = curso;
       // console.log(
       //   `Id Carrera ${id} - name ${name} - description ${description}`);
-      salida += `
+      cursoHtml += `
               <tr>
                 <td data-cell="ID" >${id}</td>
                 <td data-cell="Name">${name}</td>
                 <td data-cell="Description">${description}</td>
+                <td data-cell="Unidades">
+                 <a href="../unit/unit.html?idCurso=${id}"><button data-id="${id}" class="unidad"><i class='bx bx-customize'></i></button></a>
+                </td>
                 <td data-cell="Actions">
                   <div class="actions">
                     <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
@@ -42,7 +45,7 @@ async function loadCursos() {
               </tr>
             `;
     });
-    tbody.innerHTML = salida;
+    tbody.innerHTML = cursoHtml;
   }
 }
 
@@ -106,9 +109,9 @@ btnCurso.addEventListener("click", async (e) => {
   //OBTENER EL ID DEL VALUE DEL MENTOR
   const idMentor = document.getElementById("form-mentor").value;
   // Envíamos valores en 0
-  const task = "0";
-  const exam = "0";
-  const project = "0";
+  // const task = 0;
+  // const exam = 0;
+  // const project = 0;
 
   const data = {
     name,
@@ -116,9 +119,9 @@ btnCurso.addEventListener("click", async (e) => {
     idMentor,
     idSubject,
     idGroup,
-    task,
-    exam,
-    project,
+    task: 0,
+    exam: 0,
+    proyect: 0,
   };
   console.log(data);
   const newCurso = await create(data);

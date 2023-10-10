@@ -8,7 +8,6 @@ const modalDelete = document.getElementById("delete-carrera");
 const aceptDelete = document.getElementById("acept-delete");
 
 async function loadCareers() {
-  const outputCareers = "";
   const careers = await getAll();
   if (careers.code != 200) {
     alert(`Error ${newCareer.message}`);
