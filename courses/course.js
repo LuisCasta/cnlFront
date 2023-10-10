@@ -108,11 +108,7 @@ btnCurso.addEventListener("click", async (e) => {
 
   //OBTENER EL ID DEL VALUE DEL MENTOR
   const idMentor = document.getElementById("form-mentor").value;
-  // Envíamos valores en 0
-  // const task = 0;
-  // const exam = 0;
-  // const project = 0;
-
+  // Envíamos valores en 0 de task, exam, proyect
   const data = {
     name,
     description,
@@ -143,7 +139,7 @@ btnCurso.addEventListener("click", async (e) => {
     setTimeout(function () {
       succesPost.innerHTML = `
       <i class='bx bx-check-circle' style="color:#039855;padding:10px;border-radius:8px"></i>
-      <p>Carrera de ${newCurso.data.name} Creada con éxito</p>
+      <p>Curso de ${newCurso.data.name} Creado con éxito</p>
     `;
       succesPost.classList.add("aviso-click");
     }, 100);

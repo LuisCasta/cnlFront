@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="lessons.css" />
+    <title>Lessons</title>
+  </head>
+  <body onload="cargarSideNav(), loadAllLessonsByUnit()">
+    <div id="sidenavInsert" class="sidenav-cln"></div>
+    <main>
+      <!-- NAVEGACIÓN EN MIGAS DE PAN -->
+      <div class="breadcumbs">
+        <a class="career-link" href="../career/career.html"><p>Carreras</p></a>
+        <i class="bx bx-right-arrow-alt career-link"></i>
+        <a class="periodo-link" href="../periodo/periodo.html"
+          ><p>Periodo</p></a
+        >
+        <i class="bx bx-right-arrow-alt periodo-link"></i>
+        <a href="../groups/group.html"><p>Grupos</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <a href="../courses/course.html">Cursos</a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <a href="../unit/unit.html">Unidad</a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Clase</p>
+      </div>
+      <!-- FORMULARIO DEL HEADER -->
+      <div class="card-header">
+        <div class="heading">
+          <h2 id="name-group">Agregar Clases</h2>
+          <p>Agrega clases a tus cursos, consúltalas y configúralas</p>
+        </div>
+        <div class="form-header">
+          <input
+            type="text"
+            id="name-clase-form"
+            placeholder="Nombre de la clase"
+          />
+          <input type="text" id="des-clase" placeholder="Descripción" />
+          <!-- <div class="form-select">
+            <input type="date" id="start-class" />
+            <p>Fecha de Inicio</p>
+          </div>
+          <div class="form-select">
+            <input type="date" id="end-class" />
+            <p>Fecha de término</p>
+          </div> -->
+          <button id="agregar-clase">Agregar Clase</button>
+        </div>
+      </div>
+
+      <!-- TABLA DE UNIDADES CREADAS -->
+      <div class="container-Table">
+        <table>
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Todos las Clases</p>
+                <span id="spanTitle"></span>
+              </div>
+            </caption>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Inicio</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="table-lesson"></tbody>
+        </table>
+      </div>
+    </main>
+    <div id="succes-post"></div>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
+    <script src="../api/post.js"></script>
+    <script src="../api/lesson.js"></script>
+    <script src="lessons.js"></script>
+    <script src="../js/sidenav.js"></script>
+  </body>
+</html>

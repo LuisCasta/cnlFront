@@ -5,7 +5,7 @@ const urlParams = new URLSearchParams(queryString);
 const idCourse = urlParams.get("idCurso");
 const tbody = document.getElementById("unit-table");
 const succesPost = document.getElementById("succes-post");
-// console.log(tbody);
+
 let unitHtml;
 // CARGAR UNIDADES DEL GRUPO
 async function loadUnit() {
@@ -20,6 +20,17 @@ async function loadUnit() {
         <td data-cell="Id">${id}</td>
         <td data-cell="Nombre">${name}</td>
         <td data-cell="Type">${type}</td>
+        <td data-cell="Add Lessons">
+          <a href="../lessons/lessons.html?idCurso=${idCourse}&idUnit=${id}"><button>
+          <i class='bx bxs-file-plus'></i>
+          </button></a>
+        </td>
+        <td data-cell="Actions">
+        <div class="actions">
+          <button data-id="${id}"><i class='bx bx-edit' ></i></button>
+          <button data-id="${id}"><i class='bx bx-trash' ></i></button>
+        </div>
+        </td>
       </tr>`;
     });
     tbody.innerHTML = unitHtml;
@@ -54,7 +65,7 @@ createBtnUnit.addEventListener("click", async (e) => {
     setTimeout(function () {
       succesPost.innerHTML = `
         <i class='bx bx-check-circle' style="color:#039855;padding:10px;border-radius:8px"></i>
-        <p>Carrera de ${newUnit.data.name} Creada con éxito</p>
+        <p>Unidad de ${newUnit.data.name} Creada con éxito</p>
       `;
       succesPost.classList.add("aviso-click");
     }, 100);

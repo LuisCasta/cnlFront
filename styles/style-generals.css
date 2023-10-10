@@ -165,6 +165,8 @@ caption {
     margin: 15px auto;
 }
 
+
+
 .breadcumbs a,
 p {
     font-size: 12px;
@@ -185,6 +187,11 @@ p {
     display: flex;
     margin: 15px auto;
     justify-content: right;
+}
+
+.heading p {
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 .aviso-click {
