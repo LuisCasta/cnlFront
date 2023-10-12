@@ -1,18 +1,18 @@
 "use strict";
-
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idCourse = urlParams.get("idCurso");
 const tbody = document.getElementById("unit-table");
 const succesPost = document.getElementById("succes-post");
-
 let unitHtml;
 // CARGAR UNIDADES DEL GRUPO
 async function loadUnit() {
   const units = await getAllByCourse(idCourse);
   if (units.code != 200) {
-    console.log(`Error ${newUnit.message}`);
+    console.log(`Error ${newUnits.message}`);
   } else {
+    const countlessons = document.getElementById("spanTitle");
+    countlessons.textContent = units.data.length;
     units.data.forEach((unidad) => {
       const { id, type, name } = unidad;
       unitHtml += `
@@ -31,7 +31,8 @@ async function loadUnit() {
           <button data-id="${id}"><i class='bx bx-trash' ></i></button>
         </div>
         </td>
-      </tr>`;
+        </tr>
+     `;
     });
     tbody.innerHTML = unitHtml;
   }

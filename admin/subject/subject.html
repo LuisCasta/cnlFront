@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="group.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="materias.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
       integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
@@ -14,59 +14,62 @@
       referrerpolicy="no-referrer"
     ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Groups</title>
+    <title>Materias</title>
   </head>
-  <body onload="cargarSideNav(),loadGroups()">
+  <body onload="cargarSideNav(), loadSubject()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
-        <a href="../career/career.html"> <p>Carreras</p></a>
+        <a href="../career/career.html">Carreras</a>
         <i class="bx bx-right-arrow-alt"></i>
-        <a href="../periodo/periodo.html"> <p>Periodos</p></a>
+        <a href="../periodo/periodo.html">Configurar periodo</a>
         <i class="bx bx-right-arrow-alt"></i>
-        <p>Grupos</p>
+        <a>Configurar materias</a>
       </div>
       <div class="card-header">
         <div class="heading">
-          <h2 id="name-group">Agregar Grupo</h2>
-          <p>Agrega grupo, consulta y configúralos</p>
+          <p>Nombre de Periodo:</p>
+          <h2 id="nombreCarrera"></h2>
+          <p>Agrega materias a tus carreras</p>
         </div>
         <div class="form-header">
           <input
             type="text"
-            id="name-group-form"
-            placeholder="Nombre del grupo"
+            placeholder="Nombre de Materia"
+            name=""
+            id="nameMateria"
           />
-          <button id="agregar-grupo">Agregar Grupo</button>
+          <button class="" id="agregarMateria">
+            <i class="bx bx-plus-circle"></i>Agregar Materia
+          </button>
         </div>
+        <div id="succes-post"></div>
       </div>
       <div class="container-Table">
         <table>
           <thead>
             <caption>
               <div class="caption">
-                <p id="tableTitle">Todos las grupos</p>
+                <p id="tableTitle">Todos las Materias</p>
                 <span id="spanTitle"></span>
               </div>
             </caption>
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th></th>
+              <th>Id</th>
+              <th>Materia</th>
+              <th>Ajustar Materia</th>
             </tr>
           </thead>
-          <tbody></tbody>
-          <tbody id="tbody-grupos"></tbody>
+          <tbody id="materias-table"></tbody>
         </table>
       </div>
     </main>
-    <div id="succes-post"></div>
     <button class="responsive" id="btnResponsive">
       <i class="bx bx-menu"></i>
     </button>
-    <script src="../api/post.js"></script>
-    <script src="../api/group.js"></script>
-    <script src="group.js"></script>
+    <script src="../../api/post.js"></script>
+    <script src="../../api/subject.js"></script>
+    <script src="subject.js"></script>
     <script src="../js/sidenav.js"></script>
   </body>
 </html>

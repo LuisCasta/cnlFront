@@ -7,7 +7,11 @@ async function loadGroups() {
   const urlParams = new URLSearchParams(queryString);
   const idPeriod = urlParams.get("idPeriodo");
   const idCareer = urlParams.get("idCarrera");
+  const hrefGroup = document.getElementById("per-group");
+  const hrefCar = document.getElementById("car-group");
+  console.log(hrefCar, hrefGroup);
   const groups = await getAll(idPeriod);
+
   if (groups.code !== 200) {
     alert(` ${newGroup.message}`);
   } else {

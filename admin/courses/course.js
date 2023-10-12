@@ -54,7 +54,7 @@ async function buildSelectSubjects(subjects) {
   subjects.forEach((subject) => {
     const { Id, Materia, Periodo } = subject;
     select += `
-    <option value="${Id}">${Materia} / ${Periodo}</option>
+    <option value="${Id}">${Periodo} - ${Materia}</option>
     `;
   });
   fomSelect.innerHTML = select;

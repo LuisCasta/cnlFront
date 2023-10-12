@@ -15,9 +15,7 @@ async function loadCareers() {
     const countCareers = document.getElementById("spanTitle");
     countCareers.textContent = careers.data.length;
     careers.data.map((carrer) => {
-      const { id, name, description, active, code } = carrer;
-      // console.log(
-      //   `Id Carrera ${id} - name ${name} - description ${description}`);
+      const { id, name, description, active } = carrer;
       salida += `
               <tr>
                 <td data-cell="ID" >${id}</td>

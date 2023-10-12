@@ -2,68 +2,92 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="maestros.css" />
+    <link rel="stylesheet" href="style-mentor/mentor.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
-      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Mentor</title>
   </head>
-  <body onload="cargarSideNav(), loadMentors()">
-    <div class="sidenav-cln" id="sidenavInsert"></div>
+  <body onload="cargarSideNav()">
+    <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <div class="breadcumbs">
-        <p>Mentor</p>
+        <p>Tus cursos</p>
       </div>
       <div class="card-header">
         <div class="text-mentor">
-          <h2>Maestros</h2>
-          <p>Agregar un nuevo maestro, gestiónalo y asígnale materias</p>
+          <h2>Todos tus Cursos</h2>
+          <p>Aquí se muestran todos los cursos que tienes</p>
         </div>
-        <div class="form-header">
-          <input type="text" placeholder="Nombre" id="nameMentor" />
-          <input type="text" placeholder="Apellido" id="firstName" />
-          <input type="mail" placeholder="mail" id="mailMentor" />
-          <input type="text" placeholder="contraseña" id="contrasenaMentor" />
-          <button id="btnMentor">Agregar maestro</button>
-        </div>
-        <div id="succes-post"></div>
       </div>
+
+      <!-- BUSCADOR -->
       <div class="finder">
-        <input type="search" placeholder="Buscar Maestro ..." />
+        <input type="search" />
       </div>
-      <table class="table-mentors">
-        <thead>
-          <caption>
-            <div class="caption">
-              <p id="tableTitle">Todos los Maestros</p>
-              <span id="spanTitle"></span>
+      <!-- CONTENEDOR DE ESTUDIANTES / CURSOS -->
+
+      <div class="container-student-cursos">
+        <!-- CONTENEDOR DE CURSOS -->
+
+        <div class="cursos" id="cursos">
+          <div class="card-cursos">
+            <div class="nombre-curso">
+              <h5>Nombre del Curso</h5>
+              <p>Descripción</p>
+              <a>Agregar Unidad</a>
             </div>
-          </caption>
-          <tr>
-            <th>Nombre</th>
-            <th>First Name</th>
-            <th>Mail</th>
-            <th>Password</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="mentors"></tbody>
-      </table>
+          </div>
+          <div class="card-cursos">
+            <div class="nombre-curso">
+              <h5>Nombre del Curso</h5>
+              <p>Descripción</p>
+              <a>Agregar Unidad</a>
+            </div>
+          </div>
+          <div class="card-cursos">
+            <div class="nombre-curso">
+              <h5>Nombre del Curso</h5>
+              <p>Descripción</p>
+              <a>Agregar Unidad</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTENEDOR DE ESTUDIANTES -->
+
+        <!-- <div class="container-student">
+          <div class="container-Table">
+            <table>
+              <thead>
+                <caption>
+                  <div class="caption">
+                    <p id="tableTitle">Todos las Alumnos</p>
+                    <span id="spanTitle"></span>
+                  </div>
+                </caption>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>correo</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="alumnos"></tbody>
+            </table>
+          </div>
+        </div> -->
+      </div>
     </main>
     <button class="responsive" id="btnResponsive">
-      <i class="bx bx-menu"></i>
+      <i class="bx bx-menu bx-tada-hover"></i>
     </button>
-    <script src="../api/post.js"></script>
-    <script src="../api/mentor.js"></script>
-    <script src="mentor.js"></script>
-    <script src="../js/sidenav.js"></script>
   </body>
+  <script src="../api/post.js"></script>
+  <script src="../api/course.js"></script>
+  <script src="mentor.js"></script>
+  <script src="sidenav.js"></script>
 </html>

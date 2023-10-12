@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="unit.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad</title>
+  </head>
+  <body onload="cargarSideNav(), loadUnit()">
+    <div id="sidenavInsert" class="sidenav-cln"></div>
+    <main>
+      <div class="breadcumbs">
+        <a href="../career/career.html"><p>Carreras</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <a href="../periodo/periodo.html"><p>Periodo</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <a href="../groups/group.html"><p>Grupos</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <a href="../courses/course.html">Cursos</a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Unidad</p>
+      </div>
+
+      <!-- FORMULARIO DEL HEADER -->
+      <div class="card-header">
+        <div class="heading">
+          <h2 id="name-group">Agregar Unidad</h2>
+          <p>Agrega una unidad, consulta y configúrala</p>
+        </div>
+        <div class="form-header">
+          <input
+            type="text"
+            id="name-unit-form"
+            placeholder="Nombre de la Unidad"
+          />
+          <input type="number" id="type-unit" placeholder="Tipo de Unidad" />
+          <button id="agregar-unidad">Agregar Unidad</button>
+        </div>
+      </div>
+      <!-- TABLA DE UNIDADES CREADAS -->
+      <div class="container-Table">
+        <table>
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Todos las Cursos</p>
+                <span id="spanTitle"></span>
+              </div>
+            </caption>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Type</th>
+              <th>Lessons +</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="unit-table"></tbody>
+        </table>
+      </div>
+      <div id="succes-post"></div>
+      <button class="responsive" id="btnResponsive">
+        <i class="bx bx-menu"></i>
+      </button>
+    </main>
+    <script src="../../api/unit.js"></script>
+    <script src="../../api/post.js"></script>
+    <script src="unit.js"></script>
+    <script src="../sidenav.js"></script>
+  </body>
+</html>

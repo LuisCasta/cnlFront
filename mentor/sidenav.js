@@ -12,20 +12,9 @@ function cargarSideNav() {
       <div class="navegacion-vista">
         <ul class="ul-navigate">
           <li>
-            <a href="../student/student.html">
-            <i class="bx bx-group"></i></a>
-            <p class="tooltip">Alumnos</p>
-          </li>
-          <li>
-          <a href="../mentor/mentor.html">
-          <i class="bx bxs-graduation"></i></a>
-            <p class="tooltip">Maestros</p>
-          </li>
-          <li>
-            <a href="../career/career.html"
-              ><i class="bx bx-run"></i
-            ></a>
-            <p class="tooltip">Carreras</p>
+            <a href="mentor.html?idMentor=1">
+            <i class='bx bx-book-open'></i></a>
+            <p class="tooltip">Cursos</p>
           </li>
         </ul>
       </div>

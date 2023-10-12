@@ -1,0 +1,26 @@
+@import url('../style-mentor/sidenav.css');
+@import url('../../admin/styles/style-generals.css');
+
+.container-student-cursos {
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+.cursos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.card-cursos {
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+}

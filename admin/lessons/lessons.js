@@ -13,16 +13,18 @@ async function loadAllLessonsByUnit() {
   if (lessons.code != 200) {
     console.log(`Error ${newLesson.message}`);
   } else {
+    const countlessons = document.getElementById("spanTitle");
+    countlessons.textContent = lessons.data.length;
     lessons.data.forEach((lesson) => {
       const { name, description, id, dateStart } = lesson;
       lessonHtml += `
-      <tr>
-         <td data-cell="Id">${id}</td>
-         <td data-cell="Nombre">${name}</td>
-         <td data-cell="Descripción">${description}</td>
-         <td data-cell="Inicio">${dateStart}</td>
-      </tr>
-      `;
+        <tr>
+            <td data-cell="Id">${id}</td>
+            <td data-cell="Nombre">${name}</td>
+            <td data-cell="Descripción">${description}</td>
+            <td data-cell="Inicio">${dateStart}</td>
+        </tr>
+        `;
     });
     tbody.innerHTML = lessonHtml;
   }
