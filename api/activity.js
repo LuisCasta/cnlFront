@@ -36,3 +36,41 @@ const create = async (data) => {
   
     return { code: 200, data: activity.data.data };
   };
+
+  /**
+ * Obtiene todas las actividades de un idUnit
+ *
+ * */
+const getByUnit = async (idUnit) => {
+    const getActivities = await getApi(`unit/aboutUnit/${idUnit}`);
+  
+    if (getActivities.status != 200)
+      return {
+        code: 400,
+        message: `Error al obtener las actividades`,
+        error: getActivities.data.message,
+      };
+  
+    return { code: 200, data: getActivities.data.data };
+  };
+
+
+/**
+ * Obtiene un periodo por Id
+ *
+ * */
+const getById = async (id) => {
+    if (id == 0 || id == "" || id == undefined || id == " ")
+      return { code: 400, message: `Error, el campo id es inválido` };
+  
+    const activity = await getApi(`activity/about/${id}`);
+  
+    if (activity.status != 200)
+      return {
+        code: 400,
+        message: `Error al obtener la actividad con el id: ${id}`,
+        error: activity.data.message,
+      };
+  
+    return { code: 200, data: activity.data.data };
+  };
