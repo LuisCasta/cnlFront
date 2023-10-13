@@ -13,7 +13,7 @@
 .tabs-buttons {
     margin: 20px auto;
     display: flex;
-    gap: 10px;
+    /* gap: 10px; */
     font-size: 16px;
 }
 
@@ -21,9 +21,12 @@
     background-color: #efefef;
     padding: 5px;
     color: var(--primary-color);
-    border-radius: 3px 3px 0 0;
-    border-bottom: 2px solid var(--primary-color);
+    /* border-bottom: 2px solid var(--primary-color); */
     cursor: pointer;
+}
+
+.button-bottom {
+    border-top: 2px solid var(--primary-color);
 }
 
 .divs-tabs {
@@ -32,4 +35,8 @@
 
 .divs-tabs table {
     width: 100%;
+}
+
+.disabled {
+    display: none;
 }
