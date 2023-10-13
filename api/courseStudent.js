@@ -1,7 +1,7 @@
 /** Funcion para dar de alta un alumno en un curso
 *
 */
-const create = async (data) => {
+const createCourseStud = async (data) => {
     const { idCourse, idStudent } = data;
   
     if ( idStudent == "" || idStudent == null || idStudent == undefined || idLesson == " " )
@@ -27,7 +27,7 @@ const create = async (data) => {
  * Obtiene todas los estudiantes de un idCourse
  *
  * */
-const getByCourse = async (idCourse) => {
+const CourseStudGetByCourse = async (idCourse) => {
     const courseStudent = await getApi(`courseStudent/aboutCourse/${idCourse}`);
   
     if (courseStudent.status != 200)
@@ -44,7 +44,7 @@ const getByCourse = async (idCourse) => {
  * Obtiene todas los cursos de un idStudent
  *
  * */
-   const getByStudent = async (idStudent) => {
+   const CourseStudGetByStudent = async (idStudent) => {
     const courseStudent = await getApi(`courseStudent/aboutStudent/${idStudent}`);
   
     if (courseStudent.status != 200)

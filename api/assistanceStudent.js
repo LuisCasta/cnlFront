@@ -1,7 +1,7 @@
 /** Funcion para dar de alta un alumno en un curso
 *
 */
-const create = async (data) => {
+const createAssistance = async (data) => {
     const { idAssistance, idStudent } = data;
   
     if ( idStudent == "" || idStudent == null || idStudent == undefined || idLesson == " " )
