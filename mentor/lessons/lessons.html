@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="unit.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -13,63 +13,66 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unidad</title>
+    <link rel="stylesheet" href="lessons.css" />
+    <title>Lessons</title>
   </head>
-  <body onload="cargarSideNav(), loadUnit()">
+  <body onload="cargarSideNav(), loadAllLessonsByUnit()">
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
+      <!-- NAVEGACIÓN EN MIGAS DE PAN -->
       <div class="breadcumbs">
-        <a id="href-mentor"><p>Mentor</p></a>
+        <a href="../mentor.html"><p>Mentor</p></a>
         <i class="bx bx-right-arrow-alt"></i>
-        <p>Unidad</p>
+        <a id="href-unidad">Unidad</a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Clase</p>
       </div>
-
       <!-- FORMULARIO DEL HEADER -->
       <div class="card-header">
         <div class="heading">
-          <h2 id="name-group">Agregar Unidad</h2>
-          <p>Agrega una unidad, consulta y configúrala</p>
+          <h2 id="name-group">Agregar Clases</h2>
+          <p>Agrega clases a tus cursos, consúltalas y configúralas</p>
         </div>
         <div class="form-header">
           <input
             type="text"
-            id="name-unit-form"
-            placeholder="Nombre de la Unidad"
+            id="name-clase-form"
+            placeholder="Nombre de la clase"
           />
-          <input type="number" id="type-unit" placeholder="Tipo de Unidad" />
-          <button id="agregar-unidad">Agregar Unidad</button>
+          <input type="text" id="des-clase" placeholder="Descripción" />
+          <button id="agregar-clase">Agregar Clase</button>
         </div>
       </div>
+
       <!-- TABLA DE UNIDADES CREADAS -->
       <div class="container-Table">
         <table>
           <thead>
             <caption>
               <div class="caption">
-                <p id="tableTitle">Todos las Cursos</p>
+                <p id="tableTitle">Todos las Clases</p>
                 <span id="spanTitle"></span>
               </div>
             </caption>
             <tr>
               <th>ID</th>
               <th>Nombre</th>
-              <th>Type</th>
-              <th>Lessons +</th>
-              <th>Actions</th>
+              <th>Descripción</th>
+              <th>Inicio</th>
+              <th></th>
             </tr>
           </thead>
-          <tbody id="unit-table"></tbody>
+          <tbody id="table-lesson"></tbody>
         </table>
       </div>
-      <div id="succes-post"></div>
-      <button class="responsive" id="btnResponsive">
-        <i class="bx bx-menu"></i>
-      </button>
     </main>
+    <div id="succes-post"></div>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
     <script src="../../api/post.js"></script>
-    <script src="../../api/unit.js"></script>
-    <script src="unit.js"></script>
+    <script src="../../api/lesson.js"></script>
+    <script src="lessons.js"></script>
     <script src="../sidenav.js"></script>
   </body>
 </html>

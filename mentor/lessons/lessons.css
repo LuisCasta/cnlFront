@@ -1,0 +1,12 @@
+@import url('../../admin/styles/style-generals.css');
+@import url('../style-mentor/sidenav.css');
+
+@media(max-width:576px) {
+    .career-link {
+        display: none;
+    }
+
+    .periodo-link {
+        display: none;
+    }
+}

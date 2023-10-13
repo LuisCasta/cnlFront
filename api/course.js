@@ -134,3 +134,15 @@ const getById = async (id) => {
 
   return { code: 200, data: curso.data.data };
 };
+
+const getCourseByMentor = async (idMentor) => {
+  const cursoMentor = await getApi(`course/AllMentor/${idMentor}:idMentor`);
+
+  if (cursoMentor.status != 200)
+    return {
+      code: 400,
+      message: `Error al obttener los Cursos del docente`,
+      error: cursoMentor.data.message,
+    };
+  return { code: 200, data: cursoMentor.data.data };
+};

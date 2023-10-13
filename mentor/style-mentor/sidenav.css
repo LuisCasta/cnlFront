@@ -28,6 +28,10 @@ main {
     justify-content: space-between;
 }
 
+.sidenav-content i {
+    color: #fff;
+}
+
 .navegacion-vista ul li {
     display: flex;
     align-items: center;
@@ -106,10 +110,6 @@ main {
 }
 
 .bx-cog {
-    color: #fff;
-}
-
-.bx {
     color: #fff;
 }
 

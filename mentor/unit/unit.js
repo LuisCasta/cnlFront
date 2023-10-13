@@ -2,8 +2,10 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idCourse = urlParams.get("idCurso");
+const idMentor = urlParams.get("idMentor");
 const tbody = document.getElementById("unit-table");
 const succesPost = document.getElementById("succes-post");
+const hrefMentor = document.getElementById("href-mentor");
 let unitHtml;
 // CARGAR UNIDADES DEL GRUPO
 async function loadUnit() {
@@ -15,15 +17,14 @@ async function loadUnit() {
     countlessons.textContent = units.data.length;
     units.data.forEach((unidad) => {
       const { id, type, name } = unidad;
+      hrefMentor.href = `../mentor.html?idMentor=${idMentor}`;
       unitHtml += `
       <tr>
         <td data-cell="Id">${id}</td>
         <td data-cell="Nombre">${name}</td>
         <td data-cell="Type">${type}</td>
         <td data-cell="Add Lessons">
-          <a href="../lessons/lessons.html?idCurso=${idCourse}&idUnit=${id}"><button>
-          <i class='bx bxs-file-plus'></i>
-          </button></a>
+          <a href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}">Ver unidad</a>
         </td>
         <td data-cell="Actions">
         <div class="actions">
