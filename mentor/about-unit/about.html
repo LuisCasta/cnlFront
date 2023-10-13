@@ -16,7 +16,9 @@
     ></script>
     <title>About Unit</title>
   </head>
-  <body onload="cargarSideNav(), loadAllLessonsByUnit(),loadActivityByUnit()">
+  <body
+    onload="loadVideoByIdCourse(),cargarSideNav(), loadAllLessonsByUnit(),loadActivityByUnit(), loadStudentByIdCourse()"
+  >
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <div class="breadcumbs">
@@ -65,6 +67,50 @@
             </div>
           </div>
           <div class="actividades" id="div-actividades">
+            <!-- FORMULARIO DEL HEADER -->
+            <div class="card-header-2">
+              <div class="heading">
+                <h4 id="name-group">Agregar actividad</h4>
+                <p>
+                  Agrega actuvidades a tus cursos, consúltalas y configúralas
+                </p>
+              </div>
+              <div class="form-header">
+                <input
+                  type="text"
+                  id="name-activ"
+                  placeholder="Nombre actividad"
+                />
+                <input
+                  type="text"
+                  id="des-actividad"
+                  placeholder="Descripción"
+                />
+                <div class="form-select">
+                  <p>Inicio</p>
+                  <input type="date" id="inicio-act" />
+                </div>
+                <div class="form-select">
+                  <p>termino</p>
+                  <input type="date" id="fin-act" />
+                </div>
+                <div class="form-select">
+                  <p>Intentos</p>
+                  <input type="number" id="intentos" />
+                </div>
+                <input type="text" placeholder="type" id="type-activity" />
+                <input
+                  type="text"
+                  placeholder="Comparte un Link"
+                  id="link-activity"
+                />
+                <!-- <div class="form-select">
+                  <p>Seleciona la lección</p>
+                  <select name="lessons" id="lesson-id"></select>
+                </div> -->
+                <button id="agregar-actividad">Agregar Clase</button>
+              </div>
+            </div>
             <!-- TABLA DE ACRIVIDADES CREADAS -->
             <div class="container-Table">
               <table>
@@ -106,12 +152,33 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody id="table-activity"></tbody>
+                <tbody id="table-students"></tbody>
               </table>
             </div>
           </div>
           <div class="videollamadas" id="div-call">
             <!-- TABLA DE ACRIVIDADES CREADAS -->
+
+            <div class="card-header-2">
+              <div class="heading">
+                <h4>Crea Una videollamada</h4>
+                <p>Crea videollamadas y confíguralas</p>
+              </div>
+              <div class="form-header">
+                <input
+                  type="text"
+                  id="name-call"
+                  placeholder="Nombre de Videollamada"
+                />
+                <input type="text" id="call-desc" placeholder="Descripción" />
+                <input
+                  type="text"
+                  id="link-call"
+                  placeholder="Comparte el link"
+                />
+                <button id="btn-createCall">Agregar Videollamada</button>
+              </div>
+            </div>
             <div class="container-Table">
               <table>
                 <thead>
@@ -122,18 +189,18 @@
                     </div>
                   </caption>
                   <tr>
-                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
-                    <th>Acciones</th>
+                    <th>link</th>
                   </tr>
                 </thead>
-                <tbody id="table-activity"></tbody>
+                <tbody id="table-calls"></tbody>
               </table>
             </div>
           </div>
         </div>
       </div>
+      <div id="succes-post"></div>
       <button class="responsive" id="btnResponsive">
         <i class="bx bx-menu bx-tada-hover"></i>
       </button>
@@ -142,6 +209,8 @@
     <script src="../../api//post.js"></script>
     <script src="../../api/lesson.js"></script>
     <script src="../../api/activity.js"></script>
+    <script src="../../api/videoCall.js"></script>
+    <script src="../../api/courseStudent.js"></script>
     <script src="about.js"></script>
     <script src="tabs.js"></script>
     <script src="../sidenav.js"></script>

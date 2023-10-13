@@ -157,6 +157,25 @@ caption {
     gap: 35px;
 }
 
+.card-header-2 {
+    width: 100%;
+    display: flex;
+    border-radius: var(--border-radius);
+    flex-direction: column;
+    padding: 26px;
+    margin: 15px auto;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    gap: 35px;
+}
+
+.card-header-2 .form-header {
+    grid-template-columns:
+        repeat(auto-fit,
+            minmax(250px, 1fr));
+    gap: 20px;
+}
+
 .breadcumbs {
     width: 90%;
     gap: 5px;
@@ -215,6 +234,7 @@ p {
 .aviso-click p {
     color: #fff;
 }
+
 
 @keyframes aviso {
 
