@@ -45,6 +45,22 @@
         <div class="divs-tabs">
           <div class="clases" id="div-clases">
             <!-- TABLA DE CLASES CREADAS -->
+            <div class="card-header-2">
+              <div class="heading">
+                <h4>Crea clases</h4>
+                <p>Crea las clases y configúralas</p>
+              </div>
+              <div class="form-header">
+                <input
+                  type="text"
+                  id="name-clase-form"
+                  placeholder="Nombre de la clase"
+                />
+                <input type="text" id="des-clase" placeholder="Descripción" />
+                <button id="agregar-clase">Agregar Clase</button>
+              </div>
+            </div>
+            <!-- CONTAINER Y TABLE DE CLASES -->
             <div class="container-Table">
               <table>
                 <thead>
@@ -108,7 +124,7 @@
                   <p>Seleciona la lección</p>
                   <select name="lessons" id="lesson-id"></select>
                 </div> -->
-                <button id="agregar-actividad">Agregar Clase</button>
+                <button id="agregar-actividad">Agregar actividad</button>
               </div>
             </div>
             <!-- TABLA DE ACRIVIDADES CREADAS -->
@@ -211,6 +227,7 @@
     <script src="../../api/activity.js"></script>
     <script src="../../api/videoCall.js"></script>
     <script src="../../api/courseStudent.js"></script>
+    <script src="../lessons/lessons.js"></script>
     <script src="about.js"></script>
     <script src="tabs.js"></script>
     <script src="../sidenav.js"></script>

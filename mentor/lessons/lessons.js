@@ -1,14 +1,13 @@
 "use strict";
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const idUnit = urlParams.get("idUnit");
-const idCourse = urlParams.get("idCurso");
-const tbody = document.getElementById("table-lesson");
-const succesPost = document.getElementById("succes-post");
-const hrefUnidad = document.getElementById("href-unidad");
-const hreMentor = document.getElementById("");
+// const queryString = window.location.search;
+// const urlParams = new URLSearchParams(queryString);
+// const idUnit = urlParams.get("idUnit");
+// const idCourse = urlParams.get("idCurso");
+const tbody2 = document.getElementById("table-lesson");
+// const succesPost = document.getElementById("succes-post");
+// const hrefUnidad = document.getElementById("href-unidad");
 
-let lessonHtml;
+let lessonHtml2;
 async function loadAllLessonsByUnit() {
   const lessons = await getAllByUnit(idUnit);
 
@@ -20,7 +19,7 @@ async function loadAllLessonsByUnit() {
     lessons.data.forEach((lesson) => {
       const { name, description, id, dateStart } = lesson;
       hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}`;
-      lessonHtml += `
+      lessonHtml2 += `
         <tr>
             <td data-cell="Id">${id}</td>
             <td data-cell="Nombre">${name}</td>
@@ -29,15 +28,15 @@ async function loadAllLessonsByUnit() {
         </tr>
         `;
     });
-    tbody.innerHTML = lessonHtml;
+    tbody2.innerHTML = lessonHtml2;
   }
 }
 
 // CREAR UNA NUEVA CLASE
 
-const btnLesson = document.getElementById("agregar-clase");
+const btnLesson2 = document.getElementById("agregar-clase");
 
-btnLesson.addEventListener("click", async (e) => {
+btnLesson2.addEventListener("click", async (e) => {
   e.preventDefault();
   const name = document.getElementById("name-clase-form").value;
   const description = document.getElementById("des-clase").value;
