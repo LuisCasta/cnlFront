@@ -35,8 +35,6 @@ async function loadAllLessonsByUnit() {
               <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
               </div>
           </td>
-          <td data-cell="Lesson+">
-          <a href="../lessons/lessons.html?idCurso=${idCourse}&idUnit=${id}"><i class='bx bx-bookmark-plus'></i></a></td>
         </tr>
         `;
 

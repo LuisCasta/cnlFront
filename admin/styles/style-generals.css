@@ -48,6 +48,11 @@ button {
     border: none;
     color: #fff;
     cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+button:hover {
+    background-color: #22387d30;
 }
 
 /* ESTILOS DE LA TABLA */
@@ -155,6 +160,7 @@ caption {
     box-shadow: var(--box-shadow);
     position: relative;
     gap: 35px;
+    background-color: #fff;
 }
 
 .card-header-2 {

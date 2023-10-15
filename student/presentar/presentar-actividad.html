@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="presentar.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presentar Actividad</title>
+  </head>
+  <body onload="cargarSideNav()">
+    <div id="sidenavInsert" class="sidenav-cln"></div>
+    <main>
+      <!-- NAVEGACIÓN EN MIGAS DE PAN -->
+      <div class="breadcumbs">
+        <a href=""><p>Actividad</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Presentar actividad</p>
+      </div>
+      <!-- FORMULARIO DEL HEADER -->
+      <div class="card-header">
+        <div class="heading">
+          <h2 id="name-group">
+            <i class="bx bx-stopwatch"></i>Presenta tu actividad
+          </h2>
+          <p>Agrega clases a tus cursos, consúltalas y configúralas</p>
+        </div>
+        <div class="separator"></div>
+        <div class="container-present">
+          <div class="content-name">
+            <h3>Actividad 23 ¿Qué es el desarrollo web?</h3>
+            <p>
+              investigación de una cuartilla sobre el diseño web, historia,
+              evolución e importancia.
+            </p>
+          </div>
+
+          <div class="pautas">
+            <h4>Comentarios</h4>
+            <h5>Para resolver la actividad:</h5>
+            <p>
+              Lee el enunciado: Comienza por leer el problema cuidadosamente
+              para entender lo que se te está preguntando. Identifica las
+              variables: Las variables involucradas en este problema son la
+              velocidad del coche (90 km/h), el tiempo de viaje (2 horas) y la
+              distancia recorrida (que es lo que se te pide). Utiliza las
+              ecuaciones adecuadas: En este caso, puedes usar la ecuación de
+              velocidad promedio, que relaciona la velocidad, el tiempo y la
+              distancia: Distancia = Velocidad × Tiempo
+              Distancia=Velocidad×Tiempo Realiza un diagrama o esquema: En este
+              caso, no es necesario un diagrama, pero puedes imaginar el coche
+              viajando a 90 km/h durante 2 horas.
+            </p>
+          </div>
+          <div class="link-material">
+            <h5>Comparte el link de tu actividad</h5>
+            <input
+              type="text"
+              name=""
+              placeholder="Pega el link de drive"
+              id="link-presentar"
+            />
+            <button id="presentar-actividad">Presentar Actividad</button>
+          </div>
+        </div>
+
+        <div class="num-intent">
+          <p class="intentos-span">
+            número de intentos: <span class="bold-span" id="num-intent">0</span>
+          </p>
+        </div>
+      </div>
+    </main>
+    <div id="succes-post"></div>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
+    <script src=""></script>
+    <script src="presentar.js"></script>
+    <script src="../js/sidenav.js"></script>
+  </body>
+</html>

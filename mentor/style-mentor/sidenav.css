@@ -17,7 +17,7 @@ main {
     top: 0;
     width: 116px;
     z-index: 100;
-    border-bottom: 7px solid var(--primary-color);
+    border-bottom: 7px solid #ffffff50;
 }
 
 .sidenav-content {

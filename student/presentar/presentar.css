@@ -1,0 +1,64 @@
+@import url('../../admin/styles/style-generals.css');
+@import url('../../mentor/style-mentor/sidenav.css');
+
+.separator {
+    background-color: var(--primary-color);
+    width: 90%;
+    height: 1px;
+}
+
+.pautas {
+    margin: 30px auto;
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+}
+
+.pautas p {
+    line-height: 25px;
+}
+
+.pautas h4 {
+    line-height: 45px;
+}
+
+.pautas h5 {
+    line-height: 35px;
+}
+
+.content-name {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-material {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.card-header {
+    position: relative;
+}
+
+.num-intent {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.intentos-span {
+    background-color: var(--color-bk-opacity);
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.bold-span {
+    font-weight: 600;
+}

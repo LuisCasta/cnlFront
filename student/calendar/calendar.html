@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="calendar.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda</title>
+  </head>
+  <body onload="cargarSideNav(), LoadActivitiesAgendaStudent()">
+    <div class="sidenav-cln" id="sidenavInsert"></div>
+    <main>
+      <div class="breadcumbs">
+        <p>Eventos</p>
+      </div>
+      <div class="card-header">
+        <div class="text-Header">
+          <h2>Agenda del día</h2>
+        </div>
+      </div>
+      <!-- TABLAS DE CURSOS -->
+      <div class="container-Table">
+        <table>
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Tus Eventos</p>
+                <span id="spanTitle"></span>
+              </div>
+            </caption>
+            <tr>
+              <th>Evento</th>
+              <th>Descripción</th>
+              <th>Límite de entrega</th>
+              <th>Estatus</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="event-table"></tbody>
+          <tbody>
+            <tr>
+              <td>Actividad</td>
+              <td>Problema de Física</td>
+              <td>12/09</td>
+              <td>Pendiente</td>
+              <td>
+                <a href="../presentar/presentar-actividad.html?idStudent=1"
+                  >Presentar</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="succes-post"></div>
+      <button class="responsive" id="btnResponsive">
+        <i class="bx bx-menu"></i>
+      </button>
+    </main>
+    <script src="../../api/post.js"></script>
+    <script src="../../api/activityStudent.js"></script>
+    <script src="calendar.js"></script>
+    <script src="../js/sidenav.js"></script>
+  </body>
+</html>

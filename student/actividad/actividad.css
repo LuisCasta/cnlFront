@@ -1,0 +1,137 @@
+@import url('../../admin/styles/style-generals.css');
+@import url('../../mentor/style-mentor/sidenav.css');
+
+body {
+    background-color: #efefef;
+}
+
+.container-tabs {
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+
+.buttons-tabs {
+    width: 120px;
+    height: 100vh;
+    position: absolute;
+}
+
+.buttons-tabs p {
+    text-align: center;
+    margin: 25px auto;
+    font-size: 14px;
+    text-decoration: none;
+    position: relative;
+    transition: .3s ease-in-out;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bk-opacity);
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: 200px;
+    width: 50px;
+}
+
+.buttons-tabs p:hover {
+    background-color: #ffffff10;
+    cursor: pointer;
+}
+
+.buttons-tabs p:hover::before {
+    content: '➡️';
+    /* width: 30px; */
+    position: absolute;
+    transform: translateX(-5px);
+    left: -20px;
+    /* height: 1px; */
+    /* background-color: var(--primary-color); */
+    animation: signal .2s ease-in-out;
+}
+
+@keyframes signal {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-5px);
+    }
+}
+
+.content-divs-tab {
+    background-color: #fff;
+    margin-left: 130px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.content-divs-tab td {
+    grid-template-columns: 5ch auto;
+}
+
+.content-divs-tab table {
+    width: 100%;
+}
+
+.active {
+    background-color: #ffffff10;
+    cursor: pointer;
+}
+
+.actividades,
+.videocalls,
+.calificaciones {
+    transition: .3s ease-in-out;
+    animation: entrada .3s ease-in-out;
+}
+
+@keyframes entrada {
+    from {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.disable {
+    display: none;
+}
+
+.contentdiv h5 {
+    padding: 10px;
+}
+
+@media (max-width:576px) {
+    .container-tabs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .buttons-tabs {
+        position: initial;
+        display: flex;
+        width: 250px;
+        margin: auto;
+        height: auto;
+    }
+
+    .buttons-tabs p:hover::before {
+        content: '';
+    }
+
+    .content-divs-tab {
+        margin-left: 0;
+        width: 100%;
+        margin: 20px auto;
+    }
+}

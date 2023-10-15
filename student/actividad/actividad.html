@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="actividad.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad</title>
+  </head>
+  <body onload="cargarSideNav()">
+    <div id="sidenavInsert" class="sidenav-cln"></div>
+    <main>
+      <div class="breadcumbs">
+        <p>Actividad</p>
+      </div>
+      <div class="card-header">
+        <div class="text-Header">
+          <h2>Tus actividades, Videollamadas y Calificaciones</h2>
+        </div>
+      </div>
+      <div class="container-tabs">
+        <div class="buttons-tabs">
+          <p id="Ac"><i class="bx bxs-watch bx-sm"></i></p>
+          <p id="vc"><i class="bx bx-video bx-sm"></i></p>
+          <p id="cf"><i class="bx bx-note bx-sm"></i></p>
+        </div>
+        <div class="content-divs-tab">
+          <div class="actividades contentdiv" id="acti">
+            <h5>Actividades</h5>
+            <!-- TABLA DE UNIDADES CREADAS -->
+            <div class="container-Table">
+              <table>
+                <thead>
+                  <caption>
+                    <div class="caption">
+                      <p id="tableTitle">Todas las Actividades</p>
+                      <span id="spanTitle"></span>
+                    </div>
+                  </caption>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Type</th>
+                    <th>Lessons +</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="t-Activ">
+                  <tr>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                  </tr>
+                  <tr>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                  </tr>
+                  <tr>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                  </tr>
+                  <tr>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="videocalls contentdiv" id="vi">
+            <h5>Videollamadas</h5>
+            <!-- TABLA DE UNIDADES CREADAS -->
+            <div class="container-Table">
+              <table>
+                <thead>
+                  <caption>
+                    <div class="caption">
+                      <p id="tableTitle">Todas las Videollamadas</p>
+                      <span id="spanTitle"></span>
+                    </div>
+                  </caption>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Type</th>
+                    <th>Lessons +</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="t-Activ">
+                  <tr>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="calificaciones contentdiv" id="cali">
+            <h5>Calificaciones</h5>
+            <!-- TABLA DE UNIDADES CREADAS -->
+            <div class="container-Table">
+              <table>
+                <thead>
+                  <caption>
+                    <div class="caption">
+                      <p id="tableTitle">Todas las Calificaciones</p>
+                      <span id="spanTitle"></span>
+                    </div>
+                  </caption>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Type</th>
+                    <th>Lessons +</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="t-Activ">
+                  <tr>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                    <td>Ejemplo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="succes-post"></div>
+    </main>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
+    <script src="../js/sidenav.js"></script>
+    <script src="actividad.js"></script>
+    <script src="tabs.js"></script>
+  </body>
+</html>

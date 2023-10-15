@@ -1,0 +1,53 @@
+@import url("../../admin/styles/style-generals.css");
+@import url("../../mentor/style-mentor/sidenav.css");
+
+.container-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 90%;
+    margin: auto;
+    gap: 20px;
+}
+
+.card-cursos {
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    border-radius: 10px;
+    position: relative;
+    background-color: #b0fcc1;
+}
+
+.text-card {
+    margin: 10px auto;
+}
+
+.text-card h4 {
+    color: var(--primary-color);
+}
+
+.text-card a {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    padding: 5px 8px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: .2s ease-in;
+    font-weight: 600;
+    background-color: #22387d50;
+    color: #fff;
+}
+
+.text-card a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.hr {
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    background-color: var(--primary-color);
+}
