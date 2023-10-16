@@ -14,12 +14,12 @@ function cargarSideNav() {
           <li>
             <a href="../view/curso-student.html?idStudent=1">
             <i class='bx bx-book-open'></i></a>
-            <p class="tooltip">Cursos</p>
+            <p class="tooltip">Mis Cursos</p>
           </li>
           <li>
           <a href="../calendar/calendar.html?idStudent=1">
           <i class='bx bxs-calendar'></i></a>
-          <p class="tooltip">Cursos</p>
+          <p class="tooltip">Agenda</p>
         </li>
         </ul>
       </div>

@@ -24,8 +24,8 @@ async function LoadActivitiesAgendaStudent() {
             <p><i class="bx bx-note"></i>${typeActivity}</p>
             </div>
         </td>
-        <td data-cell="Descripción">${name}</td>
-        <td data-cell="Fecha">${dateEnd}</td>
+        <td data-cell="Nombre">${name}</td>
+        <td data-cell="Fecha entrega">${dateEnd}</td>
         <td data-cell="Estatus">${estatus}</td>
         <td data-cell="Acciones">
            <div class="actions">
@@ -58,7 +58,7 @@ async function videoCallByCourse() {
             </div>
         </td>
         <td data-cell="Descripción">${description}</td>
-        <td data-cell="Link"><a href="${link}">Entrar<a></td>
+        <td data-cell="Link"><a class="link-videocalls" href="${link}">Entrar<a></td>
          </td>
      </tr>
       `;

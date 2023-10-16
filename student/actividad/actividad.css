@@ -113,7 +113,13 @@ body {
 }
 
 
-
+.actions a {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+}
 
 .actividades h5 {
     background-color: var(--color-bk-opacity);
@@ -121,6 +127,16 @@ body {
     margin-bottom: 10px;
     border-radius: 200px;
     color: var(--primary-color);
+}
+
+.link-videocalls {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: auto;
 }
 
 @keyframes entrada {

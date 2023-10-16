@@ -20,7 +20,7 @@ async function LoadActivitiesAgendaStudent() {
             </div>
         </td>
         <td data-cell="Descripción">${name}</td>
-        <td data-cell="Fecha">${dateEnd}</td>
+        <td data-cell="Fecha límite">${dateEnd}</td>
         <td data-cell="Estatus">${estatus}</td>
         <td data-cell="Acciones">
            <div class="actions">
