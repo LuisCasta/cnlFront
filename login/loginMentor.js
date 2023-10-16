@@ -1,4 +1,3 @@
-
 const correoMentor = document.getElementById("correo2");
 const pwMentor = document.getElementById("pw-login2");
 const loginMentor = document.getElementById("Inicio-sesion2");
@@ -8,7 +7,6 @@ const loginMentor = document.getElementById("Inicio-sesion2");
 
 loginMentor.addEventListener("click", loginCnlMentor);
 async function loginCnlMentor() {
-
   const mailM = correoMentor.value;
   const passM = pwMentor.value;
 
@@ -20,7 +18,7 @@ async function loginCnlMentor() {
 
   const data = {
     mail: mailM,
-    pass:passM
+    pass: passM,
   };
   const mentor = await getLogin(data);
   console.log(mentor);
@@ -33,9 +31,5 @@ async function loginCnlMentor() {
     const { id, name, firstName, mail } = mentor.data;
 
     location.href = `mentor.html?idMentor=${id}`;
-
   }
-
-  
-    
 }

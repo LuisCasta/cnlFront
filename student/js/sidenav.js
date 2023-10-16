@@ -12,12 +12,12 @@ function cargarSideNav() {
       <div class="navegacion-vista">
         <ul class="ul-navigate">
           <li>
-            <a href="../view/curso-student.html?idStudent=1">
+            <a href="../view/curso-student.html?idStudent=${idStudent}">
             <i class='bx bx-book-open'></i></a>
             <p class="tooltip">Mis Cursos</p>
           </li>
           <li>
-          <a href="../calendar/calendar.html?idStudent=1">
+          <a href="../calendar/calendar.html?idStudent=${idStudent}">
           <i class='bx bxs-calendar'></i></a>
           <p class="tooltip">Agenda</p>
         </li>

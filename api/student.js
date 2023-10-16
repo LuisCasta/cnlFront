@@ -92,3 +92,26 @@ const getById = async (id) => {
 
   return { code: 200, data: student.data.data };
 };
+
+// Login student
+
+const getLogin = async (data) => {
+  const { mail, pass } = data;
+  console.log(data);
+  if (mail == 0 || mail == "" || mail == undefined || mail == " ")
+    return { code: 400, message: `Error, el campo mail es inválido` };
+
+  if (pass == 0 || pass == "" || pass == undefined || pass == " ")
+    return { code: 400, message: `Error, el campo pass es inválido` };
+
+  const student = await postDataC(`student/login/`, data);
+  //console.log(mentor);
+  if (student.status != 200)
+    return {
+      code: 400,
+      message: `Error al logear al docente con el mail: ${mail}`,
+      error: student.data.message,
+    };
+
+  return { code: 200, data: student.data.data };
+};
