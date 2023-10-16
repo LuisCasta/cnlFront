@@ -16,7 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Actividad</title>
   </head>
-  <body onload="cargarSideNav(), LoadActivitiesAgendaStudent()">
+  <body
+    onload="cargarSideNav(), LoadActivitiesAgendaStudent(),videoCallByCourse()"
+  >
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <div class="breadcumbs">
@@ -25,6 +27,7 @@
       <div class="card-header">
         <div class="text-Header">
           <h2>Tus actividades, Videollamadas y Calificaciones</h2>
+          <p>Aquí se muestran las actividades de tu curso</p>
         </div>
       </div>
       <div class="container-tabs">
@@ -50,8 +53,8 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Type</th>
-                    <th>Lessons +</th>
-                    <th>Actions</th>
+                    <th>Estatus</th>
+                    <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody id="t-Activ"></tbody>
@@ -71,21 +74,12 @@
                     </div>
                   </caption>
                   <tr>
-                    <th>ID</th>
                     <th>Nombre</th>
-                    <th>Type</th>
-                    <th>Lessons +</th>
-                    <th>Actions</th>
+                    <th>Descripción</th>
+                    <th>Link</th>
                   </tr>
                 </thead>
-                <tbody id="t-Activ">
-                  <tr>
-                    <td>Ejemplo</td>
-                    <td>Ejemplo</td>
-                    <td>Ejemplo</td>
-                    <td>Ejemplo</td>
-                  </tr>
-                </tbody>
+                <tbody id="t-videocall"></tbody>
               </table>
             </div>
           </div>
@@ -109,14 +103,7 @@
                     <th>Actions</th>
                   </tr>
                 </thead>
-                <tbody id="t-Activ">
-                  <tr>
-                    <td>Ejemplo</td>
-                    <td>Ejemplo</td>
-                    <td>Ejemplo</td>
-                    <td>Ejemplo</td>
-                  </tr>
-                </tbody>
+                <tbody id="t-cali"></tbody>
               </table>
             </div>
           </div>
@@ -129,6 +116,7 @@
     </button>
     <script src="../../api/post.js"></script>
     <script src="../../api/activityStudent.js"></script>
+    <script src="../../api/videoCall.js"></script>
     <script src="actividad.js"></script>
     <script src="tabs.js"></script>
     <script src="../js/sidenav.js"></script>

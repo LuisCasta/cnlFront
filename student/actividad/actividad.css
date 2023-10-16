@@ -90,6 +90,39 @@ body {
     animation: entrada .3s ease-in-out;
 }
 
+.actividades h5,
+.calificaciones h5,
+.videocalls h5 {
+    display: inline-block;
+}
+
+.videocalls h5 {
+    background-color: #f4ebff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 200px;
+    color: #7F56D9;
+}
+
+.calificaciones h5 {
+    background-color: #d1fadf;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 200px;
+    color: #039855;
+}
+
+
+
+
+.actividades h5 {
+    background-color: var(--color-bk-opacity);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 200px;
+    color: var(--primary-color);
+}
+
 @keyframes entrada {
     from {
         transform: translateY(200px);

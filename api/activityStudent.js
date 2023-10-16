@@ -2,17 +2,17 @@
  * Obtiene todas las actividades de un idUnit
  *
  * */
-const getByCourseActivityStudent = async (idCurso, idStudent) => {
+const getByCourseActivityStudent = async (idCourse, idStudent) => {
   if (
-    idCurso == "" ||
-    idCurso == null ||
-    idCurso == undefined ||
-    idCurso == " "
+    idCourse == "" ||
+    idCourse == null ||
+    idCourse == undefined ||
+    idCourse == " "
   )
     return { code: 400, message: `Error, el campo idCurso es inválido` };
 
   const activities = await getApi(
-    `activityStudent/all2/${idCurso}/${idStudent}`
+    `activityStudent/all2/${idCourse}/${idStudent}`
   );
 
   if (activities.status != 200)

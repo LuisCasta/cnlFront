@@ -3,12 +3,14 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idStudent = urlParams.get("idStudent");
 const tEvent = document.getElementById("t-Activ");
-const idCurso = document.getElementById("IdCourse");
+const tVideo = document.getElementById("t-videocall");
+
+const idCourse = urlParams.get("idCourse");
 let tableHtml = "";
 async function LoadActivitiesAgendaStudent() {
   const activitiesStudent = await getByCourseActivityStudent(
     idStudent,
-    idCurso
+    idCourse
   );
   if (activitiesStudent.code != 200) {
     alert(`Error ${newactivitiesStudent.message}`);
@@ -35,5 +37,33 @@ async function LoadActivitiesAgendaStudent() {
     });
 
     tEvent.innerHTML = tableHtml;
+  }
+}
+
+// Pinta las videollamadas
+
+let tableVcHtml = "";
+async function videoCallByCourse() {
+  const videoCalls = await videoCallGetByCourse(idCourse);
+  if (videoCalls.code != 200) {
+    alert(`Error ${newVideoCalls.message}`);
+  } else {
+    videoCalls.data.forEach((calls) => {
+      const { name, link, description } = calls;
+      tableVcHtml += `
+      <tr>
+        <td data-cell="Nombre">
+            <div class="type-event">
+            <p><i class="bx bx-note"></i>${name}</p>
+            </div>
+        </td>
+        <td data-cell="Descripción">${description}</td>
+        <td data-cell="Link"><a href="${link}">Entrar<a></td>
+         </td>
+     </tr>
+      `;
+    });
+
+    tVideo.innerHTML = tableVcHtml;
   }
 }
