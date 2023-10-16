@@ -71,7 +71,7 @@ body {
 }
 
 .content-divs-tab td {
-    grid-template-columns: 5ch auto;
+    grid-template-columns: 15ch auto;
 }
 
 .content-divs-tab table {

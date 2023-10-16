@@ -17,7 +17,7 @@ async function loadCursosByStudent() {
         <h4>${name}</h4>
         <div class="hr"></div>
         <p>${description}</p>
-        <a href="../actividad/actividad.html?${idCourse}&idStudent=${idStudent}">Ver+</a>
+        <a href="../actividad/actividad.html?idCourse=${idCourse}&idStudent=${idStudent}">Ver+</a>
       </div>
     </div>
       `;
