@@ -25,6 +25,7 @@
     font-family: Inter;
 }
 
+
 body {
     position: relative;
 }
@@ -37,6 +38,7 @@ select {
     font-size: var(--font-size-input);
     border-radius: var(--input-bor-rad);
     font-style: italic;
+    font-size: 20px;
 }
 
 button {
@@ -74,6 +76,7 @@ td {
     padding: 16px 24px;
     text-align: left;
     border-bottom: 1px solid #EAECF0;
+    font-size: 18px;
 }
 
 tr {
@@ -219,7 +222,7 @@ p {
 
 .heading p {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .aviso-click {
