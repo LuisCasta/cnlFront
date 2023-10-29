@@ -146,3 +146,50 @@ const getCourseByMentor = async (idMentor) => {
     };
   return { code: 200, data: cursoMentor.data.data };
 };
+
+const updateCourse = async (data) => {
+  const {
+    courseId,
+    name,
+    description,
+    task,
+    exam,
+    proyect,
+  } = data;
+
+  if (courseId == "" || courseId == null || courseId == undefined || courseId == " ")
+    return { code: 400, message: `Error, el campo courseId es inválido` };
+
+  if (name == "" || name == null || name == undefined || name == " ")
+    return { code: 400, message: `Error, el campo name es inválido` };
+
+  if (description == "" || description == null || description == undefined || description == " ")
+    return { code: 400, message: `Error, el campo description es inválido` };
+
+  if (task == "" || task == null || task == undefined || task == " ")
+    return { code: 400, message: `Error, el campo task es inválido` };
+
+  if (exam == "" || exam == null || exam == undefined || exam == " ")
+    return { code: 400, message: `Error, el campo exam es inválido` };
+
+  if (proyect == "" || proyect == null || proyect == undefined || proyect == " ")
+    return { code: 400, message: `Error, el campo proyect es inválido` };
+
+  const course = await putApi("course", {
+    courseId,
+    name,
+    description,
+    task,
+    exam,
+    proyect,
+  });
+
+  if (course.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar el course.`,
+      error: course.data.message,
+    };
+
+  return { code: 200, data: activity.data.data };
+};

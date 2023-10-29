@@ -21,3 +21,14 @@ async function getApi(url) {
 
   return response; // parses JSON response into native JavaScript objects
 }
+//Implementation http put
+async function putApi(url, data) {
+  const response = await axios({
+    method: "put",
+    url: `${urlBase}/${url}`,
+    data,
+  });
+  // Default options are marked with *
+
+  return response; // parses JSON response into native JavaScript objects
+}

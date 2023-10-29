@@ -85,3 +85,17 @@ const getById = async (id) => {
 
   return { code: 200, data: unit.data.data };
 };
+
+const getTypeUnits = async () => {
+
+  const unit = await getApi(`typeActivity/all`);
+
+  if (unit.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener el tipo de unidad.`,
+      error: unit.data.message,
+    };
+
+  return { code: 200, data: unit.data.data };
+};

@@ -104,3 +104,22 @@ const getByIdActivity = async (id) => {
 
   return { code: 200, data: activity.data.data };
 };
+
+
+/**
+ * Obtiene una actividad por su Id
+ *
+ * */
+const getTypeActivity = async (id) => {
+  
+  const activity = await getApi(`typeActivity/all`);
+
+  if (activity.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener los tipos de actividad`,
+      error: activity.data.message,
+    };
+
+  return { code: 200, data: activity.data.data };
+};
