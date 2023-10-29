@@ -110,7 +110,7 @@ const getByIdActivity = async (id) => {
  * Obtiene una actividad por su Id
  *
  * */
-const getTypeActivity = async (id) => {
+const getTypeActivity = async () => {
   
   const activity = await getApi(`typeActivity/all`);
 
