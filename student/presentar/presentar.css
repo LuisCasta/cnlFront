@@ -11,10 +11,26 @@
     margin: 30px auto;
     box-shadow: var(--box-shadow);
     padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pautas a {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
 }
 
 .pautas p {
     line-height: 25px;
+    font-size: 16px;
 }
 
 .pautas h4 {
@@ -29,7 +45,25 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+    align-items: center;
+}
+
+.content-name h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-name h3::before {
+    content: 'Nombre de la Actividad';
+    font-weight: normal;
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+.content-name p {
+    font-size: 16px;
 }
 
 .link-material {
@@ -61,4 +95,12 @@
 
 .bold-span {
     font-weight: 600;
+}
+
+.text-enviar {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #bfbfbf;
+    font-size: 18px;
+    font-style: italic;
 }

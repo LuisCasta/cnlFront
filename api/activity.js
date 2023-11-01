@@ -85,33 +85,32 @@ const getByUnitActivity = async (idUnit) => {
   return { code: 200, data: getActivities.data.data };
 };
 
-/**
- * Obtiene un periodo por Id
- *
- * */
-const getByIdActivity = async (id) => {
-  if (id == 0 || id == "" || id == undefined || id == " ")
+// Obtiene un periodo por Id
+
+const getByIdActivity = async (idActivity) => {
+  if (
+    idActivity == 0 ||
+    idActivity == "" ||
+    idActivity == undefined ||
+    idActivity == " "
+  )
     return { code: 400, message: `Error, el campo id es inválido` };
 
-  const activity = await getApi(`activity/about/${id}`);
+  const activity = await getApi(`activity/about/${idActivity}`);
 
   if (activity.status != 200)
     return {
       code: 400,
-      message: `Error al obtener la actividad con el id: ${id}`,
+      message: `Error al obtener la actividad con el id: ${idActivity}`,
       error: activity.data.message,
     };
 
   return { code: 200, data: activity.data.data };
 };
 
+// Obtiene una actividad por su Id
 
-/**
- * Obtiene una actividad por su Id
- *
- * */
 const getTypeActivity = async () => {
-  
   const activity = await getApi(`typeActivity/all`);
 
   if (activity.status != 200)

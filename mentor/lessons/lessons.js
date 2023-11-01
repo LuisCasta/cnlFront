@@ -4,7 +4,7 @@
 // const idUnit = urlParams.get("idUnit");
 // const idCourse = urlParams.get("idCurso");
 const tbody2 = document.getElementById("table-lesson");
-// const succesPost = document.getElementById("succes-post");
+
 // const hrefUnidad = document.getElementById("href-unidad");
 
 let lessonHtml2;

@@ -6,7 +6,7 @@ funcion getByIdActivity
 
 recibe id
 
-********************************
+---
 
 actividadStudent
 
@@ -14,14 +14,14 @@ api/activityStudent.js
 
 function sendActivity
 
-recibe objeto con estos parámetros 
+recibe objeto con estos parámetros
 
 actStudId,
 idActivity,
 commentStudent,
 link
 
-*******************************
+---
 
 updateCurso
 
@@ -29,7 +29,7 @@ api/course
 
 function updateCourse
 
-recibe 
+recibe
 
 courseId,
 name,
@@ -38,8 +38,7 @@ task,
 exam,
 proyect
 
-
-*******************************
+---
 
 TypeActivity
 
@@ -49,8 +48,7 @@ function getTypeActivity
 
 no recibe parámetros
 
-
-******************************
+---
 
 GetStudentActivity
 
@@ -60,8 +58,7 @@ function getActivityStudentById
 
 recibe idActivityStudent
 
-
-******************************
+---
 
 TypeUnits
 
@@ -70,4 +67,3 @@ api/unit
 function getTypeUnits
 
 no recibe parámetros
-

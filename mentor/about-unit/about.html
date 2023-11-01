@@ -17,7 +17,7 @@
     <title>About Unit</title>
   </head>
   <body
-    onload="loadVideoByIdCourse(),cargarSideNav(), loadAllLessonsByUnit(),loadActivityByUnit(), loadStudentByIdCourse()"
+    onload="loadVideoByIdCourse(),cargarSideNav(), loadAllLessonsByUnit(),loadActivityByUnit(), loadStudentByIdCourse(),chooseTypeActivity()"
   >
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
@@ -37,10 +37,10 @@
       <!-- EMPIEZAN EL CONTENEDOR PARA TABS -->
       <div class="container-tabs">
         <div class="tabs-buttons">
-          <a id="clases">Clases</a>
-          <a id="activ">Actividades</a>
-          <a id="students">Alumnos</a>
-          <a id="calls">Videollamadas</a>
+          <a id="clases"><i class="bx bx-book bx-sm"></i></a>
+          <a id="activ"><i class="bx bxs-watch bx-sm"></i></a>
+          <a id="students"><i class="bx bx-group bx-sm"></i></a>
+          <a id="calls"><i class="bx bx-video bx-sm"></i></a>
         </div>
         <div class="divs-tabs">
           <div class="clases" id="div-clases">
@@ -91,34 +91,34 @@
                 </p>
               </div>
               <div class="form-header">
-                <input
-                  type="text"
-                  id="name-activ"
-                  placeholder="Nombre actividad"
-                />
-                <input
-                  type="text"
-                  id="des-actividad"
-                  placeholder="Descripción"
-                />
+                <div class="form-select">
+                  <p>Nombre actividad</p>
+                  <input type="text" id="name-activ" />
+                </div>
+                <div class="form-select">
+                  <p>Descripción</p>
+                  <input type="text" id="des-actividad" />
+                </div>
                 <div class="form-select">
                   <p>Inicio</p>
                   <input type="date" id="inicio-act" />
                 </div>
                 <div class="form-select">
-                  <p>termino</p>
+                  <p>Término</p>
                   <input type="date" id="fin-act" />
                 </div>
                 <div class="form-select">
                   <p>Intentos</p>
                   <input type="number" id="intentos" />
                 </div>
-                <input type="text" placeholder="type" id="type-activity" />
-                <input
-                  type="text"
-                  placeholder="Comparte un Link"
-                  id="link-activity"
-                />
+                <div class="form-select">
+                  <p>Tipo de Actividad</p>
+                  <select type="text" id="type-activity"></select>
+                </div>
+                <div class="form-select">
+                  <p>Comparte un Link</p>
+                  <input type="text" id="link-activity" />
+                </div>
                 <!-- <div class="form-select">
                   <p>Seleciona la lección</p>
                   <select name="lessons" id="lesson-id"></select>
@@ -133,7 +133,7 @@
                   <caption>
                     <div class="caption">
                       <p>Todos las Actividades</p>
-                      <span></span>
+                      <span id="countActs"></span>
                     </div>
                   </caption>
                   <tr>
@@ -141,7 +141,7 @@
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Inicio</th>
-                    <th></th>
+                    <th>Revisar</th>
                   </tr>
                 </thead>
                 <tbody id="table-activity"></tbody>
@@ -155,7 +155,10 @@
                 <thead>
                   <caption>
                     <div class="caption">
-                      <p>Todos los Alumnos</p>
+                      <p>
+                        <i class="bx bx-group"></i>Todos los Alumnos de esta
+                        Unidad
+                      </p>
                       <span></span>
                     </div>
                   </caption>
@@ -164,7 +167,6 @@
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Inicio</th>
-                    <th></th>
                   </tr>
                 </thead>
                 <tbody id="table-students"></tbody>
@@ -175,6 +177,7 @@
             <!-- TABLA DE ACRIVIDADES CREADAS -->
 
             <div class="card-header-2">
+              <h3><i class="bx bx-video"></i>Videollamadas</h3>
               <div class="heading">
                 <h4>Crea Una videollamada</h4>
                 <p>Crea videollamadas y confíguralas</p>
@@ -221,7 +224,7 @@
       </button>
     </main>
 
-    <script src="../../api//post.js"></script>
+    <script src="../../api/post.js"></script>
     <script src="../../api/lesson.js"></script>
     <script src="../../api/activity.js"></script>
     <script src="../../api/videoCall.js"></script>

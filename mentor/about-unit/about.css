@@ -15,23 +15,78 @@
     display: flex;
     /* gap: 10px; */
     font-size: 16px;
+    background-color: #efefef;
+    border-radius: 10px;
 }
 
 .tabs-buttons a {
-    background-color: #efefef;
-    padding: 5px;
+    padding: 20px;
     color: var(--primary-color);
     /* border-bottom: 2px solid var(--primary-color); */
     cursor: pointer;
+    transition: .2s ease-in-out;
+
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .button-bottom {
-    border-top: 2px solid var(--primary-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    align-items: center;
+    border-radius: 10px;
+}
+
+.button-bottom::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    border-radius: 200px;
+    top: 0;
+    animation: fadeInOp .2s ease-in-out;
+
+}
+
+@keyframes fadeInOp {
+    from {
+        transform: translateX(-20px);
+        width: 0%;
+    }
+
+    to {
+        transform: translateX(0px);
+        width: 90%;
+    }
 }
 
 .divs-tabs {
     width: 100%;
 }
+
+.clases,
+.actividades,
+.alumnos,
+.videollamadas {
+    transition: .2s ease-in;
+    animation: fadeIn .2s ease-in;
+}
+
 
 .divs-tabs table {
     width: 100%;
@@ -39,4 +94,8 @@
 
 .disabled {
     display: none;
+}
+
+.form-select input {
+    width: 100%;
 }

@@ -16,7 +16,7 @@ async function LoadActivitiesAgendaStudent() {
     alert(`Error ${newactivitiesStudent.message}`);
   } else {
     activitiesStudent.data.forEach((activities) => {
-      const { name, typeActivity, estatus, dateEnd } = activities;
+      const { name, typeActivity, estatus, dateEnd, idActStu, id } = activities;
       tableHtml += `
       <tr>
         <td data-cell="Tipo">
@@ -29,7 +29,7 @@ async function LoadActivitiesAgendaStudent() {
         <td data-cell="Estatus">${estatus}</td>
         <td data-cell="Acciones">
            <div class="actions">
-              <a href="../presentar/presentar-actividad.html?idStudent=${idStudent}">Presentar</a>
+              <a href="../presentar/presentar-actividad.html?idStudent=${idStudent}&idCourse=${idCourse}&idActMentor=${id}&idActStudent=${idActStu}">Presentar</a>
             </div>
          </td>
      </tr>

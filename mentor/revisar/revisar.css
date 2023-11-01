@@ -1,0 +1,186 @@
+@import url('../../admin/styles/style-generals.css');
+@import url('../../mentor/style-mentor/sidenav.css');
+
+.separator {
+    background-color: var(--primary-color);
+    width: 90%;
+    height: 1px;
+}
+
+.pautas {
+    margin: 30px auto;
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pautas a {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.content-name {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    justify-content: center;
+}
+
+.content-name p {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.activities-desc::before {
+    content: 'Descripción de la Actividad';
+    font-size: 16px;
+    color: var(--primary-color);
+    font-weight: normal;
+}
+
+.coments::before {
+    content: 'Comentarios del Alumno:';
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: normal;
+}
+
+.link-student {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    position: relative;
+    justify-content: center;
+}
+
+.content-name h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-name h3::before {
+    content: 'Nombre de la Actividad';
+    font-weight: normal;
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+.content-name label {
+    font-weight: normal;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.link-material {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.card-header {
+    position: relative;
+}
+
+.num-intent {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.intentos-span {
+    background-color: var(--color-bk-opacity);
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.bold-span {
+    font-weight: 600;
+}
+
+.text-enviar {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #bfbfbf;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.content-activities {
+    display: flex;
+    gap: 10px;
+}
+
+.container-present {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.container-revisar {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.link-material {
+    background-color: #fff;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+@media (max-width:574px) {
+
+
+    .container-revisar {
+        gap: 0px;
+    }
+
+}
+
+@media (max-width:928px) {
+    .content-activities {
+        flex-direction: column;
+    }
+
+    .container-revisar {
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .content-name {
+        width: 100%;
+    }
+}

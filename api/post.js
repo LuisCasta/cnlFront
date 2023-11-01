@@ -23,6 +23,7 @@ async function getApi(url) {
 }
 //Implementation http put
 async function putApi(url, data) {
+  console.log(`url ${url} data ${data}`);
   const response = await axios({
     method: "put",
     url: `${urlBase}/${url}`,

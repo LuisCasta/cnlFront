@@ -12,7 +12,7 @@ function cargarSideNav() {
       <div class="navegacion-vista">
         <ul class="ul-navigate">
           <li>
-            <a href="mentor.html?idMentor=1">
+            <a href="../mentor.html?idMentor=1">
             <i class='bx bx-book-open bx-sm'></i></a>
             <p class="tooltip">Cursos</p>
           </li>

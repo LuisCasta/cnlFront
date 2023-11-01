@@ -10,9 +10,10 @@ const tableAct = document.getElementById("table-activity");
 const selectLesson = document.getElementById("lesson-id");
 const tableStudent = document.getElementById("table-students");
 const tableVideoCalls = document.getElementById("table-calls");
+const selectTypeActivity = document.getElementById("type-activity");
 // const hreMentor = document.getElementById("");
 
-let lessonHtml;
+let lessonHtml = "";
 async function loadAllLessonsByUnit() {
   const lessons = await getAllByUnit(idUnit);
 
@@ -48,7 +49,7 @@ async function loadAllLessonsByUnit() {
 
 // Mostrar en tabla las actividades
 
-let activityHtml;
+let activityHtml = "";
 async function loadActivityByUnit() {
   const activities = await getByUnitActivity(idUnit);
 
@@ -59,16 +60,22 @@ async function loadActivityByUnit() {
     // countlessons.textContent = lessons.data.length;
     activities.data.forEach((activity) => {
       const { name, description, id, dateStart } = activity;
+      const countActs = document.getElementById("countActs");
+      countActs.textContent = activities.data.length;
       //   hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}`;
       activityHtml += `
         <tr>
             <td data-cell="Id">${id}</td>
             <td data-cell="Nombre">${name}</td>
             <td data-cell="Descripción">${description}</td>
-            <td data-cell="Inicio">${dateStart}</td>
+            <td data-cell="Inicio">${dateStart.slice(0, -14)}</td>
+            <td data-cell="Revisar">
+            <a href="../revisar/revisar.html?actStudId=${id}">
+            <button>Revisar</button></a>
             </td>
         </tr>
         `;
+      console.log(activity.id);
     });
     tableAct.innerHTML = activityHtml;
   }
@@ -129,11 +136,10 @@ btnCreateActivity.addEventListener("click", async (e) => {
 });
 
 //Listar las videollamadas
-let videocalls;
+let videocalls = "";
 async function loadVideoByIdCourse() {
   const callByCourse = await videoCallGetByCourse(idCourse);
   if (callByCourse.code != 200) {
-    // console.log(newStudentsIdCourse.message);
   } else {
     callByCourse.data.forEach((call) => {
       const { name, description, link } = call;
@@ -197,7 +203,7 @@ btnCreatCall.addEventListener("click", async (e) => {
 });
 
 //Listar los alumnos por Curso
-let studentIdCourse;
+let studentIdCourse = "";
 async function loadStudentByIdCourse() {
   const studentsidCourse = await CourseStudGetByCourse(idCourse);
   if (studentsidCourse.code != 200) {
@@ -217,5 +223,21 @@ async function loadStudentByIdCourse() {
   `;
     });
     tableStudent.innerHTML = studentIdCourse;
+  }
+}
+
+// TRAER EL TYPE ACTIVITY
+let optionsType = "";
+async function chooseTypeActivity() {
+  const typeActivities = await getTypeActivity();
+  // console.log(typeActivities.data);
+  if (typeActivities.code !== 200) {
+  } else {
+    typeActivities.data.forEach((type) => {
+      const { id, name } = type;
+      optionsType += `
+      <option value="${id}">${name}</option>`;
+    });
+    selectTypeActivity.innerHTML = optionsType;
   }
 }

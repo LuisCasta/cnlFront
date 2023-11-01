@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="revisar.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revisar Actividad</title>
+  </head>
+  <body
+    onload="cargarSideNav(),loadGetActivityStudentById(),loadActivityStudentById() "
+  >
+    <div id="sidenavInsert" class="sidenav-cln"></div>
+    <main>
+      <!-- NAVEGACIÓN EN MIGAS DE PAN -->
+      <div class="breadcumbs">
+        <a href=""><p>Actividad</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Revisar actividad</p>
+      </div>
+      <!-- FORMULARIO DEL HEADER -->
+      <div class="card-header">
+        <div class="heading">
+          <h2 id="name-group">
+            <i class="bx bx-stopwatch"></i>Revisa las actividades
+          </h2>
+          <div class="separator"></div>
+        </div>
+      </div>
+      <div class="container-revisar">
+        <div class="container-lista-stu">
+          <table>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Estátus</th>
+            </tr>
+          </table>
+        </div>
+        <div class="container-present">
+          <div class="content-activities">
+            <div class="content-name">
+              <h3 id="name-activity"></h3>
+              <p class="activities-desc" id="descrip-act"></p>
+            </div>
+            <div class="content-name">
+              <h4>Actividad del Alumno:</h4>
+              <p class="coments" id="coment-stu"></p>
+              <div class="link">
+                <label for="link-act">Link de la actividad presentada</label>
+                <a class="link-student" id="link-act"
+                  ><i class="bx bx-link-external"></i>Abrir</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="link-material">
+            <h5>Califica la actividad</h5>
+            <input
+              type="text"
+              name=""
+              placeholder="Calificación"
+              id="link-revisar"
+            />
+            <textarea
+              class="text-enviar"
+              name=""
+              id="comments"
+              placeholder="Comentarios de la activad presentada"
+            ></textarea>
+            <button id="revisar-actividad">
+              <i class="bx bx-checkbox-checked"></i>Revisar
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="succes-post"></div>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
+    <script src="../../api/post.js"></script>
+    <script src="../../api/activity.js"></script>
+    <script src="../../api/activityStudent.js"></script>
+    <script src="revisar.js"></script>
+    <script src="../sidenav.js"></script>
+  </body>
+</html>
