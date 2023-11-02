@@ -17,7 +17,7 @@
     <title>Revisar Actividad</title>
   </head>
   <body
-    onload="cargarSideNav(),loadGetActivityStudentById(),loadActivityStudentById() "
+    onload="loadListCheck(),cargarSideNav(),loadGetActivityStudentById(),loadActivityStudentById() "
   >
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
@@ -38,13 +38,24 @@
       </div>
       <div class="container-revisar">
         <div class="container-lista-stu">
-          <table>
-            <tr>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Estátus</th>
-            </tr>
-          </table>
+          <!-- TABLA DE UNIDADES CREADAS -->
+          <div class="container-Table">
+            <table>
+              <thead>
+                <caption>
+                  <div class="caption">
+                    <p id="tableTitle">Alumnos pendientes</p>
+                    <span id="spanTitle"></span>
+                  </div>
+                </caption>
+                <tr>
+                  <th>Nombre</th>
+                  <th>estaus</th>
+                </tr>
+              </thead>
+              <tbody id="listActStud"></tbody>
+            </table>
+          </div>
         </div>
         <div class="container-present">
           <div class="content-activities">

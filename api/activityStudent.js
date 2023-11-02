@@ -123,6 +123,7 @@ const getActivityStudentById = async (idActivity) => {
 
   return { code: 200, data: activity.data.data };
 };
+//RENVÍA LA ACTIVIDAD REVISADA
 
 const chekActivityStudentById = async (data) => {
   const { actStudId, commentScore, score } = data;
@@ -168,4 +169,31 @@ const chekActivityStudentById = async (data) => {
     };
 
   return { code: 200, data: activityCheck.data.data };
+};
+
+//RECIBE LA LISTA DE ALUMNOS QUE DEBEN PRESENTAR LA ACTIVIDAD
+
+const loadListActivityStudentCheck = async (idActivity) => {
+  if (
+    actStudId == "" ||
+    actStudId == null ||
+    actStudId == undefined ||
+    actStudId == " "
+  )
+    return {
+      code: 400,
+      message: `Error, al obtener actStudId Estudiante es inválido`,
+    };
+
+  const listActivity = await getApi(
+    `activityStudent/aboutActivity/${idActivity}`
+  );
+  if (listActivity.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener las actividades`,
+      error: listActivity.data.message,
+    };
+
+  return { code: 200, data: listActivity.data.data };
 };

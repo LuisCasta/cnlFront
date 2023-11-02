@@ -5,10 +5,9 @@ const idActivity = urlParams.get("actStudId");
 const actStudId = urlParams.get("actStudId");
 const succesPost = document.getElementById("succes-post");
 const revisarActividadBtn = document.getElementById("revisar-actividad");
-
+const tabListStu = document.getElementById("listActStud");
 async function loadGetActivityStudentById() {
   const revisarAct = await getByIdActivity(idActivity);
-  console.log(revisarAct.data);
   if (revisarAct.code != 200) {
     alert(`Error ${revisarAct.message}`);
   } else {
@@ -26,6 +25,25 @@ async function loadActivityStudentById() {
   const linkstu = document.getElementById("link-act");
   commentStu.textContent = revisarActStu.data.commentStudent;
   linkstu.href = revisarActStu.data.link;
+}
+
+let listActivStu = "";
+async function loadListCheck() {
+  const revisarActStuList = await loadListActivityStudentCheck(idActivity);
+  if (revisarActStuList.code != 200) {
+    console.log(`Error ${revisarActStuList.message}`);
+  } else {
+    revisarActStuList.data.forEach((student) => {
+      const { estatus, name } = student;
+      listActivStu += `
+    <tr>
+      <td data-cell="Nombre">${name}</td>
+      <td data-cell="Inicio">${estatus}</td>
+    </tr>
+    `;
+    });
+    tabListStu.innerHTML = listActivStu;
+  }
 }
 
 revisarActividadBtn.addEventListener("click", async (e) => {
