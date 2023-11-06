@@ -26,7 +26,7 @@ async function loadCareers() {
                   <div class="actions">
                     <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                     <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../periodo/periodo.html?idCarrera=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-calendar-plus'></i></button></a>                  </div>
+                    <a href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera"><button><i class='bx bx-calendar-plus'></i></button></a>                  </div>
                 </td>
               </tr>
             `;
@@ -60,7 +60,7 @@ async function getCareerById(id) {
 const btnCarrera = document.getElementById("enviarBtn");
 btnCarrera.addEventListener("click", async (e) => {
   e.preventDefault();
-  const code = document.getElementById("idCarrera").value;
+  const code = "0";
   const name = document.getElementById("nameCarrera").value;
   const description = document.getElementById("descripcionCarrera").value;
 

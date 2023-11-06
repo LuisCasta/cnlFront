@@ -160,6 +160,14 @@
     border-radius: 10px;
 }
 
+.btn-check {
+    color: #fff;
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+}
 
 @media (max-width:574px) {
 

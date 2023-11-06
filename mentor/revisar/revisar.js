@@ -39,6 +39,11 @@ async function loadListCheck() {
     <tr>
       <td data-cell="Nombre">${name}</td>
       <td data-cell="Inicio">${estatus}</td>
+      <td data-cell="Revisar">
+        <button>
+          <a class="btn-check" href="../revisar/revisar.html/">Revisar</a>
+        </button>
+      </td>
     </tr>
     `;
     });

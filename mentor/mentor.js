@@ -1,5 +1,5 @@
 "use strict";
-let cursoMentorHtml;
+let cursoMentorHtml = "";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idMentor = urlParams.get("idMentor");
@@ -22,6 +22,9 @@ async function loadCursosById() {
           <i class='bx bx-customize'></i>
         </button>
        </a>
+       <button data-id="${id}" class="unidad">
+       <i class='bx bx-cog'></i>
+       </button>
       </td>
       <td data-cell="Actions">
         <div class="actions">

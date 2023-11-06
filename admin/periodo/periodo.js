@@ -7,7 +7,8 @@ async function loadPeriodo() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const idCareer = urlParams.get("idCarrera");
-  const nameCareer = urlParams.get("name");
+  const nameCareer = urlParams.get("nameCareer");
+  console.log(nameCareer);
   const periods = await getAll(idCareer);
   const countPeriods = document.getElementById("spanTitle");
   countPeriods.textContent = periods.data.length;
@@ -18,6 +19,7 @@ async function loadPeriodo() {
     NameCareer.textContent = nameCareer;
     periods.data.map((period) => {
       const { idCareer, name, id } = period;
+      let namePeriod = period.name;
       // console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
       salida += `
               <tr>
@@ -27,8 +29,8 @@ async function loadPeriodo() {
                   <div class="actions">
                     <button class="eliminar"><i class='bx bx-trash'></i></button>
                     <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&name=${name}" class="gestionCarrera"><button><i class='bx bx-book-add' ></i></button></a>
-                    <a href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}"><button><i class='bx bx-group'></i></button></a>
+                    <a href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&namePeriod=${namePeriod}&nameCareer=${nameCareer}" class="gestionCarrera"><button><i class='bx bx-book-add' ></i></button></a>
+                    <a href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}&namePeriod=${namePeriod}per&nameCareer=${nameCareer}"><button><i class='bx bx-group'></i></button></a>
                     </div>
                 </td>
               </tr>
@@ -68,7 +70,7 @@ btnPeriod.addEventListener("click", async (e) => {
   const data = { idCareer, name };
 
   succesPost.innerHTML = `
-      <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+      <i class='bx bx-check-circle'></i>
       <p>Creando nuevo Periodo...</p>
     `;
   succesPost.classList.add("aviso-click");
@@ -76,11 +78,16 @@ btnPeriod.addEventListener("click", async (e) => {
   const newPeriod = await create(data);
   if (newPeriod.code != 200) alert(`Error ${newPeriod.message}`);
   else {
-    alert(`ID de Periodo ${newPeriod.data.id}`);
     succesPost.innerHTML = `
-      <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-      <p>Periodo Creado con éxito</p>
+      <i class='bx bx-check-circle'"></i>
+      <p>Periodo Creado con éxito <i class='bx bx-x close-tag'></i></p>
     `;
     succesPost.classList.add("aviso-click");
+
+    let xAdvice = document.querySelector(".close-tag");
+
+    xAdvice.addEventListener("click", function () {
+      location.reload();
+    });
   }
 });

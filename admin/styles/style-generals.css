@@ -25,7 +25,6 @@
     font-family: Inter;
 }
 
-
 body {
     position: relative;
 }
@@ -232,7 +231,7 @@ p {
     right: 20px;
     width: 300px;
     margin: 20px;
-    padding: 10px;
+    padding: 20px;
     align-items: center;
     gap: 10px;
     line-height: 20px;
@@ -246,6 +245,17 @@ p {
 .aviso-click p {
     color: #fff;
 }
+
+.close-tag {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: green;
+    font-size: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 
 
 @keyframes aviso {

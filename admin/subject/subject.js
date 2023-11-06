@@ -2,31 +2,38 @@
 let salida = "";
 const tbody = document.getElementById("materias-table");
 const succesPost = document.getElementById("succes-post");
+const backPeriod = document.getElementById("back-period");
 async function loadSubject() {
   const outputSubject = "";
   //?idPeriod=1&idCareer=1
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const idPeriod = urlParams.get("idPeriodo");
-  const nameCareer = urlParams.get("name");
+  const nameCareer = urlParams.get("nameCareer");
+  const carreraId = urlParams.get("idCarrera");
+  const namePeriod = urlParams.get("namePeriod");
+  backPeriod.href = `../periodo/periodo.html?idCarrera=${carreraId}&nameCareer=${nameCareer}`;
+
   const subjects = await getAll(idPeriod);
   const spanLength = document.getElementById("spanTitle");
   spanLength.textContent = subjects.data.length;
-  const NameCareer = document.getElementById("nombreCarrera");
+  const nperiod = document.getElementById("name-period");
   if (subjects.code != 200) {
     alert(`Error ${newSubject.message}`);
   } else {
-    NameCareer.textContent = nameCareer;
+    nperiod.textContent = namePeriod;
     subjects.data.map((subject) => {
       const { idPeriod, name, idCareer } = subject;
-      console.log(
-        `Id Period ${idPeriod} - name ${name} - idCarrera ${idCareer}`
-      );
+      // console.log(
+      //   `Id Period ${idPeriod} - name ${name} - idCarrera ${idCareer}`
+      // );
       salida += `
               <tr>
-                <td data-cell="ID">${idPeriod}</td>
                 <td data-cell="Name">${name}</td>
-                <td data-cell="Carrera">${idCareer}</td>
+                <td data-cell="Actions">
+                  <button><i class='bx bx-edit-alt'></i></button>
+                  <button><i class='bx bx-trash'></i></button>
+                </td>
 
               </tr>
             `;
@@ -68,24 +75,30 @@ btnSubject.addEventListener("click", async (e) => {
   const name = document.getElementById("nameMateria").value;
   const data = { name, idCareer, idPeriod };
 
-  setTimeout(function () {
-    succesPost.innerHTML = `
-    <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-    <p>Creando nueva Materia...</p>
-  `;
-  }, 1000);
-  setTimeout(function () {
-    succesPost.innerHTML = "";
-    succesPost.classList.remove("aviso-click");
-  }, 3000);
+  // Succes Post
+  succesPost.innerHTML = `
+      <i class='bx bx-loader-circle bx-spin' ></i>
+      <p>Creando nueva materia...</p>
+    `;
+  succesPost.classList.add("aviso-click");
+
   const newSubject = await create(data);
   if (newSubject.code != 200) alert(`Error ${newSubject.message}`);
   else {
-    alert(`ID de Carrera ${newSubject.data.id}`);
     succesPost.innerHTML = `
-    <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-    <p>Carrera Creada con éxito</p>
-  `;
+    <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+      <p>Materia: ${name} creada con éxito</p>
+    `;
     succesPost.classList.add("aviso-click");
+
+    // let xAdvice = document.querySelector(".close-tag");
+
+    // xAdvice.addEventListener("click", function () {
+    //   location.reload();
+    // });
   }
+
+  setTimeout(function () {
+    location.reload();
+  }, 4000);
 });

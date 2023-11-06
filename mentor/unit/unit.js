@@ -6,7 +6,7 @@ const idMentor = urlParams.get("idMentor");
 const tbody = document.getElementById("unit-table");
 const succesPost = document.getElementById("succes-post");
 const hrefMentor = document.getElementById("href-mentor");
-let unitHtml;
+let unitHtml = "";
 // CARGAR UNIDADES DEL GRUPO
 async function loadUnit() {
   const units = await getAllByCourse(idCourse);
@@ -24,7 +24,7 @@ async function loadUnit() {
         <td data-cell="Nombre">${name}</td>
         <td data-cell="Type">${type}</td>
         <td data-cell="Add Lessons">
-          <a href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}">Ver unidad</a>
+          <a class="a-unit" href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}">Ver unidad</a>
         </td>
         <td data-cell="Actions">
         <div class="actions">
