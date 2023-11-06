@@ -18,7 +18,6 @@ async function loadCareers() {
       const { id, name, description, active } = carrer;
       salida += `
               <tr>
-                <td data-cell="ID" >${id}</td>
                 <td data-cell="Name">${name}</td>
                 <td data-cell="Description">${description}</td>
                 <td data-cell="Estatus">${active ? "activo" : "inactivo"}</td>
