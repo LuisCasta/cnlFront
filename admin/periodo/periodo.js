@@ -23,7 +23,6 @@ async function loadPeriodo() {
       // console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
       salida += `
               <tr>
-                <td data-cell="Id">${id}</td>
                 <td data-cell="Name">${name}</td>
                 <td data-cell="Actions"> 
                   <div class="actions">
@@ -69,8 +68,9 @@ btnPeriod.addEventListener("click", async (e) => {
 
   const data = { idCareer, name };
 
+  // Succes Post
   succesPost.innerHTML = `
-      <i class='bx bx-check-circle'></i>
+      <i class='bx bx-loader-circle bx-spin' ></i>
       <p>Creando nuevo Periodo...</p>
     `;
   succesPost.classList.add("aviso-click");
@@ -79,15 +79,12 @@ btnPeriod.addEventListener("click", async (e) => {
   if (newPeriod.code != 200) alert(`Error ${newPeriod.message}`);
   else {
     succesPost.innerHTML = `
-      <i class='bx bx-check-circle'"></i>
-      <p>Periodo Creado con éxito <i class='bx bx-x close-tag'></i></p>
+    <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+      <p>Periodo: ${name} creado con éxito</p>
     `;
     succesPost.classList.add("aviso-click");
-
-    let xAdvice = document.querySelector(".close-tag");
-
-    xAdvice.addEventListener("click", function () {
-      location.reload();
-    });
   }
+  setTimeout(function () {
+    location.reload();
+  }, 4000);
 });

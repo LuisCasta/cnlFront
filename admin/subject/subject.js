@@ -90,12 +90,6 @@ btnSubject.addEventListener("click", async (e) => {
       <p>Materia: ${name} creada con éxito</p>
     `;
     succesPost.classList.add("aviso-click");
-
-    // let xAdvice = document.querySelector(".close-tag");
-
-    // xAdvice.addEventListener("click", function () {
-    //   location.reload();
-    // });
   }
 
   setTimeout(function () {

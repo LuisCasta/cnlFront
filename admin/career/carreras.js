@@ -14,6 +14,9 @@ async function loadCareers() {
   } else {
     const countCareers = document.getElementById("spanTitle");
     countCareers.textContent = careers.data.length;
+    careers.data.sort((a, b) => {
+      return b.id - a.id;
+    });
     careers.data.map((carrer) => {
       const { id, name, description, active } = carrer;
       salida += `
@@ -62,38 +65,26 @@ btnCarrera.addEventListener("click", async (e) => {
   const code = "0";
   const name = document.getElementById("nameCarrera").value;
   const description = document.getElementById("descripcionCarrera").value;
-
   const data = { name, description, code };
-  const newCareer = await create(data);
-
-  if (newCareer.code != 200) {
-    setTimeout(function () {
-      succesPost.classList.add("aviso-click");
-      succesPost.innerHTML = `
-      <i class='bx bx-error' style="background-color:##FEE4E2;color:#D92D20;padding:10px;border-radius:8px"></i>
-      <p>${newCareer.message}</p>`;
-    }, 10);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
-  } else {
-    // alert(`ID de Carrera ${newCareer.data.id}`);
-
-    setTimeout(function () {
-      succesPost.innerHTML = `
-      <i class='bx bx-check-circle' style="color:#039855;padding:10px;border-radius:8px"></i>
-      <p>Carrera de ${newCareer.data.name} Creada con éxito</p>
+  // Succes Post
+  succesPost.innerHTML = `
+      <i class='bx bx-loader-circle bx-spin' ></i>
+      <p>Creando nueva carrera...</p>
     `;
-      succesPost.classList.add("aviso-click");
-    }, 100);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
+  succesPost.classList.add("aviso-click");
+  const newCareer = await create(data);
+  if (newCareer.code != 200) alert(`Error ${newCareer.message}`);
+  else {
+    succesPost.innerHTML = `
+    <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+      <p>Materia: ${name} creada con éxito</p>
+    `;
+    succesPost.classList.add("aviso-click");
   }
+
+  setTimeout(function () {
+    location.reload();
+  }, 4000);
 });
 
 // EDITAR  CARRERA

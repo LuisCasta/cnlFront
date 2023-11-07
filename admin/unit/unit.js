@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 const idCourse = urlParams.get("idCurso");
 const tbody = document.getElementById("unit-table");
 const succesPost = document.getElementById("succes-post");
-let unitHtml;
+let unitHtml = "";
 // CARGAR UNIDADES DEL GRUPO
 async function loadUnit() {
   const units = await getAllByCourse(idCourse);
@@ -46,34 +46,24 @@ createBtnUnit.addEventListener("click", async (e) => {
   const name = document.getElementById("name-unit-form").value;
   const type = document.getElementById("type-unit").value;
   const data = { name, type, idCourse };
+  // Succes Post
+  succesPost.innerHTML = `
+   <i class='bx bx-loader-circle bx-spin' ></i>
+   <p>Creando nueva materia...</p>
+ `;
+  succesPost.classList.add("aviso-click");
+
   const newUnit = await create(data);
-  if (newUnit.code != 200) {
-    setTimeout(function () {
-      succesPost.classList.add("aviso-click");
-      succesPost.innerHTML = `
-        <i class='bx bx-error' 
-        style="background-color:##FEE4E2;color:
-        #D92D20;padding:10px;border-radius:8px">
-        </i>
-        <p>${newUnit.message}</p>`;
-    }, 10);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
-  } else {
-    setTimeout(function () {
-      succesPost.innerHTML = `
-        <i class='bx bx-check-circle' style="color:#039855;padding:10px;border-radius:8px"></i>
-        <p>Unidad de ${newUnit.data.name} Creada con éxito</p>
-      `;
-      succesPost.classList.add("aviso-click");
-    }, 100);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
+  if (newUnit.code != 200) alert(`Error ${newUnit.message}`);
+  else {
+    succesPost.innerHTML = `
+ <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+   <p>Materia: ${name} creada con éxito</p>
+ `;
+    succesPost.classList.add("aviso-click");
   }
+
+  setTimeout(function () {
+    location.reload();
+  }, 4000);
 });

@@ -43,34 +43,25 @@ btnLesson2.addEventListener("click", async (e) => {
   //   const startClass = document.getElementById("start-class").value;
   //   const endClass = document.getElementById("end-class").value;
   const data = { name, description, idUnit, idCourse };
+
+  // Succes Post
+  succesPost.innerHTML = `
+      <i class='bx bx-loader-circle bx-spin' ></i>
+      <p>Creando nueva materia...</p>
+    `;
+  succesPost.classList.add("aviso-click");
+
   const newLesson = await create(data);
-  if (newLesson.code != 200) {
-    setTimeout(function () {
-      succesPost.classList.add("aviso-click");
-      succesPost.innerHTML = `
-        <i class='bx bx-error' 
-        style="background-color:##FEE4E2;color:
-        #D92D20;padding:10px;border-radius:8px">
-        </i>
-        <p>${newLesson.message}</p>`;
-    }, 10);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
-  } else {
-    setTimeout(function () {
-      succesPost.innerHTML = `
-        <i class='bx bx-check-circle' style="color:#039855;padding:10px;border-radius:8px"></i>
-        <p>Clase ${newLesson.data.name} Creada con éxito</p>
-      `;
-      succesPost.classList.add("aviso-click");
-    }, 100);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
+  if (newLesson.code != 200) alert(`Error ${newLesson.message}`);
+  else {
+    succesPost.innerHTML = `
+    <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+      <p>Materia: ${name} creada con éxito</p>
+    `;
+    succesPost.classList.add("aviso-click");
   }
+
+  setTimeout(function () {
+    location.reload();
+  }, 4000);
 });

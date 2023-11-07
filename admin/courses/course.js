@@ -119,36 +119,24 @@ btnCurso.addEventListener("click", async (e) => {
     exam: 0,
     proyect: 0,
   };
-  console.log(data);
+  // Succes Post
+  succesPost.innerHTML = `
+   <i class='bx bx-loader-circle bx-spin' ></i>
+   <p>Creando un nuevo curso...</p>
+ `;
+  succesPost.classList.add("aviso-click");
   const newCurso = await create(data);
-  if (newCurso.code != 200) {
-    setTimeout(function () {
-      succesPost.classList.add("aviso-click");
-      succesPost.innerHTML = `
-      <i class='bx bx-error' style="background-color:##FEE4E2;color:#D92D20;padding:10px;border-radius:8px"></i>
-      <p>${newCurso.message}</p>`;
-    }, 10);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
-  } else {
-    // alert(`ID de Carrera ${newCurso.data.id}`);
-
-    setTimeout(function () {
-      succesPost.innerHTML = `
-      <i class='bx bx-check-circle' style="color:#039855;padding:10px;border-radius:8px"></i>
-      <p>Curso de ${newCurso.data.name} Creado con éxito</p>
-    `;
-      succesPost.classList.add("aviso-click");
-    }, 100);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
+  if (newCurso.code != 200) alert(`Error ${newCurso.message}`);
+  else {
+    succesPost.innerHTML = `
+ <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+   <p>Curso: ${name} creado con éxito</p>
+ `;
+    succesPost.classList.add("aviso-click");
   }
+  setTimeout(function () {
+    location.reload();
+  }, 4000);
 });
 
 // EDITAR  CARRERA

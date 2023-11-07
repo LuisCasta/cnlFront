@@ -24,3 +24,7 @@ table {
     box-shadow: var(--box-shadow);
     border-radius: 8px;
 }
+
+.mentor-cog a {
+    text-decoration: none;
+}

@@ -57,38 +57,24 @@ revisarActividadBtn.addEventListener("click", async (e) => {
   const score = document.getElementById("link-revisar").value;
   const commentScore = document.getElementById("comments").value;
   const data = { actStudId, commentScore, score };
+  // Succes Post
+  succesPost.innerHTML = `
+   <i class='bx bx-loader-circle bx-spin' ></i>
+   <p>Revisando Actividad ...</p>
+ `;
+  succesPost.classList.add("aviso-click");
 
-  console.log(data);
   const revisarActividad = await chekActivityStudentById(data);
-  if (revisarActividad.code != 200) {
-    alert(`Error ${revisarActividad.message}`);
-
-    setTimeout(function () {
-      succesPost.classList.add("aviso-click");
-      succesPost.innerHTML = `
-        <i class='bx bx-error' 
-        style="background-color:##FEE4E2;color:
-        #D92D20;padding:10px;border-radius:8px">
-        </i>
-        <p>${revisarActividad.message}</p>`;
-    }, 10);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
-  } else {
-    setTimeout(function () {
-      succesPost.innerHTML = `
-        <i class='bx bx-check-circle' style="color:#039855;padding:10px;border-radius:8px"></i>
-        <p>Actividad ${revisarActividad.data.actStudId} revisada con éxito</p>
-      `;
-      succesPost.classList.add("aviso-click");
-    }, 100);
-
-    setTimeout(function () {
-      succesPost.innerHTML = "";
-      succesPost.classList.remove("aviso-click");
-    }, 6500);
+  if (revisarActividad.code != 200) alert(`Error ${revisarActividad.message}`);
+  else {
+    succesPost.innerHTML = `
+ <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+   <p>Actividad revisada</p>
+ `;
+    succesPost.classList.add("aviso-click");
   }
+
+  setTimeout(function () {
+    location.reload();
+  }, 4000);
 });
