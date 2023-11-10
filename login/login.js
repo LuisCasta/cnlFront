@@ -8,7 +8,9 @@ login.addEventListener("click", loginCnl);
 function loginCnl() {
   if (pw.value === "cnl" && correo.value === "cnl") {
     login.href = "admin/career/career.html";
-  } else {
+  } else if (pw.value === "master" && correo.value === "master") {
+    login.href = "admin/career/career.html";
+  }else {
     alert("Usuario o contraseña incorrecta");
     correo.value = "";
     pw.value = "";
