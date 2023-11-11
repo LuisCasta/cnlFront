@@ -87,8 +87,7 @@ const getById = async (id) => {
 };
 
 const getTypeUnits = async () => {
-
-  const unit = await getApi(`typeActivity/all`);
+  const unit = await getApi(`typeUnit/all`);
 
   if (unit.status != 200)
     return {

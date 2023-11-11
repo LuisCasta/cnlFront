@@ -16,6 +16,11 @@ function cargarSideNav() {
             <i class='bx bx-book-open bx-sm'></i></a>
             <p class="tooltip">Cursos</p>
           </li>
+          <li>
+          <a href="rate/rate.html">
+          <i class="bx bxs-star-half bx-sm"></i></a>
+          <p class="tooltip">Calificaciones</p>
+        </li>
         </ul>
       </div>
       <!-- PERFIL -->

@@ -51,14 +51,17 @@ main {
     text-align: left;
     transition: .5s ease-out;
     background-color: var(--tooltip-bk);
-    padding: 8px 12px;
+    padding: 5px 15px;
     color: #fff;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 12px;
     font-weight: 600;
     text-wrap: nowrap;
+    display: flex;
     text-align: center;
     opacity: 0;
+    align-items: center;
+    justify-content: center;
 }
 
 .navegacion-vista ul li:hover .tooltip {

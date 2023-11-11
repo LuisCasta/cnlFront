@@ -15,12 +15,12 @@ async function loadUnit() {
   } else {
     const countlessons = document.getElementById("spanTitle");
     countlessons.textContent = units.data.length;
+    // console.log(units.data);
     units.data.forEach((unidad) => {
       const { id, type, name } = unidad;
       hrefMentor.href = `../mentor.html?idMentor=${idMentor}`;
       unitHtml += `
       <tr>
-        <td data-cell="Id">${id}</td>
         <td data-cell="Nombre">${name}</td>
         <td data-cell="Type">${type}</td>
         <td data-cell="Add Lessons">
@@ -28,7 +28,7 @@ async function loadUnit() {
         </td>
         <td data-cell="Actions">
         <div class="actions">
-          <button data-id="${id}"><i class='bx bx-edit' ></i></button>
+          <button data-id="${id}" id="btn${id}" ><i class='bx bx-edit' ></i></button>
           <button data-id="${id}"><i class='bx bx-trash' ></i></button>
         </div>
         </td>
@@ -37,6 +37,8 @@ async function loadUnit() {
     });
     tbody.innerHTML = unitHtml;
   }
+  await loadTypeUnits();
+  // await btnSelectConfig();
 }
 
 // CREAR UNA NUEVA UNIDAD
@@ -68,3 +70,21 @@ createBtnUnit.addEventListener("click", async (e) => {
     location.reload();
   }, 4000);
 });
+
+let optionsType = "";
+async function loadTypeUnits() {
+  const typeUnis = await getTypeUnits();
+  if (typeUnis.code != 200) {
+    console.log(`Error ${typeUnis.message}`);
+  } else {
+    // console.log(typeUnis.data);
+    typeUnis.data.forEach((type) => {
+      const { id, name } = type;
+      optionsType += `
+      <option value=${id}>${name}</option>
+      `;
+    });
+    const type = document.getElementById("type-unit");
+    type.innerHTML = optionsType;
+  }
+}

@@ -19,14 +19,19 @@
     border-radius: 10px;
 }
 
+.card-header-2 h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
 .tabs-buttons a {
     padding: 20px;
     color: var(--primary-color);
     /* border-bottom: 2px solid var(--primary-color); */
     cursor: pointer;
     transition: .2s ease-in-out;
-
-
 }
 
 @keyframes fadeIn {
@@ -98,4 +103,10 @@
 
 .form-select input {
     width: 100%;
+}
+
+@media (max-width:574px) {
+    .tabs-buttons a {
+        padding: 10px;
+    }
 }

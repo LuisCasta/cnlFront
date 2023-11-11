@@ -2,7 +2,9 @@ const btnLesson = document.getElementById("clases");
 const btnActiv = document.getElementById("activ");
 const btnStud = document.getElementById("students");
 const btnCall = document.getElementById("calls");
+const btnRates = document.getElementById("rates");
 // contenedores
+const contRate = document.getElementById("rates-div");
 const contLesson = document.getElementById("div-clases");
 const contActiv = document.getElementById("div-actividades");
 const conStud = document.getElementById("div-alumnos");
@@ -12,6 +14,7 @@ const contCall = document.getElementById("div-call");
 conStud.classList.add("disabled");
 contCall.classList.add("disabled");
 contActiv.classList.add("disabled");
+contRate.classList.add("disabled");
 
 btnLesson.classList.add("button-bottom");
 
@@ -19,6 +22,7 @@ btnActiv.addEventListener("click", ocultarDivs);
 btnLesson.addEventListener("click", ocultarDivs1);
 btnStud.addEventListener("click", ocultarDivs2);
 btnCall.addEventListener("click", ocultarDivs3);
+btnRates.addEventListener("click", ocultarDivs4);
 
 function ocultarDivs() {
   // CLASES EN CONTAINER
@@ -26,12 +30,14 @@ function ocultarDivs() {
   conStud.classList.add("disabled");
   contCall.classList.add("disabled");
   contActiv.classList.remove("disabled");
+  contRate.classList.add("disabled");
 
   //   clases en Botones
   btnActiv.classList.add("button-bottom");
   btnLesson.classList.remove("button-bottom");
   btnStud.classList.remove("button-bottom");
   btnCall.classList.remove("button-bottom");
+  btnRates.classList.remove("button-bottom");
 }
 
 function ocultarDivs1() {
@@ -39,11 +45,14 @@ function ocultarDivs1() {
   conStud.classList.add("disabled");
   contCall.classList.add("disabled");
   contActiv.classList.add("disabled");
+  contRate.classList.add("disabled");
+
   //   clases en Botones
   btnLesson.classList.add("button-bottom");
   btnActiv.classList.remove("button-bottom");
   btnStud.classList.remove("button-bottom");
   btnCall.classList.remove("button-bottom");
+  btnRates.classList.remove("button-bottom");
 }
 
 function ocultarDivs2() {
@@ -51,11 +60,14 @@ function ocultarDivs2() {
   conStud.classList.remove("disabled");
   contCall.classList.add("disabled");
   contActiv.classList.add("disabled");
+  contRate.classList.add("disabled");
+
   //   clases en Botones
   btnStud.classList.add("button-bottom");
   btnCall.classList.remove("button-bottom");
   btnLesson.classList.remove("button-bottom");
   btnActiv.classList.remove("button-bottom");
+  btnRates.classList.remove("button-bottom");
 }
 
 function ocultarDivs3() {
@@ -63,9 +75,26 @@ function ocultarDivs3() {
   conStud.classList.add("disabled");
   contCall.classList.remove("disabled");
   contActiv.classList.add("disabled");
+  contRate.classList.add("disabled");
+
   //   clases en Botones
   btnCall.classList.add("button-bottom");
   btnStud.classList.remove("button-bottom");
   btnLesson.classList.remove("button-bottom");
   btnActiv.classList.remove("button-bottom");
+  btnRates.classList.remove("button-bottom");
+}
+
+function ocultarDivs4() {
+  contLesson.classList.add("disabled");
+  conStud.classList.add("disabled");
+  contCall.classList.add("disabled");
+  contActiv.classList.add("disabled");
+  contRate.classList.remove("disabled");
+  //   clases en Botones
+  btnCall.classList.remove("button-bottom");
+  btnStud.classList.remove("button-bottom");
+  btnLesson.classList.remove("button-bottom");
+  btnActiv.classList.remove("button-bottom");
+  btnRates.classList.add("button-bottom");
 }
