@@ -12,13 +12,15 @@ function cargarSideNav() {
       <div class="navegacion-vista">
         <ul class="ul-navigate">
           <li>
-            <a href="../mentor.html?idMentor=1">
-            <i class='bx bx-book-open bx-sm'></i></a>
+            <a href="mentor.html?idMentor=1">
+              <i class='bx bx-book-open bx-sm'></i>
+            </a>
             <p class="tooltip">Cursos</p>
           </li>
           <li>
           <a href="rate/rate.html">
-          <i class="bx bxs-star-half bx-sm"></i></a>
+            <i class="bx bxs-star-half bx-sm"></i>
+          </a>
           <p class="tooltip">Calificaciones</p>
         </li>
         </ul>

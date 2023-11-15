@@ -40,9 +40,10 @@ table {
     width: 90%;
     z-index: -3;
     transition: .2s ease-in-out;
+    opacity: 0;
 }
 
-.edit-course-rate form {
+.form {
     padding: 20px;
     width: 350px;
     background-color: #fff;
@@ -65,16 +66,17 @@ table {
     z-index: 9999;
     animation: course .2s ease-in-out;
     transition: .2s;
+    opacity: 1;
 }
+
 
 @keyframes course {
     from {
-        opacity: 0;
         transform: translateY(-20px);
+
     }
 
     to {
-        opacity: 1;
         transform: translateY(0px);
     }
 

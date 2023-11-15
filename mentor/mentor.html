@@ -31,7 +31,7 @@
 
       <!-- BUSCADOR -->
       <div class="finder">
-        <input type="search" />
+        <input type="search" placeholder="Buscar" />
       </div>
       <!-- TABLAS DE CURSOS -->
       <div class="container-Table">
@@ -54,7 +54,26 @@
           <tbody id="tbody-cursos"></tbody>
         </table>
       </div>
-      <div class="edit-course-rate"></div>
+      <div class="edit-course-rate">
+        <div class="form">
+          <i class="bx bx-note bx-sm" class="icon-task"></i>
+          <h4>Configura las calificaciones del Curso</h4>
+          <input type="text" id="nameModal" style="display: none" />
+          <input type="text" id="descriptionModal" style="display: none" />
+          <input type="text" id="elementId" style="display: none" />
+          <input id="task" type="number" name="tarea" placeholder="tarea" />
+          <input id="exam" type="number" name="examen" placeholder="examen" />
+          <input
+            id="proyect"
+            type="number"
+            name="proyecto"
+            placeholder="proyecto"
+          />
+          <input id="input-main" data-id="${4}" style="display: none" />
+          <button type="submit" id="btn-guardar-config-curso">Guardar</button>
+          <button id="close-modal-rate">Cancelar</button>
+        </div>
+      </div>
     </main>
     <button class="responsive" id="btnResponsive">
       <i class="bx bx-menu bx-tada-hover"></i>
