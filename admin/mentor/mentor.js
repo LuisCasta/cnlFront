@@ -66,20 +66,24 @@ btnMentor.addEventListener("click", async (e) => {
 
   const data = { mail, password, firstName, name };
 
+  // Succes Post
   succesPost.innerHTML = `
-    <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-    <p>Creando nuevo Maestro...</p>
-  `;
+ <i class='bx bx-loader-circle bx-spin' ></i>
+ <p>Creando nueva docente<p>
+`;
   succesPost.classList.add("aviso-click");
-  const newMentor = await create(data);
 
+  const newMentor = await create(data);
   if (newMentor.code != 200) alert(`Error ${newMentor.message}`);
   else {
-    alert(`ID de Carrera ${newMentor.data.id}`);
     succesPost.innerHTML = `
-    <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
-    <p>Mentor Creado con éxito</p>
-  `;
+<i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+ <p>Docente: ${name} creado con éxito</p>
+`;
     succesPost.classList.add("aviso-click");
   }
+
+  setTimeout(function () {
+    location.reload();
+  }, 4000);
 });

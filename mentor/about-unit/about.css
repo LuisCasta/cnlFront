@@ -110,3 +110,18 @@
         padding: 10px;
     }
 }
+
+td input {
+    width: 100%;
+    border: none;
+}
+
+.action-cali {
+    display: flex;
+    gap: 5px;
+}
+
+.action-cali button {
+    display: flex;
+    align-items: center;
+}

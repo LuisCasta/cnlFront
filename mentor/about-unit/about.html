@@ -223,7 +223,7 @@
               </h3>
             </div>
             <div class="container-Table">
-              <table>
+              <table class="table-quali">
                 <thead>
                   <caption>
                     <div class="caption">
@@ -233,23 +233,23 @@
                   </caption>
                   <tr>
                     <th>Nombre</th>
+                    <th>Examen</th>
+                    <th>Proyecto</th>
+                    <th>Tarea</th>
                     <th>Calificación</th>
-                    <th>Enviar Calificación</th>
+                    <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody id="table-rates">
                   <tr>
                     <td>América Juárez</td>
-                    <td>8.5</td>
-                    <td>
-                      <button><i class="bx bx-send"></i></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Jorge Zapico</td>
-                    <td>9.6</td>
-                    <td>
-                      <button><i class="bx bx-send"></i></button>
+                    <td><input type="number" placeholder="80" /></td>
+                    <td><input type="number" placeholder="50" /></td>
+                    <td><input type="number" placeholder="70" /></td>
+                    <td><input type="number" placeholder="90" /></td>
+                    <td class="action-cali" data-title="Actions">
+                      <button>Calcular</button>
+                      <button><i class="bx bx-send"></i>Guardar</button>
                     </td>
                   </tr>
                 </tbody>
@@ -272,6 +272,7 @@
     <script src="../lessons/lessons.js"></script>
     <script src="about.js"></script>
     <script src="tabs.js"></script>
+    <script src="calificaciones.js"></script>
     <script src="../sidenav.js"></script>
   </body>
 </html>

@@ -6,14 +6,16 @@ const login = document.getElementById("Inicio-sesion");
 
 login.addEventListener("click", loginCnl);
 function loginCnl() {
-  if (pw.value === "cnl" && correo.value === "cnl") {
+  if (
+    pw.value === "@@admin123@" &&
+    correo.value === "adminDemo@nuevalaguna.com"
+  ) {
     login.href = "admin/career/career.html";
   } else if (pw.value === "master" && correo.value === "master") {
     login.href = "admin/career/career.html";
-  }else {
+  } else {
     alert("Usuario o contraseña incorrecta");
     correo.value = "";
     pw.value = "";
   }
 }
-
