@@ -1,2 +1,15 @@
 @import url('../styles/style-generals.css');
 @import url('../styles/sidenav.css');
+
+.materia-select {
+    width: 100%;
+}
+
+.materia-select p {
+    font-size: 11px;
+    position: absolute;
+    font-weight: 600;
+    top: -18px;
+    left: 8px;
+    transition: .2s ease;
+}

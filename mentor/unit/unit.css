@@ -9,3 +9,7 @@
     border-radius: 5px;
     font-size: 14px;
 }
+
+.form-select input {
+    width: 100%;
+}

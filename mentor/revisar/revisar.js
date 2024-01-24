@@ -3,9 +3,20 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idActivity = urlParams.get("actStudId");
 const actStudId = urlParams.get("actStudId");
+const idMentor = urlParams.get("idMentor");
+const idCourse = urlParams.get("idCurso");
+const idUnit = urlParams.get("idUnit");
 const succesPost = document.getElementById("succes-post");
 const revisarActividadBtn = document.getElementById("revisar-actividad");
 const tabListStu = document.getElementById("listActStud");
+const backLink = document.getElementById("bActiv");
+// console.log(backLink);
+
+// console.log(`este es idCurso: ${idCourse}`);
+// console.log(`este es idUnit: ${idUnit}`);
+
+backLink.href = `../about-unit/about.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}`;
+
 async function loadGetActivityStudentById() {
   const revisarAct = await getByIdActivity(idActivity);
   if (revisarAct.code != 200) {
@@ -41,12 +52,13 @@ async function loadListCheck() {
       <td data-cell="Inicio">${estatus}</td>
       <td data-cell="Revisar">
         <button>
-          <a class="btn-check" href="../revisar/revisar.html/">Revisar</a>
+          <a class="btn-check" href="../revisar/revisar.html?idMentor=${idMentor}">Revisar</a>
         </button>
       </td>
     </tr>
     `;
     });
+
     tabListStu.innerHTML = listActivStu;
   }
 }

@@ -22,15 +22,16 @@
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <div class="breadcumbs">
-        <a href="">Mentor</a>
+        <a href="">Cursos</a>
         <i class="bx bx-right-arrow-alt"></i>
         <a id="href-unidad">Unidad</a>
         <i class="bx bx-right-arrow-alt"></i>
         <p>Acerca de la unidad</p>
       </div>
       <div class="card-header">
-        <div class="text-Header">
+        <div class="text-header">
           <h2>Acerca de la Unidad</h2>
+          <p>Gestiona las unidades, crea videollamadas,revisa y crea actividades, crea clases y califica a tus alumnos</p>
         </div>
       </div>
 
@@ -52,12 +53,17 @@
                 <p>Crea las clases y configúralas</p>
               </div>
               <div class="form-header">
+                <div class="form-select">
+                  <p>Nombre de la clase</p>
                 <input
                   type="text"
                   id="name-clase-form"
-                  placeholder="Nombre de la clase"
                 />
-                <input type="text" id="des-clase" placeholder="Descripción" />
+              </div>
+              <div class="form-select">
+                <p>Descripción</p>
+                <input type="text" id="des-clase" />
+              </div>
                 <button id="agregar-clase">Agregar Clase</button>
               </div>
             </div>
@@ -91,14 +97,14 @@
                   Agrega actuvidades a tus cursos, consúltalas y configúralas
                 </p>
               </div>
+              <div class="form-select select-text-area">
+                <p>Descripción</p>
+                <textarea type="text" id="des-actividad" /></textarea>
+              </div>
               <div class="form-header">
                 <div class="form-select">
                   <p>Nombre actividad</p>
                   <input type="text" id="name-activ" />
-                </div>
-                <div class="form-select">
-                  <p>Descripción</p>
-                  <input type="text" id="des-actividad" />
                 </div>
                 <div class="form-select">
                   <p>Inicio</p>
@@ -125,8 +131,9 @@
                   <select name="lessons" id="lesson-id"></select>
                 </div> -->
                 <button id="agregar-actividad">Agregar actividad</button>
-              </div>
             </div>
+           
+          </div>
             <!-- TABLA DE ACRIVIDADES CREADAS -->
             <div class="container-Table">
               <table>
@@ -175,7 +182,7 @@
             </div>
           </div>
           <div class="videollamadas" id="div-call">
-            <!-- TABLA DE ACRIVIDADES CREADAS -->
+            <!-- TABLA DE ACTIVIDADES CREADAS -->
             <div class="card-header-2">
               <h3><i class="bx bx-video"></i>Videollamadas</h3>
               <div class="heading">
@@ -183,17 +190,24 @@
                 <p>Crea videollamadas y confíguralas</p>
               </div>
               <div class="form-header">
+                <div class="form-select">
+                  <p>Nombre de Videollamada</p>
                 <input
                   type="text"
                   id="name-call"
-                  placeholder="Nombre de Videollamada"
                 />
-                <input type="text" id="call-desc" placeholder="Descripción" />
+              </div>
+              <div class="form-select">
+                <p>Descripción</p>
+                <input type="text" id="call-desc" />
+              </div>
+                <div class="form-select">
+                <p>Comparte el link</p>
                 <input
                   type="text"
                   id="link-call"
-                  placeholder="Comparte el link"
                 />
+              </div>
                 <button id="btn-createCall">Agregar Videollamada</button>
               </div>
             </div>
@@ -242,12 +256,12 @@
                 </thead>
                 <tbody id="table-rates">
                   <tr>
-                    <td>América Juárez</td>
-                    <td><input type="number" placeholder="80" /></td>
-                    <td><input type="number" placeholder="50" /></td>
-                    <td><input type="number" placeholder="70" /></td>
-                    <td><input type="number" placeholder="90" /></td>
-                    <td class="action-cali" data-title="Actions">
+                    <td data-cell="Nombre">América Juárez</td>
+                    <td data-cell="Examen"><input type="number" placeholder="80" /></td>
+                    <td data-cell="Proyecto"><input type="number" placeholder="50" /></td>
+                    <td data-cell="Tarea"><input type="number" placeholder="70" /></td>
+                    <td data-cell="Calificación"><input type="number" placeholder="90" /></td>
+                    <td data-cell="Acciones" class="action-cali" data-title="Actions">
                       <button>Calcular</button>
                       <button><i class="bx bx-send"></i>Guardar</button>
                     </td>
@@ -272,6 +286,7 @@
     <script src="../lessons/lessons.js"></script>
     <script src="about.js"></script>
     <script src="tabs.js"></script>
+    <script src="../../api/rates.js"></script>
     <script src="calificaciones.js"></script>
     <script src="../sidenav.js"></script>
   </body>

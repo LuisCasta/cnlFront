@@ -6,6 +6,7 @@ const idMentor = urlParams.get("idMentor");
 const tbody = document.getElementById("unit-table");
 const succesPost = document.getElementById("succes-post");
 const hrefMentor = document.getElementById("href-mentor");
+// console.log(idMentor);
 let unitHtml = "";
 // CARGAR UNIDADES DEL GRUPO
 async function loadUnit() {
@@ -18,13 +19,13 @@ async function loadUnit() {
     // console.log(units.data);
     units.data.forEach((unidad) => {
       const { id, type, name } = unidad;
-      hrefMentor.href = `../mentor.html?idMentor=${idMentor}`;
+      hrefMentor.href = `../mentor/mentor.html?idMentor=${idMentor}`;
       unitHtml += `
       <tr>
         <td data-cell="Nombre">${name}</td>
         <td data-cell="Type">${type}</td>
         <td data-cell="Add Lessons">
-          <a class="a-unit" href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}">Ver unidad</a>
+          <a class="a-unit" href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}">Ver unidad</a>
         </td>
         <td data-cell="Actions">
         <div class="actions">

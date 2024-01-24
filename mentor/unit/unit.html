@@ -20,24 +20,26 @@
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <div class="breadcumbs">
-        <a id="href-mentor"><p>Mentor</p></a>
+        <a id="href-mentor"><p>Cursos</p></a>
         <i class="bx bx-right-arrow-alt"></i>
         <p>Unidad</p>
       </div>
 
       <!-- FORMULARIO DEL HEADER -->
       <div class="card-header">
-        <div class="heading">
+        <div class="text-header">
           <h2 id="name-group">Agregar Unidad</h2>
-          <p>Agrega una unidad, consulta y configúrala</p>
+          <p>Agrega unidades, consúltalas y configúralas</p>
         </div>
         <div class="form-header">
-          <input
-            type="text"
-            id="name-unit-form"
-            placeholder="Nombre de la Unidad"
-          />
-          <select id="type-unit" placeholder="Tipo de Unidad"></select>
+          <div class="form-select">
+            <p>Nombre de la Unidad</p>
+            <input type="text" id="name-unit-form" />
+          </div>
+          <div class="form-select">
+            <p>Tipo de Unidad</p>
+            <select id="type-unit"></select>
+          </div>
           <button id="agregar-unidad">Agregar Unidad</button>
         </div>
       </div>

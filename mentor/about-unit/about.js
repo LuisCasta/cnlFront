@@ -2,6 +2,7 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idUnit = urlParams.get("idUnit");
+const idMentor = urlParams.get("idMentor");
 const idCourse = urlParams.get("idCurso");
 const tbody = document.getElementById("table-lesson");
 const succesPost = document.getElementById("succes-post");
@@ -12,6 +13,8 @@ const tableStudent = document.getElementById("table-students");
 const tableVideoCalls = document.getElementById("table-calls");
 const selectTypeActivity = document.getElementById("type-activity");
 // const hreMentor = document.getElementById("");
+
+// console.log(idUnit);
 
 let lessonHtml = "";
 async function loadAllLessonsByUnit() {
@@ -24,7 +27,7 @@ async function loadAllLessonsByUnit() {
     countlessons.textContent = lessons.data.length;
     lessons.data.forEach((lesson) => {
       const { name, description, id } = lesson;
-      hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}`;
+      hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}`;
       lessonHtml += `
         <tr>
             <td data-cell="Id">${id}</td>
@@ -70,12 +73,12 @@ async function loadActivityByUnit() {
             <td data-cell="Descripción">${description}</td>
             <td data-cell="Inicio">${dateStart.slice(0, -14)}</td>
             <td data-cell="Revisar">
-            <a href="../revisar/revisar.html?actStudId=${id}">
+            <a href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&actStudId=${id}">
             <button>Revisar</button></a>
             </td>
         </tr>
         `;
-      console.log(activity.id);
+      // console.log(activity.id);
     });
     tableAct.innerHTML = activityHtml;
   }
@@ -137,8 +140,10 @@ async function loadVideoByIdCourse() {
       videocalls += `
       <tr>
       <td data-cell="Nombre">${name}</td>
-      <td data-cell="Descripción">${description}</td>
-      <td data-cell="link">${link}</td>
+      <td data-cell="Descripción">${
+        description ? "null" || "undefined" : "Sin descripción"
+      }</td>
+      <td data-cell="Link"><button><a style="color:white;" target="_blank" href="${link}">Entrar</a></button></td>
       </td>
   </tr>
   `;
@@ -191,10 +196,10 @@ async function loadStudentByIdCourse() {
     // console.log(newStudentsIdCourse.message);
   } else {
     studentsidCourse.data.forEach((studentId) => {
-      const { id, name, firstName } = studentId;
+      const { idStudent, name, firstName } = studentId;
       studentIdCourse += `
       <tr>
-      <td data-cell="Id">${id}</td>
+      <td data-cell="Id">${idStudent}</td>
       <td data-cell="Nombre">${name}</td>
       <td data-cell="Descripción">${firstName}</td>
       <td data-cell="Actions">

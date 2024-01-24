@@ -18,7 +18,7 @@ async function loadCursosById() {
       <td data-cell="Description">${description}</td>
       <td data-cell="Unidades" class="mentor-cog">
       <div>
-       <a href="unit/unit.html?idCurso=${id}&idMentor=${idMentor}">
+       <a href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}">
         <button data-id="${id}" class="unidad">
           <i class='bx bx-customize'></i>
         </button>

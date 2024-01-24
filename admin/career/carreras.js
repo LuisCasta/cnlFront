@@ -3,7 +3,7 @@ let salida = "";
 const tbody = document.getElementById("carreras");
 const succesPost = document.getElementById("succes-post");
 const modifyCarrera = document.getElementById("modify-carrera");
-const aceptButton = document.getElementById("aceptModify");
+const aceptButton = document.getElementById("cancelModify");
 const modalDelete = document.getElementById("delete-carrera");
 const aceptDelete = document.getElementById("acept-delete");
 

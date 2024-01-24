@@ -30,6 +30,6 @@ async function loginCnlMentor() {
   } else {
     const { id, name, firstName, mail } = mentor.data;
 
-    location.href = `mentor.html?idMentor=${id}`;
+    location.href = `mentor/mentor.html?idMentor=${id}`;
   }
 }

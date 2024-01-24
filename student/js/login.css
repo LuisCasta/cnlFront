@@ -66,6 +66,10 @@ body {
     width: 100%;
 }
 
+.login-btn {
+    width: 100%;
+}
+
 @media (max-width:600px) {
     .side-Nav {
         display: none;
