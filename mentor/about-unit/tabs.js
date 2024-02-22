@@ -1,100 +1,54 @@
-const btnLesson = document.getElementById("clases");
-const btnActiv = document.getElementById("activ");
-const btnStud = document.getElementById("students");
-const btnCall = document.getElementById("calls");
-const btnRates = document.getElementById("rates");
+function obtainId(id) {
+  const getId = document.getElementById(id);
+  return getId;
+}
+const btnLesson = obtainId("clases");
+const btnActiv = obtainId("activ");
+const btnStud = obtainId("students");
+const btnCall = obtainId("calls");
+const btnRates = obtainId("rates");
 // contenedores
-const contRate = document.getElementById("rates-div");
-const contLesson = document.getElementById("div-clases");
-const contActiv = document.getElementById("div-actividades");
-const conStud = document.getElementById("div-alumnos");
-const contCall = document.getElementById("div-call");
+const contRate = obtainId("rates-div");
+const contLesson = obtainId("div-clases");
+const contActiv = obtainId("div-actividades");
+const conStud = obtainId("div-alumnos");
+const contCall = obtainId("div-call");
 
-// contLesson.classList.add("disabled");
-conStud.classList.add("disabled");
-contCall.classList.add("disabled");
-contActiv.classList.add("disabled");
-contRate.classList.add("disabled");
+const buttons = [btnLesson, btnActiv, btnStud, btnCall, btnRates];
+const containers = [contLesson, contActiv, conStud, contCall, contRate];
 
-btnLesson.classList.add("button-bottom");
+buttons[0].classList.add("button-bottom");
+containers[1].classList.add("disabled");
+containers[2].classList.add("disabled");
+containers[3].classList.add("disabled");
+containers[4].classList.add("disabled");
 
-btnActiv.addEventListener("click", ocultarDivs);
-btnLesson.addEventListener("click", ocultarDivs1);
-btnStud.addEventListener("click", ocultarDivs2);
-btnCall.addEventListener("click", ocultarDivs3);
-btnRates.addEventListener("click", ocultarDivs4);
+buttons.forEach((btn, index) => {
+  btn.addEventListener("click", () => toggleVisibility(index));
+});
 
-function ocultarDivs() {
-  // CLASES EN CONTAINER
-  contLesson.classList.add("disabled");
-  conStud.classList.add("disabled");
-  contCall.classList.add("disabled");
-  contActiv.classList.remove("disabled");
-  contRate.classList.add("disabled");
-
-  //   clases en Botones
-  btnActiv.classList.add("button-bottom");
-  btnLesson.classList.remove("button-bottom");
-  btnStud.classList.remove("button-bottom");
-  btnCall.classList.remove("button-bottom");
-  btnRates.classList.remove("button-bottom");
-}
-
-function ocultarDivs1() {
-  contLesson.classList.remove("disabled");
-  conStud.classList.add("disabled");
-  contCall.classList.add("disabled");
-  contActiv.classList.add("disabled");
-  contRate.classList.add("disabled");
-
-  //   clases en Botones
-  btnLesson.classList.add("button-bottom");
-  btnActiv.classList.remove("button-bottom");
-  btnStud.classList.remove("button-bottom");
-  btnCall.classList.remove("button-bottom");
-  btnRates.classList.remove("button-bottom");
-}
-
-function ocultarDivs2() {
-  contLesson.classList.add("disabled");
-  conStud.classList.remove("disabled");
-  contCall.classList.add("disabled");
-  contActiv.classList.add("disabled");
-  contRate.classList.add("disabled");
-
-  //   clases en Botones
-  btnStud.classList.add("button-bottom");
-  btnCall.classList.remove("button-bottom");
-  btnLesson.classList.remove("button-bottom");
-  btnActiv.classList.remove("button-bottom");
-  btnRates.classList.remove("button-bottom");
-}
-
-function ocultarDivs3() {
-  contLesson.classList.add("disabled");
-  conStud.classList.add("disabled");
-  contCall.classList.remove("disabled");
-  contActiv.classList.add("disabled");
-  contRate.classList.add("disabled");
-
-  //   clases en Botones
-  btnCall.classList.add("button-bottom");
-  btnStud.classList.remove("button-bottom");
-  btnLesson.classList.remove("button-bottom");
-  btnActiv.classList.remove("button-bottom");
-  btnRates.classList.remove("button-bottom");
-}
-
-function ocultarDivs4() {
-  contLesson.classList.add("disabled");
-  conStud.classList.add("disabled");
-  contCall.classList.add("disabled");
-  contActiv.classList.add("disabled");
-  contRate.classList.remove("disabled");
-  //   clases en Botones
-  btnCall.classList.remove("button-bottom");
-  btnStud.classList.remove("button-bottom");
-  btnLesson.classList.remove("button-bottom");
-  btnActiv.classList.remove("button-bottom");
-  btnRates.classList.add("button-bottom");
+function toggleVisibility(index) {
+  // console.log(index);
+  for (const [i, value] of containers.entries()) {
+    if (value.classList.contains("disabled") && i === index) {
+      // console.log(i, value);
+      value.classList.remove("disabled");
+    } else {
+      if (!value.classList.contains("disabled") && i !== index) {
+        // console.log(i, "No contiene disabled");
+        value.classList.add("disabled");
+      }
+    }
+  }
+  for (const [i, value] of buttons.entries()) {
+    if (!value.classList.contains("button-bottom") && i === index) {
+      // console.log(i, "no la tiene");
+      value.classList.add("button-bottom");
+    } else {
+      if (value.classList.contains("button-bottom") && i !== index) {
+        // console.log(i, "no la tiene");
+        value.classList.remove("button-bottom");
+      }
+    }
+  }
 }

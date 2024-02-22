@@ -4,14 +4,14 @@ const urlParams = new URLSearchParams(queryString);
 const idUnit = urlParams.get("idUnit");
 const idMentor = urlParams.get("idMentor");
 const idCourse = urlParams.get("idCurso");
-const tbody = document.getElementById("table-lesson");
-const succesPost = document.getElementById("succes-post");
-const hrefUnidad = document.getElementById("href-unidad");
-const tableAct = document.getElementById("table-activity");
-const selectLesson = document.getElementById("lesson-id");
-const tableStudent = document.getElementById("table-students");
-const tableVideoCalls = document.getElementById("table-calls");
-const selectTypeActivity = document.getElementById("type-activity");
+const tbody = obtainId("table-lesson");
+const succesPost = obtainId("succes-post");
+const hrefUnidad = obtainId("href-unidad");
+const tableAct = obtainId("table-activity");
+const selectLesson = obtainId("lesson-id");
+const tableStudent = obtainId("table-students");
+const tableVideoCalls = obtainId("table-calls");
+const selectTypeActivity = obtainId("type-activity");
 // const hreMentor = document.getElementById("");
 
 // console.log(idUnit);
@@ -23,7 +23,7 @@ async function loadAllLessonsByUnit() {
   if (lessons.code != 200) {
     // console.log(`Error ${newLesson.message}`);
   } else {
-    const countlessons = document.getElementById("spanTitle");
+    const countlessons = obtainId("spanTitle");
     countlessons.textContent = lessons.data.length;
     lessons.data.forEach((lesson) => {
       const { name, description, id } = lesson;
@@ -63,7 +63,7 @@ async function loadActivityByUnit() {
     // countlessons.textContent = lessons.data.length;
     activities.data.forEach((activity) => {
       const { name, description, id, dateStart } = activity;
-      const countActs = document.getElementById("countActs");
+      const countActs = obtainId("countActs");
       countActs.textContent = activities.data.length;
       //   hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}`;
       activityHtml += `
@@ -88,12 +88,12 @@ const btnCreateActivity = document.getElementById("agregar-actividad");
 btnCreateActivity.addEventListener("click", async (e) => {
   e.preventDefault();
   const name = document.getElementById("name-activ").value;
-  const description = document.getElementById("des-actividad").value;
-  const dateStart = document.getElementById("inicio-act").value;
-  const dateEnd = document.getElementById("fin-act").value;
-  const intent = document.getElementById("intentos").value;
-  const link = document.getElementById("link-activity").value;
-  const type = document.getElementById("type-activity").value;
+  const description = obtainId("des-actividad").value;
+  const dateStart = obtainId("inicio-act").value;
+  const dateEnd = obtainId("fin-act").value;
+  const intent = obtainId("intentos").value;
+  const link = obtainId("link-activity").value;
+  const type = obtainId("type-activity").value;
   const data = {
     idLesson: 6,
     name,
@@ -153,12 +153,12 @@ async function loadVideoByIdCourse() {
 }
 
 // Crear la videollamada
-const btnCreatCall = document.getElementById("btn-createCall");
+const btnCreatCall = obtainId("btn-createCall");
 btnCreatCall.addEventListener("click", async (e) => {
   e.preventDefault();
-  const name = document.getElementById("name-call").value;
-  const description = document.getElementById("call-desc").value;
-  const link = document.getElementById("link-call").value;
+  const name = obtainId("name-call").value;
+  const description = obtainId("call-desc").value;
+  const link = obtainId("link-call").value;
 
   const data = {
     link,

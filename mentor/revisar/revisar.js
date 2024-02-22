@@ -1,4 +1,8 @@
 "use strict";
+function obtainId(id) {
+  const getID = document.getElementById(id);
+  return getID;
+}
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idActivity = urlParams.get("actStudId");
@@ -6,12 +10,12 @@ const actStudId = urlParams.get("actStudId");
 const idMentor = urlParams.get("idMentor");
 const idCourse = urlParams.get("idCurso");
 const idUnit = urlParams.get("idUnit");
-const succesPost = document.getElementById("succes-post");
-const revisarActividadBtn = document.getElementById("revisar-actividad");
-const tabListStu = document.getElementById("listActStud");
-const backLink = document.getElementById("bActiv");
-// console.log(backLink);
+const succesPost = obtainId("succes-post");
+const revisarActividadBtn = obtainId("revisar-actividad");
+const tabListStu = obtainId("listActStud");
+const backLink = obtainId("bActiv");
 
+// console.log(backLink);
 // console.log(`este es idCurso: ${idCourse}`);
 // console.log(`este es idUnit: ${idUnit}`);
 
@@ -23,8 +27,8 @@ async function loadGetActivityStudentById() {
     alert(`Error ${revisarAct.message}`);
   } else {
     const { name, description } = revisarAct.data;
-    const nameActivity = document.getElementById("name-activity");
-    const descAct = document.getElementById("descrip-act");
+    const nameActivity = obtainId("name-activity");
+    const descAct = obtainId("descrip-act");
     descAct.textContent = description;
     nameActivity.textContent = name;
   }
@@ -32,8 +36,8 @@ async function loadGetActivityStudentById() {
 
 async function loadActivityStudentById() {
   const revisarActStu = await getActivityStudentById(idActivity);
-  const commentStu = document.getElementById("coment-stu");
-  const linkstu = document.getElementById("link-act");
+  const commentStu = obtainId("coment-stu");
+  const linkstu = obtainId("link-act");
   commentStu.textContent = revisarActStu.data.commentStudent;
   linkstu.href = revisarActStu.data.link;
 }
@@ -66,8 +70,8 @@ async function loadListCheck() {
 revisarActividadBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
-  const score = document.getElementById("link-revisar").value;
-  const commentScore = document.getElementById("comments").value;
+  const score = obtainId("link-revisar").value;
+  const commentScore = obtainId("comments").value;
   const data = { actStudId, commentScore, score };
   // Succes Post
   succesPost.innerHTML = `

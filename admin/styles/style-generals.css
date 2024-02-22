@@ -333,14 +333,14 @@ p {
 }
 
 .container-table {
-    margin: 50px auto;
+    margin: 20px auto;
 }
 
 .container-Table {
-    margin: 50px auto;
+    margin: 20px auto;
 }
 
-@media(max-width:576px) {
+@media(max-width:1098px) {
 
     .container-table {
         display: flex;

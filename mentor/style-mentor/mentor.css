@@ -73,6 +73,15 @@ table {
     width: 100%;
 }
 
+.form-select p {
+    font-size: 11px;
+    position: absolute;
+    font-weight: 600;
+    top: -15px;
+    left: 8px;
+    transition: .2s ease;
+}
+
 @keyframes course {
     from {
         transform: translateY(-20px);

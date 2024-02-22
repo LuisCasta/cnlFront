@@ -1,32 +1,34 @@
 "use strict";
-const btnAc = document.getElementById("Ac");
-const btnVc = document.getElementById("vc");
-const btnCf = document.getElementById("cf");
+function obtainId(id) {
+  const getId = document.getElementById(id);
+  return getId;
+}
+const btnAc = obtainId("Ac");
+const btnVc = obtainId("vc");
+const btnCf = obtainId("cf");
 
-const containerAc = document.getElementById("acti");
-const containerVc = document.getElementById("vi");
-const containerCa = document.getElementById("cali");
+const containerAc = obtainId("acti");
+const containerVc = obtainId("vi");
+const containerCa = obtainId("cali");
 
 btnAc.classList.add("active");
-
 containerVc.classList.add("disable");
 containerCa.classList.add("disable");
 
-btnAc.addEventListener("click", cambiarVista);
-btnCf.addEventListener("click", cambiarVista2);
-btnVc.addEventListener("click", cambiarVista3);
-function cambiarVista() {
-  containerAc.classList.remove("disable");
-  containerCa.classList.add("disable");
-  containerVc.classList.add("disable");
-}
-function cambiarVista2() {
-  containerAc.classList.add("disable");
-  containerCa.classList.remove("disable");
-  containerVc.classList.add("disable");
-}
-function cambiarVista3() {
-  containerAc.classList.add("disable");
-  containerCa.classList.add("disable");
-  containerVc.classList.remove("disable");
+const buttons = [btnAc, btnVc, btnCf];
+const containers = [containerAc, containerVc, containerCa];
+
+buttons.forEach((btn, index) => {
+  btn.addEventListener("click", () => ocultarCambiar(index));
+});
+
+function ocultarCambiar(index) {
+  console.log(index, "ok");
+  for (const [i, value] of containers.entries()) {
+    if (value.classList.contains("disable") && i == index) {
+      value.classList.remove("disable");
+    } else if (!value.classList.contains("disable") && i !== index) {
+      value.classList.add("disable");
+    }
+  }
 }

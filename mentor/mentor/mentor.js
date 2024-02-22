@@ -3,8 +3,8 @@ let cursoMentorHtml = "";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idMentor = urlParams.get("idMentor");
-const divCursos = document.getElementById("tbody-cursos");
-const closeModalRate = document.getElementById("close-modal-rate");
+const divCursos = obtainId("tbody-cursos");
+const closeModalRate = obtainId("close-modal-rate");
 
 async function loadCursosById() {
   const cursoMentor = await getCourseByMentor(idMentor);
@@ -61,12 +61,12 @@ async function loadCursosById() {
         let proyect = buttonModal.getAttribute(`proyect_${id}`);
         let name = buttonModal.getAttribute(`name_${id}`);
         let description = buttonModal.getAttribute(`description_${id}`);
-        let inputExam = document.getElementById("exam");
-        let inputTask = document.getElementById("task");
-        let inputProyect = document.getElementById("proyect");
-        let inputName = document.getElementById("nameModal");
-        let inputDescription = document.getElementById("descriptionModal");
-        let idHide = document.getElementById("elementId");
+        let inputExam = obtainId("exam");
+        let inputTask = obtainId("task");
+        let inputProyect = obtainId("proyect");
+        let inputName = obtainId("nameModal");
+        let inputDescription = obtainId("descriptionModal");
+        let idHide = obtainId("elementId");
 
         inputExam.value = exam;
         inputTask.value = task;
@@ -76,19 +76,19 @@ async function loadCursosById() {
         inputDescription.value = description;
       }
 
-      const btnEnviar = document.getElementById("btn-guardar-config-curso");
+      const btnEnviar = obtainId("btn-guardar-config-curso");
       // console.log(btnEnviar);
 
       btnEnviar.addEventListener("click", checkPorcentaje);
 
       async function checkPorcentaje() {
-        const id = document.getElementById("elementId").value;
-        const task = parseInt(document.getElementById("task").value);
-        const proyect = parseInt(document.getElementById("proyect").value);
-        const exam = parseInt(document.getElementById("exam").value);
+        const id = obtainId("elementId").value;
+        const task = parseInt(obtainId("task").value);
+        const proyect = parseInt(obtainId("proyect").value);
+        const exam = parseInt(obtainId("exam").value);
 
-        const name = document.getElementById("nameModal").value;
-        const description = document.getElementById("descriptionModal").value;
+        const name = obtainId("nameModal").value;
+        const description = obtainId("descriptionModal").value;
 
         let sumavalue = parseInt(task + exam + proyect, 10);
 

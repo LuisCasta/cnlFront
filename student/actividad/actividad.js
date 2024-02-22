@@ -2,8 +2,8 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idStudent = urlParams.get("idStudent");
-const tEvent = document.getElementById("t-Activ");
-const tVideo = document.getElementById("t-videocall");
+const tEvent = obtainId("t-Activ");
+const tVideo = obtainId("t-videocall");
 
 const idCourse = urlParams.get("idCourse");
 let tableHtml = "";
@@ -25,7 +25,7 @@ async function LoadActivitiesAgendaStudent() {
             </div>
         </td>
         <td data-cell="Nombre">${name}</td>
-        <td data-cell="Fecha entrega">${dateEnd}</td>
+        <td data-cell="Fecha entrega">${dateEnd.slice(0, -14)}</td>
         <td data-cell="Estatus">${estatus}</td>
         <td data-cell="Acciones">
            <div class="actions">
@@ -57,7 +57,11 @@ async function videoCallByCourse() {
             <p><i class="bx bx-note"></i>${name}</p>
             </div>
         </td>
-        <td data-cell="Descripción">${description}</td>
+        <td data-cell="Descripción">${
+          description === null || undefined || ""
+            ? "No hay descripción"
+            : description
+        }</td>
         <td data-cell="Link"><a class="link-videocalls" href="${link}">Entrar<a></td>
          </td>
      </tr>
