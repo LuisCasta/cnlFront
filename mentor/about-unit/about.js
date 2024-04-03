@@ -30,13 +30,12 @@ async function loadAllLessonsByUnit() {
       hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}`;
       lessonHtml += `
         <tr>
-            <td data-cell="Id">${id}</td>
             <td data-cell="Nombre">${name}</td>
             <td data-cell="Descripción">${description}</td>
-            <td data-cell="Actions">
+            <td data-cell="Acciones">
             <div class="actions">
-              <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
-              <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
+              <button data-id="${id}" data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
+              <button data-id="${id}" data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
               </div>
           </td>
         </tr>
@@ -65,16 +64,16 @@ async function loadActivityByUnit() {
       const { name, description, id, dateStart } = activity;
       const countActs = obtainId("countActs");
       countActs.textContent = activities.data.length;
+      const newDate = dateStart.slice(0, -14).replaceAll("-", "/");
+
       //   hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}`;
       activityHtml += `
         <tr>
-            <td data-cell="Id">${id}</td>
             <td data-cell="Nombre">${name}</td>
             <td data-cell="Descripción">${description}</td>
-            <td data-cell="Inicio">${dateStart.slice(0, -14)}</td>
+            <td data-cell="Inicio">${newDate}</td>
             <td data-cell="Revisar">
-            <a href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&actStudId=${id}">
-            <button>Revisar</button></a>
+            <a class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&actStudId=${id}">revisar</a>
             </td>
         </tr>
         `;
@@ -143,7 +142,7 @@ async function loadVideoByIdCourse() {
       <td data-cell="Descripción">${
         description ? "null" || "undefined" : "Sin descripción"
       }</td>
-      <td data-cell="Link"><button><a style="color:white;" target="_blank" href="${link}">Entrar</a></button></td>
+      <td data-cell="Link"><a class="check" style="color:white;" target="_blank" href="${link}">Entrar</a></td>
       </td>
   </tr>
   `;
@@ -199,10 +198,10 @@ async function loadStudentByIdCourse() {
       const { idStudent, name, firstName } = studentId;
       studentIdCourse += `
       <tr>
-      <td data-cell="Id">${idStudent}</td>
+   
       <td data-cell="Nombre">${name}</td>
       <td data-cell="Descripción">${firstName}</td>
-      <td data-cell="Actions">
+      <td data-cell="Acciones">
       <button><i class='bx bxs-user-check'></i></button>
       </td>
   </tr>

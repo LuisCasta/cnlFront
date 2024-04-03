@@ -14,7 +14,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/jpg" href="../../src/escudo.png" />
+    <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
     <title>Unidad</title>
   </head>
   <body onload="cargarSideNav(), loadUnit()">
@@ -44,7 +44,10 @@
             id="name-unit-form"
             placeholder="Nombre de la Unidad"
           />
-          <input type="number" id="type-unit" placeholder="Tipo de Unidad" />
+          <div class="form-select">
+            <p>Tipo de Unidad</p>
+            <select id="type-unit"></select>
+          </div>
           <button id="agregar-unidad">Agregar Unidad</button>
         </div>
       </div>
@@ -59,11 +62,10 @@
               </div>
             </caption>
             <tr>
-              <th>ID</th>
               <th>Nombre</th>
-              <th>Type</th>
-              <th>Lessons +</th>
-              <th>Actions</th>
+              <th>Tipo de Unidad</th>
+              <th>Lección +</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody id="unit-table"></tbody>

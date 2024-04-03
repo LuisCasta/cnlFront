@@ -14,7 +14,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <link rel="icon" type="image/jpg" href="../../src/escudo.png" />
+    <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
     <title>About Unit</title>
   </head>
   <body
@@ -39,11 +39,11 @@
       <!-- EMPIEZAN EL CONTENEDOR PARA TABS -->
       <div class="container-tabs">
         <div class="tabs-buttons">
-          <a id="clases"><i class="bx bx-book bx-sm"></i></a>
-          <a id="activ"><i class="bx bxs-watch bx-sm"></i></a>
-          <a id="students"><i class="bx bx-group bx-sm"></i></a>
-          <a id="calls"><i class="bx bx-video bx-sm"></i></a>
-          <a id="rates"><i class="bx bxs-star-half bx-sm"></i></a>
+          <a data-tooltip='Gestionar clases' id="clases"><i class="bx bx-book bx-sm"></i></a>
+          <a data-tooltip='Gestionar actividades' id="activ"><i class="bx bxs-watch bx-sm"></i></a>
+          <a data-tooltip='Gestionar alumnos' id="students"><i class="bx bx-group bx-sm"></i></a>
+          <a data-tooltip='Gestionar videollamadas' id="calls"><i class="bx bx-video bx-sm"></i></a>
+          <a data-tooltip='Gestionar calificaciones' id="rates"><i class="bx bxs-star-half bx-sm"></i></a>
         </div>
         <div class="divs-tabs">
           <div class="clases" id="div-clases">
@@ -79,7 +79,7 @@
                     </div>
                   </caption>
                   <tr>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Acciones</th>
@@ -146,7 +146,7 @@
                     </div>
                   </caption>
                   <tr>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Inicio</th>
@@ -172,7 +172,7 @@
                     </div>
                   </caption>
                   <tr>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Inicio</th>
@@ -263,8 +263,8 @@
                     <td data-cell="Tarea"><input type="number" placeholder="70" /></td>
                     <td data-cell="Calificación"><input type="number" placeholder="90" /></td>
                     <td data-cell="Acciones" class="action-cali" data-title="Actions">
-                      <button>Calcular</button>
-                      <button><i class="bx bx-send"></i>Guardar</button>
+                      <a class="check">calcular</a> 
+                      <a class="check">guardar</a>
                     </td>
                   </tr>
                 </tbody>

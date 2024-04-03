@@ -31,8 +31,10 @@ async function loadSubject() {
               <tr>
                 <td data-cell="Name">${name}</td>
                 <td data-cell="Actions">
-                  <button><i class='bx bx-edit-alt'></i></button>
-                  <button><i class='bx bx-trash'></i></button>
+                  <div class='actions'>
+                      <a data-tooltip='Editar'><i class='bx bx-edit-alt'></i></a>
+                      <a data-tooltip='Eliminar'><i class='bx bx-trash'></i></a>
+                  </div>
                 </td>
 
               </tr>

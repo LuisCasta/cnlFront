@@ -30,16 +30,15 @@ async function loadCursos() {
       //   `Id Carrera ${id} - name ${name} - description ${description}`);
       cursoHtml += `
               <tr>
-                <td data-cell="ID" >${id}</td>
-                <td data-cell="Name">${name}</td>
-                <td data-cell="Description">${description}</td>
+                <td data-cell="Nombre de curso">${name}</td>
+                <td data-cell="Descripción">${description}</td>
                 <td data-cell="Unidades">
-                 <a href="../unit/unit.html?idCurso=${id}"><button data-id="${id}" class="unidad"><i class='bx bx-customize'></i></button></a>
+                 <a data-tooltip='Agregar/Gestionar unidad' href="../unit/unit.html?idCurso=${id}"><button data-id="${id}" class="unidad"><i class='bx bx-customize'></i></button></a>
                 </td>
-                <td data-cell="Actions">
+                <td data-cell="Actciones">
                   <div class="actions">
-                    <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
-                    <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
+                    <button data-tooltip='Eliminar'  data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
+                    <button data-tooltip='Editar' data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
                   </div>
                 </td>
               </tr>

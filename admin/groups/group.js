@@ -18,13 +18,12 @@ async function loadGroups() {
     groups.data.map((group) => {
       const { name, id } = group;
       salida += ` <tr>
-      <td data-cell="Id">${id}</td>
-      <td data-cell="Name">${name}</td>
-      <td data-cell="Actions">
+      <td data-cell="Nombre de Grupo">${name}</td>
+      <td data-cell="Acciones">
           <div class="actions">
-          <button class="eliminar"><i class='bx bx-trash'></i></button>
-          <button class="editar"><i class='bx bx-edit' ></i>
-          <a href="../courses/course.html?idGroup=${id}&idCarrera=${idCareer}"><button
+          <button data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
+          <button data-tooltip='Editar' class="editar"><i class='bx bx-edit' ></i>
+          <a  data-tooltip='Agregar curso' href="../courses/course.html?idGroup=${id}&idCarrera=${idCareer}"><button
           <i class='bx bx-book'></i></button>
           </a>
           </div>

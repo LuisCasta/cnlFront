@@ -17,12 +17,12 @@ async function loadAllLessonsByUnit() {
     countlessons.textContent = lessons.data.length;
     lessons.data.forEach((lesson) => {
       const { name, description, id, dateStart } = lesson;
+      const newDate = dateStart.slice(0, -14).replaceAll("-", "/");
       lessonHtml += `
         <tr>
-            <td data-cell="Id">${id}</td>
             <td data-cell="Nombre">${name}</td>
             <td data-cell="Descripción">${description}</td>
-            <td data-cell="Inicio">${dateStart}</td>
+            <td data-cell="Inicio">${newDate}</td>
         </tr>
         `;
     });

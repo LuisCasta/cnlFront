@@ -22,15 +22,21 @@ async function loadUnit() {
       hrefMentor.href = `../mentor/mentor.html?idMentor=${idMentor}`;
       unitHtml += `
       <tr>
-        <td data-cell="Nombre">${name}</td>
-        <td data-cell="Type">${type}</td>
-        <td data-cell="Add Lessons">
-          <a class="a-unit" href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}">Ver unidad</a>
+        <td data-cell="Nombre de la unidad">${name}</td>
+        <td data-cell="Tipo de unidad">${
+          type === 1
+            ? "Ordinario"
+            : type === 2
+            ? "Cuatrimestral"
+            : "Extraordinario"
+        }</td>
+        <td data-cell="Gestionar unidad">
+          <a class="a-unit" href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}"><i class='bx bx-cog'></i><p>Gestionar</p></a>
         </td>
-        <td data-cell="Actions">
+        <td data-cell="Acciones">
         <div class="actions">
-          <button data-id="${id}" id="btn${id}" ><i class='bx bx-edit' ></i></button>
-          <button data-id="${id}"><i class='bx bx-trash' ></i></button>
+          <button data-tooltip='Editar' data-id="${id}" id="btn${id}" ><i class='bx bx-edit' ></i></button>
+          <button data-tooltip='Eliminar' data-id="${id}"><i class='bx bx-trash' ></i></button>
         </div>
         </td>
         </tr>

@@ -23,13 +23,13 @@ async function loadPeriodo() {
       // console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
       salida += `
               <tr>
-                <td data-cell="Name">${name}</td>
-                <td data-cell="Actions"> 
+                <td data-cell="Nombre del periodo">${name}</td>
+                <td data-cell="Acciones"> 
                   <div class="actions">
-                    <button class="eliminar"><i class='bx bx-trash'></i></button>
-                    <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&namePeriod=${namePeriod}&nameCareer=${nameCareer}" class="gestionCarrera"><button><i class='bx bx-book-add' ></i></button></a>
-                    <a href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}&namePeriod=${namePeriod}per&nameCareer=${nameCareer}"><button><i class='bx bx-group'></i></button></a>
+                    <a  data-tooltip='Agregar materia' href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&namePeriod=${namePeriod}&nameCareer=${nameCareer}" class="gestionCarrera"><button><i class='bx bx-book-add' ></i></button></a>
+                    <a  data-tooltip='Agregar grupo' href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}&namePeriod=${namePeriod}per&nameCareer=${nameCareer}"><button><i class='bx bx-group'></i></button></a>
+                    <button data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
+                    <button data-tooltip='Editar'class="editar"><i class='bx bx-edit' ></i></button>
                     </div>
                 </td>
               </tr>

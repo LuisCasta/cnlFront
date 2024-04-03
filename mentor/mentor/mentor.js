@@ -17,23 +17,23 @@ async function loadCursosById() {
       <td data-cell="Name">${name}</td>
       <td data-cell="Description">${description}</td>
       <td data-cell="Unidades" class="mentor-cog">
-      <div>
-       <a href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}">
-        <button data-id="${id}" class="unidad">
-          <i class='bx bx-customize'></i>
-        </button>
-       </a>
-       <a>
-       <button id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} class="unidadConfig">
-       <i class='bx bx-cog'></i>
-       </button>
-       </a>
+      <div class="mentor-actions">
+          <a href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}">
+            <button data-tooltip="Agregar/Configurar unidad" data-id="${id}" class="unidad">
+              <i class='bx bx-customize'></i>
+            </button>
+          </a>
+          <a >
+            <button data-tooltip="Ponderaciones" id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} class="unidadConfig">
+              <i class='bx bx-cog'></i>
+            </button>
+          </a>
        </div>
       </td>
       <td data-cell="Actions">
         <div class="actions">
-          <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
-          <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
+          <button data-id="${id}" data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
+          <button data-id="${id}" data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
         </div>
       </td>
     </tr>

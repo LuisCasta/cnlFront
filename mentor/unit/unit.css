@@ -8,6 +8,15 @@
     text-decoration: none;
     border-radius: 5px;
     font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100px;
+}
+
+.a-unit p {
+    color: #fff;
 }
 
 .form-select input {

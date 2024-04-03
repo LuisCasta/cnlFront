@@ -21,14 +21,15 @@ async function loadCareers() {
       const { id, name, description, active } = carrer;
       salida += `
               <tr>
-                <td data-cell="Name">${name}</td>
-                <td data-cell="Description">${description}</td>
+                <td data-cell="Licenciatura">${name}</td>
+                <td data-cell="Descripción">${description}</td>
                 <td data-cell="Estatus">${active ? "activo" : "inactivo"}</td>
-                <td data-cell="Actions">
+                <td data-cell="Acciones">
                   <div class="actions">
-                    <button data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
-                    <button data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera"><button><i class='bx bx-calendar-plus'></i></button></a>                  </div>
+                    <a data-tooltip="Agregar periodo" href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera"><button><i class='bx bx-calendar-plus'></i></button></a>
+                    <button data-tooltip="Eliminar" data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
+                    <button data-tooltip="Editar" data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
+                  </div>
                 </td>
               </tr>
             `;

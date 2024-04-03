@@ -19,8 +19,8 @@ async function loadStudents() {
         <td data-cell="PW">${password}</td>
         <td data-cell="Actions">
             <div class="actions">
-            <button class="eliminar"><i class='bx bx-trash'></i></button>
-            <button class="editar"><i class='bx bx-edit' ></i></button>
+            <button data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
+            <button data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
             </div>
         </td>
        </tr>

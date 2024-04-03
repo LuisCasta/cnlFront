@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('../../src/tooltip.css');
 
 :root {
     --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -70,11 +71,21 @@ button {
     color: #fff;
     cursor: pointer;
     transition: .2s ease-in-out;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 button:hover {
     background-color: #22387d30;
 }
+
+a {
+    text-decoration: none;
+}
+
 
 /* ESTILOS DE LA TABLA */
 
@@ -110,9 +121,13 @@ tbody tr {
 }
 
 tbody tr:hover {
-    background-color: #f7f7f7;
-    color: var(--primary-color);
+    color: #68809a;
+    background-color: #68809a5f;
 }
+
+/* tbody tr:hover a {
+    color: #f7f7f7;
+} */
 
 .table thead tr {
     background-color: #F9FAFB;
@@ -232,8 +247,9 @@ p {
     display: grid;
     grid-template-columns:
         repeat(auto-fit,
-            minmax(150px, 1fr));
+            minmax(450px, 1fr));
     gap: 10px;
+    padding: 50px;
 }
 
 .finder {
@@ -280,6 +296,10 @@ p {
     cursor: pointer;
 }
 
+.mentor-actions {
+    display: flex;
+    gap: 10px;
+}
 
 
 @keyframes aviso {
@@ -338,6 +358,16 @@ p {
 
 .container-Table {
     margin: 20px auto;
+}
+
+@media(max-width:768px) {
+    .form-header {
+        grid-template-columns:
+            repeat(auto-fit,
+                minmax(250px, 1fr));
+        padding: 20px;
+    }
+
 }
 
 @media(max-width:1098px) {

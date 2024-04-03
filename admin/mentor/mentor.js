@@ -22,9 +22,9 @@ async function loadMentors() {
                 <td data-cell="PW">${password}</td>
                 <td data-cell="Actions"> 
                   <div class="actions">
-                    <button class="eliminar"><i class='bx bx-trash'></i></button>
-                    <button class="editar"><i class='bx bx-edit' ></i></button>
-                    <a href="../add-subject/addsubject.html" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                    <button data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
+                    <button data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
+                    <a data-tooltip="Agregar materias a Mentor" href="../add-subject/addsubject.html" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
               </tr>
