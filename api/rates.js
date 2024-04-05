@@ -1,3 +1,29 @@
+const getAllRatesByUnit = async (idUnit) => {
+  const career = await getApi(`unitStudent/aboutUnit/${idUnit}`);
+
+  if (career.status != 200)
+    return {
+      code: 400,
+      message: `Error al crear la carrera`,
+      error: career.data.message,
+    };
+  return { code: 200, data: career.data.data };
+};
+
+const getAllRatesByCourse = async (idUnit) => {
+  const calificacionesBycourse = await getApi(
+    `unitStudent/aboutReport/${idUnit}`
+  );
+
+  if (calificacionesBycourse.status != 200)
+    return {
+      code: 400,
+      message: `Error al cargar las calificaciones`,
+      error: calificacionesBycourse.data.message,
+    };
+  return { code: 200, data: calificacionesBycourse.data.data };
+};
+
 //const post = require ("./post");
 
 // Funcion para crear una carrera
@@ -36,19 +62,6 @@
  * Obtiene todas las carreras
  *
  * */
-const getAllRatesByUnit = async (idUnit) => {
-  const career = await getApi(`unitStudent/aboutUnit/${idUnit}`);
-
-  if (career.status != 200)
-    return {
-      code: 400,
-      message: `Error al crear la carrera`,
-      error: career.data.message,
-    };
-
-  return { code: 200, data: career.data.data };
-};
-
 /**
  * Obtiene todas las carreras
  *

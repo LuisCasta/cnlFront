@@ -6,6 +6,24 @@ const login = document.getElementById("Inicio-sesion");
 
 login.addEventListener("click", loginCnl);
 function loginCnl() {
+  const user = {
+    correo: correo.value,
+    pw: pw.value,
+  };
+
+  const json = JSON.stringify(user);
+  localStorage.setItem(user.correo, json);
+  console.log("user added");
+
+  const getCorreo = localStorage.getItem(correo.vlaue);
+  const getPw = localStorage.getItem(pw.value);
+
+  console.log(getCorreo, getPw);
+
+  const userMail = localStorage.getItem(user.correo);
+  const data = JSON.parse(userMail);
+  console.log(data);
+
   if (
     pw.value === "@@admin123@" &&
     correo.value === "adminDemo@nuevalaguna.com"

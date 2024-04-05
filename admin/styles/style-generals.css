@@ -16,6 +16,7 @@
     --icon-advice-bk: #FEE4E2;
     --border-radius: 0 0 10px 10px;
     --color-graylight: #bfbfbf;
+    --color-primary-opacity: #22397d2c;
 }
 
 * {
@@ -122,7 +123,7 @@ tbody tr {
 
 tbody tr:hover {
     color: #68809a;
-    background-color: #68809a5f;
+    background-color: #68809a20;
 }
 
 /* tbody tr:hover a {

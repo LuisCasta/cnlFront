@@ -5,6 +5,40 @@ body {
     background-color: #efefef;
 }
 
+.nuevo {
+    background-color: #fef1da;
+    color: #c07507;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.send-act {
+    background-color: #d1fadf;
+    color: #039855;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.date-Activity {
+    border-radius: 5px;
+    border: 2px solid var(--color-primary-opacity);
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.name-activ {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
 .container-tabs {
     width: 90%;
     margin: auto;
@@ -38,14 +72,15 @@ body {
     cursor: pointer;
 }
 
+/* 
 .buttons-tabs p:hover::before {
     content: '➡️';
-    /* width: 30px; */
+    width: 30px; 
     position: absolute;
     transform: translateX(-5px);
     left: -20px;
-    /* height: 1px; */
-    /* background-color: var(--primary-color); */
+    height: 1px; 
+ background-color: var(--primary-color); 
     animation: signal .2s ease-in-out;
 }
 
@@ -59,7 +94,7 @@ body {
         opacity: 1;
         transform: translateX(-5px);
     }
-}
+} */
 
 .content-divs-tab {
     background-color: #fff;

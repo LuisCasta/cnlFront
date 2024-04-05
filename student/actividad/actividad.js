@@ -17,6 +17,8 @@ async function LoadActivitiesAgendaStudent() {
   } else {
     activitiesStudent.data.forEach((activities) => {
       const { name, typeActivity, estatus, dateEnd, idActStu, id } = activities;
+      const newDateEnd = dateEnd.slice(0, -14).replaceAll("-", "/");
+      const formatStatus = estatus.toLowerCase();
       tableHtml += `
       <tr>
         <td data-cell="Tipo">
@@ -24,9 +26,12 @@ async function LoadActivitiesAgendaStudent() {
             <p><i class="bx bx-note"></i>${typeActivity}</p>
             </div>
         </td>
-        <td data-cell="Nombre">${name}</td>
-        <td data-cell="Fecha entrega">${dateEnd.slice(0, -14)}</td>
-        <td data-cell="Estatus">${estatus}</td>
+        <td data-cell="Nombre"><p class="name-activ">${name.toUpperCase()}</p></td>
+        <td data-cell="Fecha entrega">
+         <p class="date-Activity"><i class='bx bx-calendar'></i>${newDateEnd}</p></td>
+        <td data-cell="Estatus"><p class=${
+          estatus === "NUEVO" ? "nuevo" : "send-act"
+        }>${formatStatus[0].toUpperCase() + formatStatus.slice(1)}</p></td>
         <td data-cell="Acciones">
            <div class="actions">
               <a href="../presentar/presentar-actividad.html?idStudent=${idStudent}&idCourse=${idCourse}&idActMentor=${id}&idActStudent=${idActStu}">Presentar</a>

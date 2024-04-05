@@ -23,13 +23,19 @@ async function loadUnit() {
       unitHtml += `
       <tr>
         <td data-cell="Nombre de la unidad">${name}</td>
-        <td data-cell="Tipo de unidad">${
+        <td data-cell="Tipo de unidad"><p class=${
           type === 1
-            ? "Ordinario"
+            ? "ordinario"
             : type === 2
-            ? "Cuatrimestral"
-            : "Extraordinario"
-        }</td>
+            ? "cuatrimestral"
+            : "extraordinario"
+        }>${
+        type === 1
+          ? "Ordinario"
+          : type === 2
+          ? "Cuatrimestral"
+          : "Extraordinario"
+      }<p></td>
         <td data-cell="Gestionar unidad">
           <a class="a-unit" href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}"><i class='bx bx-cog'></i><p>Gestionar</p></a>
         </td>

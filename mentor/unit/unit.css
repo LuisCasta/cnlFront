@@ -22,3 +22,35 @@
 .form-select input {
     width: 100%;
 }
+
+.ordinario {
+    /* border: 2px solid var(--primary-color); */
+    background-color: #22397d30;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.extraordinario {
+    /* border: 2px solid red; */
+    background-color: rgba(255, 0, 0, 0.161);
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    padding: 5px;
+
+}
+
+.cuatrimestral {
+    /* border: 1px solid green; */
+    background-color: rgba(0, 133, 0, 0.205);
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    padding: 5px;
+
+}

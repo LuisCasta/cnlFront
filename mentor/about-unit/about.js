@@ -10,6 +10,8 @@ const hrefUnidad = obtainId("href-unidad");
 const tableAct = obtainId("table-activity");
 const selectLesson = obtainId("lesson-id");
 const tableStudent = obtainId("table-students");
+const tableRate = obtainId("table-rate");
+console.log(tableRate);
 const tableVideoCalls = obtainId("table-calls");
 const selectTypeActivity = obtainId("type-activity");
 // const hreMentor = document.getElementById("");
@@ -198,16 +200,58 @@ async function loadStudentByIdCourse() {
       const { idStudent, name, firstName } = studentId;
       studentIdCourse += `
       <tr>
-   
-      <td data-cell="Nombre">${name}</td>
-      <td data-cell="Descripción">${firstName}</td>
-      <td data-cell="Acciones">
-      <button><i class='bx bxs-user-check'></i></button>
-      </td>
+        <td data-cell="Nombre">${name}</td>
+        <td data-cell="Descripción">${firstName}</td>
+        <td data-cell="Acciones">
+         <button><i class='bx bxs-user-check'></i></button>
+        </td>
   </tr>
   `;
     });
     tableStudent.innerHTML = studentIdCourse;
+  }
+}
+
+//Calificaciones de alumnos por Curso
+let ratesStudentByCourse = "";
+async function loadRateStudentByIdCourse() {
+  const allRatesStudenCourse = await getAllRatesByCourse(idUnit);
+  console.log(allRatesStudenCourse.data);
+  console.log(idUnit);
+  if (allRatesStudenCourse.code != 200) {
+    // console.log(newStudentsIdCourse.message);
+  } else {
+    allRatesStudenCourse.data.forEach((rate) => {
+      const { name, firstName, promf, pond_tasks, pond_exams, pond_proyects } =
+        rate;
+
+      const obtainClass = function (pond) {
+        const classRate = pond == 0 || pond < 5 ? "rate-no-fit" : "";
+        return classRate;
+      };
+
+      ratesStudentByCourse += `
+      <tr>
+         <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
+          <td data-cell="Descripción"><p class=${obtainClass(
+            pond_tasks
+          )}>${pond_tasks}</p></td>
+          <td data-cell="Descripción"><p class="${obtainClass(
+            pond_exams
+          )}">${pond_exams}</p></td>
+          <td data-cell="Descripción"><p class="${obtainClass(
+            pond_proyects
+          )}">${pond_proyects}</p></td>
+          <td data-cell="Descripción"><p class="${obtainClass(
+            promf
+          )}">${promf}</p></td>
+          <td data-cell="Acciones">
+            <button><i class='bx bxs-user-check'></i></button>
+          </td>
+      </tr>
+  `;
+    });
+    tableRate.innerHTML = ratesStudentByCourse;
   }
 }
 

@@ -18,7 +18,7 @@
     <title>About Unit</title>
   </head>
   <body
-    onload="loadVideoByIdCourse(),cargarSideNav(), loadAllLessonsByUnit(),loadActivityByUnit(), loadStudentByIdCourse(),chooseTypeActivity()"
+    onload="loadVideoByIdCourse(),cargarSideNav(), loadAllLessonsByUnit(),loadActivityByUnit(), loadStudentByIdCourse(),chooseTypeActivity(), loadRateStudentByIdCourse()"
   >
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
@@ -238,7 +238,7 @@
               </h3>
             </div>
             <div class="container-Table">
-              <table class="table-quali">
+              <table class="table-quali" >
                 <thead>
                   <caption>
                     <div class="caption">
@@ -248,25 +248,15 @@
                   </caption>
                   <tr>
                     <th>Nombre</th>
+                    <!-- <th>Actividad</th> -->
+                    <th>Tarea</th>
                     <th>Examen</th>
                     <th>Proyecto</th>
-                    <th>Tarea</th>
-                    <th>Calificación</th>
+                    <th>Promedio Final</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
-                <tbody id="table-rates">
-                  <tr>
-                    <td data-cell="Nombre">América Juárez</td>
-                    <td data-cell="Examen"><input type="number" placeholder="80" /></td>
-                    <td data-cell="Proyecto"><input type="number" placeholder="50" /></td>
-                    <td data-cell="Tarea"><input type="number" placeholder="70" /></td>
-                    <td data-cell="Calificación"><input type="number" placeholder="90" /></td>
-                    <td data-cell="Acciones" class="action-cali" data-title="Actions">
-                      <a class="check">calcular</a> 
-                      <a class="check">guardar</a>
-                    </td>
-                  </tr>
+                <tbody id="table-rate">
                 </tbody>
               </table>
             </div>

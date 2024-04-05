@@ -134,6 +134,10 @@
     width: 90px;
 }
 
+.rate-no-fit {
+    color: red;
+}
+
 @media (max-width:574px) {
     .tabs-buttons a {
         padding: 10px;
