@@ -138,6 +138,17 @@
     color: red;
 }
 
+.sendRate {
+    width: fit-content;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 @media (max-width:574px) {
     .tabs-buttons a {
         padding: 10px;

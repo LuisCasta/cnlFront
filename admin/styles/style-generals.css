@@ -87,6 +87,11 @@ a {
     text-decoration: none;
 }
 
+.responsive {
+    display: block;
+    border-radius: 50px;
+}
+
 
 /* ESTILOS DE LA TABLA */
 

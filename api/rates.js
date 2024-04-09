@@ -24,7 +24,24 @@ const getAllRatesByCourse = async (idUnit) => {
   return { code: 200, data: calificacionesBycourse.data.data };
 };
 
-//const post = require ("./post");
+//Guardar calificaciones parciales de un alumno
+const saveRatebyStudent = async (data) => {
+  const { idUnit, idStudent, score } = data;
+  if (idUnit == "" || idUnit == null || idUnit == undefined || idUnit == " ")
+    return { code: 400, message: `Error, el campo idUnit es inválido` };
+  if (
+    idStudent == "" ||
+    idStudent == null ||
+    idStudent == undefined ||
+    idStudent == " "
+  )
+    return { code: 400, message: `Error, el campo idStudent es inválido` };
+
+  if (score == "" || score == null || score == undefined || score == " ");
+  return { code: 400, message: `Error, el campo score es inválido` };
+};
+
+// const post = require("./post");
 
 // Funcion para crear una carrera
 // { name, code, description }

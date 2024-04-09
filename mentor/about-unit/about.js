@@ -11,7 +11,7 @@ const tableAct = obtainId("table-activity");
 const selectLesson = obtainId("lesson-id");
 const tableStudent = obtainId("table-students");
 const tableRate = obtainId("table-rate");
-console.log(tableRate);
+// console.log(tableRate);
 const tableVideoCalls = obtainId("table-calls");
 const selectTypeActivity = obtainId("type-activity");
 // const hreMentor = document.getElementById("");
@@ -178,9 +178,9 @@ btnCreatCall.addEventListener("click", async (e) => {
   if (newCall.code != 200) alert(`Error ${newCall.message}`);
   else {
     succesPost.innerHTML = `
-<i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
- <p>Videollamada: ${name} creada con éxito</p>
-`;
+      <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+      <p>Videollamada: ${name} creada con éxito</p>
+      `;
     succesPost.classList.add("aviso-click");
   }
 
@@ -216,44 +216,91 @@ async function loadStudentByIdCourse() {
 let ratesStudentByCourse = "";
 async function loadRateStudentByIdCourse() {
   const allRatesStudenCourse = await getAllRatesByCourse(idUnit);
-  console.log(allRatesStudenCourse.data);
-  console.log(idUnit);
   if (allRatesStudenCourse.code != 200) {
     // console.log(newStudentsIdCourse.message);
   } else {
     allRatesStudenCourse.data.forEach((rate) => {
-      const { name, firstName, promf, pond_tasks, pond_exams, pond_proyects } =
-        rate;
-
+      const {
+        name,
+        firstName,
+        promf,
+        pond_tasks,
+        pond_exams,
+        pond_proyects,
+        idStudent,
+      } = rate;
       const obtainClass = function (pond) {
-        const classRate = pond == 0 || pond < 5 ? "rate-no-fit" : "";
+        const classRate = pond == 0 || pond < 5 ? "rate-no-fit" : "rate";
         return classRate;
       };
 
       ratesStudentByCourse += `
       <tr>
          <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
-          <td data-cell="Descripción"><p class=${obtainClass(
+          <td data-cell="Tarea"><p class=${obtainClass(
             pond_tasks
           )}>${pond_tasks}</p></td>
-          <td data-cell="Descripción"><p class="${obtainClass(
+          <td data-cell="Examen"><p class="${obtainClass(
             pond_exams
           )}">${pond_exams}</p></td>
-          <td data-cell="Descripción"><p class="${obtainClass(
+          <td data-cell="Proyecto"><p class="${obtainClass(
             pond_proyects
           )}">${pond_proyects}</p></td>
-          <td data-cell="Descripción"><p class="${obtainClass(
+          <td data-cell="Promedio Final"><p class="${obtainClass(
             promf
           )}">${promf}</p></td>
           <td data-cell="Acciones">
-            <button><i class='bx bxs-user-check'></i></button>
+            <a class="sendRate" data-stud=${idStudent} id=ide-${idStudent} data-promf=${promf}><i class='bx bxs-user-check'></i>Guardar</a>
           </td>
       </tr>
   `;
+      tableRate.innerHTML = ratesStudentByCourse;
+      tableRate.addEventListener("click", (event) => {
+        const clickedElement = event.target;
+        if (clickedElement.closest(".sendRate")) {
+          // Busca el ancestro más cercano con la clase 'sendRate'
+          const button = clickedElement.closest(".sendRate");
+          // Obtiene el botón 'sendRate'
+          const promediofinal = button.dataset.promf;
+          const stud = button.dataset.stud;
+          guardarRate(promediofinal, stud);
+        }
+      });
+
+      async function guardarRate(promediofinal, idStudent) {
+        const score = promediofinal;
+        const savedRate = await postDataC("unitStudent/", {
+          idUnit,
+          idStudent,
+          score,
+        });
+
+        // console.log(savedRate.config.data);
+        if (savedRate.status != 200)
+          return {
+            code: 400,
+            message: `Error al enviar la calificación`,
+            error: savedRate.data.message,
+          };
+        else {
+          succesPost.innerHTML = `
+              <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+              <p>Calificaciones de ${name} ${firstName} guardadas</p>
+              `;
+          succesPost.classList.add("aviso-click");
+        }
+
+        setTimeout(function () {
+          location.reload();
+        }, 4000);
+
+        return { code: 200, data: savedRate.data.data };
+      }
     });
-    tableRate.innerHTML = ratesStudentByCourse;
   }
 }
+
+//Guarda Calificaciones Parciales de un curso
 
 // TRAER EL TYPE ACTIVITY
 let optionsType = "";
