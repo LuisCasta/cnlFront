@@ -71,9 +71,9 @@ async function loadActivityByUnit() {
       //   hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}`;
       activityHtml += `
         <tr>
-            <td data-cell="Nombre">${name}</td>
-            <td data-cell="Descripción">${description}</td>
-            <td data-cell="Inicio">${newDate}</td>
+            <td data-cell="Nombre"><p class="name-activity">${name}</p></td>
+            <td data-cell="Descripción"><p>${description}</p></td>
+            <td data-cell="Inicio"><p class="p-date"><i class='bx bx-calendar'></i>${newDate}</p></td>
             <td data-cell="Revisar">
             <a class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&actStudId=${id}">revisar</a>
             </td>

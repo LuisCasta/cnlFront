@@ -124,14 +124,27 @@
     height: 100px;
 } */
 
+.name-activity {
+    font-weight: 600;
+}
+
 .check {
     text-decoration: none;
     text-align: center;
     padding: 5px;
     background-color: var(--primary-color);
-    color: #fff;
+    color: var();
     border-radius: 5px;
-    width: 90px;
+    width: fit-content;
+    font-size: 14px;
+    color: #fff;
+}
+
+.p-date {
+    border: 1px solid var(--color-primary-opacity);
+    border-radius: 5px;
+    padding: 5px;
+    width: fit-content;
 }
 
 .rate-no-fit {
