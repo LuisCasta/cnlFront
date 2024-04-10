@@ -246,11 +246,11 @@ async function loadRateStudentByIdCourse() {
           <td data-cell="Proyecto"><p class="${obtainClass(
             pond_proyects
           )}">${pond_proyects}</p></td>
-          <td data-cell="Promedio Final"><p class="${obtainClass(
-            promf
-          )}">${promf}</p></td>
+          <td data-cell="Promedio Final"><input id=ide-${idStudent}  value=${promf} class="input-promf ${obtainClass(
+        promf
+      )}"/></td>
           <td data-cell="Acciones">
-            <a class="sendRate" data-stud=${idStudent} id=ide-${idStudent} data-promf=${promf}><i class='bx bxs-user-check'></i>Guardar</a>
+            <a class="sendRate" data-stud=${idStudent} data-promf=${promf}><i class='bx bxs-user-check'></i>Guardar</a>
           </td>
       </tr>
   `;
@@ -258,23 +258,27 @@ async function loadRateStudentByIdCourse() {
       tableRate.addEventListener("click", (event) => {
         const clickedElement = event.target;
         if (clickedElement.closest(".sendRate")) {
+          const recuperarIdInput = function (stud) {
+            const promfModify = obtainId(`ide-${stud}`);
+            const valueFinal = promfModify.value;
+            return valueFinal;
+          };
           // Busca el ancestro más cercano con la clase 'sendRate'
           const button = clickedElement.closest(".sendRate");
-          // Obtiene el botón 'sendRate'
-          const promediofinal = button.dataset.promf;
           const stud = button.dataset.stud;
-          guardarRate(promediofinal, stud);
+          //función para pasar el value del Input
+          guardarRate(recuperarIdInput(stud), stud);
         }
       });
 
-      async function guardarRate(promediofinal, idStudent) {
-        const score = promediofinal;
+      async function guardarRate(recuperarIdInput, idStudent) {
+        const score = recuperarIdInput;
         const savedRate = await postDataC("unitStudent/", {
           idUnit,
           idStudent,
           score,
         });
-
+        console.log(savedRate.config.data);
         // console.log(savedRate.config.data);
         if (savedRate.status != 200)
           return {
@@ -290,9 +294,9 @@ async function loadRateStudentByIdCourse() {
           succesPost.classList.add("aviso-click");
         }
 
-        setTimeout(function () {
-          location.reload();
-        }, 4000);
+        // setTimeout(function () {
+        //   location.reload();
+        // }, 4000);
 
         return { code: 200, data: savedRate.data.data };
       }
