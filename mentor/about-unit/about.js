@@ -228,6 +228,7 @@ async function loadRateStudentByIdCourse() {
         pond_exams,
         pond_proyects,
         idStudent,
+        score,
       } = rate;
       const obtainClass = function (pond) {
         const classRate = pond == 0 || pond < 5 ? "rate-no-fit" : "rate";
@@ -246,9 +247,13 @@ async function loadRateStudentByIdCourse() {
           <td data-cell="Proyecto"><p class="${obtainClass(
             pond_proyects
           )}">${pond_proyects}</p></td>
-          <td data-cell="Promedio Final"><input id=ide-${idStudent}  value=${promf} class="input-promf ${obtainClass(
-        promf
+          <td data-cell="Promedio Calculado"><p class="${obtainClass(
+            promf
+          )}">${promf}</p></td>
+          <td data-cell="Promedio Final"><input id=ide-${idStudent}  value=${score} class="input-promf ${obtainClass(
+        score
       )}"/></td>
+
           <td data-cell="Acciones">
             <a class="sendRate" data-stud=${idStudent} data-promf=${promf}><i class='bx bxs-user-check'></i>Guardar</a>
           </td>

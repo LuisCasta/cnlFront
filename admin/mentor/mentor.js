@@ -63,8 +63,9 @@ btnMentor.addEventListener("click", async (e) => {
   const password = document.getElementById("contrasenaMentor").value;
   const firstName = document.getElementById("firstName").value;
   const name = document.getElementById("nameMentor").value;
+  const secondName = document.getElementById("secondName").value;
 
-  const data = { mail, password, firstName, name };
+  const data = { mail, password, firstName, name, secondName };
   console.log(data);
 
   // Succes Post

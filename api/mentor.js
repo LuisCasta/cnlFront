@@ -7,9 +7,9 @@ const create = async (data) => {
   const {
     name,
     firstName,
-    // secondName,
-    // birthdate,
-    // mobilePhone,
+    secondName,
+    birthdate,
+    mobilePhone,
     mail,
     password,
   } = data;
@@ -17,6 +17,16 @@ const create = async (data) => {
   if (name == "" || name == null || name == undefined || name == " ")
     return { code: 400, message: `Error, el campo nombre es inválido` };
 
+  if (
+    secondName == "" ||
+    secondName == null ||
+    secondName == undefined ||
+    secondName == " "
+  )
+    return {
+      code: 400,
+      message: `Error, el campo Segundo Apellido es inválido`,
+    };
   if (
     firstName == "" ||
     firstName == null ||
