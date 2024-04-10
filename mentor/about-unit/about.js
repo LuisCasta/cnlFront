@@ -141,9 +141,9 @@ async function loadVideoByIdCourse() {
       videocalls += `
       <tr>
       <td data-cell="Nombre">${name}</td>
-      <td data-cell="Descripción">${
-        description ? "null" || "undefined" : "Sin descripción"
-      }</td>
+      <td data-cell="Descripción"><p> ${
+        description ? null || undefined : "Sin descripción"
+      }</p></td>
       <td data-cell="Link"><a class="check" style="color:white;" target="_blank" href="${link}">Entrar</a></td>
       </td>
   </tr>
@@ -294,9 +294,9 @@ async function loadRateStudentByIdCourse() {
           succesPost.classList.add("aviso-click");
         }
 
-        // setTimeout(function () {
-        //   location.reload();
-        // }, 4000);
+        setTimeout(function () {
+          location.reload();
+        }, 4000);
 
         return { code: 200, data: savedRate.data.data };
       }

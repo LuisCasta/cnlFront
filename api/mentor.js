@@ -7,9 +7,9 @@ const create = async (data) => {
   const {
     name,
     firstName,
-    secondName,
-    birthdate,
-    mobilePhone,
+    // secondName,
+    // birthdate,
+    // mobilePhone,
     mail,
     password,
   } = data;
@@ -91,7 +91,6 @@ const getById = async (id) => {
 };
 
 const getLogin = async (data) => {
-  
   const { mail, pass } = data;
   console.log(data);
   if (mail == 0 || mail == "" || mail == undefined || mail == " ")

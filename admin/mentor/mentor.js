@@ -65,6 +65,7 @@ btnMentor.addEventListener("click", async (e) => {
   const name = document.getElementById("nameMentor").value;
 
   const data = { mail, password, firstName, name };
+  console.log(data);
 
   // Succes Post
   succesPost.innerHTML = `
