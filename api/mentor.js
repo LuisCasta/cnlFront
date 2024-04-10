@@ -8,8 +8,8 @@ const create = async (data) => {
     name,
     firstName,
     secondName,
-    birthdate,
-    mobilePhone,
+    birthdate = "1990-01-20",
+    mobilePhone = "8710000000",
     mail,
     password,
   } = data;
@@ -52,6 +52,8 @@ const create = async (data) => {
     firstName,
     password,
     secondName,
+    birthdate,
+    mobilePhone,
   });
 
   if (mentor.status != 200)

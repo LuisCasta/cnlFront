@@ -71,7 +71,7 @@ btnMentor.addEventListener("click", async (e) => {
   // Succes Post
   succesPost.innerHTML = `
  <i class='bx bx-loader-circle bx-spin' ></i>
- <p>Creando nueva docente<p>
+ <p>Creando nuevo docente<p>
 `;
   succesPost.classList.add("aviso-click");
 
