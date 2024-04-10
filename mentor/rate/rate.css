@@ -7,4 +7,13 @@
 
 .cal-final {
     font-size: 14px;
+    width: fit-content;
+}
+
+select {
+    font-size: 14px;
+}
+
+select option {
+    font-size: 14px;
 }
