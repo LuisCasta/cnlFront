@@ -51,6 +51,7 @@ const create = async (data) => {
     mail,
     firstName,
     password,
+    secondName,
   });
 
   if (mentor.status != 200)
