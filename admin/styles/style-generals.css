@@ -5,8 +5,8 @@
     --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     --tooltip-bk: #101828;
     --input-border: 2px solid #D0D5DD;
-    --input--padding: 10px 14px;
-    --input-bor-rad: 8px;
+    --input--padding: 8px;
+    --input-bor-rad: 3px;
     --font-size-input: 16px;
     --primary-color: #22387d;
     --color-bk-opacity: #22387d10;
@@ -59,10 +59,12 @@ textarea {
     font-size: var(--font-size-input);
     border-radius: var(--input-bor-rad);
     font-style: italic;
-    font-size: 20px;
+    font-size: 14px;
+    width: fit-content;
 }
 
 button {
+    width: fit-content;
     outline: none;
     padding: var(--input--padding);
     font-size: var(--font-size-input);
@@ -72,11 +74,15 @@ button {
     color: #fff;
     cursor: pointer;
     transition: .2s ease-in-out;
-    font-size: 17px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+button p {
+    color: white;
 }
 
 button:hover {

@@ -32,8 +32,8 @@ async function loadAllLessonsByUnit() {
       hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}`;
       lessonHtml += `
         <tr>
-            <td data-cell="Nombre">${name}</td>
-            <td data-cell="Descripción">${description}</td>
+            <td data-cell="Nombre"><p>${name}</p></td>
+            <td data-cell="Descripción"><p>${description}</p></td>
             <td data-cell="Acciones">
             <div class="actions">
               <button data-id="${id}" data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
@@ -140,9 +140,9 @@ async function loadVideoByIdCourse() {
       const { name, description, link } = call;
       videocalls += `
       <tr>
-      <td data-cell="Nombre">${name}</td>
+      <td data-cell="Nombre"><p>${name}</p></td>
       <td data-cell="Descripción"><p> ${
-        description ? null || undefined : "Sin descripción"
+        description == null || undefined ? "Sin descripción" : description
       }</p></td>
       <td data-cell="Link"><a class="check" style="color:white;" target="_blank" href="${link}">Entrar</a></td>
       </td>
@@ -200,8 +200,7 @@ async function loadStudentByIdCourse() {
       const { idStudent, name, firstName } = studentId;
       studentIdCourse += `
       <tr>
-        <td data-cell="Nombre">${name}</td>
-        <td data-cell="Descripción">${firstName}</td>
+        <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
         <td data-cell="Acciones">
          <button><i class='bx bxs-user-check'></i></button>
         </td>
@@ -215,7 +214,7 @@ async function loadStudentByIdCourse() {
 //Calificaciones de alumnos por Curso
 let ratesStudentByCourse = "";
 async function loadRateStudentByIdCourse() {
-  const allRatesStudenCourse = await getAllRatesByCourse(idUnit);
+  const allRatesStudenCourse = await getAllRatesPartialByUnit(idUnit);
   if (allRatesStudenCourse.code != 200) {
     // console.log(newStudentsIdCourse.message);
   } else {

@@ -64,9 +64,9 @@ async function obtenerIdMentor() {
   let mentorSelect;
   const mentores = await getAllMentor();
   mentores.data.forEach((mentor) => {
-    const { id, name } = mentor;
+    const { id, name, firstName } = mentor;
     mentorSelect += `
-        <option value=${id}>${name}</option>
+        <option value=${id}>${name} ${firstName}</option>
         `;
   });
   formMentor.innerHTML = mentorSelect;

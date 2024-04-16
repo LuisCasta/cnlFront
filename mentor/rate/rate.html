@@ -17,7 +17,7 @@
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
     <title>Calificaciones</title>
   </head>
-  <body onload="cargarSideNav()">
+  <body onload="cargarSideNav(), loadCursosById()">
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <div class="breadcumbs">
@@ -27,9 +27,12 @@
         <div class="text-Header">
           <h2>Calificaciones finales</h2>
           <p>Consulta y modifica las Calificaciones de tus alumnos</p>
-          <select name="" id="">
-            <option value="">Carrera en Educación</option>
-          </select>
+          <div class="view-rate">
+            <select id="select-course" name="" id="">
+              <option value="">Escoge carrera</option>
+            </select>
+            <button class="search-rate">Ver calificaciones</button>
+          </div>
         </div>
       </div>
       <!-- CONTAINER Y TABLE DE CLASES -->
@@ -48,34 +51,17 @@
               <th>Enviar Calificación</th>
             </tr>
           </thead>
-          <tbody id="table-rate-final">
-            <tr>
-              <td data-cell="Nombre"><p>América Juárez</p></td>
-              <td data-cell="Calificación">
-                <input class="cal-final" type="text" name="" value="9" id="" />
-              </td>
-              <td data-cell="Acción">
-                <button class="enviar-calificacion">
-                  <i class="bx bx-send"></i>Guardar Calificación
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td data-cell="Nombre"><p>Jorge Zapico</p></td>
-              <td data-cell="Calificación">
-                <input class="cal-final" type="text" value="10" />
-              </td>
-              <td data-cell="Acción">
-                <button class="enviar-calificacion">
-                  <i class="bx bx-send"></i>Guardar Calificación
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="table-rate-final"></tbody>
         </table>
       </div>
     </main>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu bx-tada-hover"></i>
+    </button>
     <script src="../sidenav.js"></script>
+    <script src="../../api/rates.js"></script>
     <script src="rate.js"></script>
+    <script src="../../api/course.js"></script>
+    <script src="../../api/post.js"></script>
   </body>
 </html>

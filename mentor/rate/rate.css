@@ -17,3 +17,15 @@ select {
 select option {
     font-size: 14px;
 }
+
+.text-Header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.view-rate {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}

@@ -1,27 +1,25 @@
 const getAllRatesByUnit = async (idUnit) => {
-  const career = await getApi(`unitStudent/aboutUnit/${idUnit}`);
+  const ratesByUnit = await getApi(`unitStudent/aboutUnit/${idUnit}`);
 
-  if (career.status != 200)
+  if (ratesByUnit.status != 200)
     return {
       code: 400,
       message: `Error al crear la carrera`,
-      error: career.data.message,
+      error: ratesByUnit.data.message,
     };
-  return { code: 200, data: career.data.data };
+  return { code: 200, data: ratesByUnit.data.data };
 };
 
-const getAllRatesByCourse = async (idUnit) => {
-  const calificacionesBycourse = await getApi(
-    `unitStudent/aboutReport/${idUnit}`
-  );
+const getAllRatesPartialByUnit = async (idUnit) => {
+  const rateByUnit = await getApi(`unitStudent/aboutReport/${idUnit}`);
 
-  if (calificacionesBycourse.status != 200)
+  if (rateByUnit.status != 200)
     return {
       code: 400,
       message: `Error al cargar las calificaciones`,
-      error: calificacionesBycourse.data.message,
+      error: rateByUnit.data.message,
     };
-  return { code: 200, data: calificacionesBycourse.data.data };
+  return { code: 200, data: rateByUnit.data.data };
 };
 
 //Guardar calificaciones parciales de un alumno
@@ -41,6 +39,17 @@ const saveRatebyStudent = async (data) => {
   return { code: 400, message: `Error, el campo score es inválido` };
 };
 
+// Obtener las calificaciones finales por curso
+const getEndRateByCourse = async (idCourse) => {
+  const ratesByCourse = await getApi(`courseStudent/aboutCourse/${idCourse}`);
+  if (ratesByCourse.status != 200)
+    return {
+      code: 400,
+      message: `Error al cargar las calificaciones`,
+      error: ratesByCourse.data.message,
+    };
+  return { code: 200, data: ratesByCourse.data.data };
+};
 // const post = require("./post");
 
 // Funcion para crear una carrera
