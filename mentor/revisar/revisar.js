@@ -14,6 +14,9 @@ const succesPost = obtainId("succes-post");
 const revisarActividadBtn = obtainId("revisar-actividad");
 const tabListStu = obtainId("listActStud");
 const backLink = obtainId("bActiv");
+const int = obtainId("int-act");
+const inicio = obtainId("init-act");
+const fin = obtainId("fin-act");
 
 // console.log(backLink);
 // console.log(`este es idCurso: ${idCourse}`);
@@ -26,12 +29,26 @@ async function loadGetActivityStudentById() {
   if (revisarAct.code != 200) {
     alert(`Error ${revisarAct.message}`);
   } else {
-    const { name, description } = revisarAct.data;
+    const { name, description, dateEnd, dateStart, intent } = revisarAct.data;
     const nameActivity = obtainId("name-activity");
     const descAct = obtainId("descrip-act");
     descAct.value = description;
     nameActivity.value = name;
+    int.value = intent;
+    const endFormat = dateEnd.slice(0, -14).replaceAll("-", "-");
+    const startFormat = dateStart.slice(0, -14).replaceAll("-", "-");
+    inicio.value = startFormat;
+    fin.value = endFormat;
   }
+}
+
+async function actualizarAct() {
+  const name = obtainId("name-activity").value;
+  const description = obtainId("descrip-act").value;
+  const intent = int.value;
+  const dateEnd = fin.value;
+  const dateStart = inicio.value;
+  const id = idActivity;
 }
 
 async function loadActivityStudentById() {
@@ -49,15 +66,15 @@ async function loadListCheck() {
     console.log(`Error ${revisarActStuList.message}`);
   } else {
     revisarActStuList.data.forEach((student) => {
-      const { estatus, name } = student;
+      const { estatus, name, secondName, idActStudent, score, firstName } =
+        student;
+      console.log(student);
       listActivStu += `
     <tr>
-      <td data-cell="Nombre">${name}</td>
-      <td data-cell="Inicio">${estatus}</td>
+      <td data-cell="Nombre"><p>${name}</p></td>
+      <td data-cell="Estatus"><p>${estatus}</p></td>
       <td data-cell="Revisar">
-        <button>
-          <a class="btn-check" href="../revisar/revisar.html?idMentor=${idMentor}">Revisar</a>
-        </button>
+        <button onclick='mostrarDataActAlumno(${idActStudent},${score},"${name}","${firstName}","${secondName}");' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} class="btn-check">Revisar</button>
       </td>
     </tr>
     `;
@@ -67,12 +84,30 @@ async function loadListCheck() {
   }
 }
 
+async function mostrarDataActAlumno(
+  idActAlu,
+  score,
+  name,
+  firstName,
+  secondName
+) {
+  score === null ? (score = 0) : (score = score);
+  let nombre = obtainId("coment-stu");
+  let califFinalAct = obtainId("link-revisar");
+  nombre.textContent = name + " " + firstName + " " + secondName;
+  califFinalAct.value = parseFloat(score);
+  revisarActividadBtn.setAttribute("data-idact", `${idActAlu}`);
+}
+
 revisarActividadBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
+  const idActalu = revisarActividadBtn.dataset.idact;
   const score = obtainId("link-revisar").value;
   const commentScore = obtainId("comments").value;
-  const data = { actStudId, commentScore, score };
+
+  console.log(score, commentScore, idActalu);
+  const data = { actStudId: idActalu, commentScore, score };
   // Succes Post
   succesPost.innerHTML = `
    <i class='bx bx-loader-circle bx-spin' ></i>
@@ -90,7 +125,7 @@ revisarActividadBtn.addEventListener("click", async (e) => {
     succesPost.classList.add("aviso-click");
   }
 
-  setTimeout(function () {
-    location.reload();
-  }, 4000);
+  // setTimeout(function () {
+  //   location.reload();
+  // }, 4000);
 });

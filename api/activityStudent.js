@@ -197,3 +197,66 @@ const loadListActivityStudentCheck = async (idActivity) => {
 
   return { code: 200, data: listActivity.data.data };
 };
+
+// Update Activity
+
+const updateActivity = async (data) => {
+  const { name, description, dateStart, dateEnd, intent, idActivity } = data;
+
+  if (name == "" || name == null || name == undefined || name == " ")
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  if (
+    description == "" ||
+    description == null ||
+    description == undefined ||
+    description == " "
+  )
+    return { code: 400, message: `Error, el campo descripción es inválido` };
+
+  if (intent == "" || intent == null || intent == undefined || intent == " ")
+    return { code: 400, message: `Error, el campo intento es inválido` };
+
+  if (
+    dateEnd == "" ||
+    dateEnd == null ||
+    dateEnd == undefined ||
+    dateEnd == " "
+  )
+    return { code: 400, message: `Error, el campo finaliza es inválido` };
+
+  if (
+    dateStart == "" ||
+    dateStart == null ||
+    dateStart == undefined ||
+    dateStart == " "
+  )
+    return { code: 400, message: `Error, el campo Inicia es inválido` };
+
+  if (
+    idActivity == "" ||
+    idActivity == null ||
+    idActivity == undefined ||
+    idActivity == " "
+  )
+    return { code: 400, message: `Error, el campo id es inválido` };
+
+  const activity = await postDataC("activity/", {
+    name,
+    type,
+    description,
+    dateStart,
+    dateEnd,
+    intent,
+    idActivity,
+  });
+
+  if (activity.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar la actividad`,
+      error: activity.data.message,
+    };
+
+  return { code: 200, data: activity.data.data };
+};

@@ -45,6 +45,15 @@
 }
 
 .name-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.actualizar-act {
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -53,7 +62,10 @@
 .desc-act-check {
     display: flex;
     flex-direction: column;
+}
 
+.desc-act-check input[type='date'] {
+    font-size: 11px;
 }
 
 /* .content-name input {
@@ -64,26 +76,33 @@
     background-color: var(--primary-color);
     color: white;
     font-size: 14px;
-    padding: 5px;
+    padding: 8px;
     border-radius: 3px;
     text-align: center;
+    cursor: pointer;
 }
 
+.checkRevisar {
+    width: 100%;
+    font-size: 15px;
+}
+
+/* 
 .coments::before {
     content: 'Comentarios del Alumno:';
     font-size: 14px;
     color: var(--primary-color);
     font-weight: normal;
-}
+} */
 
 .link-student {
     background-color: var(--primary-color);
     color: #fff;
-    padding: 5px;
+    padding: 8px;
     display: flex;
     align-items: center;
     gap: 10px;
-    border-radius: 5px;
+    border-radius: 3px;
     text-decoration: none;
     position: relative;
     justify-content: center;
@@ -110,6 +129,7 @@
     font-size: 14px;
     color: var(--primary-color);
 }
+
 
 .content-stud {
     display: flex;
@@ -172,9 +192,7 @@
     resize: none;
 }
 
-.content-activities {
-    /* gap: 10px; */
-}
+
 
 .container-present {
     width: 100%;
@@ -229,5 +247,13 @@ table {
 
     .content-name {
         width: 100%;
+    }
+
+    .actualizar-act {
+        width: 100%;
+    }
+
+    .name-container {
+        flex-direction: column;
     }
 }

@@ -63,20 +63,41 @@
           <div class="content-activities">
             <div class="content-name">
               <div class="name-container">
-                <div class="desc-act-check">
-                  <label class="title-revisar">Nombre de la Actividad:</label>
-                  <input id="name-activity" />
+                <div class="actualizar-act">
+                  <div class="desc-act-check">
+                    <label class="title-revisar">Nombre de la Actividad:</label>
+                    <input id="name-activity" />
+                  </div>
+                  <div class="desc-act-check">
+                    <label class="title-revisar">Descripción:</label>
+                    <textarea
+                      class="activities-desc"
+                      id="descrip-act"
+                    ></textarea>
+                  </div>
+                  <div class="desc-act-check">
+                    <label class="title-revisar">Intentos</label>
+                    <input class="activities-desc" id="int-act" />
+                  </div>
                 </div>
-                <div class="desc-act-check">
-                  <label class="title-revisar">Descripción:</label>
-                  <input class="activities-desc" id="descrip-act" />
+                <div class="actualizar-act">
+                  <div class="desc-act-check">
+                    <label class="title-revisar">Inicia:</label>
+                    <input type="date" class="activities-desc" id="init-act" />
+                  </div>
+                  <div class="desc-act-check">
+                    <label class="title-revisar">Finaliza:</label>
+                    <input type="date" class="activities-desc" id="fin-act" />
+                  </div>
+                  <a class="save-check" onclick="actualizarAct()">Actualizar</a>
                 </div>
-                <a class="save-check">Guardar</a>
               </div>
             </div>
             <div class="content-stud">
-              <p class="act-alumno">Actividad del Alumno:</p>
-              <p class="coments" id="coment-stu"></p>
+              <div>
+                <p class="act-alumno">Nombre del Alumno:</p>
+                <p class="coments" id="coment-stu"></p>
+              </div>
               <div class="link">
                 <a class="link-student" id="link-act"
                   ><i class="bx bx-link-external"></i>Abrir link de actividad</a
@@ -98,7 +119,7 @@
               id="comments"
               placeholder="Comentarios de la activad presentada"
             ></textarea>
-            <button id="revisar-actividad">
+            <button class="checkRevisar" id="revisar-actividad">
               <i class="bx bx-checkbox-checked"></i>Revisar
             </button>
           </div>
@@ -114,5 +135,6 @@
     <script src="../../api/activityStudent.js"></script>
     <script src="revisar.js"></script>
     <script src="../sidenav.js"></script>
+    <script src="../../luxon/luxon.min.js"></script>
   </body>
 </html>

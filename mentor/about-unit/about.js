@@ -76,8 +76,9 @@ async function loadActivityByUnit() {
             <td data-cell="Descripción"><p>${description}</p></td>
             <td data-cell="Inicio"><p class="p-date"><i class='bx bx-calendar'></i>${newDate}</p></td>
             <td data-cell="Finaliza"><p class="p-date"><i class='bx bx-calendar'></i>${endDate}</p></td>
-            <td data-cell="Revisar">
+            <td data-cell="Acciones">
             <a class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&actStudId=${id}">revisar</a>
+            <a class="check">Eliminar
             </td>
         </tr>
         `;
