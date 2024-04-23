@@ -51,8 +51,8 @@
                 </caption>
                 <tr>
                   <th>Nombre</th>
-                  <th>estaus</th>
-                  <th>Check</th>
+                  <th>Estaus</th>
+                  <th>Revisar</th>
                 </tr>
               </thead>
               <tbody id="listActStud"></tbody>
@@ -62,16 +62,24 @@
         <div class="container-present">
           <div class="content-activities">
             <div class="content-name">
-              <h3 id="name-activity"></h3>
-              <p class="activities-desc" id="descrip-act"></p>
+              <div class="name-container">
+                <div class="desc-act-check">
+                  <label class="title-revisar">Nombre de la Actividad:</label>
+                  <input id="name-activity" />
+                </div>
+                <div class="desc-act-check">
+                  <label class="title-revisar">Descripción:</label>
+                  <input class="activities-desc" id="descrip-act" />
+                </div>
+                <a class="save-check">Guardar</a>
+              </div>
             </div>
-            <div class="content-name">
-              <h4>Actividad del Alumno:</h4>
+            <div class="content-stud">
+              <p class="act-alumno">Actividad del Alumno:</p>
               <p class="coments" id="coment-stu"></p>
               <div class="link">
-                <label for="link-act">Link de la actividad presentada</label>
                 <a class="link-student" id="link-act"
-                  ><i class="bx bx-link-external"></i>Abrir</a
+                  ><i class="bx bx-link-external"></i>Abrir link de actividad</a
                 >
               </div>
             </div>
@@ -79,7 +87,7 @@
           <div class="link-material">
             <h5>Califica la actividad</h5>
             <input
-              type="text"
+              type="number"
               name=""
               placeholder="Calificación"
               id="link-revisar"

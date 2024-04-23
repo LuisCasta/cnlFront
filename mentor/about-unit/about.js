@@ -63,10 +63,11 @@ async function loadActivityByUnit() {
     // const countlessons = document.getElementById("spanTitle");
     // countlessons.textContent = lessons.data.length;
     activities.data.forEach((activity) => {
-      const { name, description, id, dateStart } = activity;
+      const { name, description, id, dateStart, dateEnd } = activity;
       const countActs = obtainId("countActs");
       countActs.textContent = activities.data.length;
       const newDate = dateStart.slice(0, -14).replaceAll("-", "/");
+      const endDate = dateEnd.slice(0, -14).replaceAll("-", "/");
 
       //   hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}`;
       activityHtml += `
@@ -74,6 +75,7 @@ async function loadActivityByUnit() {
             <td data-cell="Nombre"><p class="name-activity">${name}</p></td>
             <td data-cell="Descripción"><p>${description}</p></td>
             <td data-cell="Inicio"><p class="p-date"><i class='bx bx-calendar'></i>${newDate}</p></td>
+            <td data-cell="Finaliza"><p class="p-date"><i class='bx bx-calendar'></i>${endDate}</p></td>
             <td data-cell="Revisar">
             <a class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&actStudId=${id}">revisar</a>
             </td>

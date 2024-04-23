@@ -29,8 +29,8 @@ async function loadGetActivityStudentById() {
     const { name, description } = revisarAct.data;
     const nameActivity = obtainId("name-activity");
     const descAct = obtainId("descrip-act");
-    descAct.textContent = description;
-    nameActivity.textContent = name;
+    descAct.value = description;
+    nameActivity.value = name;
   }
 }
 
