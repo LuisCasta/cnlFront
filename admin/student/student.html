@@ -21,7 +21,7 @@
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
     <title>Alumnos</title>
   </head>
-  <body onload="cargarSideNav(), loadStudents()">
+  <body onload="cargarSideNav(), loadStudents(), loadCareers()">
     <!-- sidenav -->
     <div class="sidenav-cln" id="sidenavInsert"></div>
 
@@ -29,25 +29,71 @@
       <div class="breadcumbs">
         <p>Alumnos</p>
       </div>
+      <header class="tabs-content">
+        <div id="alumnos-id" class="tab-alumn"><button>Alumnos</button></div>
+        <div id="asignacion" class="tab-alumn">
+          <button>Asiganciones</button>
+        </div>
+      </header>
       <div class="card-header">
-        <div class="heading">
-          <h2>Alumnos</h2>
-          <p>Agrega alumnos, consulta y configúralos</p>
-        </div>
-        <div class="form-header">
-          <input type="text" placeholder="Nombre" id="nameStud" />
-          <input type="text" placeholder="Apellido Paterno" id="fnameStud" />
-          <input type="text" id="secondName" placeholder="Apellido Materno" />
-          <input type="date" id="birthDate" placeholder="Fecha de Nacimiento" />
-          <input type="text" id="mobile" placeholder="mobile" />
-          <input type="text" placeholder="Email" id="emailStud" />
-          <input type="text" placeholder="Contraseña" id="pwStud" />
+        <div class="container-alumnos-asignaciones">
+          <div class="cambio">
+            <div class="heading">
+              <h2>Alumnos</h2>
+              <p>Agrega alumnos, consulta y configúralos</p>
+            </div>
+            <div class="form-header">
+              <input type="text" placeholder="Nombre" id="nameStud" />
+              <input
+                type="text"
+                placeholder="Apellido Paterno"
+                id="fnameStud"
+              />
+              <input
+                type="text"
+                id="secondName"
+                placeholder="Apellido Materno"
+              />
+              <input
+                type="date"
+                id="birthDate"
+                placeholder="Fecha de Nacimiento"
+              />
+              <input type="text" id="mobile" placeholder="mobile" />
+              <input type="text" placeholder="Email" id="emailStud" />
+              <input type="text" placeholder="Contraseña" id="pwStud" />
 
-          <button id="agregar-alumno">Agregar Alumno</button>
-        </div>
+              <button id="agregar-alumno">Agregar Alumno</button>
+            </div>
 
-        <div id="succes-post" class="succes-post"></div>
+            <div id="succes-post" class="succes-post"></div>
+          </div>
+          <div class="asignaciones-container">
+            <div class="heading">
+              <h2>Asignaciones</h2>
+              <p>Agrega alumnos a tus Cursos</p>
+              <div class="form-header">
+                <select onchange="changeCareer()" type="text" id="carrera">
+                  <option value="carrera">Carrera</option>
+                </select>
+                <select name="" onchange="changePeriod()" id="period">
+                  <option value="">periodo</option>
+                </select>
+                <select name="" onchange="changeGroup()" id="groups">
+                  <option value="">grupo</option>
+                </select>
+                <select name="" id="cursos">
+                  <option value="">curso</option>
+                </select>
+                <button onclick="loadCheckBoxes()" id="btn-mostrar-ids">
+                  Guardar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       <!-- BUSCAR ELEMENTOS EN LA TABLA -->
       <section>
         <div class="finder">
@@ -74,7 +120,8 @@
               <th>Apellido</th>
               <th>Mail</th>
               <th>Contraseña</th>
-              <th></th>
+              <th>Seleccionar</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody class="datos" id="datos"></tbody>
@@ -84,9 +131,11 @@
     <button class="responsive" id="btnResponsive">
       <i class="bx bx-menu"></i>
     </button>
+    <div id="succes-post"></div>
   </body>
   <script src="../../api/post.js"></script>
   <script src="../../api/student.js"></script>
+  <script src="../../api/assigmentsStudents.js"></script>
   <script src="student.js"></script>
   <script src="../js/sidenav.js"></script>
   <script src="../js/post.js"></script>

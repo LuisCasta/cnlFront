@@ -10,14 +10,16 @@ async function loadStudents() {
     students.data.map((student) => {
       const amountStudents = document.getElementById("spanTitle");
       amountStudents.textContent = students.data.length;
-      const { name, firstName, mail, password } = student;
+      const { name, firstName, mail, password, id } = student;
+
       salida += `
       <tr>
         <td data-cell="Name">${name}</td>
         <td data-cell="FirstName">${firstName}</td>
         <td data-cell="Mail">${mail}</td>
         <td data-cell="PW">${password}</td>
-        <td data-cell="Actions">
+        <td data-cell="Seleccionar"><input value=${id} type="checkbox" class="chk-alumno"/></>
+        <td data-cell="Acciones">
             <div class="actions">
             <button data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
             <button data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
@@ -26,6 +28,7 @@ async function loadStudents() {
        </tr>
   `;
     });
+
     myTable.innerHTML = salida;
   }
 }
@@ -43,6 +46,22 @@ async function getStudentById(id) {
       id,
     };
   }
+  //SELECCIONAR ALUMNOS PARA AGREGAR A CURSOS
+
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   const checkboxes = document.querySelectorAll(".chk-alumno");
+  //   const btnMostrarIds = document.getElementById("btn-mostrar-ids");
+  //   btnMostrarIds.addEventListener("click", function () {
+  //     const idsSeleccionados = [];
+  //     checkboxes.forEach(function (checkbox) {
+  //       console.log(checkbox);
+  //       if (checkbox.checked) {
+  //         idsSeleccionados.push(checkbox.value);
+  //       }
+  //     });
+  //     console.log("IDs de alumnos seleccionados:", idsSeleccionados);
+  //   });
+  // });
 }
 
 /**
@@ -100,3 +119,133 @@ btnStudent.addEventListener("click", async (e) => {
     }, 7000);
   }
 });
+
+function obtainId(id) {
+  const getID = document.getElementById(id);
+  return getID;
+}
+
+const btnAlumno = obtainId("alumnos-id");
+const btnAsig = obtainId("asignacion");
+const selectCareer = obtainId("carrera");
+
+// Cargar las carreras
+let option = "";
+async function loadCareers() {
+  option += `
+  <option>Selecciona una Carrera</option>
+      `;
+  const careers = await getAllAssigmentCareers();
+  if (careers.code != 200) {
+    alert(`Error ${newCareer.message}`);
+  } else {
+    const countCareers = document.getElementById("spanTitle");
+    countCareers.textContent = careers.data.length;
+    careers.data.sort((a, b) => {
+      return b.id - a.id;
+    });
+    careers.data.map((carrer) => {
+      const { id, name } = carrer;
+      option += `
+    <option value=${id}>${name}</option>
+          
+            `;
+    });
+    selectCareer.innerHTML = option;
+  }
+}
+
+async function changeCareer() {
+  let periodos = "";
+  periodos += `
+  <option>Selecciona un periodo</option>
+      `;
+  const period = obtainId("period");
+  console.log(period);
+  const careerValue = obtainId("carrera").value;
+  console.log(careerValue);
+  const periods = await getAllPeriod(careerValue);
+  if (periods.code != 200) {
+    alert(`Error ${newPeriods.message}`);
+  } else {
+    periods.data.map((item) => {
+      const { id, name } = item;
+      periodos += `
+      <option value=${id}>${name}</option>
+          `;
+    });
+
+    period.innerHTML = periodos;
+  }
+}
+
+async function changePeriod() {
+  console.log("entra");
+  let groupsHtml = "";
+  groupsHtml += `
+      <option>Selecciona un Grupo</option>
+          `;
+  const selectorGroups = obtainId("groups");
+
+  const selectorPeriod = obtainId("period").value;
+  console.log(selectorGroups, selectorPeriod);
+  const groups = await getAllGroup(selectorPeriod);
+  if (groups.code != 200) {
+    alert(`Error ${groups.message}`);
+  } else {
+    groups.data.map((group) => {
+      const { id, name } = group;
+      groupsHtml += `
+      <option value=${id}>${name}</option>
+          `;
+    });
+
+    selectorGroups.innerHTML = groupsHtml;
+  }
+}
+
+async function changeGroup() {
+  console.log("entra");
+  let cursosHtml = "";
+  cursosHtml += `
+  <option>Selecciona un Curso</option>
+      `;
+  const selectorCursos = obtainId("cursos");
+
+  const selectorGrupos = obtainId("groups").value;
+  // console.log(selectorGroups, selectorPeriod);
+  const cursos = await getAllCursos(selectorGrupos);
+  if (cursos.code != 200) {
+    alert(`Error ${cursos.message}`);
+  } else {
+    cursos.data.map((curso) => {
+      const { id, name } = curso;
+      cursosHtml += `
+      <option value=${id}>${name}</option>
+          `;
+    });
+
+    selectorCursos.innerHTML = cursosHtml;
+  }
+}
+
+function loadCheckBoxes() {
+  const checkboxes = document.querySelectorAll(".chk-alumno");
+  const idsSeleccionados = [];
+  checkboxes.forEach(function (checkbox) {
+    if (checkbox.checked) {
+      idsSeleccionados.push(checkbox.value);
+    }
+  });
+  const idCourse = obtainId("cursos").value;
+  console.log(
+    "IDs de alumnos seleccionados:",
+    idsSeleccionados,
+    "IdCurso",
+    idCourse
+  );
+
+  const selectorCourse = obtainId("cursos").value;
+
+  // llamar api
+}
