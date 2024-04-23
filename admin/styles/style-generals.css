@@ -60,7 +60,7 @@ textarea {
     border-radius: var(--input-bor-rad);
     font-style: italic;
     font-size: 14px;
-    width: fit-content;
+    /* width: fit-content; */
 }
 
 button {
