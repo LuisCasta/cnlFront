@@ -12,6 +12,26 @@
     gap: 10px;
 }
 
+.asignaciones-container {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.text-pw-student {
+    text-wrap: balance;
+}
+
+.show {
+    display: block;
+    transform: translateX(-50px);
+    transition: .2s ease-in-out translateX;
+}
+
+.active {}
+
 .filter {
     display: none;
 }

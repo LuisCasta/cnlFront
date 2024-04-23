@@ -14,10 +14,15 @@ async function loadStudents() {
 
       salida += `
       <tr>
-        <td data-cell="Name">${name}</td>
-        <td data-cell="FirstName">${firstName}</td>
-        <td data-cell="Mail">${mail}</td>
-        <td data-cell="PW">${password}</td>
+      <td data-cell="ID"><p>${id}</p></td>
+
+        <td data-cell="Name"><p>${name}</p></td>
+        <td data-cell="FirstName"><p>${firstName}</p></td>
+        <td data-cell="Mail"><p>${mail}</p></td>
+        <td data-cell="PW"><p class='text-pw-student'>${password.slice(
+          0,
+          6
+        )}</p></td>
         <td data-cell="Seleccionar"><input value=${id} type="checkbox" class="chk-alumno"/></>
         <td data-cell="Acciones">
             <div class="actions">
@@ -125,8 +130,6 @@ function obtainId(id) {
   return getID;
 }
 
-const btnAlumno = obtainId("alumnos-id");
-const btnAsig = obtainId("asignacion");
 const selectCareer = obtainId("carrera");
 
 // Cargar las carreras
@@ -249,3 +252,24 @@ function loadCheckBoxes() {
 
   // llamar api
 }
+
+const btnAlumno = obtainId("alumnos-id");
+const btnAsig = obtainId("asignacion");
+
+const alumnosList = obtainId("alumnos-list");
+const asignados = obtainId("asignados");
+
+function ocultarAsignacion() {
+  asignados.classList.add("hide");
+  alumnosList.classList.add("show");
+  asignados.classList.remove("show");
+}
+
+function ocultarAlumnosLista() {
+  asignados.classList.add("show");
+  alumnosList.classList.add("hide");
+  alumnosList.classList.remove("show");
+}
+
+btnAsig.addEventListener("click", ocultarAlumnosLista);
+btnAlumno.addEventListener("click", ocultarAsignacion);

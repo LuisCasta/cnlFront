@@ -37,7 +37,7 @@
       </header>
       <div class="card-header">
         <div class="container-alumnos-asignaciones">
-          <div class="cambio">
+          <div id="alumnos-list" class="alumnos-list show">
             <div class="heading">
               <h2>Alumnos</h2>
               <p>Agrega alumnos, consulta y configúralos</p>
@@ -65,10 +65,9 @@
 
               <button id="agregar-alumno">Agregar Alumno</button>
             </div>
-
-            <div id="succes-post" class="succes-post"></div>
           </div>
-          <div class="asignaciones-container">
+          <!-- ASIGNACIONES CONTAINER -->
+          <div id="asignados" class="asignaciones-container">
             <div class="heading">
               <h2>Asignaciones</h2>
               <p>Agrega alumnos a tus Cursos</p>
@@ -116,6 +115,7 @@
               </div>
             </caption>
             <tr>
+              <th>ID</th>
               <th>Nbmbre</th>
               <th>Apellido</th>
               <th>Mail</th>
