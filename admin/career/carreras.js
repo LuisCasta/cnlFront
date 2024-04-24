@@ -18,14 +18,16 @@ async function loadCareers() {
       const { id, name, description, code } = carrer;
       salida += `
               <tr>
-                <td data-cell="Licenciatura"><input id='name_${id}' value=${name}></td>
-                <td data-cell="Descripción"><input id='description_${id}' value=${description}></td>
-                <td class="not-show" data-cell="Code"><input id='code_${id}' value=${code}></td>
+                <td data-cell="Licenciatura"><p id='name_${id}' contenteditable="true" spellcheck="false">${name}</p></td>
+                <td data-cell="Descripción"><p id='description_${id}' contenteditable="true" spellcheck="false" >${description}</p></td>
+                <td class="not-show" data-cell="Code"><p id='code_${id}' contenteditable="true" spellcheck="false">${code}</p></td>
                 <td data-cell="Acciones">
                   <div class="actions">
-                    <a data-tooltip="Agregar periodo" href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera"><button><i class='bx bx-calendar-plus'></i></button></a>
-                    <button onclick="updateCareer(${id})" data-tooltip="Editar" data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
-                    <button onclick="deleteCareer(${id})" data-tooltip="Eliminar" data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
+                    <a data-tooltip="Agregar periodo" href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera">
+                      <button class="edit"><i class='bx bx-calendar-plus'></i></button>
+                    </a>
+                    <button onclick="updateCareer(${id})" data-tooltip="Editar" data-id="${id}" class="edit"><i class='bx bx-edit' ></i></button>
+                    <button onclick="deleteCareer(${id})" data-tooltip="Eliminar" data-id="${id}" class="edit"><i class='bx bx-trash'></i></button>
                   </div>
                 </td>
               </tr>
@@ -88,9 +90,9 @@ btnCarrera.addEventListener("click", async (e) => {
 // Update
 async function updateCareer(careerId) {
   if (confirm("¿Estás seguro de que deseas continuar?")) {
-    const name = obtainId(`name_${careerId}`).value;
-    const description = obtainId(`description_${careerId}`).value;
-    const code = obtainId(`code_${careerId}`).value;
+    const name = obtainId(`name_${careerId}`).textContent;
+    const description = obtainId(`description_${careerId}`).textContent;
+    const code = obtainId(`code_${careerId}`).textContent;
 
     const updateData = await updateCarrera({
       careerId,

@@ -40,17 +40,17 @@ async function loadMentors() {
                 </td>
                 <td data-cell="Acciones"> 
                   <div class="actions">
-                    <button   onclick="updateMaestro(${id})" data-tooltip="Editar" class="edit">
-                      <i class='bx bx-edit' ></i>
-                    </button>
-                    <button   onclick="deleteMaestro(${id})" data-tooltip="Eliminar" class="edit">
-                      <i class='bx bx-trash'></i>
-                    </button >
                     <button class="edit">
                     <a data-tooltip="Agregar materias a Mentor">
                     <i class='bx bx-cog'></i>
                     </button>
                     </a>
+                    <button   onclick="updateMaestro(${id})" data-tooltip="Editar" class="edit">
+                    <i class='bx bx-edit' ></i>
+                  </button>
+                  <button   onclick="deleteMaestro(${id})" data-tooltip="Eliminar" class="edit">
+                    <i class='bx bx-trash'></i>
+                  </button>
                   </div>
                 </td>
               </tr>

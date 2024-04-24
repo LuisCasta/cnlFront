@@ -25,7 +25,8 @@ p {
 }
 
 
-.bx-cog {
+.bx-cog,
+.bx-calendar-plus {
     color: #1b4332;
     background-color: #1b433230;
     padding: 5px;
@@ -57,6 +58,17 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+
+
+.edit {
+    background-color: transparent;
+}
+
+.edit:hover {
+    background-color: transparent;
 }
 
 * {
