@@ -25,20 +25,39 @@ async function loadCursos() {
     const countCursos = document.getElementById("spanTitle");
     countCursos.textContent = cursos.data.length;
     cursos.data.map((curso) => {
-      const { id, name, description } = curso;
-      // console.log(
-      //   `Id Carrera ${id} - name ${name} - description ${description}`);
+      const { id, name, description, idGroup, idMentor, proyect, task, exam } =
+        curso;
+
       cursoHtml += `
               <tr>
-                <td data-cell="Nombre de curso">${name}</td>
-                <td data-cell="Descripción">${description}</td>
-                <td data-cell="Unidades">
-                 <a data-tooltip='Agregar/Gestionar unidad' href="../unit/unit.html?idCurso=${id}"><button data-id="${id}" class="unidad"><i class='bx bx-customize'></i></button></a>
+                <td data-cell="Nombre de curso">
+                  <input id='name_${id}' value=${name}>
                 </td>
-                <td data-cell="Actciones">
+                <td data-cell="Descripción">
+                  <input id='description_${id}' value=${description}>
+                </td>
+                <td data-cell="Unidades">
+                 <a data-tooltip='Agregar/Gestionar unidad' href="../unit/unit.html?idCurso=${id}">
+                  <button data-id="${id}" class="unidad">
+                  <i class='bx bx-customize'></i>
+                  </button></a>
+                </td>
+                <td data-cell="Acciones">
                   <div class="actions">
-                    <button data-tooltip='Editar' data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
-                    <button data-tooltip='Eliminar'  data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
+                    <button onclick="upCurso(${id})" 
+                      data-idgroup=${idGroup} 
+                      data-idmentor=${idMentor} 
+                      data-proyect=${proyect}  
+                      data-task=${task}  
+                      data-exam=${exam}  
+                      data-tooltip='Editar' 
+                      id='btn_${id}' 
+                      class="editar">
+                      <i class='bx bx-edit'></i>
+                    </button>
+                    <button onclick="delCurso(${id})" data-tooltip='Eliminar'  
+                     data-id="${id}" class="eliminar"><i class='bx bx-trash'></i>
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -138,43 +157,82 @@ btnCurso.addEventListener("click", async (e) => {
   }, 4000);
 });
 
-// EDITAR  CARRERA
+// Update
+async function upCurso(courseId) {
+  if (confirm("¿Estás seguro de que deseas continuar?")) {
+    const name = obtainId(`name_${courseId}`).value;
+    const description = obtainId(`description_${courseId}`).value;
+    const btn = obtainId(`btn_${courseId}`);
+    console.log(btn);
+    const task = btn.getAttribute("data-task");
+    const idGroup = btn.getAttribute("data-idgroup");
+    const idMentor = btn.getAttribute("data-idmentor");
+    const proyect = btn.getAttribute("data-proyect");
+    const exam = btn.getAttribute("data-exam");
 
-async function modificarCarrera() {
-  const data = await getAll();
-  const { name, active, description } = data;
-  const buttons = document.querySelectorAll(".editar");
-  buttons.forEach((button) => {
-    button.addEventListener("click", modificar);
-    function modificar() {
-      modifyCarrera.classList.add("opacityModificar");
-      const div = document.createElement("div");
-      const h3 = document.createElement("h3");
-      h3.textContent = "Modificar Carrera";
-      // const input =
-    }
+    const updateData = await updateCourseAdmin({
+      courseId,
+      name,
+      description,
+      task,
+      exam,
+      proyect,
+      idGroup,
+      idMentor,
+    });
 
-    aceptButton.addEventListener("click", ocultarModificarCarrera);
-    function ocultarModificarCarrera() {
-      modifyCarrera.classList.remove("opacityModificar");
+    if (updateData.code != 200) {
+      alert(`Error al actualizar el grupo ${courseId} ${name} `);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle'></i>
+        <p>Grupo actualizado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
     }
-  });
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
 }
 
-// // BORRAR CARRERA
+async function delCurso(courseId) {
+  if (confirm("¿Estás seguro de que deseas eliminar este Grupo?")) {
+    const deleteData = await deleteGroup({
+      courseId,
+    });
 
-async function deleteCarrera() {
-  const data = await getAll();
-  const buttonsDelete = document.querySelectorAll(".eliminar");
+    if (deleteData.code != 200) {
+      alert(`Error al eliminar el Grupo ${courseId}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' ></i>
+        <p>Grupo eliminado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
 
-  buttonsDelete.forEach((button) => {
-    button.addEventListener("click", abrirDelete);
-    function abrirDelete() {
-      modalDelete.classList.add("opacityModificar");
-    }
-    aceptDelete.addEventListener("click", cerrarModalDelete);
-    function cerrarModalDelete() {
-      modalDelete.classList.remove("opacityModificar");
-    }
-  });
+    location.reload();
+  }
 }

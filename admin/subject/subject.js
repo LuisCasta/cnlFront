@@ -3,14 +3,16 @@ let salida = "";
 const tbody = document.getElementById("materias-table");
 const succesPost = document.getElementById("succes-post");
 const backPeriod = document.getElementById("back-period");
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const idPeriod = urlParams.get("idPeriodo");
+const nameCareer = urlParams.get("nameCareer");
+const carreraId = urlParams.get("idCarrera");
+const idCareer = urlParams.get("idCarrera");
+
 async function loadSubject() {
   const outputSubject = "";
   //?idPeriod=1&idCareer=1
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const idPeriod = urlParams.get("idPeriodo");
-  const nameCareer = urlParams.get("nameCareer");
-  const carreraId = urlParams.get("idCarrera");
   const namePeriod = urlParams.get("namePeriod");
   backPeriod.href = `../periodo/periodo.html?idCarrera=${carreraId}&nameCareer=${nameCareer}`;
 
@@ -23,17 +25,17 @@ async function loadSubject() {
   } else {
     nperiod.textContent = namePeriod;
     subjects.data.map((subject) => {
-      const { idPeriod, name, idCareer } = subject;
+      const { name, id } = subject;
       // console.log(
       //   `Id Period ${idPeriod} - name ${name} - idCarrera ${idCareer}`
       // );
       salida += `
               <tr>
-                <td data-cell="Name">${name}</td>
+                <td data-cell="Name"><p id='name_${id}' spellcheck="false" contenteditable="true">${name}</p></td>
                 <td data-cell="Actions">
                   <div class='actions'>
-                      <a data-tooltip='Editar'><i class='bx bx-edit-alt'></i></a>
-                      <a data-tooltip='Eliminar'><i class='bx bx-trash'></i></a>
+                      <a onclick="upSubject(${id})" data-tooltip='Editar'><i class='bx bx-edit-alt'></i></a>
+                      <a onclick="delSubject(${id})" data-tooltip='Eliminar'><i class='bx bx-trash'></i></a>
                   </div>
                 </td>
 
@@ -98,3 +100,73 @@ btnSubject.addEventListener("click", async (e) => {
     location.reload();
   }, 4000);
 });
+
+// Update
+async function upSubject(subjectId) {
+  const name = obtainId(`name_${subjectId}`).textContent;
+  // setName.setAttribute("contenteditable", "true");
+
+  console.log(name);
+
+  if (confirm("¿Estás seguro de que deseas continuar?")) {
+    const updateData = await updateSubject({
+      subjectId,
+      name,
+      idCareer,
+      idPeriod,
+    });
+    if (updateData.code != 200) {
+      alert(`Error al actualizar el grupo ${courseId} ${name} `);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle'></i>
+        <p>Materia ${name} actualizada con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
+}
+
+async function delSubject(subjectId) {
+  if (confirm("¿Estás seguro de que deseas eliminar esta Materia?")) {
+    const deleteData = await deleteMateria({
+      subjectId,
+    });
+
+    if (deleteData.code != 200) {
+      alert(`Error al eliminar la Materia ${subjectId}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' ></i>
+        <p>Materia eliminado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+
+    location.reload();
+  }
+}

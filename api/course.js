@@ -81,7 +81,7 @@ const getAll = async (idGroup) => {
   if (curso.status != 200)
     return {
       code: 400,
-      message: `Error al crear el curso`,
+      message: `Error al obtener el curso`,
       error: curso.data.message,
     };
 
@@ -200,4 +200,114 @@ const updateCourse = async (data) => {
     };
 
   return { code: 200, data: course.data.data };
+};
+
+const updateCourseAdmin = async (data) => {
+  const {
+    courseId,
+    name,
+    description,
+    task,
+    exam,
+    proyect,
+    idGroup,
+    idMentor,
+  } = data;
+
+  if (
+    idGroup == "" ||
+    idGroup == null ||
+    idGroup == undefined ||
+    idGroup == " "
+  )
+    return { code: 400, message: `Error, el campo idGroup es inválido` };
+
+  if (
+    idMentor == "" ||
+    idMentor == null ||
+    idMentor == undefined ||
+    idMentor == " "
+  )
+    return { code: 400, message: `Error, el campo idGroup es inválido` };
+
+  if (
+    courseId == "" ||
+    courseId == null ||
+    courseId == undefined ||
+    courseId == " "
+  )
+    return { code: 400, message: `Error, el campo courseId es inválido` };
+
+  if (name == "" || name == null || name == undefined || name == " ")
+    return { code: 400, message: `Error, el campo name es inválido` };
+
+  if (
+    description == "" ||
+    description == null ||
+    description == undefined ||
+    description == " "
+  )
+    return { code: 400, message: `Error, el campo description es inválido` };
+
+  if (task == "" || task == null || task == undefined || task == " ")
+    return { code: 400, message: `Error, el campo task es inválido` };
+
+  if (exam == "" || exam == null || exam == undefined || exam == " ")
+    return { code: 400, message: `Error, el campo exam es inválido` };
+
+  if (
+    proyect == "" ||
+    proyect == null ||
+    proyect == undefined ||
+    proyect == " "
+  )
+    return { code: 400, message: `Error, el campo proyect es inválido` };
+
+  const course = await putApi("course", {
+    courseId,
+    name,
+    description,
+    task,
+    exam,
+    proyect,
+    idGroup,
+    idMentor,
+  });
+
+  if (course.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar el course.`,
+      error: course.data.message,
+    };
+
+  return { code: 200, data: course.data.data };
+};
+
+/**
+ * @descripcion Delete a student by id
+ */
+const deleteGroup = async (data) => {
+  const { courseId } = data;
+
+  if (
+    courseId == "" ||
+    courseId == null ||
+    courseId == undefined ||
+    courseId == ""
+  )
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  const career = await putApi(`group/d/${courseId}`, {});
+
+  if (career.status != 200) {
+    return {
+      code: 400,
+      message: `Error al eliminar al Mentor`,
+      error: career.data.message,
+    };
+  } else {
+    location.reload();
+    return { code: 200, data: career.data.data };
+  }
 };
