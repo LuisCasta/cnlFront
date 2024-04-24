@@ -123,3 +123,85 @@ const getLogin = async (data) => {
 
   return { code: 200, data: mentor.data.data };
 };
+
+/**
+ * @description update a student by all params
+ */
+const updateMentor = async (data) => {
+  const { name, firstName, mail, password, mentorId } = data;
+
+  if (name == "" || name == null || name == undefined || name == " ")
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  if (
+    firstName == "" ||
+    firstName == null ||
+    firstName == undefined ||
+    firstName == " "
+  )
+    return { code: 400, message: `Error, el campo firstName es inválido` };
+
+  if (
+    mentorId == "" ||
+    mentorId == null ||
+    mentorId == undefined ||
+    mentorId == ""
+  )
+    return { code: 400, message: `Error, el campo studentId es inválido` };
+
+  if (mail == "" || mail == null || mail == undefined || mail == " ")
+    return { code: 400, message: `Error, el campo email es inválido` };
+
+  if (
+    password == "" ||
+    password == null ||
+    password == undefined ||
+    password == " "
+  )
+    return { code: 400, message: `Error, el campo password es inválido` };
+
+  const mentor = await putApi("mentor/", {
+    name,
+    firstName,
+    mail,
+    password,
+    mentorId,
+    secondName: "0",
+    birthdate: "0001-01-01",
+    mobilePhone: "0",
+  });
+
+  if (mentor.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar los datos del Maestro`,
+      error: mentor.data.message,
+    };
+
+  return { code: 200, data: mentor.data.data };
+};
+/**
+ * @descripcion Delete a student by id
+ */
+const deleteMentor = async (data) => {
+  const { mentorId } = data;
+
+  if (
+    mentorId == "" ||
+    mentorId == null ||
+    mentorId == undefined ||
+    mentorId == ""
+  )
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  const mentor = await putApi(`mentor/d/${mentorId}`, {});
+
+  if (mentor.status != 200)
+    return {
+      code: 400,
+      message: `Error al eliminar al Mentor`,
+      error: mentor.data.message,
+    };
+
+  return { code: 200, data: mentor.data.data };
+};

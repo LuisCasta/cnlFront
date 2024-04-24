@@ -13,24 +13,25 @@ async function loadMentors() {
   let salida = "";
   const tbody = document.getElementById("mentors");
   const mentors = await getAll();
-
+  console.log(mentors.data);
   if (mentors.code != 200) {
     alert(`Error ${newMentor.message}`);
   } else {
     const countMentors = document.getElementById("spanTitle");
     countMentors.textContent = mentors.data.length;
     mentors.data.map((mentor) => {
-      const { firstName, name, mail, password } = mentor;
+      const { firstName, name, mail, password, id } = mentor;
       salida += `
               <tr>
-                <td data-cell="Name" >${name}</td>
-                <td data-cell="FirstName">${firstName}</td>
-                <td data-cell="Mail">${mail}</td>
-                <td data-cell="PW">${password}</td>
+                <td data-cell="ID"><p>${id}</p></td>
+                <td data-cell="Name" ><input id='name_${id}' value=${name}></td>
+                <td data-cell="FirstName"><input id='first-name_${id}' value=${firstName}></td>
+                <td data-cell="Mail"><input id='mail_${id}' value=${mail}></td>
+                <td data-cell="PW"><input id='password_${id}' value='${password}'></td>
                 <td data-cell="Actions"> 
                   <div class="actions">
-                    <button data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
-                    <button data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
+                    <button  onclick="updateMaestro(${id})" data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
+                    <button  onclick="deleteMaestro(${id})" data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
                     <a data-tooltip="Agregar materias a Mentor" href="../add-subject/addsubject.html" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
                   </div>
                 </td>
@@ -86,7 +87,7 @@ btnMentor.addEventListener("click", async (e) => {
   if (newMentor.code != 200) alert(`Error ${newMentor.message}`);
   else {
     succesPost.innerHTML = `
-<i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+<i class='bx bx-check-circle bx-tada' ></i>
  <p>Docente: ${name} creado con éxito</p>
 `;
     succesPost.classList.add("aviso-click");
@@ -96,3 +97,75 @@ btnMentor.addEventListener("click", async (e) => {
   limpiarInputs();
   succesPost.style.display = "none";
 });
+
+// Update
+async function updateMaestro(mentorId) {
+  if (confirm("¿Estás seguro de que deseas continuar?")) {
+    const name = obtainId(`name_${mentorId}`).value;
+    const firstName = obtainId(`first-name_${mentorId}`).value;
+    const mail = obtainId(`mail_${mentorId}`).value;
+    const password = obtainId(`password_${mentorId}`).value;
+
+    const updateData = await updateMentor({
+      mentorId,
+      name,
+      firstName,
+      mail,
+      password,
+    });
+
+    if (updateData.code != 200) {
+      alert(`Error al actualizar al alumno ${mentorId} ${name} `);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle'></i>
+        <p>Maestro actualizado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
+}
+
+async function deleteMaestro(mentorId) {
+  if (confirm("¿Estás seguro de que deseas eliminar al alumno?")) {
+    const deleteData = await deleteMentor({
+      mentorId,
+    });
+
+    if (deleteData.code != 200) {
+      alert(`Error al eliminar al alumno ${mentorId}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' ></i>
+        <p>Maestro eliminado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+
+    location.reload();
+  }
+}

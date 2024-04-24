@@ -15,8 +15,7 @@ async function loadStudents() {
 
       salida += `
       <tr>
-      <td data-cell="ID"><p>${id}</p></td>
-
+        <td data-cell="ID"><p>${id}</p></td>
         <td data-cell="Name"><input id='name_${id}' value=${name}></td>
         <td data-cell="FirstName"><input id='first-name_${id}' value=${firstName}></td>
         <td data-cell="Mail"><input id='mail_${id}' value=${mail}></td>
@@ -52,22 +51,6 @@ async function getStudentById(id) {
       id,
     };
   }
-  //SELECCIONAR ALUMNOS PARA AGREGAR A CURSOS
-
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   const checkboxes = document.querySelectorAll(".chk-alumno");
-  //   const btnMostrarIds = document.getElementById("btn-mostrar-ids");
-  //   btnMostrarIds.addEventListener("click", function () {
-  //     const idsSeleccionados = [];
-  //     checkboxes.forEach(function (checkbox) {
-  //       console.log(checkbox);
-  //       if (checkbox.checked) {
-  //         idsSeleccionados.push(checkbox.value);
-  //       }
-  //     });
-  //     console.log("IDs de alumnos seleccionados:", idsSeleccionados);
-  //   });
-  // });
 }
 
 /**
@@ -99,7 +82,7 @@ btnStudent.addEventListener("click", async (e) => {
 
   setTimeout(function () {
     succesPost.innerHTML = `
-    <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+    <i class='bx bx-check-circle'></i>
     <p>Creando nueva carrera...</p>`;
     succesPost.classList.add("aviso-click");
   }, 100);
@@ -115,7 +98,7 @@ btnStudent.addEventListener("click", async (e) => {
   else {
     setTimeout(function () {
       succesPost.innerHTML = `
-      <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+      <i class='bx bx-check-circle'></i>
       <p>Estudiante cread0 con éxito</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
@@ -268,7 +251,7 @@ async function updateAlumno(studentId) {
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `
-        <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+        <i class='bx bx-check-circle'></i>
         <p>Estudiante actualizado con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
@@ -280,7 +263,7 @@ async function updateAlumno(studentId) {
   } else {
     setTimeout(function () {
       succesPost.innerHTML = `
-      <i class='bx bx-x' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+      <i class='bx bx-x' ></i>
       <p>Operación Cancelada</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
@@ -298,7 +281,7 @@ async function deleteAlumno(studentId) {
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `
-        <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+        <i class='bx bx-check-circle' ></i>
         <p>Estudiante eliminado con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
@@ -310,7 +293,7 @@ async function deleteAlumno(studentId) {
   } else {
     setTimeout(function () {
       succesPost.innerHTML = `
-      <i class='bx bx-x' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+      <i class='bx bx-x' ></i>
       <p>Operación Cancelada</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
