@@ -21,11 +21,11 @@ async function loadGroups() {
       <td data-cell="Nombre de Grupo">${name}</td>
       <td data-cell="Acciones">
           <div class="actions">
-          <button data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
-          <button data-tooltip='Editar' class="editar"><i class='bx bx-edit' ></i>
           <a  data-tooltip='Agregar curso' href="../courses/course.html?idGroup=${id}&idCarrera=${idCareer}"><button
           <i class='bx bx-book'></i></button>
           </a>
+          <button data-tooltip='Editar' class="editar"><i class='bx bx-edit' ></i>
+          <button data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
           </div>
       </td>
      </tr>`;

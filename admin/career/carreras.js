@@ -1,6 +1,5 @@
 "use strict";
-let salida = "";
-const tbody = document.getElementById("carreras");
+
 const succesPost = document.getElementById("succes-post");
 const modifyCarrera = document.getElementById("modify-carrera");
 const aceptButton = document.getElementById("cancelModify");
@@ -8,6 +7,8 @@ const modalDelete = document.getElementById("delete-carrera");
 const aceptDelete = document.getElementById("acept-delete");
 
 async function loadCareers() {
+  let salida = "";
+  const tbody = document.getElementById("carreras");
   const careers = await getAll();
   if (careers.code != 200) {
     alert(`Error ${newCareer.message}`);
@@ -27,8 +28,8 @@ async function loadCareers() {
                 <td data-cell="Acciones">
                   <div class="actions">
                     <a data-tooltip="Agregar periodo" href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera"><button><i class='bx bx-calendar-plus'></i></button></a>
-                    <button data-tooltip="Eliminar" data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                     <button data-tooltip="Editar" data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
+                    <button data-tooltip="Eliminar" data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                   </div>
                 </td>
               </tr>
@@ -83,9 +84,9 @@ btnCarrera.addEventListener("click", async (e) => {
     succesPost.classList.add("aviso-click");
   }
 
-  setTimeout(function () {
-    location.reload();
-  }, 4000);
+  await loadCareers();
+  limpiarInputs();
+  succesPost.style.display = "none";
 });
 
 // EDITAR  CARRERA

@@ -43,25 +43,48 @@
               <p>Agrega alumnos, consulta y configúralos</p>
             </div>
             <div class="form-header">
-              <input type="text" placeholder="Nombre" id="nameStud" />
+              <input
+                type="text"
+                placeholder="Nombre"
+                id="nameStud"
+                class="form-student"
+              />
               <input
                 type="text"
                 placeholder="Apellido Paterno"
                 id="fnameStud"
+                class="form-student"
               />
               <input
                 type="text"
                 id="secondName"
                 placeholder="Apellido Materno"
+                class="form-student"
               />
               <input
                 type="date"
                 id="birthDate"
                 placeholder="Fecha de Nacimiento"
+                class="form-student"
               />
-              <input type="text" id="mobile" placeholder="mobile" />
-              <input type="text" placeholder="Email" id="emailStud" />
-              <input type="text" placeholder="Contraseña" id="pwStud" />
+              <input
+                type="text"
+                id="mobile"
+                placeholder="mobile"
+                class="form-student"
+              />
+              <input
+                type="text"
+                placeholder="Email"
+                id="emailStud"
+                class="form-student"
+              />
+              <input
+                type="text"
+                placeholder="Contraseña"
+                id="pwStud"
+                class="form-student"
+              />
 
               <button id="agregar-alumno">Agregar Alumno</button>
             </div>
@@ -120,11 +143,11 @@
               <th>Apellido</th>
               <th>Mail</th>
               <th>Contraseña</th>
-              <th>Seleccionar</th>
+              <th id="seleccion">Seleccionar</th>
               <th>Acciones</th>
             </tr>
           </thead>
-          <tbody class="datos" id="datos"></tbody>
+          <tbody class="datos" id="tbody-data"></tbody>
         </table>
       </div>
     </main>

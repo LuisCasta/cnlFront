@@ -37,8 +37,8 @@ async function loadCursos() {
                 </td>
                 <td data-cell="Actciones">
                   <div class="actions">
-                    <button data-tooltip='Eliminar'  data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                     <button data-tooltip='Editar' data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
+                    <button data-tooltip='Eliminar'  data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                   </div>
                 </td>
               </tr>

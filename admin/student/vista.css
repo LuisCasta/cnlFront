@@ -53,6 +53,36 @@
     justify-content: center;
 }
 
+.chk-alumno {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.chk-alumno:checked::after {
+    content: 'Seleccionado';
+    font-size: 10px;
+    position: absolute;
+    font-weight: bolder;
+    left: 20px;
+    animation: fade-in .2s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
 
 @media(max-width:768px) {
     .form-header {

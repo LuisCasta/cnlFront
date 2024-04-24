@@ -79,7 +79,7 @@ const getAllCursos = async (idGroup) => {
 
 // Agregar alumnos a curso
 
-const assigmentStudent = async (idCourse, students) => {
+const assigmentStudent = async (idCourse, idStudents) => {
   if (
     idCourse == "" ||
     idCourse == null ||
@@ -88,17 +88,19 @@ const assigmentStudent = async (idCourse, students) => {
   )
     return { code: 400, message: `Error, el campo idCourse es inválido` };
 
-  if (students.length > 0)
+  console.log(idStudents);
+  if (idStudents.length <= 0)
     return {
       code: 400,
       message: `Error, debe seleccionar al menos un alumno.`,
     };
 
-  const activity = await postDataC("courseStudents/", {
+  const assigment = await postDataC("courseStudent/ListStudents", {
     idCourse,
-    students,
+    idStudents,
   });
 
+  console.log(assigment);
   const succesPost = obtainId("succes-post");
 
   // Succes Post
@@ -107,11 +109,11 @@ const assigmentStudent = async (idCourse, students) => {
    <p>Asiganado Alumnos a curso...</p>
  `;
   succesPost.classList.add("aviso-click");
-  if (activity.status != 200)
+  if (assigment.status != 200)
     return {
       code: 400,
       message: `Error al asignar alumnos a un curso`,
-      error: activity.data.message,
+      error: assigment.data.message,
     };
   else {
     succesPost.innerHTML = `
@@ -121,5 +123,5 @@ const assigmentStudent = async (idCourse, students) => {
     succesPost.classList.add("aviso-click");
   }
 
-  return { code: 200, data: activity.data.data };
+  return { code: 200, data: assigment.data.data };
 };

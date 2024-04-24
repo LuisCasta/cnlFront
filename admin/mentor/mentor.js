@@ -1,10 +1,17 @@
 "use strict";
-let salida = "";
-const tbody = document.getElementById("mentors");
+
+function limpiarInputs() {
+  const inputs = document.querySelectorAll(".input-form");
+  inputs.forEach(function (input) {
+    input.value = ""; // Limpiar el valor del input
+  });
+}
+
 const succesPost = document.getElementById("succes-post");
 
 async function loadMentors() {
-  const outputMentors = "";
+  let salida = "";
+  const tbody = document.getElementById("mentors");
   const mentors = await getAll();
 
   if (mentors.code != 200) {
@@ -85,7 +92,7 @@ btnMentor.addEventListener("click", async (e) => {
     succesPost.classList.add("aviso-click");
   }
 
-  setTimeout(function () {
-    location.reload();
-  }, 4000);
+  await loadMentors();
+  limpiarInputs();
+  succesPost.style.display = "none";
 });

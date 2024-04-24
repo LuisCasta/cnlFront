@@ -1,8 +1,9 @@
 "use strict";
-let salida = "";
-const myTable = document.getElementById("datos");
+
 const succesPost = document.getElementById("succes-post");
 async function loadStudents() {
+  let salida = "";
+  const myTable = document.getElementById("tbody-data");
   const students = await getAll();
   if (students.code !== 200) {
     alert(`Error ${newStudent.message}`);
@@ -16,25 +17,25 @@ async function loadStudents() {
       <tr>
       <td data-cell="ID"><p>${id}</p></td>
 
-        <td data-cell="Name"><p>${name}</p></td>
-        <td data-cell="FirstName"><p>${firstName}</p></td>
-        <td data-cell="Mail"><p>${mail}</p></td>
-        <td data-cell="PW"><p class='text-pw-student'>${password.slice(
-          0,
-          6
-        )}</p></td>
-        <td data-cell="Seleccionar"><input value=${id} type="checkbox" class="chk-alumno"/></>
+        <td data-cell="Name"><input id='name_${id}' value=${name}></td>
+        <td data-cell="FirstName"><input id='first-name_${id}' value=${firstName}></td>
+        <td data-cell="Mail"><input id='mail_${id}' value=${mail}></td>
+        <td data-cell="PW"><input id='password_${id}' value='${password.slice(
+        0,
+        6
+      )}' class='text-pw-student'></td>
+        <td class='td-select' data-cell="Seleccionar">
+        <input value=${id} type="checkbox" class="chk-alumno"/></>
         <td data-cell="Acciones">
             <div class="actions">
-            <button data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
-            <button data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
+            <button onclick="updateAlumno(${id})" data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
+            <button onclick="deleteAlumno(${id})" data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
             </div>
         </td>
        </tr>
   `;
+      myTable.innerHTML = salida;
     });
-
-    myTable.innerHTML = salida;
   }
 }
 
@@ -122,6 +123,8 @@ btnStudent.addEventListener("click", async (e) => {
       succesPost.innerHTML = "";
       succesPost.classList.remove("aviso-click");
     }, 7000);
+
+    await loadStudents();
   }
 });
 
@@ -232,25 +235,88 @@ async function changeGroup() {
   }
 }
 
-function loadCheckBoxes() {
+async function loadCheckBoxes() {
   const checkboxes = document.querySelectorAll(".chk-alumno");
-  const idsSeleccionados = [];
+  const idStudents = [];
   checkboxes.forEach(function (checkbox) {
     if (checkbox.checked) {
-      idsSeleccionados.push(checkbox.value);
+      idStudents.push(checkbox.value);
     }
   });
   const idCourse = obtainId("cursos").value;
-  console.log(
-    "IDs de alumnos seleccionados:",
-    idsSeleccionados,
-    "IdCurso",
-    idCourse
-  );
+  console.log("IDs de alumnos seleccionados:", idStudents, "IdCurso", idCourse);
+  const data = await assigmentStudent(idCourse, idStudents);
+}
 
-  const selectorCourse = obtainId("cursos").value;
+async function updateAlumno(studentId) {
+  if (confirm("¿Estás seguro de que deseas continuar?")) {
+    const name = obtainId(`name_${studentId}`).value;
+    const firstName = obtainId(`first-name_${studentId}`).value;
+    const mail = obtainId(`mail_${studentId}`).value;
+    const password = obtainId(`password_${studentId}`).value;
 
-  // llamar api
+    const updateData = await updateStudent({
+      studentId,
+      name,
+      firstName,
+      mail,
+      password,
+    });
+
+    if (updateData.code != 200) {
+      alert(`Error al actualizar al alumno ${studentId} ${name} `);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+        <p>Estudiante actualizado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
+}
+
+async function deleteAlumno(studentId) {
+  if (confirm("¿Estás seguro de que deseas eliminar al alumno?")) {
+    const deleteData = await deleteStudent({
+      studentId,
+    });
+
+    if (deleteData.code != 200) {
+      alert(`Error al eliminar al alumno ${studentId}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+        <p>Estudiante eliminado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' style="background-color:#D1FADF;color:#039855;padding:10px;border-radius:8px"></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+
+    location.reload();
+  }
 }
 
 const btnAlumno = obtainId("alumnos-id");

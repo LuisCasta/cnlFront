@@ -115,3 +115,85 @@ const getLogin = async (data) => {
 
   return { code: 200, data: student.data.data };
 };
+
+/**
+ * @description update a student by all params
+ */
+const updateStudent = async (data) => {
+  const { name, firstName, mail, password, studentId } = data;
+
+  if (name == "" || name == null || name == undefined || name == " ")
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  if (
+    firstName == "" ||
+    firstName == null ||
+    firstName == undefined ||
+    firstName == " "
+  )
+    return { code: 400, message: `Error, el campo firstName es inválido` };
+
+  if (
+    studentId == "" ||
+    studentId == null ||
+    studentId == undefined ||
+    studentId == " "
+  )
+    return { code: 400, message: `Error, el campo studentId es inválido` };
+
+  if (mail == "" || mail == null || mail == undefined || mail == " ")
+    return { code: 400, message: `Error, el campo email es inválido` };
+
+  if (
+    password == "" ||
+    password == null ||
+    password == undefined ||
+    password == " "
+  )
+    return { code: 400, message: `Error, el campo password es inválido` };
+
+  const student = await putApi("student/", {
+    name,
+    firstName,
+    mail,
+    password,
+    studentId,
+    secondName: "0",
+    birthdate: "1993-04-12",
+    mobilePhone: "0",
+  });
+
+  if (student.status != 200)
+    return {
+      code: 400,
+      message: `Error al crear al estudiante`,
+      error: student.data.message,
+    };
+
+  return { code: 200, data: student.data.data };
+};
+/**
+ * @descripcion Delete a student by id
+ */
+const deleteStudent = async (data) => {
+  const { studentId } = data;
+
+  if (
+    studentId == "" ||
+    studentId == null ||
+    studentId == undefined ||
+    studentId == " "
+  )
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  const student = await putApi(`student/d/${studentId}`, {});
+
+  if (student.status != 200)
+    return {
+      code: 400,
+      message: `Error al eliminar al estudiante`,
+      error: student.data.message,
+    };
+
+  return { code: 200, data: student.data.data };
+};

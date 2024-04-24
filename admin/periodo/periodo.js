@@ -28,8 +28,9 @@ async function loadPeriodo() {
                   <div class="actions">
                     <a  data-tooltip='Agregar materia' href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&namePeriod=${namePeriod}&nameCareer=${nameCareer}" class="gestionCarrera"><button><i class='bx bx-book-add' ></i></button></a>
                     <a  data-tooltip='Agregar grupo' href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}&namePeriod=${namePeriod}per&nameCareer=${nameCareer}"><button><i class='bx bx-group'></i></button></a>
-                    <button data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
                     <button data-tooltip='Editar'class="editar"><i class='bx bx-edit' ></i></button>
+                    <button data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
+
                     </div>
                 </td>
               </tr>
