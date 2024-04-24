@@ -16,19 +16,30 @@ async function loadStudents() {
       salida += `
       <tr>
         <td data-cell="ID"><p>${id}</p></td>
-        <td data-cell="Name"><input id='name_${id}' value=${name}></td>
-        <td data-cell="FirstName"><input id='first-name_${id}' value=${firstName}></td>
-        <td data-cell="Mail"><input id='mail_${id}' value=${mail}></td>
-        <td data-cell="PW"><input id='password_${id}' value='${password.slice(
-        0,
-        6
-      )}' class='text-pw-student'></td>
+        <td data-cell="Name">
+         <p id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
+        </td>
+        <td data-cell="FirstName">
+          <p id='first-name_${id}' contenteditable="true" spellcheck="false">${firstName}</p>
+        </td>
+        <td data-cell="Mail">
+          <p id='mail_${id}' contenteditable="true" spellcheck="false">${mail}</p>
+        </td>
+        <td data-cell="PW">
+          <p id='password_${id}' class='text-pw-student' contenteditable="true" spellcheck="false">
+            ${password.slice(0, 6)}
+          </p>
+        </td>
         <td class='td-select' data-cell="Seleccionar">
         <input value=${id} type="checkbox" class="chk-alumno"/></>
         <td data-cell="Acciones">
             <div class="actions">
-            <button onclick="updateAlumno(${id})" data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
-            <button onclick="deleteAlumno(${id})" data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
+            <button onclick="updateAlumno(${id})" data-tooltip="Editar" class="editar">
+            <i class='bx bx-edit' ></i>
+            </button>
+            <button onclick="deleteAlumno(${id})" data-tooltip="Eliminar" class="eliminar">
+            <i class='bx bxs-trash' ></i>
+            </button>
             </div>
         </td>
        </tr>
@@ -233,10 +244,10 @@ async function loadCheckBoxes() {
 
 async function updateAlumno(studentId) {
   if (confirm("¿Estás seguro de que deseas continuar?")) {
-    const name = obtainId(`name_${studentId}`).value;
-    const firstName = obtainId(`first-name_${studentId}`).value;
-    const mail = obtainId(`mail_${studentId}`).value;
-    const password = obtainId(`password_${studentId}`).value;
+    const name = obtainId(`name_${studentId}`).textContent;
+    const firstName = obtainId(`first-name_${studentId}`).textContent;
+    const mail = obtainId(`mail_${studentId}`).textContent;
+    const password = obtainId(`password_${studentId}`).textContent;
 
     const updateData = await updateStudent({
       studentId,

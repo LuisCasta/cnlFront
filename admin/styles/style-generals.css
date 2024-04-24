@@ -19,6 +19,30 @@
     --color-primary-opacity: #22397d2c;
 }
 
+.bxs-trash {
+    color: #ef233c;
+    background-color: #ef233c30;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center'
+
+}
+
+.bx-edit {
+    color: var(--primary-color);
+    background-color: var(--color-primary-opacity);
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center'   
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -279,6 +303,7 @@ p {
 .aviso-click {
     display: flex;
     position: fixed;
+    z-index: 100;
     bottom: 20px;
     right: 20px;
     width: 300px;

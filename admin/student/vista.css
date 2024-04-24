@@ -66,8 +66,9 @@
     content: 'Seleccionado';
     font-size: 10px;
     position: absolute;
-    font-weight: bolder;
-    left: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+    left: 25px;
     animation: fade-in .2s ease-in-out;
 }
 

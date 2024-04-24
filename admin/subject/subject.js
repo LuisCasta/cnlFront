@@ -1,5 +1,4 @@
 "use strict";
-let salida = "";
 const tbody = document.getElementById("materias-table");
 const succesPost = document.getElementById("succes-post");
 const backPeriod = document.getElementById("back-period");
@@ -11,7 +10,7 @@ const carreraId = urlParams.get("idCarrera");
 const idCareer = urlParams.get("idCarrera");
 
 async function loadSubject() {
-  const outputSubject = "";
+  let salida = "";
   //?idPeriod=1&idCareer=1
   const namePeriod = urlParams.get("namePeriod");
   backPeriod.href = `../periodo/periodo.html?idCarrera=${carreraId}&nameCareer=${nameCareer}`;
@@ -34,11 +33,18 @@ async function loadSubject() {
                 <td data-cell="Name"><p id='name_${id}' spellcheck="false" contenteditable="true">${name}</p></td>
                 <td data-cell="Actions">
                   <div class='actions'>
-                      <a onclick="upSubject(${id})" data-tooltip='Editar'><i class='bx bx-edit-alt'></i></a>
-                      <a onclick="delSubject(${id})" data-tooltip='Eliminar'><i class='bx bx-trash'></i></a>
+                      <button>
+                        <a onclick="upSubject(${id})" data-tooltip='Editar'>
+                          <i class='bx bx-edit-alt'></i>
+                        </a>
+                      </button>
+                      <button>
+                        <a onclick="delSubject(${id})" data-tooltip='Eliminar'>
+                          <i class='bx bx-trash'></i>
+                        </a>
+                      </button>
                   </div>
                 </td>
-
               </tr>
             `;
     });
@@ -166,7 +172,7 @@ async function delSubject(subjectId) {
       <p>Operación Cancelada</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
-
-    location.reload();
   }
+
+  location.reload();
 }
