@@ -24,15 +24,33 @@ async function loadMentors() {
       salida += `
               <tr>
                 <td data-cell="ID"><p>${id}</p></td>
-                <td data-cell="Name" ><input id='name_${id}' value=${name}></td>
-                <td data-cell="FirstName"><input id='first-name_${id}' value=${firstName}></td>
-                <td data-cell="Mail"><input id='mail_${id}' value=${mail}></td>
-                <td data-cell="PW"><input id='password_${id}' value='${password}'></td>
-                <td data-cell="Actions"> 
+                <td data-cell="Name" >
+                  <p id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
+                </td>
+                <td data-cell="FirstName">
+                  <p id='first-name_${id}' contenteditable="true" spellcheck="false">${firstName}</p>
+                </td>
+                <td data-cell="Mail">
+                <p id='mail_${id}' contenteditable="true" spellcheck="false">${mail}</p>
+                </td>
+                <td data-cell="PW">
+                  <p id='password_${id}' contenteditable="true" spellcheck="false">
+                  ${password.slice(0, 6)}
+                  </p>
+                </td>
+                <td data-cell="Acciones"> 
                   <div class="actions">
-                    <button  onclick="updateMaestro(${id})" data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
-                    <button  onclick="deleteMaestro(${id})" data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
-                    <a data-tooltip="Agregar materias a Mentor" href="../add-subject/addsubject.html" class="gestionCarrera"><button><i class='bx bx-cog'></i></button></a>
+                    <button   onclick="updateMaestro(${id})" data-tooltip="Editar" class="edit">
+                      <i class='bx bx-edit' ></i>
+                    </button>
+                    <button   onclick="deleteMaestro(${id})" data-tooltip="Eliminar" class="edit">
+                      <i class='bx bx-trash'></i>
+                    </button >
+                    <button class="edit">
+                    <a data-tooltip="Agregar materias a Mentor">
+                    <i class='bx bx-cog'></i>
+                    </button>
+                    </a>
                   </div>
                 </td>
               </tr>
@@ -101,10 +119,10 @@ btnMentor.addEventListener("click", async (e) => {
 // Update
 async function updateMaestro(mentorId) {
   if (confirm("¿Estás seguro de que deseas continuar?")) {
-    const name = obtainId(`name_${mentorId}`).value;
-    const firstName = obtainId(`first-name_${mentorId}`).value;
-    const mail = obtainId(`mail_${mentorId}`).value;
-    const password = obtainId(`password_${mentorId}`).value;
+    const name = obtainId(`name_${mentorId}`).textContent;
+    const firstName = obtainId(`first-name_${mentorId}`).textContent;
+    const mail = obtainId(`mail_${mentorId}`).textContent;
+    const password = obtainId(`password_${mentorId}`).textContent;
 
     const updateData = await updateMentor({
       mentorId,

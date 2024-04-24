@@ -1,2 +1,10 @@
 @import url('../styles/style-generals.css');
 @import url('../styles/sidenav.css');
+
+.edit {
+    background-color: transparent;
+}
+
+.edit:hover {
+    background-color: transparent;
+}
