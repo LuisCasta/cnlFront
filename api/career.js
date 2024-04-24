@@ -68,3 +68,71 @@ const getById = async (id) => {
 
   return { code: 200, data: career.data.data };
 };
+
+/**
+ * @description update a student by all params
+ */
+const updateCarrera = async (data) => {
+  const { name, description, careerId, code } = data;
+
+  if (name == "" || name == null || name == undefined || name == " ")
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  if (code == "" || code == null || code == undefined || code == "")
+    if (
+      description == "" ||
+      description == null ||
+      description == undefined ||
+      description == ""
+    )
+      return { code: 400, message: `Error, el campo description es inválido` };
+
+  if (
+    careerId == "" ||
+    careerId == null ||
+    careerId == undefined ||
+    careerId == ""
+  )
+    return { code: 400, message: `Error, el campo careerId es inválido` };
+
+  const career = await putApi("career/", {
+    careerId,
+    name,
+    description,
+    code,
+  });
+
+  if (career.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar los datos del Maestro`,
+      error: career.data.message,
+    };
+
+  return { code: 200, data: career.data.data };
+};
+/**
+ * @descripcion Delete a student by id
+ */
+const deleteCarrera = async (data) => {
+  const { careerId } = data;
+
+  if (
+    careerId == "" ||
+    careerId == null ||
+    careerId == undefined ||
+    careerId == ""
+  )
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  const career = await putApi(`career/d/${careerId}`, {});
+
+  if (career.status != 200)
+    return {
+      code: 400,
+      message: `Error al eliminar al Mentor`,
+      error: career.data.message,
+    };
+
+  return { code: 200, data: career.data.data };
+};

@@ -65,3 +65,59 @@ const getById = async (id) => {
 
   return { code: 200, data: group.data.data };
 };
+
+/**
+ * @description update a student by all params
+ */
+const updateGroup = async (data) => {
+  const { name, groupId, idPeriod } = data;
+
+  if (name == "" || name == null || name == undefined || name == " ")
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  if (groupId == "" || groupId == null || groupId == undefined || groupId == "")
+    return { code: 400, message: `Error, el campo  periodId es inválido` };
+
+  if (
+    idPeriod == "" ||
+    idPeriod == null ||
+    idPeriod == undefined ||
+    idPeriod == ""
+  )
+    return { code: 400, message: `Error, el campo idCareer es inválido` };
+
+  const group = await putApi("group/", {
+    groupId,
+    name,
+    idPeriod,
+  });
+
+  if (group.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar los datos del Maestro`,
+      error: group.data.message,
+    };
+
+  return { code: 200, data: group.data.data };
+};
+/**
+ * @descripcion Delete a student by id
+ */
+const deleteGroup = async (data) => {
+  const { groupId } = data;
+
+  if (groupId == "" || groupId == null || groupId == undefined || groupId == "")
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  const group = await putApi(`group/d/${groupId}`, {});
+
+  if (group.status != 200)
+    return {
+      code: 400,
+      message: `Error al eliminar el Periodo`,
+      error: group.data.message,
+    };
+
+  return { code: 200, data: group.data.data };
+};

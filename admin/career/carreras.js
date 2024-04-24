@@ -1,10 +1,6 @@
 "use strict";
 
 const succesPost = document.getElementById("succes-post");
-const modifyCarrera = document.getElementById("modify-carrera");
-const aceptButton = document.getElementById("cancelModify");
-const modalDelete = document.getElementById("delete-carrera");
-const aceptDelete = document.getElementById("acept-delete");
 
 async function loadCareers() {
   let salida = "";
@@ -19,17 +15,17 @@ async function loadCareers() {
       return b.id - a.id;
     });
     careers.data.map((carrer) => {
-      const { id, name, description, active } = carrer;
+      const { id, name, description, code } = carrer;
       salida += `
               <tr>
-                <td data-cell="Licenciatura">${name}</td>
-                <td data-cell="Descripción">${description}</td>
-                <td data-cell="Estatus">${active ? "activo" : "inactivo"}</td>
+                <td data-cell="Licenciatura"><input id='name_${id}' value=${name}></td>
+                <td data-cell="Descripción"><input id='description_${id}' value=${description}></td>
+                <td class="not-show" data-cell="Code"><input id='code_${id}' value=${code}></td>
                 <td data-cell="Acciones">
                   <div class="actions">
                     <a data-tooltip="Agregar periodo" href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera"><button><i class='bx bx-calendar-plus'></i></button></a>
-                    <button data-tooltip="Editar" data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
-                    <button data-tooltip="Eliminar" data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
+                    <button onclick="updateCareer(${id})" data-tooltip="Editar" data-id="${id}" class="editar"><i class='bx bx-edit' ></i></button>
+                    <button onclick="deleteCareer(${id})" data-tooltip="Eliminar" data-id="${id}" class="eliminar"><i class='bx bx-trash'></i></button>
                   </div>
                 </td>
               </tr>
@@ -89,43 +85,72 @@ btnCarrera.addEventListener("click", async (e) => {
   succesPost.style.display = "none";
 });
 
-// EDITAR  CARRERA
+// Update
+async function updateCareer(careerId) {
+  if (confirm("¿Estás seguro de que deseas continuar?")) {
+    const name = obtainId(`name_${careerId}`).value;
+    const description = obtainId(`description_${careerId}`).value;
+    const code = obtainId(`code_${careerId}`).value;
 
-async function modificarCarrera() {
-  const data = await getAll();
-  const { name, active, description } = data;
-  const buttons = document.querySelectorAll(".editar");
-  buttons.forEach((button) => {
-    button.addEventListener("click", modificar);
-    function modificar() {
-      modifyCarrera.classList.add("opacityModificar");
-      const div = document.createElement("div");
-      const h3 = document.createElement("h3");
-      h3.textContent = "Modificar Carrera";
-      // const input =
-    }
+    const updateData = await updateCarrera({
+      careerId,
+      name,
+      description,
+      code,
+    });
 
-    aceptButton.addEventListener("click", ocultarModificarCarrera);
-    function ocultarModificarCarrera() {
-      modifyCarrera.classList.remove("opacityModificar");
+    if (updateData.code != 200) {
+      alert(`Error al actualizar al alumno ${careerId} ${name} `);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle'></i>
+        <p>Carrera actualizada con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
     }
-  });
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
 }
 
-// // BORRAR CARRERA
+async function deleteCareer(careerId) {
+  if (confirm("¿Estás seguro de que deseas eliminar esta carrera?")) {
+    const deleteData = await deleteCarrera({
+      careerId,
+    });
 
-async function deleteCarrera() {
-  const data = await getAll();
-  const buttonsDelete = document.querySelectorAll(".eliminar");
+    if (deleteData.code != 200) {
+      alert(`Error al eliminar la carrera ${careerId}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' ></i>
+        <p>Carrera eliminada con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
 
-  buttonsDelete.forEach((button) => {
-    button.addEventListener("click", abrirDelete);
-    function abrirDelete() {
-      modalDelete.classList.add("opacityModificar");
-    }
-    aceptDelete.addEventListener("click", cerrarModalDelete);
-    function cerrarModalDelete() {
-      modalDelete.classList.remove("opacityModificar");
-    }
-  });
+    location.reload();
+  }
 }

@@ -16,7 +16,7 @@
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
     <title>Carreras</title>
   </head>
-  <body onload="loadCareers(), cargarSideNav(), modificarCarrera(), deleteCarrera()">
+  <body onload="loadCareers(), cargarSideNav()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
@@ -70,7 +70,6 @@
             <tr>
               <th>Licenciatura</th>
               <th>Descripción</th>
-              <th>Estatus</th>
               <th>Configurar</th>
             </tr>
           </thead>
@@ -128,5 +127,6 @@
     <script src="../../api/career.js"></script>
     <script src="carreras.js"></script>
     <script src="../js/sidenav.js"></script>
+    <script src="../../api/getid.js"></script>
   </body>
 </html>

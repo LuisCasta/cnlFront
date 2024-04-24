@@ -5,6 +5,10 @@
     margin-bottom: 20px;
 }
 
+.not-show {
+    display: none;
+}
+
 .finder {
     width: 90%;
     margin: 15px auto;

@@ -8,7 +8,7 @@ async function loadPeriodo() {
   const urlParams = new URLSearchParams(queryString);
   const idCareer = urlParams.get("idCarrera");
   const nameCareer = urlParams.get("nameCareer");
-  console.log(nameCareer);
+
   const periods = await getAll(idCareer);
   const countPeriods = document.getElementById("spanTitle");
   countPeriods.textContent = periods.data.length;
@@ -23,14 +23,13 @@ async function loadPeriodo() {
       // console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
       salida += `
               <tr>
-                <td data-cell="Nombre del periodo">${name}</td>
+                <td data-cell="Nombre del periodo"><input id='name_${id}' value=${name}></td>
                 <td data-cell="Acciones"> 
                   <div class="actions">
                     <a  data-tooltip='Agregar materia' href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&namePeriod=${namePeriod}&nameCareer=${nameCareer}" class="gestionCarrera"><button><i class='bx bx-book-add' ></i></button></a>
                     <a  data-tooltip='Agregar grupo' href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}&namePeriod=${namePeriod}per&nameCareer=${nameCareer}"><button><i class='bx bx-group'></i></button></a>
-                    <button data-tooltip='Editar'class="editar"><i class='bx bx-edit' ></i></button>
-                    <button data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
-
+                    <button onclick="updatePeriodo(${id})" data-tooltip='Editar'class="editar"><i class='bx bx-edit' ></i></button>
+                    <button onclick="deletePeriodo(${id})"  data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
                     </div>
                 </td>
               </tr>
@@ -89,3 +88,73 @@ btnPeriod.addEventListener("click", async (e) => {
     location.reload();
   }, 4000);
 });
+
+// Update
+async function updatePeriodo(periodId) {
+  if (confirm("¿Estás seguro de que deseas continuar?")) {
+    const name = obtainId(`name_${periodId}`).value;
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const idCareer = urlParams.get("idCarrera");
+    console.log(idCareer);
+    const updateData = await updatePeriod({
+      idCareer,
+      name,
+      periodId,
+    });
+
+    if (updateData.code != 200) {
+      alert(`Error al actualizar al alumno ${periodId} ${name} `);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle'></i>
+        <p>Periodo actualizado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
+}
+
+async function deletePeriodo(periodId) {
+  if (confirm("¿Estás seguro de que deseas eliminar este Periodo?")) {
+    const deleteData = await deletePeriod({
+      periodId,
+    });
+
+    if (deleteData.code != 200) {
+      alert(`Error al eliminar el Periodo ${periodId}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' ></i>
+        <p>Periodo eliminado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+
+    location.reload();
+  }
+}

@@ -7,9 +7,8 @@ async function loadGroups() {
   const urlParams = new URLSearchParams(queryString);
   const idPeriod = urlParams.get("idPeriodo");
   const idCareer = urlParams.get("idCarrera");
-  const hrefGroup = document.getElementById("per-group");
-  const hrefCar = document.getElementById("car-group");
-  console.log(hrefCar, hrefGroup);
+  // const hrefGroup = document.getElementById("per-group");
+  // const hrefCar = document.getElementById("car-group");
   const groups = await getAll(idPeriod);
 
   if (groups.code !== 200) {
@@ -18,14 +17,14 @@ async function loadGroups() {
     groups.data.map((group) => {
       const { name, id } = group;
       salida += ` <tr>
-      <td data-cell="Nombre de Grupo">${name}</td>
+      <td data-cell="Nombre de Grupo"><input id='name_${id}' value=${name}></td>
       <td data-cell="Acciones">
           <div class="actions">
           <a  data-tooltip='Agregar curso' href="../courses/course.html?idGroup=${id}&idCarrera=${idCareer}"><button
           <i class='bx bx-book'></i></button>
           </a>
-          <button data-tooltip='Editar' class="editar"><i class='bx bx-edit' ></i>
-          <button data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
+          <button onclick="upGroup(${id})" data-tooltip='Editar' class="editar"><i class='bx bx-edit' ></i>
+          <button onclick="delGroup(${id})" data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
           </div>
       </td>
      </tr>`;
@@ -81,3 +80,73 @@ btnGroup.addEventListener("click", async (e) => {
     location.reload();
   }, 4000);
 });
+
+// Update
+async function upGroup(groupId) {
+  if (confirm("¿Estás seguro de que deseas continuar?")) {
+    const name = obtainId(`name_${groupId}`).value;
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const idPeriod = urlParams.get("idPeriodo");
+
+    const updateData = await updateGroup({
+      idPeriod,
+      name,
+      groupId,
+    });
+
+    if (updateData.code != 200) {
+      alert(`Error al actualizar el grupo ${groupId} ${name} `);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle'></i>
+        <p>Grupo actualizado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
+}
+
+async function delGroup(groupId) {
+  if (confirm("¿Estás seguro de que deseas eliminar este Grupo?")) {
+    const deleteData = await deleteGroup({
+      groupId,
+    });
+
+    if (deleteData.code != 200) {
+      alert(`Error al eliminar el Grupo ${groupId}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' ></i>
+        <p>Grupo eliminado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+
+    location.reload();
+  }
+}
