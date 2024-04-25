@@ -219,7 +219,7 @@ async function changeGroup() {
     alert(`Error ${cursos.message}`);
   } else {
     cursos.data.map((curso) => {
-      const { id, name } = curso;
+      const { id, nameCourse } = curso;
       cursosHtml += `
       <option value=${id}>${nameCourse}</option>
           `;
