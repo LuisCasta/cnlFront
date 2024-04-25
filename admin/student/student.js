@@ -210,7 +210,7 @@ async function changeGroup() {
   cursosHtml += `
   <option>Selecciona un Curso</option>
       `;
-  const selectorCursos = obtainId("cursos");
+  const selectorCursos = obtainId("cursos").value;
 
   const selectorGrupos = obtainId("groups").value;
   // console.log(selectorGroups, selectorPeriod);
@@ -238,6 +238,7 @@ async function loadCheckBoxes() {
     }
   });
   const idCourse = obtainId("cursos").value;
+  console.log(idCourse);
   console.log("IDs de alumnos seleccionados:", idStudents, "IdCurso", idCourse);
   const data = await assigmentStudent(idCourse, idStudents);
 }
