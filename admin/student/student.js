@@ -34,10 +34,10 @@ async function loadStudents() {
         <input value=${id} type="checkbox" class="chk-alumno"/></>
         <td data-cell="Acciones">
             <div class="actions">
-            <button onclick="updateAlumno(${id})" data-tooltip="Editar" class="editar">
+            <button onclick="updateAlumno(${id})" data-tooltip="Editar" class="edit">
             <i class='bx bx-edit' ></i>
             </button>
-            <button onclick="deleteAlumno(${id})" data-tooltip="Eliminar" class="eliminar">
+            <button onclick="deleteAlumno(${id})" data-tooltip="Eliminar" class="edit">
             <i class='bx bxs-trash' ></i>
             </button>
             </div>

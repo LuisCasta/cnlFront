@@ -15,16 +15,24 @@ async function loadGroups() {
     alert(` ${newGroup.message}`);
   } else {
     groups.data.map((group) => {
-      const { name, id } = group;
+      const { name, id, idPeriod } = group;
       salida += ` <tr>
-      <td data-cell="Nombre de Grupo"><input id='name_${id}' value=${name}></td>
+      <td data-cell="Nombre de Grupo">
+        <p id='name_${id}' data-idperiod=${idPeriod} >${name}</p>
+      </td>
       <td data-cell="Acciones">
           <div class="actions">
-          <a  data-tooltip='Agregar curso' href="../courses/course.html?idGroup=${id}&idCarrera=${idCareer}"><button
-          <i class='bx bx-book'></i></button>
-          </a>
-          <button onclick="upGroup(${id})" data-tooltip='Editar' class="editar"><i class='bx bx-edit' ></i>
-          <button onclick="delGroup(${id})" data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
+            <a  data-tooltip='Agregar curso' href="../courses/course.html?idGroup=${id}&idCarrera=${idCareer}">
+              <button class="edit">
+              <i class='bx bx-book'></i>
+              </button>
+            </a>
+            <button onclick="upGroup(${id})" data-tooltip='Editar' class="edit">
+              <i class='bx bx-edit' ></i>
+              </button>
+            <button onclick="delGroup(${id})" data-tooltip='Eliminar' class="edit">
+              <i class='bx bx-trash'></i>
+            </button>
           </div>
       </td>
      </tr>`;
@@ -132,6 +140,76 @@ async function delGroup(groupId) {
         succesPost.innerHTML = `
         <i class='bx bx-check-circle' ></i>
         <p>Grupo eliminado con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+
+    location.reload();
+  }
+}
+
+// Update
+
+async function upGroup(groupId) {
+  if (confirm("¿Estás seguro de que deseas continuar?")) {
+    const name = obtainId(`name_${groupId}`).textContent;
+    const p = obtainId(`name_${groupId}`);
+    const idPeriod = p.getAttribute("data-idperiod");
+
+    const updateData = await updateGroup({
+      idPeriod,
+      groupId,
+      name,
+    });
+
+    if (updateData.code != 200) {
+      alert(`Error al actualizar al alumno ${groupId} ${name} `);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle'></i>
+        <p>Carrera actualizada con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
+}
+
+async function delGroup(groupId) {
+  if (confirm("¿Estás seguro de que deseas eliminar esta carrera?")) {
+    const deleteData = await deleteCarrera({
+      groupId,
+    });
+
+    if (deleteData.code != 200) {
+      alert(`Error al eliminar la carrera ${groupId}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' ></i>
+        <p>Carrera eliminada con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
       setTimeout(function () {

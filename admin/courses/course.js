@@ -25,38 +25,51 @@ async function loadCursos() {
     const countCursos = document.getElementById("spanTitle");
     countCursos.textContent = cursos.data.length;
     cursos.data.map((curso) => {
-      const { id, name, description, idGroup, idMentor, proyect, task, exam } =
-        curso;
-
+      const {
+        idCourse,
+        nameCourse,
+        nameMentor,
+        description,
+        idGroup,
+        idMentor,
+        proyect,
+        task,
+        exam,
+        firstName,
+      } = curso;
+      console.log(curso);
       cursoHtml += `
               <tr>
-                <td data-cell="Nombre de curso">
-                  <input id='name_${id}' value=${name}>
+                <td data-cell="Curso">
+                  <p id='curso_${idCourse}' contenteditable='true' spellcheck='false'>${nameCourse}</p>
                 </td>
+                <td data-cell="Docente">
+                <p id='docente_${idCourse}'>${nameMentor} ${firstName}</p>
+              </td>
                 <td data-cell="Descripción">
-                  <input id='description_${id}' value=${description}>
+                  <p id='description_${idCourse}' contenteditable='true' spellcheck='false'>${description}</p>
                 </td>
                 <td data-cell="Unidades">
-                 <a data-tooltip='Agregar/Gestionar unidad' href="../unit/unit.html?idCurso=${id}">
-                  <button data-id="${id}" class="unidad">
+                 <a  href="../unit/unit.html?idCurso=${idCourse}">
+                  <button  data-tooltip='Agregar/Gestionar' data-id="${idCourse}" class="unidad">
                   <i class='bx bx-customize'></i>
                   </button></a>
                 </td>
                 <td data-cell="Acciones">
                   <div class="actions">
-                    <button onclick="upCurso(${id})" 
+                    <button class='edit'  onclick="upCurso(${idCourse})" 
                       data-idgroup=${idGroup} 
                       data-idmentor=${idMentor} 
                       data-proyect=${proyect}  
                       data-task=${task}  
                       data-exam=${exam}  
                       data-tooltip='Editar' 
-                      id='btn_${id}' 
+                      id='btn_${idCourse}' 
                       class="editar">
                       <i class='bx bx-edit'></i>
                     </button>
-                    <button onclick="delCurso(${id})" data-tooltip='Eliminar'  
-                     data-id="${id}" class="eliminar"><i class='bx bx-trash'></i>
+                    <button onclick="delCurso(${idCourse})" data-tooltip='Eliminar' class='edit' 
+                     data-id="${idCourse}" class="eliminar"><i class='bx bx-trash'></i>
                     </button>
                   </div>
                 </td>
@@ -91,16 +104,17 @@ async function obtenerIdMentor() {
   formMentor.innerHTML = mentorSelect;
 }
 
-async function getCourseById(id) {
+async function getCourseById(idCourse) {
   const curso = await getById(id);
 
-  if (curso.status != 200) alert(`Error al obtener el curso con el id ${id}`);
+  if (curso.status != 200)
+    alert(`Error al obtener el curso con el id ${idCourse}`);
   else {
     const { name, description, id } = curso.data;
 
     return {
       name,
-      id,
+      idCourse,
       description,
     };
   }
@@ -160,19 +174,17 @@ btnCurso.addEventListener("click", async (e) => {
 // Update
 async function upCurso(courseId) {
   if (confirm("¿Estás seguro de que deseas continuar?")) {
-    const name = obtainId(`name_${courseId}`).value;
-    const description = obtainId(`description_${courseId}`).value;
+    const nameCourse = obtainId(`curso_${courseId}`).textContent;
+    const description = obtainId(`description_${courseId}`).textContent;
     const btn = obtainId(`btn_${courseId}`);
-    console.log(btn);
     const task = btn.getAttribute("data-task");
     const idGroup = btn.getAttribute("data-idgroup");
     const idMentor = btn.getAttribute("data-idmentor");
     const proyect = btn.getAttribute("data-proyect");
     const exam = btn.getAttribute("data-exam");
-
     const updateData = await updateCourseAdmin({
       courseId,
-      name,
+      name: nameCourse,
       description,
       task,
       exam,
@@ -181,8 +193,10 @@ async function upCurso(courseId) {
       idMentor,
     });
 
+    console.log(updateData);
+
     if (updateData.code != 200) {
-      alert(`Error al actualizar el grupo ${courseId} ${name} `);
+      alert(`Error al actualizar el grupo ${courseId} ${nameCourse} `);
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `

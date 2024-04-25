@@ -220,7 +220,7 @@ const updateCourseAdmin = async (data) => {
     idGroup == undefined ||
     idGroup == " "
   )
-    return { code: 400, message: `Error, el campo idGroup es inválido` };
+    return { code: 400, message: `Error, el campo Id Group es inválido` };
 
   if (
     idMentor == "" ||
@@ -228,7 +228,7 @@ const updateCourseAdmin = async (data) => {
     idMentor == undefined ||
     idMentor == " "
   )
-    return { code: 400, message: `Error, el campo idGroup es inválido` };
+    return { code: 400, message: `Error, el campo Id Mentor es inválido` };
 
   if (
     courseId == "" ||

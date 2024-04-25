@@ -23,13 +23,19 @@ async function loadPeriodo() {
       // console.log(`Id Carrera ${idCareer} - name ${name} id de Periodo: ${id}`);
       salida += `
               <tr>
-                <td data-cell="Nombre del periodo"><input id='name_${id}' value=${name}></td>
+                <td data-cell="Nombre del periodo"><p contenteditable="true" spellcheck="false" id='name_${id}'>${name}</p></td>
                 <td data-cell="Acciones"> 
                   <div class="actions">
-                    <a  data-tooltip='Agregar materia' href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&namePeriod=${namePeriod}&nameCareer=${nameCareer}" class="gestionCarrera"><button><i class='bx bx-book-add' ></i></button></a>
-                    <a  data-tooltip='Agregar grupo' href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}&namePeriod=${namePeriod}per&nameCareer=${nameCareer}"><button><i class='bx bx-group'></i></button></a>
-                    <button onclick="updatePeriodo(${id})" data-tooltip='Editar'class="editar"><i class='bx bx-edit' ></i></button>
-                    <button onclick="deletePeriodo(${id})"  data-tooltip='Eliminar' class="eliminar"><i class='bx bx-trash'></i></button>
+                    <a data-tooltip='Agregar materia' href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&namePeriod=${namePeriod}&nameCareer=${nameCareer}" class="gestionCarrera">
+                    <button class="edit"><i class='bx bx-book-add' ></i>
+                    </button>
+                    </a>
+                    <a  data-tooltip='Agregar grupo' 
+                    href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}&namePeriod=${namePeriod}per&nameCareer=${nameCareer}">
+                    <button class="edit"><i class='bx bx-group'></i></button>
+                    </a>
+                    <button onclick="updatePeriodo(${id})" data-tooltip='Editar'class="edit"><i class='bx bx-edit' ></i></button>
+                    <button onclick="deletePeriodo(${id})"  data-tooltip='Eliminar' class="edit"><i class='bx bx-trash'></i></button>
                     </div>
                 </td>
               </tr>
@@ -92,7 +98,7 @@ btnPeriod.addEventListener("click", async (e) => {
 // Update
 async function updatePeriodo(periodId) {
   if (confirm("¿Estás seguro de que deseas continuar?")) {
-    const name = obtainId(`name_${periodId}`).value;
+    const name = obtainId(`name_${periodId}`).textContent;
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const idCareer = urlParams.get("idCarrera");

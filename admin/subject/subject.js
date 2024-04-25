@@ -33,12 +33,12 @@ async function loadSubject() {
                 <td data-cell="Name"><p id='name_${id}' spellcheck="false" contenteditable="true">${name}</p></td>
                 <td data-cell="Actions">
                   <div class='actions'>
-                      <button>
+                      <button class="edit">
                         <a onclick="upSubject(${id})" data-tooltip='Editar'>
-                          <i class='bx bx-edit-alt'></i>
+                          <i class='bx bx-edit'></i>
                         </a>
                       </button>
-                      <button>
+                      <button class="edit">
                         <a onclick="delSubject(${id})" data-tooltip='Eliminar'>
                           <i class='bx bx-trash'></i>
                         </a>
