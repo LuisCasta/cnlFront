@@ -18,7 +18,8 @@ async function loadGroups() {
       const { name, id, idPeriod } = group;
       salida += ` <tr>
       <td data-cell="Nombre de Grupo">
-        <p id='name_${id}' data-idperiod=${idPeriod} >${name}</p>
+        <p id='name_${id}' contenteditable="true" spellcheck="false" data-idperiod=${idPeriod}>${name}
+        </p>
       </td>
       <td data-cell="Acciones">
           <div class="actions">

@@ -221,7 +221,7 @@ async function changeGroup() {
     cursos.data.map((curso) => {
       const { id, name } = curso;
       cursosHtml += `
-      <option value=${id}>${name}</option>
+      <option value=${id}>${nameCourse}</option>
           `;
     });
 
