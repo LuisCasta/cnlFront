@@ -1,6 +1,10 @@
 @import url('../style-mentor/sidenav.css');
 @import url('../../admin/styles/style-generals.css');
 
+.btn-pond {
+    width: 100%;
+}
+
 .container-student-cursos {
     display: grid;
     width: 90%;

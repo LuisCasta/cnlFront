@@ -23,18 +23,10 @@ async function loadCursosById() {
               <i class='bx bx-customize'></i>
             </button>
           </a>
-          <a >
-            <button data-tooltip="Ponderaciones" id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} class="unidadConfig">
+            <button  data-tooltip="Ponderaciones" id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} class="unidadConfig edit">
               <i class='bx bx-cog'></i>
             </button>
-          </a>
        </div>
-      </td>
-      <td data-cell="Actions">
-        <div class="actions">
-          <button data-id="${id}" data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
-          <button data-id="${id}" data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
-        </div>
       </td>
     </tr>
   `;

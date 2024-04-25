@@ -122,3 +122,26 @@ const getTypeActivity = async () => {
 
   return { code: 200, data: activity.data.data };
 };
+
+const deleteActivity = async (data) => {
+  const { activityId } = data;
+
+  if (
+    activityId == "" ||
+    activityId == null ||
+    activityId == undefined ||
+    activityId == ""
+  )
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  const career = await putApi(`activity/d/${activityId}`, {});
+
+  if (career.status != 200)
+    return {
+      code: 400,
+      message: `Error al eliminar al Mentor`,
+      error: career.data.message,
+    };
+
+  return { code: 200, data: career.data.data };
+};

@@ -1,7 +1,7 @@
 @import url('../../admin/styles/style-generals.css');
 @import url('../style-mentor/sidenav.css');
 
-.a-unit {
+/* .a-unit {
     background-color: var(--primary-color);
     color: #fff;
     padding: 5px;
@@ -13,7 +13,7 @@
     align-items: center;
     gap: 5px;
     width: 100px;
-}
+} */
 
 .a-unit p {
     color: #fff;

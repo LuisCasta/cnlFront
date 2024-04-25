@@ -98,3 +98,55 @@ const getTypeUnits = async () => {
 
   return { code: 200, data: unit.data.data };
 };
+
+/**
+ * @description update a student by all params
+ */
+const updateUnitMentor = async (data) => {
+  const { unitId, name, idCourse, type } = data;
+
+  if (type == "" || type == null || type == undefined || type == " ")
+    return { code: 400, message: `Error, el campo type es inválido` };
+
+  if (unitId == "" || unitId == null || unitId == undefined || unitId == " ")
+    return { code: 400, message: `Error, el campo idUnit es inválido` };
+
+  if (name == "" || name == null || name == undefined || name == " ")
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  const activity = await putApi("unit/", {
+    unitId,
+    name,
+    idCourse,
+    type,
+  });
+
+  if (activity.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar los datos de la Unidad`,
+      error: activity.data.message,
+    };
+
+  return { code: 200, data: activity.data.data };
+};
+/**
+ * @descripcion Delete a student by id
+ */
+const deleteUnit = async (data) => {
+  const { unitId } = data;
+
+  if (unitId == "" || unitId == null || unitId == undefined || unitId == "")
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  const unit = await putApi(`unit/d/${unitId}`, {});
+
+  if (unit.status != 200)
+    return {
+      code: 400,
+      message: `Error al eliminar al Mentor`,
+      error: unit.data.message,
+    };
+
+  return { code: 200, data: unit.data.data };
+};

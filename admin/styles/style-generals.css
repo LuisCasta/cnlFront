@@ -29,7 +29,10 @@ p {
 .bx-calendar-plus,
 .bx-group,
 .bx-book-add,
-.bx-book {
+.bx-book,
+.bxs-star-half,
+.bx-video,
+.bxs-watch {
     color: #1b4332;
     background-color: #1b433230;
     padding: 5px;
@@ -375,6 +378,7 @@ p {
 .mentor-actions {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
 

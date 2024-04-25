@@ -29,10 +29,30 @@ async function loadGetActivityStudentById() {
   if (revisarAct.code != 200) {
     alert(`Error ${revisarAct.message}`);
   } else {
-    const { name, description, dateEnd, dateStart, intent } = revisarAct.data;
+    const {
+      id,
+      name,
+      description,
+      dateEnd,
+      dateStart,
+      intent,
+      type,
+      idCourse,
+      idLesson,
+      link,
+      idUnit,
+    } = revisarAct.data;
     const nameActivity = obtainId("name-activity");
+    const linkAct = obtainId("link-act-up");
     const descAct = obtainId("descrip-act");
+    const btn = obtainId("data-act");
+    btn.setAttribute("data-idcourse", `${idCourse}`);
+    btn.setAttribute("data-idlesson", `${idLesson}`);
+    btn.setAttribute("data-type", `${type}`);
+    btn.setAttribute("data-idunit", `${idUnit}`);
+    btn.setAttribute("onclick", `actualizarAct(${id})`);
     descAct.value = description;
+    linkAct.value = link;
     nameActivity.value = name;
     int.value = intent;
     const endFormat = dateEnd.slice(0, -14).replaceAll("-", "-");
@@ -42,13 +62,57 @@ async function loadGetActivityStudentById() {
   }
 }
 
-async function actualizarAct() {
-  const name = obtainId("name-activity").value;
-  const description = obtainId("descrip-act").value;
-  const intent = int.value;
-  const dateEnd = fin.value;
-  const dateStart = inicio.value;
-  const id = idActivity;
+async function actualizarAct(id) {
+  if (confirm("¿Estás seguro de que deseas continuar?")) {
+    const name = obtainId("name-activity").value;
+    const description = obtainId("descrip-act").value;
+    const link = obtainId("link-act-up").value;
+    const intent = int.value;
+    const dateEnd = fin.value;
+    const dateStart = inicio.value;
+    const btn = obtainId("data-act");
+    const idLesson = btn.getAttribute("data-idlesson");
+    const idUnit = btn.getAttribute("data-idunit");
+    const idCourse = btn.getAttribute("data-idcourse");
+    const type = btn.getAttribute("data-type");
+    const activityId = id;
+    console.log(link);
+    const updateData = await updateActivity({
+      name,
+      description,
+      intent,
+      dateEnd,
+      dateStart,
+      idLesson,
+      idCourse,
+      idUnit,
+      type,
+      link,
+      activityId,
+    });
+
+    if (updateData.code != 200) {
+      alert(`Error al actualizar la actividad llamada: ${name}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle'></i>
+        <p>Carrera actualizada con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
 }
 
 async function loadActivityStudentById() {

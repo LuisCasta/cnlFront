@@ -36,8 +36,12 @@ async function loadAllLessonsByUnit() {
             <td data-cell="Descripción"><p>${description}</p></td>
             <td data-cell="Acciones">
             <div class="actions">
-              <button data-id="${id}" data-tooltip="Eliminar" class="eliminar"><i class='bx bx-trash'></i></button>
-              <button data-id="${id}" data-tooltip="Editar" class="editar"><i class='bx bx-edit' ></i></button>
+            <button data-id="${id}" data-tooltip="Editar" class="edit">
+             <i class='bx bx-edit' ></i>
+            </button>
+            <button data-id="${id}" data-tooltip="Eliminar" class="edit">
+              <i class='bx bx-trash'></i>
+            </button>
               </div>
           </td>
         </tr>
@@ -77,8 +81,12 @@ async function loadActivityByUnit() {
             <td data-cell="Inicio"><p class="p-date"><i class='bx bx-calendar'></i>${newDate}</p></td>
             <td data-cell="Finaliza"><p class="p-date"><i class='bx bx-calendar'></i>${endDate}</p></td>
             <td data-cell="Acciones">
+            <div class='actions'>
             <a class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&actStudId=${id}">revisar</a>
-            <a class="check">Eliminar
+              <button onclick="delActivity(${id})" class='edit'>
+                <i class='bx bx-trash'></i>
+              </button>
+            </div>
             </td>
         </tr>
         `;
@@ -326,5 +334,41 @@ async function chooseTypeActivity() {
       <option value="${id}">${name}</option>`;
     });
     selectTypeActivity.innerHTML = optionsType;
+  }
+}
+
+/**
+ *
+ * @descripction Eliminar Actividad
+ */
+async function delActivity(activityId) {
+  if (confirm("¿Estás seguro de que deseas eliminar esta carrera?")) {
+    const deleteData = await deleteActivity({
+      activityId,
+    });
+
+    if (deleteData.code != 200) {
+      alert(`Error al eliminar la carrera ${activityId}`);
+    } else {
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-check-circle' ></i>
+        <p>Actividad eliminada con éxito</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
+    }
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-x' ></i>
+      <p>Operación Cancelada</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+
+    location.reload();
   }
 }

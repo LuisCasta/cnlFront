@@ -14,8 +14,8 @@ const contActiv = obtainId("div-actividades");
 const conStud = obtainId("div-alumnos");
 const contCall = obtainId("div-call");
 
-const buttons = [btnLesson, btnActiv, btnStud, btnCall, btnRates];
-const containers = [contLesson, contActiv, conStud, contCall, contRate];
+const buttons = [btnActiv, btnLesson, btnStud, btnCall, btnRates];
+const containers = [contActiv, contLesson, conStud, contCall, contRate];
 
 buttons[0].classList.add("button-bottom");
 containers[1].classList.add("disabled");

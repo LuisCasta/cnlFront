@@ -50,60 +50,128 @@ const getEndRateByCourse = async (idCourse) => {
     };
   return { code: 200, data: ratesByCourse.data.data };
 };
-// const post = require("./post");
-
-// Funcion para crear una carrera
-// { name, code, description }
-
-// const create = async (data) => {
-//   const { name, code, description } = data;
-
-//   if (name == "" || name == null || name == undefined || name == " ")
-//     return { code: 400, message: `Error, el campo nombre es inválido` };
-
-//   if (code == "" || code == null || code == undefined || code == " ")
-//     return { code: 400, message: `Error, el campo nombre es inválido` };
-
-//   if (
-//     description == "" ||
-//     description == null ||
-//     description == undefined ||
-//     description == " "
-//   )
-//     return { code: 400, message: `Error, el campo description es inválido` };
-
-//   const career = await postDataC("career/", { name, code, description });
-
-//   if (career.status != 200)
-//     return {
-//       code: 400,
-//       message: `Error al crear la carrera`,
-//       error: career.data.message,
-//     };
-
-//   return { code: 200, data: career.data.data };
-// };
 
 /**
- * Obtiene todas las carreras
- *
- * */
+ * @description update a student by all params
+ */
+const updateActivity = async (data) => {
+  const {
+    name,
+    description,
+    intent,
+    dateEnd,
+    dateStart,
+    idLesson,
+    idCourse,
+    idUnit,
+    type,
+    link,
+    activityId,
+  } = data;
+
+  if (type == "" || type == null || type == undefined || type == " ")
+    return { code: 400, message: `Error, el campo type es inválido` };
+
+  if (idUnit == "" || idUnit == null || idUnit == undefined || idUnit == " ")
+    return { code: 400, message: `Error, el campo idUnit es inválido` };
+
+  if (
+    idCourse == "" ||
+    idCourse == null ||
+    idCourse == undefined ||
+    idCourse == " "
+  )
+    return { code: 400, message: `Error, el campo idCourse es inválido` };
+
+  if (
+    idLesson == "" ||
+    idLesson == null ||
+    idLesson == undefined ||
+    idLesson == " "
+  )
+    return { code: 400, message: `Error, el campo idLesson es inválido` };
+
+  if (link == "" || link == null || link == undefined || link == " ")
+    return { code: 400, message: `Error, el campo link es inválido` };
+
+  if (name == "" || name == null || name == undefined || name == " ")
+    return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  if (intent == "" || intent == null || intent == undefined || intent == "")
+    return { code: 400, message: `Error, el campo intento es inválido` };
+
+  if (
+    dateStart == "" ||
+    dateStart == null ||
+    dateStart == undefined ||
+    dateStart == ""
+  )
+    return { code: 400, message: `Error, el campo fecha inicio es inválido` };
+
+  if (dateEnd == "" || dateEnd == null || dateEnd == undefined || dateEnd == "")
+    return { code: 400, message: `Error, el campo fecha término es inválido` };
+
+  if (
+    description == "" ||
+    description == null ||
+    description == undefined ||
+    description == ""
+  )
+    return { code: 400, message: `Error, el campo description es inválido` };
+
+  if (
+    activityId == "" ||
+    activityId == null ||
+    activityId == undefined ||
+    activityId == ""
+  )
+    return { code: 400, message: `Error, el campo Acitity Id es inválido` };
+
+  const activity = await putApi("activity/", {
+    name,
+    description,
+    intent,
+    dateEnd,
+    dateStart,
+    idLesson,
+    idCourse,
+    idUnit,
+    type,
+    link,
+    activityId,
+  });
+
+  if (activity.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar los datos de la Actividad`,
+      error: activity.data.message,
+    };
+
+  return { code: 200, data: activity.data.data };
+};
 /**
- * Obtiene todas las carreras
- *
- * */
-// const getById = async (id) => {
-//   if (id == 0 || id == "" || id == undefined || id == " ")
-//     return { code: 400, message: `Error, el campo id es inválido` };
+ * @descripcion Delete a student by id
+ */
+const deleteCarrera = async (data) => {
+  const { careerId } = data;
 
-//   const career = await getApi(`career/about/${id}`);
+  if (
+    careerId == "" ||
+    careerId == null ||
+    careerId == undefined ||
+    careerId == ""
+  )
+    return { code: 400, message: `Error, el campo nombre es inválido` };
 
-//   if (career.status != 200)
-//     return {
-//       code: 400,
-//       message: `Error al obtener carrera con el id: ${id}`,
-//       error: career.data.message,
-//     };
+  const career = await putApi(`career/d/${careerId}`, {});
 
-//   return { code: 200, data: career.data.data };
-// };
+  if (career.status != 200)
+    return {
+      code: 400,
+      message: `Error al eliminar al Mentor`,
+      error: career.data.message,
+    };
+
+  return { code: 200, data: career.data.data };
+};
