@@ -210,7 +210,7 @@ async function changeGroup() {
   cursosHtml += `
   <option>Selecciona un Curso</option>
       `;
-  const selectorCursos = obtainId("cursos").value;
+  const selectorCursos = obtainId("cursos");
 
   const selectorGrupos = obtainId("groups").value;
   // console.log(selectorGroups, selectorPeriod);
@@ -219,13 +219,14 @@ async function changeGroup() {
     alert(`Error ${cursos.message}`);
   } else {
     cursos.data.map((curso) => {
-      const { id, nameCourse } = curso;
+      const { idCourse, nameCourse } = curso;
       cursosHtml += `
-      <option value=${id}>${nameCourse}</option>
+      <option value=${idCourse}>${nameCourse}</option>
           `;
     });
 
     selectorCursos.innerHTML = cursosHtml;
+    console.log(selectorCursos);
   }
 }
 
@@ -241,6 +242,29 @@ async function loadCheckBoxes() {
   console.log(idCourse);
   console.log("IDs de alumnos seleccionados:", idStudents, "IdCurso", idCourse);
   const data = await assigmentStudent(idCourse, idStudents);
+  if (data.code == 200) {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-check-circle' ></i>
+      <p>Alumnos agregados al Curso con éxito</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+    succesPost.innerHTML = "";
+  } else if (data.code == 500) {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-check-circle' ></i>
+      <p>Error al agregar alumnos al Curso</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  } else {
+    setTimeout(function () {
+      succesPost.innerHTML = `
+      <i class='bx bx-check-circle'></i>
+      <p>Error información duplicada al asignar el alumno</p>`;
+      succesPost.classList.add("aviso-click");
+    }, 100);
+  }
 }
 
 async function updateAlumno(studentId) {
