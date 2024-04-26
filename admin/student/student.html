@@ -30,9 +30,15 @@
         <p>Alumnos</p>
       </div>
       <header class="tabs-content">
-        <div id="alumnos-id" class="tab-alumn"><button>Alumnos</button></div>
+        <div id="alumnos-id" class="tab-alumn">
+          <button data-tooltip="Alumnos" class="choose">
+            <i class="bx bx-group"></i>
+          </button>
+        </div>
         <div id="asignacion" class="tab-alumn">
-          <button>Asiganciones</button>
+          <button class="choose" data-tooltip="Asignar alumnos">
+            <i class="bx bx-list-plus"></i>
+          </buttonm>
         </div>
       </header>
       <div class="card-header">
@@ -86,7 +92,9 @@
                 class="form-student"
               />
 
-              <button id="agregar-alumno">Agregar Alumno</button>
+              <button id="agregar-alumno">
+                <i class="bx bx-user-plus"></i>Agregar Alumno
+              </button>
             </div>
           </div>
           <!-- ASIGNACIONES CONTAINER -->
@@ -94,23 +102,23 @@
             <div class="heading">
               <h2>Asignaciones</h2>
               <p>Agrega alumnos a tus Cursos</p>
-              <div class="form-header">
-                <select onchange="changeCareer()" type="text" id="carrera">
-                  <option value="carrera">Carrera</option>
-                </select>
-                <select name="" onchange="changePeriod()" id="period">
-                  <option value="">periodo</option>
-                </select>
-                <select name="" onchange="changeGroup()" id="groups">
-                  <option value="">grupo</option>
-                </select>
-                <select name="" id="cursos">
-                  <option value="">curso</option>
-                </select>
-                <button onclick="loadCheckBoxes()" id="btn-mostrar-ids">
-                  Guardar
-                </button>
-              </div>
+            </div>
+            <div class="form-header">
+              <select onchange="changeCareer()" type="text" id="carrera">
+                <option value="carrera">Carrera</option>
+              </select>
+              <select name="" onchange="changePeriod()" id="period">
+                <option value="">periodo</option>
+              </select>
+              <select name="" onchange="changeGroup()" id="groups">
+                <option value="">grupo</option>
+              </select>
+              <select name="" id="cursos">
+                <option value="">curso</option>
+              </select>
+              <button onclick="loadCheckBoxes()" id="btn-mostrar-ids">
+                <i class="bx bx-save"></i> Guardar
+              </button>
             </div>
           </div>
         </div>

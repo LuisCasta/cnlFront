@@ -23,6 +23,12 @@
     width: 100%;
 }
 
+.form-header {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
 .ordinario {
     /* border: 2px solid var(--primary-color); */
     background-color: #22397d30;

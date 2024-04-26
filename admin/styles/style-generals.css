@@ -4,7 +4,7 @@
 :root {
     --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     --tooltip-bk: #101828;
-    --input-border: 2px solid #D0D5DD;
+    --input-border: 1px solid #D0D5DD;
     --input--padding: 8px;
     --input-bor-rad: 3px;
     --font-size-input: 16px;
@@ -17,15 +17,22 @@
     --border-radius: 0 0 10px 10px;
     --color-graylight: #bfbfbf;
     --color-primary-opacity: #22397d2c;
+    --body-bk: #f0f1f2;
+}
+
+body {
+    background-color: var(--body-bk);
 }
 
 p {
     width: fit-content;
     line-height: 20px;
+    word-break: break-word;
 }
 
 
 .bx-cog,
+.bx-list-plus,
 .bx-calendar-plus,
 .bx-group,
 .bx-book-add,
@@ -88,31 +95,35 @@ p {
 
 body {
     position: relative;
+    overflow-x: hidden;
 }
 
+
 body::-webkit-scrollbar {
-    width: 15px;
-    /* width of the entire scrollbar */
+    width: 10px;
+    /* width of the entire scrollbar  */
 }
 
 body::-webkit-scrollbar-track {
-    background: var(--primary-color);
-    /* color of the tracking area */
+    background: #fff;
+    /* color of the tracking area  */
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: var(--bk-color-caption);
-    /* color of the scroll thumb */
+    background-color: var(--color-graylight);
+    /* color of the scroll thumb  */
     border-radius: 20px;
-    /* roundness of the scroll thumb */
-    border: 1px solid var(--color-bk-opacity);
-    /*  creates padding around scroll thumb */
+    /* roundness of the scroll thumb  */
+    /* border: 5px solid var(--color-bk-opacity); */
+    /* creates padding around scroll thumb  */
 }
 
 input,
 select,
 textarea {
-    border: var(--input-border);
+    outline: none;
+    border: none;
+    border-bottom: var(--input-border);
     outline: none;
     padding: var(--input--padding);
     font-size: var(--font-size-input);
@@ -170,6 +181,7 @@ table {
     overflow: hidden;
     border: 1px solid;
     box-shadow: var(--box-shadow);
+    background-color: #fff;
 }
 
 tbody th,
@@ -288,6 +300,7 @@ caption {
     box-shadow: var(--box-shadow);
     position: relative;
     gap: 35px;
+    background-color: #fff;
 }
 
 .card-header-2 .form-header {
@@ -327,7 +340,6 @@ p {
         repeat(auto-fit,
             minmax(450px, 1fr));
     gap: 10px;
-    padding: 50px;
 }
 
 .finder {

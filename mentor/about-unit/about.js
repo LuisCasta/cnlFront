@@ -82,8 +82,10 @@ async function loadActivityByUnit() {
             <td data-cell="Finaliza"><p class="p-date"><i class='bx bx-calendar'></i>${endDate}</p></td>
             <td data-cell="Acciones">
             <div class='actions'>
-            <a class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&actStudId=${id}">revisar</a>
-              <button onclick="delActivity(${id})" class='edit'>
+            <a data-tooltip="Revisar" class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&actStudId=${id}">
+            <i class='bx bx-check-double'></i>
+            </a>
+                <button onclick="delActivity(${id})" class='edit'>
                 <i class='bx bx-trash'></i>
               </button>
             </div>

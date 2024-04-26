@@ -136,11 +136,16 @@ async function loadListCheck() {
         student;
       // console.log(student);
       listActivStu += `
-    <tr>
+    <tr class="td-check">
       <td data-cell="Nombre"><p>${name}</p></td>
-      <td data-cell="Estatus"><p>${estatus}</p></td>
+      <td data-cell="Estatus"><p class="${
+        estatus == "Pendiente" ? "pendiente" : ""
+      }">${estatus}</p></td>
       <td data-cell="Revisar">
-        <button onclick='mostrarDataActAlumno(${idActStudent},${score},"${name}","${firstName}","${secondName}");' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} class="btn-check">Revisar</button>
+        <a data-tooltip="Revisar" onclick='mostrarDataActAlumno(${idActStudent},${score},"${name}","${firstName}","${secondName}");' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} 
+        class="btn-check">
+        <i class='bx bx-check-square'></i>
+        </a>
       </td>
     </tr>
     `;

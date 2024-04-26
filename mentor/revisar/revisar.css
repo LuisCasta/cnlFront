@@ -17,6 +17,7 @@
     align-items: center;
 }
 
+
 .pautas a {
     background-color: var(--primary-color);
     color: #fff;
@@ -29,6 +30,8 @@
 }
 
 .content-name {
+    background-color: #fff;
+
     display: flex;
     gap: 15px;
     box-shadow: var(--box-shadow);
@@ -80,6 +83,19 @@
     border-radius: 3px;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pendiente {
+    background-color: #fca31130;
+    color: #fca311;
+    padding: 5px;
+    border-radius: 25px;
+    font-size: 10px;
+    line-height: 7px;
 }
 
 .checkRevisar {
@@ -88,17 +104,21 @@
 }
 
 /* 
-.coments::before {
-    content: 'Comentarios del Alumno:';
-    font-size: 14px;
-    color: var(--primary-color);
-    font-weight: normal;
+.td-check {
+    display: flex;
+    justify-content: space-around;
+}
+
+.td-check td {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 } */
 
 .link-student {
     background-color: var(--primary-color);
     color: #fff;
-    padding: 8px;
+    padding: 5px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -133,6 +153,7 @@
 
 .content-stud {
     display: flex;
+    background-color: #fff;
     flex-direction: column;
     gap: 10px;
     align-items: center;
@@ -218,8 +239,14 @@
 }
 
 .btn-check {
-    color: #fff;
     text-decoration: none;
+    font-size: 12px;
+    border-radius: 3px;
+    color: var(--primary-color);
+}
+
+.bx-check-square {
+    font-size: 30px;
 }
 
 table {
@@ -255,5 +282,17 @@ table {
 
     .name-container {
         flex-direction: column;
+    }
+
+
+    .td-check {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .td-check td {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }
