@@ -16,10 +16,10 @@ async function loadCursosById() {
       cursoMentorHtml += `<tr>
       <td data-cell="Name">${name}</td>
       <td data-cell="Description">${description}</td>
-      <td data-cell="Unidades" class="mentor-cog">
+      <td data-cell="Parciales" class="mentor-cog">
       <div class="mentor-actions">
           <a href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}">
-            <button data-tooltip="Agregar/Configurar unidad" data-id="${id}" class="unidad">
+            <button data-tooltip="Agregar/Configurar parcial" data-id="${id}" class="unidad">
               <i class='bx bx-customize'></i>
             </button>
           </a>
