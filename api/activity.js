@@ -132,7 +132,7 @@ const deleteActivity = async (data) => {
     activityId == undefined ||
     activityId == ""
   )
-    return { code: 400, message: `Error, el campo nombre es inválido` };
+    return { code: 400, message: `Error, el campo activityId es inválido` };
 
   const career = await putApi(`activity/d/${activityId}`, {});
 

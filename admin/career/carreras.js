@@ -144,6 +144,9 @@ async function deleteCareer(careerId) {
         succesPost.innerHTML = "";
         succesPost.classList.remove("aviso-click");
       }, 7000);
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     }
   } else {
     setTimeout(function () {
@@ -151,8 +154,6 @@ async function deleteCareer(careerId) {
       <i class='bx bx-x' ></i>
       <p>Operación Cancelada</p>`;
       succesPost.classList.add("aviso-click");
-    }, 100);
-
-    location.reload();
+    }, 1000);
   }
 }

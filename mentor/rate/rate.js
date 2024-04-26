@@ -31,12 +31,26 @@ async function loadCursosById() {
     } else {
       console.log(printCalif.data);
       printCalif.data.forEach((rate) => {
-        const { name, Promedio, secondName } = rate;
+        const {
+          name,
+          score,
+          secondName,
+          PromCalculado,
+          cuatri,
+          parcial1,
+          parcial2,
+        } = rate;
         taBendRate += `
             <tr>
                 <td data-cell="Nombre"><p>${name} ${secondName}</p></td>
-                <td data-cell="Calificación"><input value=${Promedio} /></td>
-                <td data-cell='Acciones'><button value=${Promedio}><p>Guardar calificación</p></button></td>
+                <td data-cell="Parcial 1"><p>${parcial1}</p></td>
+                <td data-cell="Parcial 2"><p>${parcial2}</p></td>
+                <td data-cell="Cuatrimestre"><p>${cuatri}</p></td>
+                <td data-cell="Promedio calculado"><p>${PromCalculado}</p></td>
+                <td data-cell="Calificación final">
+                  <p contenteditable="true" spellcheck="false">${score}</p>
+                </td>
+                <td data-cell='Acciones'><button value=${score}><p>Guardar calificación</p></button></td>
             </tr>
             `;
         tabEnd.innerHTML = taBendRate;

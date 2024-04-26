@@ -23,10 +23,10 @@ async function loadUnit() {
       hrefMentor.href = `../mentor/mentor.html?idMentor=${idMentor}`;
       unitHtml += `
       <tr>
-        <td data-cell="Nombre de la unidad">
+        <td data-cell="Nombre del parcial">
          <p id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
         </td>
-        <td data-cell="Tipo de unidad"><p class=${
+        <td data-cell="Tipo de parcial"><p class=${
           type === 1
             ? "ordinario"
             : type === 2
@@ -39,7 +39,7 @@ async function loadUnit() {
           ? "Cuatrimestral"
           : "Extraordinario"
       }<p></td>
-        <td data-cell="Gestionar unidad">
+        <td data-cell="Gestionar parcial">
           <button data-tooltip='Gestionar' class="edit">
             <a  href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}">
               <i class='bx bx-cog'></i>
@@ -77,7 +77,7 @@ createBtnUnit.addEventListener("click", async (e) => {
   // Succes Post
   succesPost.innerHTML = `
       <i class='bx bx-loader-circle bx-spin' ></i>
-      <p>Creando nueva Unidad...</p>
+      <p>Creando nuevo Parcial...</p>
     `;
   succesPost.classList.add("aviso-click");
 
@@ -86,7 +86,7 @@ createBtnUnit.addEventListener("click", async (e) => {
   else {
     succesPost.innerHTML = `
     <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
-      <p>Unidad: ${name} creada con éxito</p>
+      <p>Parcial: ${name} creado con éxito</p>
     `;
     succesPost.classList.add("aviso-click");
   }
@@ -155,7 +155,7 @@ async function updateUnit(unitId) {
 }
 
 async function delUnit(unitId) {
-  if (confirm("¿Estás seguro de que deseas eliminar esta Unidad?")) {
+  if (confirm("¿Estás seguro de que deseas eliminar este Parcial?")) {
     const deleteData = await deleteUnit({
       unitId,
     });
@@ -166,7 +166,7 @@ async function delUnit(unitId) {
       setTimeout(function () {
         succesPost.innerHTML = `
         <i class='bx bx-check-circle' ></i>
-        <p>Unidad eliminada con éxito</p>`;
+        <p>Parcial eliminado con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
       setTimeout(function () {

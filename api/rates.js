@@ -41,7 +41,9 @@ const saveRatebyStudent = async (data) => {
 
 // Obtener las calificaciones finales por curso
 const getEndRateByCourse = async (idCourse) => {
-  const ratesByCourse = await getApi(`courseStudent/aboutCourse/${idCourse}`);
+  const ratesByCourse = await getApi(
+    `courseStudent/getReportByCourse/${idCourse}`
+  );
   if (ratesByCourse.status != 200)
     return {
       code: 400,

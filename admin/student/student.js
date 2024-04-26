@@ -94,7 +94,7 @@ btnStudent.addEventListener("click", async (e) => {
   setTimeout(function () {
     succesPost.innerHTML = `
     <i class='bx bx-check-circle'></i>
-    <p>Creando nueva carrera...</p>`;
+    <p>Creando alumno...</p>`;
     succesPost.classList.add("aviso-click");
   }, 100);
 
@@ -110,7 +110,7 @@ btnStudent.addEventListener("click", async (e) => {
     setTimeout(function () {
       succesPost.innerHTML = `
       <i class='bx bx-check-circle'></i>
-      <p>Estudiante cread0 con éxito</p>`;
+      <p>Estudiante creado con éxito</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
     setTimeout(function () {
@@ -325,6 +325,9 @@ async function deleteAlumno(studentId) {
         succesPost.innerHTML = "";
         succesPost.classList.remove("aviso-click");
       }, 7000);
+      // const myTable = document.getElementById("tbody-data");
+      // myTable.innerHTML = "";
+      // await getAll();
     }
   } else {
     setTimeout(function () {

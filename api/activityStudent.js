@@ -201,10 +201,41 @@ const loadListActivityStudentCheck = async (idActivity) => {
 // Update Activity
 
 const updateActivity = async (data) => {
-  const { name, description, dateStart, dateEnd, intent, idActivity } = data;
+  const {
+    name,
+    description,
+    dateStart,
+    dateEnd,
+    intent,
+    activityId,
+    type,
+    idLesson,
+    idCourse,
+    idUnit,
+    link,
+  } = data;
 
   if (name == "" || name == null || name == undefined || name == " ")
     return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  if (
+    idLesson == "" ||
+    idLesson == null ||
+    idLesson == undefined ||
+    idLesson == " "
+  )
+    return { code: 400, message: `Error, el campo idLesson es inválido` };
+
+  if (
+    idCourse == "" ||
+    idCourse == null ||
+    idCourse == undefined ||
+    idCourse == " "
+  )
+    return { code: 400, message: `Error, el campo idCourse es inválido` };
+
+  if (idUnit == "" || idUnit == null || idUnit == undefined || idUnit == " ")
+    return { code: 400, message: `Error, el campo idUnit es inválido` };
 
   if (
     description == "" ||
@@ -234,21 +265,25 @@ const updateActivity = async (data) => {
     return { code: 400, message: `Error, el campo Inicia es inválido` };
 
   if (
-    idActivity == "" ||
-    idActivity == null ||
-    idActivity == undefined ||
-    idActivity == " "
+    activityId == "" ||
+    activityId == null ||
+    activityId == undefined ||
+    activityId == " "
   )
     return { code: 400, message: `Error, el campo id es inválido` };
 
-  const activity = await postDataC("activity/", {
+  const activity = await putApi("activity/", {
     name,
-    type,
     description,
-    dateStart,
-    dateEnd,
     intent,
-    idActivity,
+    dateEnd,
+    dateStart,
+    idLesson,
+    idCourse,
+    idUnit,
+    type,
+    link,
+    activityId,
   });
 
   if (activity.status != 200)

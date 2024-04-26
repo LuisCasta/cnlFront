@@ -75,7 +75,9 @@ async function actualizarAct(id) {
     const idUnit = btn.getAttribute("data-idunit");
     const idCourse = btn.getAttribute("data-idcourse");
     const type = btn.getAttribute("data-type");
+
     const activityId = id;
+    console.log(activityId);
     console.log(link);
     const updateData = await updateActivity({
       name,
@@ -90,7 +92,7 @@ async function actualizarAct(id) {
       link,
       activityId,
     });
-
+    console.log(updateData);
     if (updateData.code != 200) {
       alert(`Error al actualizar la actividad llamada: ${name}`);
     } else {
@@ -132,7 +134,7 @@ async function loadListCheck() {
     revisarActStuList.data.forEach((student) => {
       const { estatus, name, secondName, idActStudent, score, firstName } =
         student;
-      console.log(student);
+      // console.log(student);
       listActivStu += `
     <tr>
       <td data-cell="Nombre"><p>${name}</p></td>
