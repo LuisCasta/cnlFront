@@ -452,12 +452,48 @@ p {
     margin: 20px auto;
 }
 
+.confirm-cancelar {
+    position: absolute;
+    top: -200px;
+    left: 116px;
+    width: 90%;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+}
+
+.show-modal {
+    top: 0;
+}
+
+.content-confirm-cancel {
+    border-radius: 10px;
+    background-color: #fff;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
+.content-confirm-cancel button {
+
+    background-color: #000000;
+}
+
 @media(max-width:768px) {
     .form-header {
         grid-template-columns:
             repeat(auto-fit,
                 minmax(250px, 1fr));
         padding: 20px;
+    }
+
+    .confirm-cancelar {
+        left: 0px;
     }
 
 }

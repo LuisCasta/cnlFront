@@ -35,7 +35,7 @@ table {
 
 .edit-course-rate {
     position: absolute;
-    top: 0;
+    top: -120px;
     padding: 10px;
     align-items: center;
     display: flex;
@@ -67,6 +67,7 @@ table {
 }
 
 .animaterate {
+    top: 0;
     z-index: 9999;
     animation: course .2s ease-in-out;
     transition: .2s;
@@ -95,6 +96,15 @@ table {
     to {
         transform: translateY(0px);
     }
+
+}
+
+.a-unit-mentor {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 5px;
+    border-radius: 25px;
+    display: flex;
 
 }
 

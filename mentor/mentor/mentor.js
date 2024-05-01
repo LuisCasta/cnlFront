@@ -14,14 +14,15 @@ async function loadCursosById() {
     cursoMentor.data.forEach((curso) => {
       const { id, name, description, task, proyect, exam } = curso;
       cursoMentorHtml += `<tr>
-      <td data-cell="Name">${name}</td>
-      <td data-cell="Description">${description}</td>
+      <td data-cell="Name"><p>${name}</p></td>
+      <td data-cell="Description"><p>${description}</p></td>
       <td data-cell="Parciales" class="mentor-cog">
       <div class="mentor-actions">
-          <a href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}">
-            <button data-tooltip="Agregar/Configurar parcial" data-id="${id}" class="unidad">
-              <i class='bx bx-customize'></i>
-            </button>
+          <a class="a-unit-mentor" href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}" 
+          data-tooltip="Agregar/Configurar parcial" 
+          data-id="${id}">
+              <i class='bx bx-customize'>
+              </i>
           </a>
             <button  data-tooltip="Ponderaciones" id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} class="unidadConfig edit">
               <i class='bx bx-cog'></i>

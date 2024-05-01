@@ -138,6 +138,24 @@
     font-weight: 600;
 }
 
+/* styles: add clase btn */
+.a-add-clase {
+    display: flex;
+    background-color: var(--primary-color);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.bx-book-add {
+    color: #fff;
+    font-size: 14px;
+}
+
 .input-promf {
     width: fit-content;
     font-size: 14px;
