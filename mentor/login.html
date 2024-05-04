@@ -18,30 +18,47 @@
     <title>Login</title>
   </head>
   <body>
-    <div class="side-Nav"></div>
+    <!-- <div class="side-Nav"></div> -->
     <div class="log-sidenav">
-      <div class="container-login">
+      <div class="mensaje">
         <img
           src="https://universidadnuevalaguna.edu.mx/wp-content/uploads/2023/08/escudo.png"
           alt=""
         />
+        <h4>¡Bienvenido!</h4>
         <h2>Universidad Nueva Laguna</h2>
+        <hr />
+        <p>
+          Inicia sesión con tu correo y contraseña que te proporcionó la
+          Universidad.
+        </p>
+        <span>#SOYNUEVALAGUNA <i class="bx bxs-heart-circle"></i></span>
+      </div>
+      <div class="container-login">
         <div class="login-content">
           <div class="text-login">
-            <i class="bx bx-user-circle bx-sm"></i>
-            <h2>Inicia sesión</h2>
+            <i class="bx bx-user"></i>
+            <h3 class="title-login">Inicia sesión</h3>
           </div>
-          <input type="email" id="correo2" placeholder="Nombre" />
-          <input type="password" id="pw-login2" placeholder="contraseña" />
+          <input type="email" id="correo2" placeholder="Usuario" />
+          <input type="password" id="pw-login2" placeholder="Contraseña" />
           <a id="Inicio-sesion2"
-            ><button class="login-btn">Iniciar sesión</button></a
+            ><button class="login-btn">
+              <i class="bx bx-log-in"></i>Entrar
+            </button></a
           >
           <div class="forgotPw">
             <i class="bx bx-info-circle"></i>
-            <a href="">Olvidé mi contraseña</a>
+            <a
+              data-tooltip="Comunícate con el área administrativa para recuperar tu contraseña"
+              >Olvidé mi contraseña
+            </a>
           </div>
         </div>
       </div>
+    </div>
+    <div class="bk-img">
+      <img src="../src/cnl.png" alt="" />
     </div>
   </body>
   <script src="../api/post.js"></script>

@@ -2,37 +2,140 @@
 
 
 .log-sidenav {
-    background-image: url('../src/cnl.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     height: 100vh;
     margin: auto;
     display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensaje {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+    animation: fadein .9s ease-in-out;
+}
+
+.mensaje h2 {
+    background-image: linear-gradient(to right, #dddee0, wheat);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 50px;
+    text-wrap: pretty;
+}
+
+.mensaje img {
+    width: 100px;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.mensaje p {
+    color: white;
+    font-size: 18px;
+}
+
+.mensaje span {
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.bk-img {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mensaje h4 {
+    color: wheat;
+}
+
+.bk-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #22397de5, rgba(255, 255, 255, 0.885))
+}
+
+.bk-img img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
 }
 
 .container-login {
     border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     display: flex;
-    background-color: #fff;
+    background-color: #ffffff30;
+    backdrop-filter: blur(5px);
+    border: 1px solid #dadada;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 30px;
     margin: auto;
+    box-shadow: var(--box-shadow);
+    transition: .2s ease-in-out;
+    animation: fadeout .9s ease-in-out;
 }
 
-.container-login img {
-    width: 100px;
+@keyframes fadeout {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+.container-login:hover {
+    background-color: #ffffff90;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
+
+.login-content input {
+    background-color: transparent;
+    color: black;
+    /* border-bottom: 1px solid var(--primary-color); */
+}
+
+
+.container-login h2 {
+    font-size: 20px;
 }
 
 .login-content {
-    border-top: 5px solid var(--primary-color);
+    /* border-top: 5px solid var(--primary-color); */
     display: flex;
     flex-direction: column;
     gap: 20px;
-    box-shadow: var(--box-shadow);
     padding: 20px;
 }
 
@@ -40,10 +143,10 @@
     text-align: center;
 }
 
-.text-login .bx-user-circle {
-    margin: 10px;
-    padding: 16px;
-    border-radius: 8px;
+.text-login .bx-user {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 25px;
     color: var(--primary-color);
     background-color: var(--color-bk-opacity);
 }
@@ -59,6 +162,13 @@
 
 .forgotPw a {
     font-size: 12px;
+    cursor: pointer;
+    text-wrap: balance;
+}
+
+.title-login {
+    font-size: 15px;
+    font-weight: 500;
 }
 
 /* .side-Nav {
@@ -91,4 +201,31 @@ body {
     .container-login img {
         width: 70px;
     }
+
+    .log-sidenav {
+        flex-direction: column;
+    }
+
+    .bk-img::after {
+        background-image: linear-gradient(to bottom, #22397de5, rgba(255, 255, 255, 0.885))
+    }
+
+    .mensaje {
+        text-align: center;
+    }
+
+    .mensaje img {
+        width: 50px;
+        margin: auto;
+    }
+
+    .bk-img img {
+        aspect-ratio: 9/16;
+        object-fit: cover;
+    }
+
+    .container-login {
+        padding: 0px;
+    }
+
 }

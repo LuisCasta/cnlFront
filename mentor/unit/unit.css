@@ -60,3 +60,13 @@
     padding: 5px;
 
 }
+
+@media (max-width:578px) {
+    .form-header {
+        flex-direction: column;
+    }
+
+    .form-header button {
+        width: 100%;
+    }
+}

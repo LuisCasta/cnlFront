@@ -3,7 +3,7 @@
 // Funcion para crear una carrera
 // { name, code, description }
 
-const create = async (data) => {
+const createStudent = async (data) => {
   const {
     name,
     firstName,
@@ -60,7 +60,7 @@ const create = async (data) => {
  * Obtiene todas las carreras
  *
  * */
-const getAll = async () => {
+const getAllStudent = async () => {
   const student = await getApi("student/all");
 
   if (student.status != 200)
@@ -77,7 +77,7 @@ const getAll = async () => {
  * Obtiene todas las carreras
  *
  * */
-const getById = async (id) => {
+const getByIdStudent = async (id) => {
   if (id == 0 || id == "" || id == undefined || id == " ")
     return { code: 400, message: `Error, el campo id es inválido` };
 
@@ -95,7 +95,7 @@ const getById = async (id) => {
 
 // Login student
 
-const getLogin = async (data) => {
+const getLoginStudent = async (data) => {
   const { mail, pass } = data;
   console.log(data);
   if (mail == 0 || mail == "" || mail == undefined || mail == " ")

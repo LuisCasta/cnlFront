@@ -11,10 +11,10 @@ async function loginCnlMentor() {
   const passM = pwMentor.value;
 
   if (mailM == 0 || mailM == "" || mailM == undefined || mailM == " ")
-    alert("colocar usuario");
+    alert("falta usuario");
 
   if (passM == 0 || passM == "" || passM == undefined || passM == " ")
-    alert("colocar pw");
+    alert("falta contraseña");
 
   const data = {
     mail: mailM,

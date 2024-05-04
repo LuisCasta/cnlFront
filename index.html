@@ -7,6 +7,12 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpg" href="src/logo.svg" />
     <title>Login</title>
@@ -14,29 +20,62 @@
   <body>
     <!-- <div class="side-Nav"></div> -->
     <div class="log-sidenav">
-      <div class="container-login">
+      <div class="mensaje">
         <img
           src="https://universidadnuevalaguna.edu.mx/wp-content/uploads/2023/08/escudo.png"
           alt=""
         />
+        <h4>¡Bienvenido!</h4>
         <h2>Universidad Nueva Laguna</h2>
+        <hr />
+        <p>
+          Inicia sesión con tu correo y contraseña que te proporcionó la
+          Universidad.
+        </p>
+        <span>#SOYNUEVALAGUNA <i class="bx bxs-heart-circle"></i></span>
+      </div>
+      <div class="container-login">
         <div class="login-content">
           <div class="text-login">
-            <i class="bx bx-user-circle bx-sm"></i>
-            <h2>Inicia sesión</h2>
+            <i class="bx bx-user"></i>
+            <h3 class="title-login">Inicia sesión</h3>
           </div>
-          <input type="email" id="correo" placeholder="Nombre" />
-          <input type="password" id="pw-login" placeholder="contraseña" />
+          <select
+            id="selectUser"
+            style="background-color: transparent"
+            name=""
+            id=""
+          >
+            <option value="Usuario">Escoge usuario</option>
+            <option value="1">Admin</option>
+            <option value="2">Tutor</option>
+            <option value="3">Alumno</option>
+          </select>
+          <input type="email" id="correo" placeholder="Usuario" />
+          <input type="password" id="pw-login" placeholder="Contraseña" />
           <a id="Inicio-sesion"
-            ><button class="login-btn">Iniciar sesión</button></a
+            ><button class="login-btn">
+              <i class="bx bx-log-in"></i>Entrar
+            </button></a
           >
           <div class="forgotPw">
             <i class="bx bx-info-circle"></i>
-            <a href="">Olvidé mi contraseña</a>
+            <a
+              data-tooltip="Comunícate con el área administrativa para recuperar tu contraseña"
+              >Olvidé mi contraseña
+            </a>
           </div>
         </div>
       </div>
     </div>
+    <div class="bk-img">
+      <img src="src/cnl.png" alt="" />
+    </div>
   </body>
   <script src="login/login.js"></script>
+  <!-- mentor -->
+  <script src="api/post.js"></script>
+  <script src="api/mentor.js"></script>
+  <!-- student -->
+  <script src="api/student.js"></script>
 </html>

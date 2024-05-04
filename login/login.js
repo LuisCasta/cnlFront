@@ -1,39 +1,92 @@
 const correo = document.getElementById("correo");
 const pw = document.getElementById("pw-login");
 const login = document.getElementById("Inicio-sesion");
+const selectUser = document.getElementById("selectUser");
 
-//console.log(login);
+login.addEventListener("click", async function loginCnl() {
+  const userSelection = selectUser.value;
 
-login.addEventListener("click", loginCnl);
-function loginCnl() {
-  const user = {
-    correo: correo.value,
-    pw: pw.value,
-  };
+  if (userSelection === "1") {
+    // Admin Login
+    if (
+      pw.value === "@@admin123@" &&
+      correo.value === "adminDemo@nuevalaguna.com"
+    ) {
+      login.href = "admin/career/career.html";
+    } else if (pw.value === "master" && correo.value === "master") {
+      login.href = "admin/career/career.html";
+    } else {
+      alert("Usuario o contraseña incorrecta");
+      correo.value = "";
+      pw.value = "";
+    }
+  } else if (userSelection === "2") {
+    // Mentor Login
+    const mentorMail = correo.value;
+    const mentorPassword = pw.value;
 
-  const json = JSON.stringify(user);
-  localStorage.setItem(user.correo, json);
-  console.log("user added");
+    if (!mentorMail) {
+      alert("falta usuario");
+    }
 
-  const getCorreo = localStorage.getItem(correo.vlaue);
-  const getPw = localStorage.getItem(pw.value);
+    if (!mentorPassword) {
+      alert("falta contraseña");
+    }
 
-  console.log(getCorreo, getPw);
+    try {
+      const data = {
+        mail: mentorMail,
+        pass: mentorPassword,
+      };
+      const mentor = await getLogin(data);
+      console.log(mentor);
+      if (mentor.code !== 200) {
+        console.log(`Error de login ${mentorMail}`);
+        alert("Usuario o contraseña incorrecta");
+        correo.value = "";
+        pw.value = "";
+      } else {
+        const { id, name, firstName, mail } = mentor.data;
+        location.href = `mentor/mentor/mentor.html?idMentor=${id}`;
+      }
+    } catch (error) {
+      console.error("Error fetching mentor data:", error);
+      alert("Error al iniciar sesión. Intente nuevamente más tarde.");
+    }
+  } else if (userSelection === "3") {
+    // Student Login
+    const studentMail = correo.value;
+    const studentPassword = pw.value;
 
-  const userMail = localStorage.getItem(user.correo);
-  const data = JSON.parse(userMail);
-  console.log(data);
+    if (!studentMail) {
+      alert("colocar usuario");
+    }
 
-  if (
-    pw.value === "@@admin123@" &&
-    correo.value === "adminDemo@nuevalaguna.com"
-  ) {
-    login.href = "admin/career/career.html";
-  } else if (pw.value === "master" && correo.value === "master") {
-    login.href = "admin/career/career.html";
+    if (!studentPassword) {
+      alert("colocar pw");
+    }
+
+    try {
+      const data = {
+        mail: studentMail,
+        pass: studentPassword,
+      };
+      const student = await getLoginStudent(data);
+      console.log(student);
+      if (student.code !== 200) {
+        console.log(`Error de login ${studentMail}`);
+        alert("Usuario o contraseña incorrecta");
+        correo.value = "";
+        pwAlumno.value = ""; // Assuming pwAlumno is the student password field
+      } else {
+        const { id, name, firstName, mail } = student.data;
+        location.href = `student/calendar/calendar.html?idStudent=${id}`;
+      }
+    } catch (error) {
+      console.error("Error fetching student data:", error);
+      alert("Error al iniciar sesión. Intente nuevamente más tarde.");
+    }
   } else {
-    alert("Usuario o contraseña incorrecta");
-    correo.value = "";
-    pw.value = "";
+    console.warn("Invalid user selection:", userSelection);
   }
-}
+});

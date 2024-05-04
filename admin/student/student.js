@@ -4,7 +4,7 @@ const succesPost = document.getElementById("succes-post");
 async function loadStudents() {
   let salida = "";
   const myTable = document.getElementById("tbody-data");
-  const students = await getAll();
+  const students = await getAllStudent();
   if (students.code !== 200) {
     alert(`Error ${newStudent.message}`);
   } else {
@@ -50,7 +50,7 @@ async function loadStudents() {
 }
 
 async function getStudentById(id) {
-  const student = await getById(id);
+  const student = await getByIdStudent(id);
 
   if (student.status != 200)
     alert(`Error al obtener al estudiante con el id ${id}`);
@@ -103,7 +103,7 @@ btnStudent.addEventListener("click", async (e) => {
     succesPost.classList.remove("aviso-click");
   }, 6500);
 
-  const newStudent = await create(data);
+  const newStudent = await createStudent(data);
 
   if (newStudent.code != 200) alert(`Error ${newStudent.message}`);
   else {

@@ -25,7 +25,7 @@ async function loginCnlStudent() {
     mail: mailS,
     pass: pwAlumno,
   };
-  const student = await getLogin(data);
+  const student = await getLoginStudent(data);
   console.log(student);
   if (student.code != 200) {
     console.log(`Error de login ${eStudent}`);
