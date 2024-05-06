@@ -108,8 +108,123 @@ table {
 
 }
 
+/* estilos agregados para mentor */
+
+.card-header-2 {
+    padding: 0;
+    margin: auto;
+    width: 90%;
+    background-color: transparent;
+}
+
+.alumnos {
+    background-image: linear-gradient(to right, #b5179e, #7209b7);
+    color: white;
+}
+
+.content-static {
+    backdrop-filter: blur(5px);
+    width: 100%;
+    padding: 25px;
+    border-radius: 5px;
+    /* height: 150px; */
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.p-asign {
+    margin-bottom: 25px;
+}
+
+.a-static {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    background-color: white;
+    color: var(--primary-color);
+    border-radius: 25px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s ease-in-out width;
+    gap: 5px;
+    align-items: center;
+}
+
+.ponderaciones {
+    position: absolute;
+    bottom: 15px;
+    right: 115px;
+    background-color: white;
+    color: var(--primary-color);
+    border-radius: 25px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s ease-in-out width;
+    gap: 5px;
+    align-items: center;
+}
+
+.bxs-cog {
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    font-size: 15px;
+}
+
+.a-static:hover {
+    background-image: linear-gradient(to right, white, #b5179e);
+}
+
+
+.content-static img {
+    width: 50px;
+    position: absolute;
+    bottom: -100px;
+    transition: .3s ease-in-out;
+    z-index: -1;
+}
+
+.content-static:hover img {
+    bottom: -100px;
+    width: 300px;
+    opacity: .3;
+    z-index: -1;
+}
+
+.curs p,
+.alumnos p,
+.calificaciones p {
+    color: white;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-header {
+    background-image: url('../../src/back.png');
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
 @media(max-width:576px) {
     .edit-course-rate {
         width: 100%;
+    }
+}
+
+@media(max-width:740px) {
+    .grid-container {
+        flex-direction: column;
     }
 }

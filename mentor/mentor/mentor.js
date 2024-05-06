@@ -3,7 +3,8 @@ let cursoMentorHtml = "";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idMentor = urlParams.get("idMentor");
-const divCursos = obtainId("tbody-cursos");
+const divCursos = obtainId("static-div");
+
 const closeModalRate = obtainId("close-modal-rate");
 
 async function loadCursosById() {
@@ -13,23 +14,21 @@ async function loadCursosById() {
   } else {
     cursoMentor.data.forEach((curso) => {
       const { id, name, description, task, proyect, exam } = curso;
-      cursoMentorHtml += `<tr>
-      <td data-cell="Name"><p>${name}</p></td>
-      <td data-cell="Description"><p>${description}</p></td>
-      <td data-cell="Parciales" class="mentor-cog">
-      <div class="mentor-actions">
-          <a class="a-unit-mentor" href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}" 
-          data-tooltip="Agregar/Configurar parcial" 
-          data-id="${id}">
-              <i class='bx bx-customize'>
-              </i>
-          </a>
-            <button  data-tooltip="Ponderaciones" id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} class="unidadConfig edit">
-              <i class='bx bx-cog'></i>
-            </button>
-       </div>
-      </td>
-    </tr>
+      cursoMentorHtml += `
+      <div class="alumnos calificaciones content-static">
+            <img src="../../src/alumno.svg" alt="" />
+            <h5>${name}</h5>
+            <p class="p-asign">${description}</p>
+            <a class="a-static" href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}" 
+            data-id="${id}">
+              Ir a parcial
+               <i class='bx bx-customize'>
+               </i>
+              </a>
+               <a data-tooltip="Ponderación" class="ponderaciones unidadConfig edit" id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} >
+               <i class='bx bxs-cog' ></i>
+             </a>
+          </div> 
   `;
 
       divCursos.innerHTML = cursoMentorHtml;

@@ -28,6 +28,106 @@
 
       <!-- FORMULARIO DEL HEADER -->
       <div class="card-header">
+        <h4>Información de mi asignatura</h4>
+        <div class="card-content-info-unit">
+          <div class="content-static descripcion-unit">
+            <i class="bx bx-text"></i>
+            <h6 class="title">Descripción general del Parcial</h6>
+            <p class="label-unit" contenteditable="true">
+              Este curso ofrece un enfoque completo, teórico y práctico, para
+              dominar los fundamentos.
+            </p>
+            <a class="a-unit-card" href="">Guardar</a>
+          </div>
+          <div class="content-static">
+            <i class="bx bx-slideshow"></i>
+            <h6>Presentación de la Asignatura</h6>
+            <p>Este es el link de la presentación de tu Asignatura</p>
+            <a class="a-unit-card" href="">Guardar</a>
+          </div>
+          <div class="content-static avisos">
+            <h6><i class="bx bxs-bell-ring"></i>Avisos</h6>
+            <div class="notification">
+              <div class="name-notify">
+                <h6>Recordatorio</h6>
+                <label>Entrega de proyecto Martes y examen miércoles</label>
+              </div>
+              <a><i class="bx bx-x"></i></a>
+            </div>
+            <div class="notification">
+              <div class="name-notify">
+                <h6>Recordatorio</h6>
+                <label>Entrega de proyecto Martes y examen miércoles</label>
+              </div>
+              <a><i class="bx bx-x"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-header-2">
+        <div class="cards-actividad-unit">
+          <div class="card-tareas content-static">
+            <div class="text-tareas">
+              <i class="bx bx-task"></i>
+              <h6>Tareas Activas</h6>
+              <ul class="list-tareas">
+                <li>
+                  <i class="bx bx-check"></i> Crear presentación sobre historia
+                  tecnológica.
+                </li>
+                <li>
+                  <i class="bx bx-check"></i> Programar robot para seguir
+                  trayectoria.
+                </li>
+                <li>
+                  <i class="bx bx-check"></i> Diseñar página web interactiva.
+                </li>
+                <li>
+                  <i class="bx bx-check"></i> Investigar impacto de tecnología
+                  educativa.
+                </li>
+              </ul>
+              <a class="a-unit-card">Ver todas</a>
+            </div>
+          </div>
+          <div class="evaluation content-static">
+            <div class="text-evaluation">
+              <i class="bx bxs-star-half"></i>
+              <h6>Evaluación</h6>
+              <div class="evaluation-card">
+                <p>Emiliano Martínez</p>
+                <p class="quali-unit">9.5</p>
+              </div>
+              <div class="evaluation-card">
+                <p>Enrique Samaniego</p>
+                <p class="quali-unit">7.5</p>
+              </div>
+              <div class="evaluation-card">
+                <p>Enrique Samaniego</p>
+                <p class="quali-unit">7.5</p>
+              </div>
+              <div class="evaluation-card">
+                <p>Enrique Samaniego</p>
+                <p class="quali-unit">7.5</p>
+              </div>
+              <a class="unit-card">Ver todos</a>
+            </div>
+          </div>
+          <div class="card-forum content-static">
+            <div class="text-forum">
+              <img src="../../src/forum.svg" alt="" />
+              <i class="bx bx-conversation"></i>
+              <h6>Foro</h6>
+              <p class="forum-p">
+                Crea espacios de discusión y resuelve dudas de tus alumnos
+              </p>
+              <a class="a-unit-card">Ir al Foro</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- TABLA DE UNIDADES CREADAS -->
+      <div class="card-header-2">
         <div class="text-header">
           <h2 id="name-group">Agregar Parcial</h2>
           <p>Agrega parciales, consúltalas y configúralas</p>
@@ -46,7 +146,6 @@
           </button>
         </div>
       </div>
-      <!-- TABLA DE UNIDADES CREADAS -->
       <div class="container-Table">
         <table>
           <thead>
@@ -66,6 +165,7 @@
           <tbody id="unit-table"></tbody>
         </table>
       </div>
+
       <div id="succes-post"></div>
       <button class="responsive" id="btnResponsive">
         <i class="bx bx-menu"></i>

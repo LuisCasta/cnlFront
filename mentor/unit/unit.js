@@ -24,7 +24,7 @@ async function loadUnit() {
       unitHtml += `
       <tr>
         <td data-cell="Nombre del parcial">
-         <p id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
+         <p data-tooltip="Editar" id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
         </td>
         <td data-cell="Tipo de parcial"><p class=${
           type === 1

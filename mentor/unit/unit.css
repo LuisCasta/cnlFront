@@ -61,7 +61,267 @@
 
 }
 
-@media (max-width:578px) {
+.card-header-2 {
+    width: 90%;
+
+}
+
+.card-content-info-unit {
+    display: flex;
+    gap: 10px;
+}
+
+.a-unit-card {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 25px;
+    padding: 5px;
+    background-image: linear-gradient(to right, #b5179e, #7209b7);
+}
+
+.a-unit-card:hover {
+    background-image: linear-gradient(to right, #7209b7, #b5179e);
+
+}
+
+.content-static {
+    /* backdrop-filter: blur(5px); */
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 200px;
+    border-radius: 5px;
+    background-color: #ffffff20;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-static p {
+    margin-bottom: 20px;
+}
+
+.avisos,
+.evaluation {
+    background-color: #1a1c23;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #999 #f0f0f0
+}
+
+.avisos::-webkit-scrollbar-thumb,
+.evaluation::-webkit-scrollbar-thumb {
+    background-color: #999;
+}
+
+.avisos::-webkit-scrollbar-track,
+.evaluation::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+.avisos,
+.evaluation {
+    scrollbar-width: none;
+}
+
+/* DESCRIPTION CARD STATIC */
+
+.descripcion-unit {
+    background-image: linear-gradient(to right, #b5179e, #7209b7);
+    color: #fff;
+}
+
+.descripcion-unit p {
+    color: #fff;
+}
+
+.avisos h6 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification {
+    background-image: linear-gradient(to right, #b5179e, #23262f);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+
+.name-notify label {
+    color: #fff;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.name-notify h6 {
+    color: #c1c1c1;
+}
+
+.bx-x {
+    color: #dadada;
+}
+
+/**
+ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
+**/
+
+.cards-actividad-unit {
+    display: flex;
+    gap: 10px;
+}
+
+.card-tareas {
+    background-image: linear-gradient(to right, #ffffff, #dee2e6);
+    /* background-color: #adb5bd; */
+}
+
+.text-tareas h6 {
+    background-image: linear-gradient(to right, #b5179e, #540788);
+    -webkit-background-clip: text;
+    /* Para navegadores WebKit */
+    background-clip: text;
+    color: transparent;
+    font-size: 16px;
+}
+
+.bx-task {
+    background-image: linear-gradient(to right, #b5179e, #540788);
+    -webkit-background-clip: text;
+    /* Para navegadores WebKit */
+    background-clip: text;
+    color: transparent;
+}
+
+.list-tareas {
+    text-align: left;
+}
+
+.list-tareas li {
+    font-size: 12px;
+    list-style: none;
+    line-height: 16px;
+    text-align: left;
+}
+
+.bx-check {
+    color: #06d6a0;
+}
+
+/* EVALUACIONES CARD */
+
+.evaluation {
+    background-color: #3c096c;
+}
+
+.text-evaluation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text-evaluation h6 {
+    color: #fff;
+}
+
+.bxs-star-half {
+    color: #fff;
+    width: fit-content;
+}
+
+.evaluation-card {
+    display: flex;
+    background-image: linear-gradient(to right, #c8b6ff48, #3c096c);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+.quali-unit {
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid #c8b6ff48;
+    padding: 5px;
+    border-radius: 3px;
+    display: flex;
+}
+
+.evaluation-card p {
+    margin-bottom: 0;
+    color: #fff;
+}
+
+.unit-card {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.unit-card:hover {
+    background-color: rgba(255, 255, 255, 0.437);
+
+}
+
+
+/* FORUM STYLES */
+
+.card-forum {
+    backdrop-filter: blur(5px);
+    background-image: linear-gradient(to right, #b5179e, #540788);
+    position: relative;
+
+}
+
+.text-forum h6 {
+    color: #fff;
+}
+
+.text-forum h6 {
+    font-size: 18px;
+}
+
+.bx-conversation {
+    color: #ffff;
+}
+
+.forum-p {
+    color: white;
+}
+
+.text-forum img {
+
+    width: 150px;
+    position: absolute;
+    bottom: -110px;
+    z-index: -1;
+    transition: .2s ease-in-out;
+}
+
+.card-forum:hover img {
+    bottom: -20px;
+    opacity: .6;
+}
+
+
+@media (max-width:748px) {
     .form-header {
         flex-direction: column;
     }
@@ -69,4 +329,10 @@
     .form-header button {
         width: 100%;
     }
+
+    .card-content-info-unit,
+    .cards-actividad-unit {
+        flex-direction: column;
+    }
+
 }
