@@ -8,6 +8,21 @@ const succesPost = document.getElementById("succes-post");
 const hrefMentor = document.getElementById("href-mentor");
 // console.log(idMentor);
 
+{
+  /* <td data-cell="Tipo de parcial"><p class=${
+  type === 1
+    ? "ordinario"
+    : type === 2
+    ? "cuatrimestral"
+    : "extraordinario"
+}>${
+type === 1
+  ? "Ordinario"
+  : type === 2
+  ? "Cuatrimestral"
+  : "Extraordinario"
+}<p></td> */
+}
 // CARGAR UNIDADES DEL GRUPO
 async function loadUnit() {
   let unitHtml = "";
@@ -17,6 +32,7 @@ async function loadUnit() {
   } else {
     const countlessons = document.getElementById("spanTitle");
     countlessons.textContent = units.data.length;
+    // const hrefCog = `<a href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}">`;
     // console.log(units.data);
     units.data.forEach((unidad) => {
       const { id, type, name, idCourse } = unidad;
@@ -26,22 +42,10 @@ async function loadUnit() {
         <td data-cell="Nombre del parcial">
          <p data-tooltip="Editar" id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
         </td>
-        <td data-cell="Tipo de parcial"><p class=${
-          type === 1
-            ? "ordinario"
-            : type === 2
-            ? "cuatrimestral"
-            : "extraordinario"
-        }>${
-        type === 1
-          ? "Ordinario"
-          : type === 2
-          ? "Cuatrimestral"
-          : "Extraordinario"
-      }<p></td>
+     
         <td data-cell="Gestionar parcial">
           <button data-tooltip='Gestionar' class="edit">
-            <a  href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}">
+          <a href="../tareas/activas.html">
               <i class='bx bx-cog'></i>
             </a>
           </button>
@@ -77,7 +81,7 @@ createBtnUnit.addEventListener("click", async (e) => {
   // Succes Post
   succesPost.innerHTML = `
       <i class='bx bx-loader-circle bx-spin' ></i>
-      <p>Creando nuevo Parcial...</p>
+      <p>Creando nueva tarea activa...</p>
     `;
   succesPost.classList.add("aviso-click");
 
@@ -86,7 +90,7 @@ createBtnUnit.addEventListener("click", async (e) => {
   else {
     succesPost.innerHTML = `
     <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
-      <p>Parcial: ${name} creado con éxito</p>
+      <p>Tarea activa: ${name} creado con éxito</p>
     `;
     succesPost.classList.add("aviso-click");
   }

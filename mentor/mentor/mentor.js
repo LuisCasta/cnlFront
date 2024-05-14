@@ -16,7 +16,6 @@ async function loadCursosById() {
       const { id, name, description, task, proyect, exam } = curso;
       cursoMentorHtml += `
       <div class="alumnos calificaciones content-static">
-            <img src="../../src/alumno.svg" alt="" />
             <h5>${name}</h5>
             <p class="p-asign">${description}</p>
             <a class="a-static" href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}" 

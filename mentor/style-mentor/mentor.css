@@ -118,7 +118,7 @@ table {
 }
 
 .alumnos {
-    background-image: linear-gradient(to right, #b5179e, #7209b7);
+    background-image: linear-gradient(to right, #4f70d4, var(--primary-color));
     color: white;
 }
 
@@ -180,7 +180,9 @@ table {
 }
 
 .a-static:hover {
-    background-image: linear-gradient(to right, white, #b5179e);
+    background-image: linear-gradient(to right, #4f70d4, var(--primary-color));
+    color: white;
+
 }
 
 
