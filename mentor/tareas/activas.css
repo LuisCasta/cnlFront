@@ -100,7 +100,7 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
 
 .card-tareas {
     background-image: linear-gradient(to right, #ffffff, #dee2e6);
-    /* background-color: #adb5bd; */
+    backdrop-filter: blur(5px);
 }
 
 .text-tareas h6 {
@@ -114,7 +114,6 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
 
 .bx-task {
     background-image: linear-gradient(to right, #4f70d4, var(--primary-color));
-
     -webkit-background-clip: text;
     /* Para navegadores WebKit */
     background-clip: text;
@@ -144,6 +143,7 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
     right: 50px;
     color: #4f70d4;
     transition: .2s ease-in-out;
+    z-index: 1;
 }
 
 .content-static:hover .bx-bookmark-alt {
@@ -164,6 +164,14 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
     .card-content-info-unit,
     .cards-actividad-unit {
         flex-direction: column;
+    }
+
+    .bx-bookmark-alt {
+        opacity: 0;
+    }
+
+    .label-unit {
+        margin-bottom: 20px;
     }
 
 }

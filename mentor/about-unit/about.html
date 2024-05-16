@@ -25,24 +25,33 @@
       <div class="breadcumbs">
         <a href="">Cursos</a>
         <i class="bx bx-right-arrow-alt"></i>
-        <a id="href-unidad">tarea activa</a>
+        <a id="href-unidad">Tarea activa</a>
         <i class="bx bx-right-arrow-alt"></i>
         <p>Acerca de la tarea activa</p>
       </div>
       <div class="card-header">
         <div class="text-header">
           <h2>Acerca de la tarea activa</h2>
-          <p>Gestiona tareas activas, crea videollamadas,revisa y crea actividades</p>
+          <p>
+            Gestiona tareas activas, crea videollamadas,revisa y crea
+            actividades
+          </p>
         </div>
       </div>
 
       <!-- EMPIEZAN EL CONTENEDOR PARA TABS -->
       <div class="container-tabs">
         <div class="tabs-buttons">
-          <a data-tooltip='Gestionar actividades' id="activ"><i class="bx bxs-watch"></i></a>
+          <a data-tooltip="Gestionar actividades" id="activ"
+            ><i class="bx bxs-watch"></i
+          ></a>
           <!-- <a data-tooltip='Gestionar alumnos' id="students"><i class="bx bx-group "></i></a> -->
-          <a data-tooltip='Gestionar videollamadas' id="calls"><i class="bx bx-video "></i></a>
-          <a data-tooltip='Gestionar calificaciones' id="rates"><i class="bx bxs-star-half "></i></a>
+          <a data-tooltip="Gestionar videollamadas" id="calls"
+            ><i class="bx bx-video"></i
+          ></a>
+          <a data-tooltip="Gestionar calificaciones" id="rates"
+            ><i class="bx bxs-star-half"></i
+          ></a>
           <!-- <a data-tooltip='Gestionar clases' id="clases"><i class="bx bx-book "></i></a>        -->
         </div>
         <div class="divs-tabs">
@@ -55,10 +64,6 @@
                   Agrega actuvidades a tus cursos, consúltalas y configúralas
                 </p>
               </div>
-              <div class="form-select select-text-area">
-                <p>Descripción</p>
-                <textarea type="text" id="des-actividad" /></textarea>
-              </div>
               <div class="form-header">
                 <div class="form-select">
                   <p>Nombre actividad</p>
@@ -69,29 +74,26 @@
                   <input type="date" id="inicio-act" />
                 </div>
                 <div class="form-select">
-                  <p>Término</p>
+                  <p>Fecha límite</p>
                   <input type="date" id="fin-act" />
                 </div>
                 <div class="form-select">
                   <p>Intentos</p>
                   <input type="number" id="intentos" />
                 </div>
-                <!-- <div class="form-select">
-                  <p>Tipo de Actividad</p>
-                  <select type="text" id="type-activity"></select>
-                </div> -->
                 <div class="form-select">
                   <p>Comparte un Link</p>
                   <input type="text" id="link-activity" />
                 </div>
-                <!-- <div class="form-select">
-                  <p>Seleciona la lección</p>
-                  <select name="lessons" id="lesson-id"></select>
-                </div> -->
-                <button id="agregar-actividad" class="add-activity"><i class="bx bxs-watch"></i>Agregar actividad</button>
+              </div>
+              <div class="form-select select-text-area">
+                <p>Descripción</p>
+                <textarea type="text" id="des-actividad"></textarea>
+                <button id="agregar-actividad" class="add-activity">
+                  <i class="bx bxs-watch"></i>Agregar actividad
+                </button>
+              </div>
             </div>
-           
-          </div>
             <!-- TABLA DE ACRIVIDADES CREADAS -->
             <div class="container-Table">
               <table>
@@ -107,7 +109,7 @@
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Inicio</th>
-                    <th>Finaliza</th>
+                    <th>Fecha límite</th>
                     <th>Revisar</th>
                   </tr>
                 </thead>
@@ -126,24 +128,18 @@
               <div class="form-header">
                 <div class="form-select">
                   <p>Nombre de Videollamada</p>
-                <input
-                  type="text"
-                  id="name-call"
-                />
-              </div>
-              <div class="form-select">
-                <p>Descripción</p>
-                <input type="text" id="call-desc" />
-              </div>
+                  <input type="text" id="name-call" />
+                </div>
                 <div class="form-select">
-                <p>Comparte el link</p>
-                <input
-                  type="text"
-                  id="link-call"
-                />
-              </div>
+                  <p>Descripción</p>
+                  <input type="text" id="call-desc" />
+                </div>
+                <div class="form-select">
+                  <p>Comparte el link</p>
+                  <input type="text" id="link-call" />
+                </div>
                 <button id="btn-createCall">
-                  <i class='bx bx-video-plus'></i>
+                  <i class="bx bx-video-plus"></i>
                   Agregar videollamada
                 </button>
               </div>
@@ -170,11 +166,12 @@
           <div class="rates-div" id="rates-div">
             <div class="card-header-2">
               <h3>
-                <i class="bx bxs-star-half bx-sm"></i>Evaluaciones de tarea activa
+                <i class="bx bxs-star-half bx-sm"></i>Evaluaciones de tarea
+                activa
               </h3>
             </div>
             <div class="container-Table">
-              <table class="table-quali" >
+              <table class="table-quali">
                 <thead>
                   <caption>
                     <div class="caption">
@@ -189,8 +186,7 @@
                     <th>Guardar</th>
                   </tr>
                 </thead>
-                <tbody id="table-rate">
-                </tbody>
+                <tbody id="table-rate"></tbody>
               </table>
             </div>
           </div>

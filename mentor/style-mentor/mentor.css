@@ -300,7 +300,21 @@ table {
 
 .notification p {
     color: #fff;
-    padding-right: 20px;
+}
+
+.fecha {
+    justify-content: right;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding-right: 40px;
+    align-items: center;
+
+}
+
+.fecha h6 {
+    color: #fff;
+    font-size: 10px;
 }
 
 .avisos h5 {
@@ -331,6 +345,18 @@ table {
 }
 
 
+.card-header-2 {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 26px;
+}
+
+.tabs-reticula {
+    display: flex;
+    justify-content: right;
+    width: 90%;
+    margin: auto;
+}
 
 @media(max-width:576px) {
     .edit-course-rate {
@@ -341,5 +367,13 @@ table {
 @media(max-width:740px) {
     .grid-container {
         flex-direction: column;
+    }
+
+    .fecha {
+        padding-right: 0px;
+    }
+
+    .fecha p {
+        font-size: 12px;
     }
 }

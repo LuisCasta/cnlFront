@@ -163,7 +163,42 @@
     border-radius: none;
     height: 90%;
     background-color: transparent;
+    margin-bottom: 10px;
+    resize: none;
 }
+
+/*SCROLL*/
+
+.parrafo-modal {
+    overflow: auto;
+}
+
+.parrafo-modal::-webkit-scrollbar {
+    width: 10px;
+    /* Ancho de la barra de desplazamiento vertical */
+    height: 12px;
+    cursor: pointer;
+    /* Altura de la barra de desplazamiento horizontal */
+}
+
+.parrafo-modal::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Color de la pista de la barra de desplazamiento */
+}
+
+.parrafo-modal::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+    /* Color de la barra de desplazamiento */
+    border-radius: 10px;
+    /* Redondear la barra de desplazamiento */
+}
+
+.parrafo-modal::-webkit-scrollbar-thumb:hover {
+    background: #cacaca6f;
+    /* Color de la barra de desplazamiento al pasar el cursor */
+}
+
+
 
 .modal-buttons {
     display: flex;

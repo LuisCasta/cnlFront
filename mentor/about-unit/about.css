@@ -120,6 +120,17 @@
     height: 70px;
 }
 
+
+.form-header:last-child {
+    grid-column: span 2;
+    /* Hace que el último elemento abarque dos columnas */
+}
+
+.select-text-area {
+    width: 100%;
+}
+
+
 .select-text-area p {
     font-size: 11px;
     position: absolute;
@@ -163,7 +174,9 @@
 }
 
 .add-activity {
-    padding: 0px 10px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
 }
 
 .add-activity .bxs-watch {
