@@ -6,7 +6,6 @@
 const createActivity = async (data) => {
   const {
     name,
-    type,
     description,
     dateStart,
     dateEnd,
@@ -19,9 +18,6 @@ const createActivity = async (data) => {
 
   if (name == "" || name == null || name == undefined || name == " ")
     return { code: 400, message: `Error, el campo name es inválido` };
-
-  if (type == "" || type == null || type == undefined || type == " ")
-    return { code: 400, message: `Error, el campo type es inválido` };
 
   if (intent == "" || intent == null || intent == undefined || intent == " ")
     return { code: 400, message: `Error, el campo intent es inválido` };
@@ -47,7 +43,6 @@ const createActivity = async (data) => {
 
   const activity = await postDataC("activity/", {
     name,
-    type,
     description,
     dateStart,
     dateEnd,

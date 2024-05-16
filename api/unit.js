@@ -4,7 +4,7 @@
 // { name, code, description }
 
 const create = async (data) => {
-  const { name, type, idCourse } = data;
+  const { name, percentage, idCourse, description } = data;
 
   if (name == "" || name == null || name == undefined || name == " ")
     return { code: 400, message: `Error, el campo nombre es inválido` };
@@ -12,8 +12,20 @@ const create = async (data) => {
   //   if (code == "" || code == null || code == undefined || code == " ")
   //     return { code: 400, message: `Error, el campo nombre es inválido` };
 
-  if (type == "" || type == null || type == undefined || type == " ")
-    return { code: 400, message: `Error, el campo type es inválido` };
+  if (
+    description == "" ||
+    description == null ||
+    description == undefined ||
+    description == " "
+  )
+    return { code: 400, message: `Error, el campo de descripción es inválido` };
+  if (
+    percentage == "" ||
+    percentage == null ||
+    percentage == undefined ||
+    percentage == " "
+  )
+    return { code: 400, message: `Error, el campo de porcentaje es inválido` };
 
   if (
     idCourse == "" ||
@@ -25,15 +37,16 @@ const create = async (data) => {
 
   const unit = await postDataC("unit/", {
     name,
-    type,
+    percentage,
     idCourse,
     active: 1,
+    description,
   });
 
   if (unit.status != 200)
     return {
       code: 400,
-      message: `Error al crear una unidad`,
+      message: `Error al crear una Tarea activa`,
       error: unit.data.message,
     };
 
@@ -103,9 +116,14 @@ const getTypeUnits = async () => {
  * @description update a student by all params
  */
 const updateUnitMentor = async (data) => {
-  const { unitId, name, idCourse, type } = data;
+  const { unitId, name, idCourse, percentage, type, description } = data;
 
-  if (type == "" || type == null || type == undefined || type == " ")
+  if (
+    percentage == "" ||
+    percentage == null ||
+    percentage == undefined ||
+    percentage == " "
+  )
     return { code: 400, message: `Error, el campo type es inválido` };
 
   if (unitId == "" || unitId == null || unitId == undefined || unitId == " ")
@@ -118,13 +136,15 @@ const updateUnitMentor = async (data) => {
     unitId,
     name,
     idCourse,
-    type,
+    type: 0,
+    percentage,
+    description,
   });
 
   if (activity.status != 200)
     return {
       code: 400,
-      message: `Error al actualizar los datos de la Unidad`,
+      message: `Error al actualizar los datos de la Tarea Activa`,
       error: activity.data.message,
     };
 

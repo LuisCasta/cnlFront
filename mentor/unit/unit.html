@@ -7,6 +7,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
       integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
@@ -27,32 +28,36 @@
       </div>
 
       <!-- FORMULARIO DEL HEADER -->
-      <div class="card-header-2">
+      <div class="card-header">
         <div class="text-header">
-          <h2 id="name-group">Agregar Tarea Activa</h2>
+          <h2 id="name-group">Agregar tarea activa</h2>
           <p>Agrega tareas activas, consúltalas y configúralas</p>
         </div>
-        <div class="form-header">
-          <div class="form-select">
-            <p>Nombre de la tarea activa</p>
-            <input type="text" id="name-unit-form" />
-          </div>
-          <div class="form-select">
-            <p>Porcentaje de evaluación</p>
-            <input type="number" id="" />
-          </div>
-          <!-- <div class="form-select">
-            <p>Tipo de </p>
-            <select id="type-unit"></select>
-          </div> -->
-          <button id="agregar-unidad">
-            <i class="bx bxs-file-plus"></i>Agregar tarea activa
-          </button>
+
+        <div class="form-select">
+          <p>Nombre de la tarea activa</p>
+          <input type="text" id="name-unit-form" />
         </div>
+        <div class="form-select">
+          <p>Porcentaje de evaluación</p>
+          <input type="number" id="percentage" />
+        </div>
+        <div class="form-select">
+          <p>Descripción de la Tarea activa</p>
+          <textarea
+            style="display: flex; width: 100%"
+            type="text"
+            id="description"
+          ></textarea>
+        </div>
+        <!-- <textarea id="txt-description"></textarea> -->
+        <button id="agregar-unidad">
+          <i class="bx bxs-file-plus"></i>Agregar tarea activa
+        </button>
       </div>
       <!-- TABLA DE tareas activas CREADAS -->
       <div class="container-Table">
-        <table>
+        <table class="table-active">
           <thead>
             <caption>
               <div class="caption">
@@ -62,19 +67,45 @@
             </caption>
             <tr>
               <th>Nombre de tareas activas</th>
+              <th>%Evaluación</th>
+              <th>Descripción</th>
               <th>Gestionar</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody id="unit-table"></tbody>
         </table>
+        <!-- MODAL DE DESCRIPCIÓN -->
+        <div class="modal-description" id="modal-description">
+          <div class="container-modal">
+            <div class="content-text-modal">
+              <h5>Descripción de la Tarea Activa</h5>
+              <textarea
+                class="parrafo-modal"
+                spellcheck="false"
+                id="descripcion-parrafo"
+              ></textarea>
+              <div class="modal-buttons">
+                <button onclick="cancelar()">Continuar</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- SUCCES POST AND RESPONSIVE MENU -->
       <div id="succes-post"></div>
       <button class="responsive" id="btnResponsive">
         <i class="bx bx-menu"></i>
       </button>
     </main>
+    <script>
+      ClassicEditor.create(document.querySelector("#txt-description")).catch(
+        (error) => {
+          console.error(error);
+        }
+      );
+    </script>
     <script src="../../api/post.js"></script>
     <script src="../../api/unit.js"></script>
     <script src="unit.js"></script>

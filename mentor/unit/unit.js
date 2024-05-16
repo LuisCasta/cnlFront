@@ -8,21 +8,6 @@ const succesPost = document.getElementById("succes-post");
 const hrefMentor = document.getElementById("href-mentor");
 // console.log(idMentor);
 
-{
-  /* <td data-cell="Tipo de parcial"><p class=${
-  type === 1
-    ? "ordinario"
-    : type === 2
-    ? "cuatrimestral"
-    : "extraordinario"
-}>${
-type === 1
-  ? "Ordinario"
-  : type === 2
-  ? "Cuatrimestral"
-  : "Extraordinario"
-}<p></td> */
-}
 // CARGAR UNIDADES DEL GRUPO
 async function loadUnit() {
   let unitHtml = "";
@@ -32,27 +17,31 @@ async function loadUnit() {
   } else {
     const countlessons = document.getElementById("spanTitle");
     countlessons.textContent = units.data.length;
-    // const hrefCog = `<a href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}">`;
     // console.log(units.data);
     units.data.forEach((unidad) => {
-      const { id, type, name, idCourse } = unidad;
+      const { id, percentage, name, idCourse, description } = unidad;
       hrefMentor.href = `../mentor/mentor.html?idMentor=${idMentor}`;
       unitHtml += `
       <tr>
         <td data-cell="Nombre del parcial">
          <p data-tooltip="Editar" id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
         </td>
-     
-        <td data-cell="Gestionar parcial">
+     <td data-cell="Porcentaje"><p id="percentage-${id}" contenteditable="true" spellcheck="false">${percentage}</p></td>
+   
+     <td data-cell="Descripción">
+      <button data-description='${description}' 
+      onclick="abrirDescripcion(${id})" id="description_${id}">Ver</button>
+     </td>  
+     <td data-cell="Gestionar parcial">
           <button data-tooltip='Gestionar' class="edit">
-          <a href="../tareas/activas.html">
+          <a href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}">
               <i class='bx bx-cog'></i>
             </a>
           </button>
         </td>
         <td data-cell="Acciones">
         <div class="actions">
-          <button id='btn_${id}' onclick='updateUnit(${id})' data-type="${type}" data-idcurso='${idCourse}'  data-tooltip='Editar' data-id="${id}" class='edit'>
+          <button id='btn_${id}' onclick='updateUnit(${id})' data-type="${percentage}" data-idcurso='${idCourse}'  data-tooltip='Guardar' data-id="${id}" class='edit'>
            <i class='bx bx-edit' ></i>
           </button>
           <button onclick='delUnit(${id})' data-tooltip='Eliminar'  class='edit'>
@@ -65,18 +54,43 @@ async function loadUnit() {
     });
     tbody.innerHTML = unitHtml;
   }
-  await loadTypeUnits();
+  // await loadTypeUnits();
   // await btnSelectConfig();
 }
 
+const modalDescription = document.getElementById("modal-description");
+modalDescription.classList.add("ocultar");
+
+async function abrirDescripcion(id) {
+  const buttonId = obtainId(`description_${id}`);
+  const description = buttonId.dataset.description;
+  const modalDescription = obtainId("modal-description");
+  const save = document.querySelector(".save-description");
+  const parrafo = obtainId("descripcion-parrafo");
+  parrafo.textContent = description;
+  modalDescription.classList.remove("ocultar");
+  modalDescription.classList.add("animaterate");
+  save.setAttribute("id", `${id}`);
+  // console.log(description, modalDescription, save, parrafo);
+}
+function cancelar() {
+  const modalDescription = obtainId("modal-description");
+  modalDescription.classList.add("ocultar");
+  modalDescription.classList.remove("animaterate");
+}
+
 // CREAR UNA NUEVA UNIDAD
+// const editorContent = document.querySelector(".ck-editor editable").textContent;
+// console.log(editorContent);
 
 const createBtnUnit = document.getElementById("agregar-unidad");
 createBtnUnit.addEventListener("click", async (e) => {
   e.preventDefault();
   const name = document.getElementById("name-unit-form").value;
-  const type = document.getElementById("type-unit").value;
-  const data = { name, type, idCourse };
+  const percentage = document.getElementById("percentage").value;
+  const description = document.getElementById("description").value;
+  console.log(description);
+  const data = { name, percentage, idCourse, description };
 
   // Succes Post
   succesPost.innerHTML = `
@@ -99,24 +113,6 @@ createBtnUnit.addEventListener("click", async (e) => {
   }, 4000);
 });
 
-let optionsType = "";
-async function loadTypeUnits() {
-  const typeUnis = await getTypeUnits();
-  if (typeUnis.code != 200) {
-    console.log(`Error ${typeUnis.message}`);
-  } else {
-    // console.log(typeUnis.data);
-    typeUnis.data.forEach((type) => {
-      const { id, name } = type;
-      optionsType += `
-      <option value=${id}>${name}</option>
-      `;
-    });
-    const type = document.getElementById("type-unit");
-    type.innerHTML = optionsType;
-  }
-}
-
 /**
  * @description Update Unit
  */
@@ -124,23 +120,25 @@ async function updateUnit(unitId) {
   if (confirm("¿Estás seguro de que deseas continuar?")) {
     const name = obtainId(`name_${unitId}`).textContent;
     const btn = obtainId(`btn_${unitId}`);
+    const percentage = obtainId(`percentage-${unitId}`).textContent;
     const idCourse = btn.getAttribute("data-idcurso");
-    const type = btn.getAttribute("data-type");
-
+    const description = obtainId("descripcion-parrafo").value;
     const updateData = await updateUnitMentor({
       unitId,
       name,
       idCourse,
-      type,
+      type: 0,
+      percentage,
+      description,
     });
 
     if (updateData.code != 200) {
-      alert(`Error al actualizar al alumno ${unitId} ${name} `);
+      alert(`Error al actualizar la tarea Activa ${unitId} ${name} `);
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `
         <i class='bx bx-check-circle'></i>
-        <p>Unidad actualizada con éxito</p>`;
+        <p>Tarea Activa actualizada con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
       setTimeout(function () {
@@ -185,7 +183,6 @@ async function delUnit(unitId) {
       <p>Operación Cancelada</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
-
     location.reload();
   }
 }

@@ -14,19 +14,17 @@ async function loadCursosById() {
   } else {
     cursoMentor.data.forEach((curso) => {
       const { id, name, description, task, proyect, exam } = curso;
+      //   const modalPonderacion = `<a data-tooltip="Ponderación" class="ponderaciones unidadConfig edit" id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} >
+      //   <i class='bx bxs-cog' ></i>
+      // </a>`;
       cursoMentorHtml += `
       <div class="alumnos calificaciones content-static">
             <h5>${name}</h5>
             <p class="p-asign">${description}</p>
-            <a class="a-static" href="../unit/unit.html?idCurso=${id}&idMentor=${idMentor}" 
+            <a class="a-static" href="../tareas/activas.html?idCurso=${id}&idMentor=${idMentor}" 
             data-id="${id}">
-              Ir a parcial
-               <i class='bx bx-customize'>
-               </i>
-              </a>
-               <a data-tooltip="Ponderación" class="ponderaciones unidadConfig edit" id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} >
-               <i class='bx bxs-cog' ></i>
-             </a>
+             entrar<i class='bx bx-customize'></i>
+            </a>
           </div> 
   `;
 

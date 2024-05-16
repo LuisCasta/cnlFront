@@ -18,42 +18,42 @@ const selectTypeActivity = obtainId("type-activity");
 
 // console.log(idUnit);
 
-let lessonHtml = "";
-async function loadAllLessonsByUnit() {
-  const lessons = await getAllByUnit(idUnit);
+// let lessonHtml = "";
+// async function loadAllLessonsByUnit() {
+//   const lessons = await getAllByUnit(idUnit);
 
-  if (lessons.code != 200) {
-    // console.log(`Error ${newLesson.message}`);
-  } else {
-    const countlessons = obtainId("spanTitle");
-    countlessons.textContent = lessons.data.length;
-    lessons.data.forEach((lesson) => {
-      const { name, description, id } = lesson;
-      hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}`;
-      lessonHtml += `
-        <tr>
-            <td data-cell="Nombre"><p>${name}</p></td>
-            <td data-cell="Descripción"><p>${description}</p></td>
-            <td data-cell="Acciones">
-            <div class="actions">
-            <button data-id="${id}" data-tooltip="Editar" class="edit">
-             <i class='bx bx-edit' ></i>
-            </button>
-            <button data-id="${id}" data-tooltip="Eliminar" class="edit">
-              <i class='bx bx-trash'></i>
-            </button>
-              </div>
-          </td>
-        </tr>
-        `;
+//   if (lessons.code != 200) {
+//     // console.log(`Error ${newLesson.message}`);
+//   } else {
+//     const countlessons = obtainId("spanTitle");
+//     countlessons.textContent = lessons.data.length;
+//     lessons.data.forEach((lesson) => {
+//       const { name, description, id } = lesson;
+//       hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}`;
+//       lessonHtml += `
+//         <tr>
+//             <td data-cell="Nombre"><p>${name}</p></td>s
+//             <td data-cell="Descripción"><p>${description}</p></td>
+//             <td data-cell="Acciones">
+//             <div class="actions">
+//             <button data-id="${id}" data-tooltip="Editar" class="edit">
+//              <i class='bx bx-edit' ></i>
+//             </button>
+//             <button data-id="${id}" data-tooltip="Eliminar" class="edit">
+//               <i class='bx bx-trash'></i>
+//             </button>
+//               </div>
+//           </td>
+//         </tr>
+//         `;
 
-      // selectLesson += `
-      //       <option value="${id}">${name}</option>
-      //  `;
-    });
-    tbody.innerHTML = lessonHtml;
-  }
-}
+//       // selectLesson += `
+//       //       <option value="${id}">${name}</option>
+//       //  `;
+//     });
+//     tbody.innerHTML = lessonHtml;
+//   }
+// }
 
 // Mostrar en tabla las actividades
 
@@ -107,11 +107,9 @@ btnCreateActivity.addEventListener("click", async (e) => {
   const dateEnd = obtainId("fin-act").value;
   const intent = obtainId("intentos").value;
   const link = obtainId("link-activity").value;
-  const type = obtainId("type-activity").value;
   const data = {
     idLesson: 6,
     name,
-    type,
     description,
     dateStart,
     dateEnd,
@@ -203,120 +201,86 @@ btnCreatCall.addEventListener("click", async (e) => {
 });
 
 //Listar los alumnos por Curso
-let studentIdCourse = "";
-async function loadStudentByIdCourse() {
-  const studentsidCourse = await CourseStudGetByCourse(idCourse);
-  if (studentsidCourse.code != 200) {
-    // console.log(newStudentsIdCourse.message);
-  } else {
-    studentsidCourse.data.forEach((studentId) => {
-      const { idStudent, name, firstName } = studentId;
-      studentIdCourse += `
-      <tr>
-        <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
-        <td data-cell="Acciones">
-         <button><i class='bx bxs-user-check'></i></button>
-        </td>
-  </tr>
-  `;
-    });
-    tableStudent.innerHTML = studentIdCourse;
-  }
-}
+// let studentIdCourse = "";
+// async function loadStudentByIdCourse() {
+//   const studentsidCourse = await CourseStudGetByCourse(idCourse);
+//   if (studentsidCourse.code != 200) {
+//     // console.log(newStudentsIdCourse.message);
+//   } else {
+//     studentsidCourse.data.forEach((studentId) => {
+//       const { idStudent, name, firstName } = studentId;
+//       studentIdCourse += `
+//       <tr>
+//         <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
+//         <td data-cell="Acciones">
+//          <button><i class='bx bxs-user-check'></i></button>
+//         </td>
+//   </tr>
+//   `;
+//     });
+//     tableStudent.innerHTML = studentIdCourse;
+//   }
+// }
 
 //Calificaciones de alumnos por Curso
 let ratesStudentByCourse = "";
-async function loadRateStudentByIdCourse() {
-  const allRatesStudenCourse = await getAllRatesPartialByUnit(idUnit);
-  if (allRatesStudenCourse.code != 200) {
+async function guardarRate(idStudent) {
+  const score = document.getElementById(`ide-${idStudent}`).value;
+  console.log(score);
+  if (score == "" || score == undefined || score == null) {
+    succesPost.innerText = "Error, la calificación es inválida";
+  } else {
+    const savedRate = await postDataC("unitStudent/", {
+      idUnit,
+      idStudent,
+      score,
+    });
+    console.log(savedRate.config.data);
+    // console.log(savedRate.config.data);
+    if (savedRate.status != 200)
+      return {
+        code: 400,
+        message: `Error al enviar la calificación`,
+        error: savedRate.data.message,
+      };
+    else {
+      succesPost.innerHTML = `
+        <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+        <p>Calificación guardada</p>
+        `;
+      succesPost.classList.add("aviso-click");
+    }
+
+    // setTimeout(function () {
+    //   location.reload();
+    // }, 4000);
+
+    return { code: 200, data: savedRate.data.data };
+  }
+}
+async function loadRateStudentByUnit() {
+  const allRates = await getAllRatesByUnit(idUnit);
+  if (allRates.code != 200) {
     // console.log(newStudentsIdCourse.message);
   } else {
-    allRatesStudenCourse.data.forEach((rate) => {
-      const {
-        name,
-        firstName,
-        promf,
-        pond_tasks,
-        pond_exams,
-        pond_proyects,
-        idStudent,
-        score,
-      } = rate;
-      const obtainClass = function (pond) {
-        const classRate = pond == 0 || pond < 5 ? "rate-no-fit" : "rate";
-        return classRate;
-      };
+    allRates.data.forEach((rate) => {
+      const { fullname, califRecomend, calif, idStudent } = rate;
+      // const obtainClass = function (pond) {
+      //   const classRate = pond == 0 || pond < 5 ? "rate-no-fit" : "rate";
+      //   return classRate;
+      // };
 
       ratesStudentByCourse += `
       <tr>
-         <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
-          <td data-cell="Tarea"><p class=${obtainClass(
-            pond_tasks
-          )}>${pond_tasks}</p></td>
-          <td data-cell="Examen"><p class="${obtainClass(
-            pond_exams
-          )}">${pond_exams}</p></td>
-          <td data-cell="Proyecto"><p class="${obtainClass(
-            pond_proyects
-          )}">${pond_proyects}</p></td>
-          <td data-cell="Promedio Calculado"><p class="${obtainClass(
-            promf
-          )}">${promf}</p></td>
-          <td data-cell="Promedio Final"><input id=ide-${idStudent}  value=${score} class="input-promf ${obtainClass(
-        score
-      )}"/></td>
-
+         <td data-cell="Nombre"><p>${fullname}</p></td>
+          <td data-cell="calificación recomendada"><p>${califRecomend}</p></td>
+          <td data-cell="Calificación"><input id=ide-${idStudent}  value=${calif} class="input-promf"/></td>
           <td data-cell="Acciones">
-            <a class="sendRate" data-stud=${idStudent} data-promf=${promf}><i class='bx bxs-user-check'></i>Guardar</a>
+            <a class="sendRate" onclick="guardarRate(${idStudent})";"><i class='bx bxs-user-check'></i>Guardar</a>
           </td>
       </tr>
   `;
       tableRate.innerHTML = ratesStudentByCourse;
-      tableRate.addEventListener("click", (event) => {
-        const clickedElement = event.target;
-        if (clickedElement.closest(".sendRate")) {
-          const recuperarIdInput = function (stud) {
-            const promfModify = obtainId(`ide-${stud}`);
-            const valueFinal = promfModify.value;
-            return valueFinal;
-          };
-          // Busca el ancestro más cercano con la clase 'sendRate'
-          const button = clickedElement.closest(".sendRate");
-          const stud = button.dataset.stud;
-          //función para pasar el value del Input
-          guardarRate(recuperarIdInput(stud), stud);
-        }
-      });
-
-      async function guardarRate(recuperarIdInput, idStudent) {
-        const score = recuperarIdInput;
-        const savedRate = await postDataC("unitStudent/", {
-          idUnit,
-          idStudent,
-          score,
-        });
-        console.log(savedRate.config.data);
-        // console.log(savedRate.config.data);
-        if (savedRate.status != 200)
-          return {
-            code: 400,
-            message: `Error al enviar la calificación`,
-            error: savedRate.data.message,
-          };
-        else {
-          succesPost.innerHTML = `
-              <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
-              <p>Calificaciones de ${name} ${firstName} guardadas</p>
-              `;
-          succesPost.classList.add("aviso-click");
-        }
-
-        setTimeout(function () {
-          location.reload();
-        }, 4000);
-
-        return { code: 200, data: savedRate.data.data };
-      }
     });
   }
 }
@@ -324,20 +288,6 @@ async function loadRateStudentByIdCourse() {
 //Guarda Calificaciones Parciales de un curso
 
 // TRAER EL TYPE ACTIVITY
-let optionsType = "";
-async function chooseTypeActivity() {
-  const typeActivities = await getTypeActivity();
-  // console.log(typeActivities.data);
-  if (typeActivities.code !== 200) {
-  } else {
-    typeActivities.data.forEach((type) => {
-      const { id, name } = type;
-      optionsType += `
-      <option value="${id}">${name}</option>`;
-    });
-    selectTypeActivity.innerHTML = optionsType;
-  }
-}
 
 /**
  *

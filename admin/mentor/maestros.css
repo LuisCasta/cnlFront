@@ -8,3 +8,14 @@
 .edit:hover {
     background-color: transparent;
 }
+
+.password-mentor {
+    padding: 5px;
+}
+
+.password-mentor:hover {
+
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 3px
+}

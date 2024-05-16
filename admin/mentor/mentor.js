@@ -34,7 +34,7 @@ async function loadMentors() {
                 <p id='mail_${id}' contenteditable="true" spellcheck="false">${mail}</p>
                 </td>
                 <td data-cell="PW">
-                  <p id='password_${id}' contenteditable="true" spellcheck="false">
+                  <p class="password-mentor" id='password_${id}' data-tooltip="click para editar" contenteditable="true" spellcheck="false">
                   ${password.slice(0, 6)}
                   </p>
                 </td>

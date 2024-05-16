@@ -1,10 +1,10 @@
 const getAllRatesByUnit = async (idUnit) => {
-  const ratesByUnit = await getApi(`unitStudent/aboutUnit/${idUnit}`);
+  const ratesByUnit = await getApi(`mentor/evaluationOfActiveTask/${idUnit}`);
 
   if (ratesByUnit.status != 200)
     return {
       code: 400,
-      message: `Error al crear la carrera`,
+      message: `Error al cargar las calificaciones`,
       error: ratesByUnit.data.message,
     };
   return { code: 200, data: ratesByUnit.data.data };

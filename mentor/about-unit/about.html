@@ -15,24 +15,24 @@
       referrerpolicy="no-referrer"
     ></script>
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
-    <title>Acerca del Parcial</title>
+    <title>Acerca de la tarea activa</title>
   </head>
   <body
-    onload="loadVideoByIdCourse(),cargarSideNav(), loadAllLessonsByUnit(),loadActivityByUnit(), loadStudentByIdCourse(),chooseTypeActivity(), loadRateStudentByIdCourse()"
+    onload="loadVideoByIdCourse(),cargarSideNav(),loadActivityByUnit(),loadRateStudentByUnit()"
   >
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <div class="breadcumbs">
         <a href="">Cursos</a>
         <i class="bx bx-right-arrow-alt"></i>
-        <a id="href-unidad">Parcial</a>
+        <a id="href-unidad">tarea activa</a>
         <i class="bx bx-right-arrow-alt"></i>
-        <p>Acerca del Parcial</p>
+        <p>Acerca de la tarea activa</p>
       </div>
       <div class="card-header">
         <div class="text-header">
-          <h2>Acerca de la Parcial</h2>
-          <p>Gestiona Parciales, crea videollamadas,revisa y crea actividades, crea clases y califica a tus alumnos</p>
+          <h2>Acerca de la tarea activa</h2>
+          <p>Gestiona tareas activas, crea videollamadas,revisa y crea actividades</p>
         </div>
       </div>
 
@@ -40,58 +40,12 @@
       <div class="container-tabs">
         <div class="tabs-buttons">
           <a data-tooltip='Gestionar actividades' id="activ"><i class="bx bxs-watch"></i></a>
-          <a data-tooltip='Gestionar alumnos' id="students"><i class="bx bx-group "></i></a>
+          <!-- <a data-tooltip='Gestionar alumnos' id="students"><i class="bx bx-group "></i></a> -->
           <a data-tooltip='Gestionar videollamadas' id="calls"><i class="bx bx-video "></i></a>
           <a data-tooltip='Gestionar calificaciones' id="rates"><i class="bx bxs-star-half "></i></a>
-          <a data-tooltip='Gestionar clases' id="clases"><i class="bx bx-book "></i></a>       
+          <!-- <a data-tooltip='Gestionar clases' id="clases"><i class="bx bx-book "></i></a>        -->
         </div>
         <div class="divs-tabs">
-          <div class="clases" id="div-clases">
-            <!-- TABLA DE CLASES CREADAS -->
-            <div class="card-header-2">
-              <div class="heading">
-                <h4>Crea clases</h4>
-                <p>Crea las clases y configúralas</p>
-              </div>
-              <div class="form-header">
-                <div class="form-select">
-                  <p>Nombre de la clase</p>
-                <input
-                  type="text"
-                  id="name-clase-form"
-                />
-              </div>
-              <div class="form-select">
-                <p>Descripción</p>
-                <input type="text" id="des-clase" />
-              </div>
-                <a class="a-add-clase" id="agregar-clase">
-                  <i class='bx bx-book-add'></i>
-                  Agregar Clase
-                </a>
-              </div>
-            </div>
-            <!-- CONTAINER Y TABLE DE CLASES -->
-            <div class="container-Table">
-              <table>
-                <thead>
-                  <caption>
-                    <div class="caption">
-                      <p id="tableTitle">Todos las Clases</p>
-                      <span id="spanTitle"></span>
-                    </div>
-                  </caption>
-                  <tr>
-                    <!-- <th>ID</th> -->
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Acciones</th>
-                  </tr>
-                </thead>
-                <tbody id="table-lesson"></tbody>
-              </table>
-            </div>
-          </div>
           <div class="actividades" id="div-actividades">
             <!-- FORMULARIO DEL HEADER -->
             <div class="card-header-2">
@@ -122,10 +76,10 @@
                   <p>Intentos</p>
                   <input type="number" id="intentos" />
                 </div>
-                <div class="form-select">
+                <!-- <div class="form-select">
                   <p>Tipo de Actividad</p>
                   <select type="text" id="type-activity"></select>
-                </div>
+                </div> -->
                 <div class="form-select">
                   <p>Comparte un Link</p>
                   <input type="text" id="link-activity" />
@@ -158,30 +112,6 @@
                   </tr>
                 </thead>
                 <tbody id="table-activity"></tbody>
-              </table>
-            </div>
-          </div>
-          <div class="alumnos" id="div-alumnos">
-            <!-- TABLA DE ACRIVIDADES CREADAS -->
-            <div class="container-Table">
-              <table>
-                <thead>
-                  <caption>
-                    <div class="caption">
-                      <p>
-                        <i class="bx bx-group"></i>Todos los Alumnos de esta
-                        Unidad
-                      </p>
-                      <span></span>
-                    </div>
-                  </caption>
-                  <tr>
-                    <!-- <th>ID</th> -->
-                    <th>Nombre</th>
-                    <th>Acciones</th>
-                  </tr>
-                </thead>
-                <tbody id="table-students"></tbody>
               </table>
             </div>
           </div>
@@ -240,7 +170,7 @@
           <div class="rates-div" id="rates-div">
             <div class="card-header-2">
               <h3>
-                <i class="bx bxs-star-half bx-sm"></i>Calificaciones Parciales
+                <i class="bx bxs-star-half bx-sm"></i>Evaluaciones de tarea activa
               </h3>
             </div>
             <div class="container-Table">
@@ -248,19 +178,15 @@
                 <thead>
                   <caption>
                     <div class="caption">
-                      <p>Calificaciones de tus alumnos por Parcial</p>
+                      <p>Evaluaciones de tus alumnos por Tarea Activa</p>
                       <!-- <span>2</span> -->
                     </div>
                   </caption>
                   <tr>
-                    <th>Nombre</th>
-                    <!-- <th>Actividad</th> -->
-                    <th>Tarea</th>
-                    <th>Examen</th>
-                    <th>Proyecto</th>
-                    <th>Promedio Calculado</th>
-                    <th>Promedio Final</th>
-                    <th>Acciones</th>
+                    <th>Participante</th>
+                    <th>Evaluación recomendada</th>
+                    <th>Evaluación</th>
+                    <th>Guardar</th>
                   </tr>
                 </thead>
                 <tbody id="table-rate">
@@ -281,7 +207,7 @@
     <script src="../../api/activity.js"></script>
     <script src="../../api/videoCall.js"></script>
     <script src="../../api/courseStudent.js"></script>
-    <script src="../lessons/lessons.js"></script>
+    <!-- <script src="../lessons/lessons.js"></script> -->
     <script src="about.js"></script>
     <script src="tabs.js"></script>
     <script src="../../api/rates.js"></script>

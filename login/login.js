@@ -46,7 +46,7 @@ login.addEventListener("click", async function loginCnl() {
         correo.value = "";
         pw.value = "";
       } else {
-        const { id, name, firstName, mail } = mentor.data;
+        const { id } = mentor.data;
         location.href = `mentor/mentor/mentor.html?idMentor=${id}`;
       }
     } catch (error) {
@@ -79,7 +79,7 @@ login.addEventListener("click", async function loginCnl() {
         correo.value = "";
         pwAlumno.value = ""; // Assuming pwAlumno is the student password field
       } else {
-        const { id, name, firstName, mail } = student.data;
+        const { id } = student.data;
         location.href = `student/calendar/calendar.html?idStudent=${id}`;
       }
     } catch (error) {
