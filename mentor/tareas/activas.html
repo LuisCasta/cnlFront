@@ -7,12 +7,18 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tareas Activas</title>
   </head>
-  <body onload="cargarSideNav()">
+  <body onload="cargarSideNav(), LoadGetTutorById()">
     <div id="sidenavInsert" class="sidenav-cln"></div>
-    <main>
+    <main style="position: relative">
       <div class="breadcumbs">
         <a id="href-mentor"><p>Asignaturas</p></a>
         <i class="bx bx-right-arrow-alt"></i>
@@ -23,7 +29,7 @@
         <div class="card-content-info-unit">
           <div class="content-static descripcion-unit">
             <i class="bx bx-text"></i>
-            <i class='bx bx-bookmark-alt'></i>
+            <i class="bx bx-bookmark-alt"></i>
             <h3 class="title">Tareas Activas</h3>
             <p class="label-unit" contenteditable="true">
               Agrega y gestiona tareas activas.
@@ -31,19 +37,56 @@
             <a id="a-activity" class="a-unit-card">Entrar</a>
           </div>
           <div class="content-static">
-            <i class="bx bx-slideshow"></i>
-            <h2 class="intro">Presentación del Tutor</h2>
-            <div class="link-intro">
-              <input type="text" placeholder="Link de video" />
-              <input type="text" placeholder="Currículum en pdf" />
+            <div class="video-container">
+              <i class="bx bx-slideshow"></i>
+              <h3 class="intro">Video Tutor</h3>
+              <input type="text" id="link-video" placeholder="Link de video" />
+              <div class="buttons-tutor-presentation">
+                <a onclick="guardarVideolink()" class="a-unit-card-2"
+                  >Guardar</a
+                >
+                <a onclick="reproducirVideo()" class="a-unit-card-2"
+                  >Reproducir</a
+                >
+              </div>
             </div>
-            <a class="a-unit-card" href="">Guardar</a>
+          </div>
+          <div class="content-static">
+            <div class="pdf-container">
+              <i class="bx bxs-file-pdf"></i>
+              <h3 class="intro">Currículum PDF</h3>
+              <input type="text" id="link-cv" placeholder="Currículum en pdf" />
+              <div class="buttons-tutor-presentation">
+                <a onclick="GuardarLink()" class="a-unit-card-2">Guardar</a>
+                <a onclick="verPdf()" class="a-unit-card-2">Ver</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="card-header-2" id="container-video">
+        <iframe
+          class="iframe-video"
+          src=""
+          id="video-link-play"
+          controls
+        ></iframe>
+      </div>
+      <div id="containerPdf" class="card-header-2">
+        <iframe
+          src=""
+          class="iframe-pdf"
+          id="pdf-iframe"
+          frameborder="0"
+        ></iframe>
       </div>
     </main>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu bx-tada-hover"></i>
+    </button>
   </body>
   <script src="sidenav.js"></script>
   <script src="activas.js"></script>
+  <script src="../../api/post.js"></script>
+  <script src="../../api/mentor.js"></script>
 </html>

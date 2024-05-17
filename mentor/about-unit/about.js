@@ -62,7 +62,7 @@ async function loadActivityByUnit() {
   const activities = await getByUnitActivity(idUnit);
 
   if (activities.code != 200) {
-    console.log(`Error ${newActivity.message}`);
+    console.log(`Error ${activities.message}`);
   } else {
     // const countlessons = document.getElementById("spanTitle");
     // countlessons.textContent = lessons.data.length;

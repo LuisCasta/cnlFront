@@ -4,7 +4,94 @@ const idMentor = urlParams.get("idMentor");
 const idCourse = urlParams.get("idCurso");
 
 const activeLink = document.getElementById("a-activity");
-
+function obtainId(id) {
+  const getId = document.getElementById(id);
+  return getId;
+}
 console.log(activeLink);
 
 activeLink.href = `../unit/unit.html?idCurso=${idCourse}&idMentor=${idMentor}`;
+
+// FORMATEAR LINK DE VIDEO
+
+function getDriveVideoId(url) {
+  const regex = /\/d\/([a-zA-Z0-9_-]+)\//;
+  const match = url.match(regex);
+  return match ? match[1] : null;
+}
+
+function getPreviewLink(driveUrl) {
+  const videoId = getDriveVideoId(driveUrl);
+  if (videoId) {
+    return `https://drive.google.com/file/d/${videoId}/preview`;
+  } else {
+    return null;
+  }
+}
+
+// FORMATEAR LINK DE PDF PARA VISUALIZARLO
+
+function getDriveFileId(url) {
+  const regex = /\/d\/([a-zA-Z0-9_-]+)\//;
+  const match = url.match(regex);
+  return match ? match[1] : null;
+}
+
+function getPreviewLink(pdfUrl) {
+  const fileId = getDriveFileId(pdfUrl);
+  if (fileId) {
+    return `https://drive.google.com/file/d/${fileId}/preview`;
+  } else {
+    return null;
+  }
+}
+
+async function LoadGetTutorById() {
+  const tutor = await getMentorById(idMentor);
+  if (tutor.code != 200) {
+    console.log(`Error ${tutor.message}`);
+  } else {
+    console.log(tutor.data);
+
+    const { videolink, cvlink } = tutor.data;
+    const inputVideo = obtainId("link-video");
+    const InputCv = obtainId("link-cv");
+    const driveUrl = videolink; // Reemplaza con tu URL de Google Drive
+    const directLink = getPreviewLink(driveUrl);
+    const pdfUrl = cvlink;
+    const directPdfLink = getPreviewLink(pdfUrl);
+    const pdfIframe = obtainId("pdf-iframe");
+    pdfIframe.src = directPdfLink;
+    console.log(inputVideo, InputCv);
+    InputCv.value = cvlink;
+    inputVideo.value = videolink;
+    const videoTutor = obtainId("video-link-play");
+    videoTutor.src = directLink;
+  }
+}
+
+// OCULTAR Y MOSTRAR LOS ARCHIVOS pdf y video
+const containerVideo = obtainId("container-video");
+const containerPdf = obtainId("containerPdf");
+containerVideo.classList.add("fadeOut");
+containerPdf.classList.add("fadeOut");
+
+console.log(containerPdf);
+
+function verPdf() {
+  containerPdf.classList.add("show-container");
+  containerPdf.classList.remove("fadeOut");
+
+  //   quita las clases de visualización de video
+  containerVideo.classList.remove("show-container");
+  containerVideo.classList.add("fadeOut");
+}
+
+function reproducirVideo() {
+  containerVideo.classList.add("show-container");
+  containerVideo.classList.remove("fadeOut");
+
+  //   quita las clases de visualización de pdf
+  containerPdf.classList.remove("show-container");
+  containerPdf.classList.add("fadeOut");
+}

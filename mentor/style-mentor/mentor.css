@@ -358,6 +358,24 @@ table {
     margin: auto;
 }
 
+/* //Tab retícula */
+
+.tabs-reticula {
+    display: flex;
+    gap: 10px;
+    border: 1px solid #4f70d4;
+    width: fit-content;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.tabs-reticula button {
+    background-color: transparent;
+    color: #4f70d4;
+}
+
+
+
 @media(max-width:576px) {
     .edit-course-rate {
         width: 100%;

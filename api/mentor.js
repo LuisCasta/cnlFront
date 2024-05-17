@@ -76,7 +76,19 @@ const getAll = async () => {
   if (mentor.status != 200)
     return {
       code: 400,
-      message: `Error al crear al docente`,
+      message: `Error al obtener al tutor`,
+      error: mentor.data.message,
+    };
+
+  return { code: 200, data: mentor.data.data };
+};
+
+const getMentorById = async (mentorId) => {
+  const mentor = await getApi(`mentor/about/${mentorId}`);
+  if (mentor.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener al tutor`,
       error: mentor.data.message,
     };
 
