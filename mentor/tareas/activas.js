@@ -8,7 +8,7 @@ function obtainId(id) {
   const getId = document.getElementById(id);
   return getId;
 }
-console.log(activeLink);
+// console.log(activeLink);
 
 activeLink.href = `../unit/unit.html?idCurso=${idCourse}&idMentor=${idMentor}`;
 
@@ -51,7 +51,7 @@ async function LoadGetTutorById() {
   if (tutor.code != 200) {
     console.log(`Error ${tutor.message}`);
   } else {
-    console.log(tutor.data);
+    // console.log(tutor.data);
 
     const { videolink, cvlink } = tutor.data;
     const inputVideo = obtainId("link-video");
@@ -62,7 +62,7 @@ async function LoadGetTutorById() {
     const directPdfLink = getPreviewLink(pdfUrl);
     const pdfIframe = obtainId("pdf-iframe");
     pdfIframe.src = directPdfLink;
-    console.log(inputVideo, InputCv);
+    // console.log(inputVideo, InputCv);
     InputCv.value = cvlink;
     inputVideo.value = videolink;
     const videoTutor = obtainId("video-link-play");
@@ -70,28 +70,32 @@ async function LoadGetTutorById() {
   }
 }
 
-// OCULTAR Y MOSTRAR LOS ARCHIVOS pdf y video
-const containerVideo = obtainId("container-video");
-const containerPdf = obtainId("containerPdf");
-containerVideo.classList.add("fadeOut");
-containerPdf.classList.add("fadeOut");
+// UPDATE MENTOR PRESENTATION
 
-console.log(containerPdf);
+async function savePresentation() {
+  const inputVideo = obtainId("link-video").value;
+  const InputCv = obtainId("link-cv").value;
+  const cvlink = InputCv;
+  const videolink = inputVideo;
 
-function verPdf() {
-  containerPdf.classList.add("show-container");
-  containerPdf.classList.remove("fadeOut");
+  const data = {
+    cvlink,
+    videolink,
+    mentorId: idMentor,
+  };
 
-  //   quita las clases de visualización de video
-  containerVideo.classList.remove("show-container");
-  containerVideo.classList.add("fadeOut");
+  const updatePresentation = await updateTutorPresentation(data);
+  // console.log(data);
+  console.log(`is Updated ${updatePresentation}`);
+
+  setTimeout(() => {
+    location.reload();
+  }, 1000);
 }
 
-function reproducirVideo() {
-  containerVideo.classList.add("show-container");
-  containerVideo.classList.remove("fadeOut");
-
-  //   quita las clases de visualización de pdf
-  containerPdf.classList.remove("show-container");
-  containerPdf.classList.add("fadeOut");
+function expandir() {
+  const iconExpand = obtainId("expandir");
+  // iconExpand.classList.remove("bx-expand-vertical");
+  const containerAsignature = obtainId("card-header-asign");
+  containerAsignature.classList.toggle("height-container");
 }

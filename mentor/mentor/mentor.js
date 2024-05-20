@@ -70,7 +70,6 @@ async function loadCursosById() {
       // console.log(btnEnviar);
 
       btnEnviar.addEventListener("click", checkPorcentaje);
-
       async function checkPorcentaje() {
         const id = obtainId("elementId").value;
         const task = parseInt(obtainId("task").value);

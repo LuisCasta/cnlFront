@@ -195,6 +195,7 @@ const updateMentor = async (data) => {
 /**
  * @descripcion Delete a student by id
  */
+
 const deleteMentor = async (data) => {
   const { mentorId } = data;
 
@@ -217,3 +218,49 @@ const deleteMentor = async (data) => {
 
   return { code: 200, data: mentor.data.data };
 };
+
+//UPDATE DE MENTOR PRESENTACIÓN
+
+/**
+ * @description update a student by all params
+ */
+const updateTutorPresentation = async (data) => {
+  const { videolink, cvlink, mentorId } = data;
+
+  if (
+    videolink == "" ||
+    videolink == null ||
+    videolink == undefined ||
+    videolink == " "
+  )
+    return { code: 400, message: `Error, el campo videolink es inválido` };
+
+  if (
+    mentorId == "" ||
+    mentorId == null ||
+    mentorId == undefined ||
+    mentorId == ""
+  )
+    return { code: 400, message: `Error, el campo mentorId es inválido` };
+
+  if (cvlink == "" || cvlink == null || cvlink == undefined || cvlink == " ")
+    return { code: 400, message: `Error, el campo cvlink es inválido` };
+
+  const turorPresentation = await putApi("mentor/profile", {
+    mentorId,
+    videolink,
+    cvlink,
+  });
+
+  if (turorPresentation.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar los datos del Maestro`,
+      error: turorPresentation.data.message,
+    };
+
+  return { code: 200, data: turorPresentation.data.data };
+};
+/**
+ * @descripcion Delete a student by id
+ */
