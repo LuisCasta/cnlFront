@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="unit.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
+    <title>Asignatura</title>
+  </head>
+  <body onload="cargarSideNav(), loadUnit()">
+    <div id="sidenavInsert" class="sidenav-cln"></div>
+    <main>
+      <div class="breadcumbs">
+        <a id="href-mentor"><p>Cursos</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Tarea activa</p>
+      </div>
+
+      <!-- FORMULARIO DEL HEADER -->
+      <div class="card-header"></div>
+      <!-- TABLA DE tareas activas CREADAS -->
+      <div class="container-Table">
+        <table class="table-active">
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Todas las tareas activas</p>
+                <span id="spanTitle"></span>
+              </div>
+            </caption>
+            <tr>
+              <th>Nombre de tareas activas</th>
+              <th>%Evaluación</th>
+              <th>Descripción</th>
+              <th>Gestionar</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="unit-table"></tbody>
+        </table>
+        <!-- MODAL DE DESCRIPCIÓN -->
+        <div class="modal-description" id="modal-description">
+          <div class="container-modal">
+            <div class="content-text-modal">
+              <h5>Descripción de la Tarea Activa</h5>
+              <p class="parrafo-modal" id="descripcion-parrafo"></p>
+              <div class="modal-buttons">
+                <button onclick="cancelar()">cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUCCES POST AND RESPONSIVE MENU -->
+      <div id="succes-post"></div>
+      <button class="responsive" id="btnResponsive">
+        <i class="bx bx-menu"></i>
+      </button>
+    </main>
+    <script src="../../api/post.js"></script>
+    <script src="../../api/unit.js"></script>
+    <script src="tareasactivas.js"></script>
+    <script src="../js/sidenav.js"></script>
+    <script src="../../api/getid.js"></script>
+  </body>
+</html>

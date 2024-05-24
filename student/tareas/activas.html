@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="activas.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tareas Activas</title>
+  </head>
+  <body onload="cargarSideNav(), LoadGetTutorById()">
+    <div id="sidenavInsert" class="sidenav-cln"></div>
+    <main style="position: relative">
+      <div class="breadcumbs">
+        <a id="href-mentor"><p>Asignaturas</p></a>
+        <i class="bx bx-right-arrow-alt"></i>
+        <p>Panel</p>
+      </div>
+      <div class="card-header" id="card-header-asign">
+        <i id="expandir" onclick="expandir()" class="bx bx-expand"></i>
+        <div class="card-content-info-unit">
+          <div class="content-static descripcion-unit">
+            <i class="bx bx-text"></i>
+            <i class="bx bx-bookmark-alt"></i>
+            <h3 class="title">Tareas Activas</h3>
+            <p class="label-unit" contenteditable="true">
+              Agrega y gestiona tareas activas.
+            </p>
+            <a id="a-activity" class="a-unit-card-2">Entrar</a>
+          </div>
+          <div class="content-static presentacion">
+            <i class="bx bx-slideshow"></i>
+            <i class="bx bxs-video-plus"></i>
+            <h3>Presentación del Tutor</h3>
+            <p>
+              Da click en el botón para mostrar abajo los documentos de la
+              presentación del Tutor
+            </p>
+            <a onclick="abrirDocs()" class="a-unit-card">Mostrar</a>
+          </div>
+          <div class="content-static foro descripcion-unit">
+            <i class="bx bx-chat"></i>
+            <i class="bx bx-comment-add"></i>
+            <h3>Foro</h3>
+            <p class="p-forum">
+              Da click en el botón para mostrar los mensajes de Foro
+            </p>
+            <a class="a-unit-card-2" onclick="showForo()">Mostrar</a>
+          </div>
+        </div>
+      </div>
+      <div class="container-docs-foro">
+        <div class="card-btn-present card-header-2" id="card-docs">
+          <div class="content-static bk-color">
+            <div class="video-container container-text-tutor">
+              <h6 class="intro">Video Tutor</h6>
+              <input type="text" id="link-video" />
+              <div class="buttons-tutor-presentation">
+                <a onclick="savePresentation()" class="a-tutor-presentation"
+                  ><i class="bx bx-save"></i> Guardar</a
+                >
+                <a onclick="reproducirVideo()" class="a-tutor-presentation"
+                  ><i class="bx bx-play-circle"></i> Reproducir</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="content-static bk-color-2">
+            <div class="pdf-container container-text-tutor">
+              <!-- <i class="bx bxs-file-pdf"></i> -->
+              <h6 class="intro">Currículum PDF</h6>
+              <input type="text" id="link-cv" />
+              <div class="buttons-tutor-presentation">
+                <a onclick="savePresentation()" class="a-tutor-presentation"
+                  ><i class="bx bx-save"></i> Guardar</a
+                >
+                <a onclick="verPdf()" class="a-tutor-presentation"
+                  ><i class="bx bx-show"></i> Ver</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-header-2 container-foro" id="foro">
+          <div class="new-discu">
+            <textarea
+              class="message-TA"
+              name=""
+              placeholder="Escribe el Mensaje"
+              id="message"
+            ></textarea>
+            <div class="buttons-message-foro">
+              <a data-tooltip="Enviar" onclick="sendMessageForo()"
+                ><i class="bx bx-send"></i>
+              </a>
+              <a data-tooltip="Refrescar" onclick="refreshForo()"
+                ><i class="bx bx-refresh"></i>
+              </a>
+            </div>
+          </div>
+          <div class="comment-foro card-header-2" id="comment-foro"></div>
+        </div>
+      </div>
+      <div class="card-header-2" id="container-video">
+        <iframe
+          class="iframe-video"
+          src=""
+          id="video-link-play"
+          controls
+        ></iframe>
+      </div>
+      <div id="containerPdf" class="card-header-2">
+        <iframe
+          src=""
+          class="iframe-pdf"
+          id="pdf-iframe"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </main>
+    <div id="succes-post"></div>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu bx-tada-hover"></i>
+    </button>
+  </body>
+  <script src="activas.js"></script>
+  <script src="../../api/post.js"></script>
+  <script src="../../api/mentor.js"></script>
+  <script src="interaction.js"></script>
+  <script src="../../api/forostudent.js"></script>
+  <script src="../js/sidenav.js"></script>
+</html>

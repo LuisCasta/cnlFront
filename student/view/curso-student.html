@@ -15,18 +15,25 @@
     ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
-    <title>Cursos</title>
+    <title>Asignaturas</title>
   </head>
-  <body onload="cargarSideNav(),loadCursosByStudent()">
+  <body onload="cargarSideNav(),loadCursosByStudent(),loadNotices()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
-        <p>Tus Cursos</p>
+        <p>Asignaturas</p>
       </div>
       <div class="card-header">
         <div class="text-Header">
-          <h2>Tus Cursos</h2>
+          <h2>Tus asignaturas</h2>
         </div>
+      </div>
+      <div class="card-header-2">
+        <div class="content-static-2 avisos">
+          <h5><i class="bx bxs-bell-ring"></i>Avisos</h5>
+          <div id="asignaturas"></div>
+        </div>
+        <div class="grid-container" id="static-div"></div>
       </div>
       <div class="container-cursos" id="container-cursos"></div>
     </main>
@@ -37,5 +44,6 @@
     <script src="../../api/courseStudent.js"></script>
     <script src="cursos.js"></script>
     <script src="../js/sidenav.js"></script>
+    <script src="../../api/notices.js"></script>
   </body>
 </html>

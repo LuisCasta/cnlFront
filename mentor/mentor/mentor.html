@@ -17,7 +17,7 @@
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
     <title>Mentor</title>
   </head>
-  <body onload="cargarSideNav(), loadCursosById()">
+  <body onload="cargarSideNav(), loadCursosById(),loadNotices()">
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <div class="breadcumbs">
@@ -41,49 +41,10 @@
       <div class="card-header" id="reticula">
         <h2>Aquí se muestra la retícula</h2>
       </div>
-      <div class="card-header-2" id="asignaturas">
+      <div class="card-header-2">
         <div class="content-static-2 avisos">
           <h5><i class="bx bxs-bell-ring"></i>Avisos</h5>
-          <div class="notification">
-            <div class="name-notify">
-              <h6>Recordatorio</h6>
-              <label>Entrega de proyecto Martes y examen miércoles</label>
-            </div>
-            <div class="fecha">
-              <h6>fecha de publicación</h6>
-              <p>16/05/2024</p>
-            </div>
-          </div>
-          <div class="notification">
-            <div class="name-notify">
-              <h6>Recordatorio</h6>
-              <label>Entrega de proyecto Martes y examen miércoles</label>
-            </div>
-            <div class="fecha">
-              <h6>fecha de publicación</h6>
-              <p>16/05/2024</p>
-            </div>
-          </div>
-          <div class="notification">
-            <div class="name-notify">
-              <h6>Recordatorio</h6>
-              <label>Entrega de proyecto Martes y examen miércoles</label>
-            </div>
-            <div class="fecha">
-              <h6>fecha de publicación</h6>
-              <p>16/05/2024</p>
-            </div>
-          </div>
-          <div class="notification">
-            <div class="name-notify">
-              <h6>Recordatorio</h6>
-              <label>Entrega de proyecto Martes y examen miércoles</label>
-            </div>
-            <div class="fecha">
-              <h6>fecha de publicación</h6>
-              <p>16/05/2024</p>
-            </div>
-          </div>
+          <div id="asignaturas"></div>
         </div>
         <div class="grid-container" id="static-div"></div>
       </div>
@@ -130,4 +91,5 @@
   <script src="mentor.js"></script>
   <script src="../sidenav.js"></script>
   <script src="animation-advice.js"></script>
+  <script src="../../api/notices.js"></script>
 </html>

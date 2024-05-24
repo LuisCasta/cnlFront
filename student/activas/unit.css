@@ -1,5 +1,7 @@
+@import url('../../mentor/style-mentor/sidenav.css');
 @import url('../../admin/styles/style-generals.css');
-@import url('../style-mentor/sidenav.css');
+
+
 
 /* .a-unit {
     background-color: var(--primary-color);

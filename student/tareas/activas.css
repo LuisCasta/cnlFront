@@ -1,5 +1,5 @@
-@import url('../../admin/styles/style-generals.css');
-@import url('../style-mentor/sidenav.css');
+@import url("../../admin/styles/style-generals.css");
+@import url("../../mentor/style-mentor/sidenav.css");
 
 .card-content-info-unit {
     display: flex;

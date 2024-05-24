@@ -177,3 +177,14 @@ const deleteCarrera = async (data) => {
 
   return { code: 200, data: career.data.data };
 };
+
+const obtainRateByIdCourse = async (idCourse) => {
+  const calificacionFinal = await getApi(`evaluationAssignature/${idCourse}`);
+  if (calificacionFinal.status != 200)
+    return {
+      code: 400,
+      message: `Error al cargar las calificaciones`,
+      error: calificacionFinal.data.message,
+    };
+  return { code: 200, data: calificacionFinal.data.data };
+};

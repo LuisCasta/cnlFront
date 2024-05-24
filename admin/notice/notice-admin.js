@@ -1,0 +1,2 @@
+"use strtict";
+z;
