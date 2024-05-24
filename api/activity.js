@@ -2,7 +2,6 @@
 
 // Funcion para crear una actividad
 // { name, code, description }
-
 const createActivity = async (data) => {
   const {
     name,
