@@ -4,6 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 const idStudent = urlParams.get("idStudent");
 const tEvent = obtainId("t-Activ");
 const tVideo = obtainId("t-videocall");
+const tCalif = obtainId('t-cali')
 
 const idCourse = urlParams.get("idCourse");
 let tableHtml = "";
@@ -13,8 +14,14 @@ async function LoadActivitiesAgendaStudent() {
     idCourse
   );
   if (activitiesStudent.code != 200) {
-    alert(`Error ${newactivitiesStudent.message}`);
+    alert(`Error ${activitiesStudent.message}`);
   } else {
+    const numberRate = obtainId('spanTitle')
+    if(activitiesStudent.data.length >= 0){
+      numberRate.textContent = "0"
+    } else if (activitiesStudent.data.length < 0) {
+      numberRate.textContent = activitiesStudent.data.length;
+    }
     activitiesStudent.data.forEach((activities) => {
       const { name, typeActivity, estatus, dateEnd, idActStu, id } = activities;
       const newDateEnd = dateEnd.slice(0, -14).replaceAll("-", "/");
@@ -51,8 +58,15 @@ let tableVcHtml = "";
 async function videoCallByCourse() {
   const videoCalls = await videoCallGetByCourse(idCourse);
   if (videoCalls.code != 200) {
-    alert(`Error ${newVideoCalls.message}`);
+    alert(`Error ${videoCalls.message}`);
   } else {
+    const numberRate = obtainId('spanTitle-vc')
+    if(videoCalls.data.length >= 0){
+      numberRate.innerHTML = "<i class='bx bx-video-off' ></i>"
+    } else if (videoCalls.data.length < 0) {
+      numberRate.textContent = videoCalls.data.length;
+    }
+   
     videoCalls.data.forEach((calls) => {
       const { name, link, description } = calls;
       tableVcHtml += `
@@ -74,5 +88,35 @@ async function videoCallByCourse() {
     });
 
     tVideo.innerHTML = tableVcHtml;
+  }
+}
+
+
+async function RateByCourseStudent() {
+  let tableRateHtml = "";
+  const rates = await obtainRateByIdStudent(idCourse, idStudent);
+  if (rates.code != 200) {
+    alert(`Error ${rates.message}`);
+  } else {
+    // console.log(rates.data);
+    const numberRate = obtainId('spanTitle-rate')
+    numberRate.textContent = rates.data.length;
+    rates.data.forEach((calls) => {
+      const { name, percentage, score } = calls;
+      tableRateHtml += `
+      <tr>
+        <td data-cell="Nombre">
+            <div class="type-event">
+            <p><i class="bx bx-note"></i>${name}</p>
+            </div>
+        </td>
+        <td data-cell="Promedio"><p>${percentage}</p></td>
+        <td data-cell="Evaluación final"><p>${score}<p></td>
+         </td>
+     </tr>
+      `;
+    });
+
+    tCalif.innerHTML = tableRateHtml;
   }
 }

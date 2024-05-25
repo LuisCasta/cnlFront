@@ -23,7 +23,7 @@ buttons.forEach((btn, index) => {
 });
 
 function ocultarCambiar(index) {
-  console.log(index, "ok");
+  // console.log(index, "ok");
   for (const [i, value] of containers.entries()) {
     if (value.classList.contains("disable") && i == index) {
       value.classList.remove("disable");

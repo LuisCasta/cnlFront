@@ -18,7 +18,7 @@
     <title>Actividad</title>
   </head>
   <body
-    onload="cargarSideNav(), LoadActivitiesAgendaStudent(),videoCallByCourse()"
+    onload="cargarSideNav(), LoadActivitiesAgendaStudent(),videoCallByCourse(), RateByCourseStudent()"
   >
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
@@ -77,7 +77,7 @@
                   <caption>
                     <div class="caption">
                       <p id="tableTitle">Todas las Videollamadas</p>
-                      <span id="spanTitle"></span>
+                      <span id="spanTitle-vc"></span>
                     </div>
                   </caption>
                   <tr>
@@ -99,14 +99,13 @@
                   <caption>
                     <div class="caption">
                       <p id="tableTitle">Todas las Calificaciones</p>
-                      <span id="spanTitle"></span>
+                      <span id="spanTitle-rate"></span>
                     </div>
                   </caption>
                   <tr>
-                    <th>Parcial</th>
-                    <th>Tareas</th>
-                    <th>Proyectos</th>
-                    <th>Acciones</th>
+                    <th>Tarea Activa</th>
+                    <th>Porcentaje</th>
+                    <th>Evaluación Final</th>
                   </tr>
                 </thead>
                 <tbody id="t-cali"></tbody>

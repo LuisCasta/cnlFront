@@ -295,3 +295,14 @@ const updateActivity = async (data) => {
 
   return { code: 200, data: activity.data.data };
 };
+
+const obtainRateByIdStudent = async (idCourse, idStudent) => {
+  const calificacionStudent = await getApi(`unitStudent/aboutStudent/${idCourse}/${idStudent}`);
+  if (calificacionStudent.status != 200)
+    return {
+      code: 400,
+      message: `Error al cargar las calificaciones`,
+      error: calificacionStudent.data.message,
+    };
+  return { code: 200, data: calificacionStudent.data.data };
+};

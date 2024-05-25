@@ -188,3 +188,5 @@ const obtainRateByIdCourse = async (idCourse) => {
     };
   return { code: 200, data: calificacionFinal.data.data };
 };
+
+

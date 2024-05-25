@@ -6,8 +6,8 @@ body {
 }
 
 .nuevo {
-    background-color: #fef1da;
-    color: #c07507;
+    background-color: #dafede;
+    color: #07c04e;
     width: 80px;
     display: flex;
     justify-content: center;
@@ -31,7 +31,8 @@ body {
     width: 110px;
     display: flex;
     justify-content: center;
-    padding: 5px;
+    /* padding: 2px; */
+    font-size: 12px;
 }
 
 .name-activ {
@@ -65,6 +66,9 @@ body {
     padding: 10px;
     border-radius: 200px;
     width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .buttons-tabs p:hover {
