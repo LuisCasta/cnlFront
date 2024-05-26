@@ -23,7 +23,7 @@ async function loadGroups() {
       </td>
       <td data-cell="Acciones">
           <div class="actions">
-            <a  data-tooltip='Agregar curso' href="../courses/course.html?idGroup=${id}&idCarrera=${idCareer}">
+            <a  data-tooltip='Gestionar asignatura' href="../courses/course.html?idGroup=${id}&idCarrera=${idCareer}">
               <button class="edit">
               <i class='bx bx-book'></i>
               </button>

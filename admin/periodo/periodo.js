@@ -26,11 +26,11 @@ async function loadPeriodo() {
                 <td data-cell="Nombre del periodo"><p contenteditable="true" spellcheck="false" id='name_${id}'>${name}</p></td>
                 <td data-cell="Acciones"> 
                   <div class="actions">
-                    <a data-tooltip='Agregar materia' href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&namePeriod=${namePeriod}&nameCareer=${nameCareer}" class="gestionCarrera">
+                    <a data-tooltip='Gestionar materia' href="../subject/subject.html?idCarrera=${idCareer}&idPeriodo=${id}&namePeriod=${namePeriod}&nameCareer=${nameCareer}" class="gestionCarrera">
                     <button class="edit"><i class='bx bx-book-add' ></i>
                     </button>
                     </a>
-                    <a  data-tooltip='Agregar grupo' 
+                    <a  data-tooltip='Gestionar asignatura' 
                     href="../groups/group.html?idPeriodo=${id}&idCarrera=${idCareer}&namePeriod=${namePeriod}per&nameCareer=${nameCareer}">
                     <button class="edit"><i class='bx bx-group'></i></button>
                     </a>

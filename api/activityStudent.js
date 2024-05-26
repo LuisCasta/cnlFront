@@ -49,7 +49,7 @@ const getActivitiesDaily = async (idStudent) => {
 // Presentar una actividad
 const sendActivity = async (data) => {
   try {
-    const { idStudent, idActivity, commentStudent, link } = data;
+    const { idStudent, idActivity, link } = data;
     if (
       idStudent == "" ||
       idStudent == null ||
@@ -66,24 +66,12 @@ const sendActivity = async (data) => {
     )
       return { code: 400, message: `Error, el campo idActivity es inválido` };
 
-    if (
-      commentStudent == "" ||
-      commentStudent == null ||
-      commentStudent == undefined ||
-      commentStudent == " "
-    )
-      return {
-        code: 400,
-        message: `Error, el campo commentStudent es inválido`,
-      };
-
     if (link == "" || link == null || link == undefined || link == " ")
       return { code: 400, message: `Error, el campo link es inválido` };
 
-    const activity = await putApi("activityStudent", {
-      actStudId,
+    const activity = await postDataC("activityStudent", {
+      idStudent,
       idActivity,
-      commentStudent,
       link,
     });
 
@@ -305,4 +293,66 @@ const obtainRateByIdStudent = async (idStudent, idCourse) => {
       error: calificacionStudent.data.message,
     };
   return { code: 200, data: calificacionStudent.data.data };
+};
+
+
+// OBTENER ACTIVIDAD TUTOR EN PRESENTAR ACTIVIDAD ALUMNO
+
+const getActivityMentorStudent = async (idActivity) => {
+  if (
+    idActivity == "" ||
+    idActivity == null ||
+    idActivity == undefined ||
+    idActivity == " "
+  )
+    return {
+      code: 400,
+      message: `Error, el campo id: Actividad Estudiante es inválido`,
+    };
+
+  const activity = await getApi(`activity/about/${idActivity}`);
+
+  if (activity.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener la actividad del estudiante.`,
+      error: activity.data.message,
+    };
+
+  return { code: 200, data: activity.data.data };
+};
+
+const getRateIntent = async (idStudent, idActivity) => {
+  if (
+    idActivity == "" ||
+    idActivity == null ||
+    idActivity == undefined ||
+    idActivity == " "
+  )
+    return {
+      code: 400,
+      message: `Error, el campo id: Actividad Estudiante es inválido`,
+    };
+
+    if (
+      idStudent == "" ||
+      idStudent == null ||
+      idStudent == undefined ||
+      idStudent == " "
+    )
+      return {
+        code: 400,
+        message: `Error, el campo id: Actividad Estudiante es inválido`,
+      };
+
+  const activity = await getApi(`activityStudent/aboutStudent/${idStudent}/${idActivity}`);
+
+  if (activity.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener la actividad del estudiante.`,
+      error: activity.data.message,
+    };
+
+  return { code: 200, data: activity.data.data };
 };

@@ -2,6 +2,7 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idStudent = urlParams.get("idStudent");
+const idActivity = urlParams.get("idActivity");
 const idUnit = urlParams.get("idUnit");
 
 const tEvent = obtainId("t-Activ");
@@ -24,7 +25,7 @@ async function LoadActivitiesAgendaStudent() {
       numberRate.textContent = activitiesStudent.data.length;
     }
     activitiesStudent.data.forEach((activities) => {
-      const { name, dateEnd, id,description } = activities;
+      const { name, dateEnd, id, description, idUnit } = activities;
       const newDateEnd = dateEnd.slice(0, -14).replaceAll("-", "/");
       tableHtml += `
       <tr>
@@ -39,7 +40,7 @@ async function LoadActivitiesAgendaStudent() {
          <p class="date-Activity"><i class='bx bx-calendar'></i>${newDateEnd}</p></td>
         <td data-cell="Acciones">
            <div class="actions">
-              <a class="presentar" href="../presentar/presentar-actividad.html?idStudent=${idStudent}&idCourse=${idCourse}&idActMentor=${id}">Presentar</a>
+              <a class="presentar" href="../presentar/presentar-actividad.html?idStudent=${idStudent}&idCourse=${idCourse}&idActivity=${id}&idUnit=${idUnit}">Presentar</a>
             </div>
          </td>
      </tr>

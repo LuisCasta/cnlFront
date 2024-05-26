@@ -23,7 +23,7 @@ async function loadCareers() {
                 <td class="not-show" data-cell="Code"><p id='code_${id}' contenteditable="true" spellcheck="false">${code}</p></td>
                 <td data-cell="Acciones">
                   <div class="actions">
-                    <a data-tooltip="Agregar periodo" href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera">
+                    <a data-tooltip="Gestionar" href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera">
                       <button class="edit"><i class='bx bx-calendar-plus'></i></button>
                     </a>
                     <button onclick="updateCareer(${id})" data-tooltip="Editar" data-id="${id}" class="edit"><i class='bx bx-edit' ></i></button>

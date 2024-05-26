@@ -80,7 +80,7 @@ login.addEventListener("click", async function loginCnl() {
         pwAlumno.value = ""; // Assuming pwAlumno is the student password field
       } else {
         const { id } = student.data;
-        location.href = `student/calendar/calendar.html?idStudent=${id}`;
+        location.href = `student/view/curso-student.html?idStudent=${id}`;
       }
     } catch (error) {
       console.error("Error fetching student data:", error);

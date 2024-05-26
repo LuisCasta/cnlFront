@@ -40,20 +40,14 @@ async function loadCursos() {
       console.log(curso);
       cursoHtml += `
               <tr>
-                <td data-cell="Curso">
+                <td data-cell="Nombre de la asignatura">
                   <p id='curso_${idCourse}' contenteditable='true' spellcheck='false'>${nameCourse}</p>
                 </td>
-                <td data-cell="Docente">
+                <td data-cell="Tutor">
                 <p id='docente_${idCourse}'>${nameMentor} ${firstName}</p>
               </td>
                 <td data-cell="Descripción">
                   <p id='description_${idCourse}' contenteditable='true' spellcheck='false'>${description}</p>
-                </td>
-                <td data-cell="Unidades">
-                 <a  href="../unit/unit.html?idCurso=${idCourse}">
-                  <button  data-tooltip='Agregar/Gestionar' data-id="${idCourse}" class="unidad">
-                  <i class='bx bx-customize'></i>
-                  </button></a>
                 </td>
                 <td data-cell="Acciones">
                   <div class="actions">

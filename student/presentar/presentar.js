@@ -1,8 +1,9 @@
 "use strict";
+
 const succesPost = document.getElementById("succes-post");
 const enviarActividadBtn = document.getElementById("presentar-actividad");
 async function loadActivitiesPresentar() {
-  const presentarAct = await getByIdActivity(idActivity);
+  const presentarAct = await getActivityMentorStudent(idActivity);
   if (presentarAct.code != 200) {
     alert(`Error ${presentarAct.message}`);
   } else {
@@ -57,3 +58,30 @@ enviarActividadBtn.addEventListener("click", async (e) => {
     }, 6500);
   }
 });
+
+
+async function getRateIntentActivity(){
+  const rateIntent = await getRateIntent(idStudent, idActivity)
+  console.log(rateIntent.code, '1');
+  if (rateIntent.code != 200) {
+    console.log('no hay nada para mostrar');
+     
+  } else {
+    const keys = Object.keys(rateIntent.data)
+    if(keys.length > 0){
+      const {score}= rateIntent.data;
+       const messageCalif =  document.getElementById('calif-parrafo')
+      return messageCalif.textContent = score
+    } else{
+      console.log('No hay nada');
+      const messageCalif =  document.getElementById('calif-parrafo')
+      return messageCalif.textContent = 'No has presentado la Actividad'
+    }
+    // score
+    // intent
+    // sendDate
+    // id
+    // link
+    // status
+  }
+} 

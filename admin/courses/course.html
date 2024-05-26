@@ -15,7 +15,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
-    <title>Cursos</title>
+    <title>Asignaturas</title>
   </head>
   <body onload="cargarSideNav(), loadCursos()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
@@ -31,12 +31,12 @@
         <i class="bx bx-right-arrow-alt"></i>
         <a href="../groups/group.html" id="grupos-breadcumb"><p>Grupos</p></a>
         <i class="bx bx-right-arrow-alt"></i>
-        <p>Cursos</p>
+        <p>Asignaturas</p>
       </div>
       <div class="card-header">
         <div class="heading">
-          <h2 id="name-group">Agregar Curso</h2>
-          <p>Agrega un curso, consulta y configúralo</p>
+          <h2 id="name-group">Agregar asignaturas</h2>
+          <p>Agrega una asignatura, consulta y configúralo</p>
         </div>
         <div class="form-select materia-select">
           <p>Escoge materia</p>
@@ -44,20 +44,20 @@
         </div>
         <div class="form-header">
           <div class="form-select">
-            <p>Escoge Mentor</p>
+            <p>Escoge Tutor</p>
             <select name="Mentor" id="form-mentor"></select>
           </div>
           <input
             type="text"
             id="name-curso-form"
-            placeholder="Nombre del Curso"
+            placeholder="Nombre de la asignatura"
           />
           <input
             type="text"
             id="descripcion-curso"
-            placeholder="Descripción del Curso"
+            placeholder="Descripción de la asignatura"
           />
-          <button id="agregar-curso">Agregar Curso</button>
+          <button id="agregar-curso">Agregar asignatura</button>
         </div>
       </div>
       <!-- TABLAS DE CURSOS -->
@@ -66,15 +66,15 @@
           <thead>
             <caption>
               <div class="caption">
-                <p id="tableTitle">Todos las Cursos</p>
+                <p id="tableTitle">Todos las Asignaturas</p>
                 <span id="spanTitle"></span>
               </div>
             </caption>
             <tr>
-              <th>Curso</th>
-              <th>Docente</th>
-              <th>Periodo</th>
-              <th>Unidad +</th>
+              <th>Nombre de la asignatura</th>
+              <th>Tutor</th>
+              <th>Descripción</th>
+              <!-- <th>Unidad +</th> -->
               <th>Acciones</th>
             </tr>
           </thead>

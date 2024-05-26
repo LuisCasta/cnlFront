@@ -6,7 +6,7 @@ function obtainId(id) {
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idActivity = urlParams.get("actStudId");
-const actStudId = urlParams.get("actStudId");
+// const actStudId = urlParams.get("actStudId");
 const idMentor = urlParams.get("idMentor");
 const idCourse = urlParams.get("idCurso");
 const idUnit = urlParams.get("idUnit");
