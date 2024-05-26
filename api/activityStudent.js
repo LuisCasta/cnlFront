@@ -2,17 +2,17 @@
  * Obtiene todas las actividades de un idUnit
  *
  * */
-const getByCourseActivityStudent = async (idCourse, idStudent) => {
+const getByCourseActivityStudent = async (idUnit) => {
   if (
-    idCourse == "" ||
-    idCourse == null ||
-    idCourse == undefined ||
-    idCourse == " "
+    idUnit == "" ||
+    idUnit == null ||
+    idUnit == undefined ||
+    idUnit == " "
   )
     return { code: 400, message: `Error, el campo idCurso es inválido` };
 
   const activities = await getApi(
-    `activityStudent/all2/${idCourse}/${idStudent}`
+    `activity/aboutUnit/${idUnit}`
   );
 
   if (activities.status != 200)
@@ -49,14 +49,14 @@ const getActivitiesDaily = async (idStudent) => {
 // Presentar una actividad
 const sendActivity = async (data) => {
   try {
-    const { actStudId, idActivity, commentStudent, link } = data;
+    const { idStudent, idActivity, commentStudent, link } = data;
     if (
-      actStudId == "" ||
-      actStudId == null ||
-      actStudId == undefined ||
-      actStudId == " "
+      idStudent == "" ||
+      idStudent == null ||
+      idStudent == undefined ||
+      idStudent == " "
     )
-      return { code: 400, message: `Error, el campo actStudId es inválido` };
+      return { code: 400, message: `Error, el campo id estudiante es inválido` };
 
     if (
       idActivity == "" ||
@@ -296,8 +296,8 @@ const updateActivity = async (data) => {
   return { code: 200, data: activity.data.data };
 };
 
-const obtainRateByIdStudent = async (idCourse, idStudent) => {
-  const calificacionStudent = await getApi(`unitStudent/aboutStudent/${idCourse}/${idStudent}`);
+const obtainRateByIdStudent = async (idStudent, idCourse) => {
+  const calificacionStudent = await getApi(`unitStudent/aboutStudent/${idStudent}/${idCourse}`);
   if (calificacionStudent.status != 200)
     return {
       code: 400,

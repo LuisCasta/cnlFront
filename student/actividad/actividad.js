@@ -2,46 +2,44 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idStudent = urlParams.get("idStudent");
+const idUnit = urlParams.get("idUnit");
+
 const tEvent = obtainId("t-Activ");
 const tVideo = obtainId("t-videocall");
 const tCalif = obtainId('t-cali')
 
 const idCourse = urlParams.get("idCourse");
-let tableHtml = "";
+
 async function LoadActivitiesAgendaStudent() {
-  const activitiesStudent = await getByCourseActivityStudent(
-    idStudent,
-    idCourse
-  );
+  let tableHtml = "";
+  const activitiesStudent = await getByCourseActivityStudent(idUnit);
   if (activitiesStudent.code != 200) {
     alert(`Error ${activitiesStudent.message}`);
   } else {
+    console.log(activitiesStudent.data);
     const numberRate = obtainId('spanTitle')
-    if(activitiesStudent.data.length >= 0){
+    if(activitiesStudent.data.length > 0){
       numberRate.textContent = "0"
     } else if (activitiesStudent.data.length < 0) {
       numberRate.textContent = activitiesStudent.data.length;
     }
     activitiesStudent.data.forEach((activities) => {
-      const { name, typeActivity, estatus, dateEnd, idActStu, id } = activities;
+      const { name, dateEnd, id,description } = activities;
       const newDateEnd = dateEnd.slice(0, -14).replaceAll("-", "/");
-      const formatStatus = estatus.toLowerCase();
       tableHtml += `
       <tr>
-        <td data-cell="Tipo">
+      <td data-cell="Nombre"><p class="name-activ">${name.toUpperCase()}</p></td>
+        <td data-cell="Descripción">
             <div class="type-event">
-            <p><i class="bx bx-note"></i>${typeActivity}</p>
+            <p><i class="bx bx-note"></i>${description}</p>
             </div>
         </td>
-        <td data-cell="Nombre"><p class="name-activ">${name.toUpperCase()}</p></td>
+        
         <td data-cell="Fecha entrega">
          <p class="date-Activity"><i class='bx bx-calendar'></i>${newDateEnd}</p></td>
-        <td data-cell="Estatus"><p class=${
-          estatus === "NUEVO" ? "nuevo" : "send-act"
-        }>${formatStatus[0].toUpperCase() + formatStatus.slice(1)}</p></td>
         <td data-cell="Acciones">
            <div class="actions">
-              <a href="../presentar/presentar-actividad.html?idStudent=${idStudent}&idCourse=${idCourse}&idActMentor=${id}&idActStudent=${idActStu}">Presentar</a>
+              <a class="presentar" href="../presentar/presentar-actividad.html?idStudent=${idStudent}&idCourse=${idCourse}&idActMentor=${id}">Presentar</a>
             </div>
          </td>
      </tr>
@@ -94,7 +92,7 @@ async function videoCallByCourse() {
 
 async function RateByCourseStudent() {
   let tableRateHtml = "";
-  const rates = await obtainRateByIdStudent(idCourse, idStudent);
+  const rates = await obtainRateByIdStudent(idStudent,idCourse);
   if (rates.code != 200) {
     alert(`Error ${rates.message}`);
   } else {

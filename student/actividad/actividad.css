@@ -155,8 +155,9 @@ body {
 .actions a {
     background-color: var(--primary-color);
     color: #fff;
-    padding: 10px;
+    padding: 5px;
     border-radius: 4px;
+    font-size: 12px;
     text-decoration: none;
 }
 

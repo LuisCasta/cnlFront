@@ -33,7 +33,7 @@ async function loadUnit() {
      </td>  
      <td data-cell="Gestionar parcial">
           <button data-tooltip='Entrar' class="edit">
-          <a href="../actividad/actividad.html?idCourse=${idCourse}&idStudent=${idStudent}">
+          <a href="../actividad/actividad.html?idCourse=${idCourse}&idStudent=${idStudent}&idUnit=${id}">
           <i class='bx bx-cog'></i>
             </a>
           </button>

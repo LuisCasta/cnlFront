@@ -22,8 +22,7 @@ enviarActividadBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   const link = document.getElementById("link-presentar").value;
-  const commentStudent = document.getElementById("comments").value;
-  const data = { actStudId, idActivity, commentStudent, link };
+  const data = { idStudent, idActivity, link };
 
   const presentarActividad = await sendActivity(data);
   if (presentarActividad.code != 200) {
