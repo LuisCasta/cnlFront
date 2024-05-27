@@ -85,3 +85,62 @@ async function getRateIntentActivity(){
     // status
   }
 } 
+
+
+// {
+//   "message": "Success getEvaluation ",
+//   "data": [
+//       {
+//           "idStudent": 8,
+//           "name": "Luis",
+//           "firstName": "Castañeda",
+//           "secondName": "Villalobos",
+//           "idCS": 21,
+//           "calif": 0,
+//           "fullname": "Castañeda Villalobos Luis",
+//           "califRecomend": 40,
+//           "listCalif": [
+//               {
+//                   "id": 24,
+//                   "califRecomend": 40
+//               },
+//               {
+//                   "id": 25,
+//                   "califRecomend": "0"
+//               }
+//           ]
+//       },
+//       {
+//           "idStudent": 9,
+//           "name": "alberto",
+//           "firstName": "sosa",
+//           "secondName": "ramirez",
+//           "idCS": 22,
+//           "calif": 0,
+//           "fullname": "sosa ramirez alberto",
+//           "califRecomend": 0,
+//           "listCalif": [
+//               {
+//                   "id": 24,
+//                   "califRecomend": "0"
+//               },
+//               {
+//                   "id": 25,
+//                   "califRecomend": "0"
+//               }
+//           ]
+//       }
+//   ],
+//   "headers": [
+//       {
+//           "idUnit": 24,
+//           "nameUnit": "TareaAct1",
+//           "percentage": 50
+//       },
+//       {
+//           "idUnit": 25,
+//           "nameUnit": "TareaAct2",
+//           "percentage": 40
+//       }
+//   ]
+// }

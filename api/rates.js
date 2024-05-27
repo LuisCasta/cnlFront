@@ -22,27 +22,11 @@ const getAllRatesPartialByUnit = async (idUnit) => {
   return { code: 200, data: rateByUnit.data.data };
 };
 
-//Guardar calificaciones parciales de un alumno
-const saveRatebyStudent = async (data) => {
-  const { idUnit, idStudent, score } = data;
-  if (idUnit == "" || idUnit == null || idUnit == undefined || idUnit == " ")
-    return { code: 400, message: `Error, el campo idUnit es inválido` };
-  if (
-    idStudent == "" ||
-    idStudent == null ||
-    idStudent == undefined ||
-    idStudent == " "
-  )
-    return { code: 400, message: `Error, el campo idStudent es inválido` };
-
-  if (score == "" || score == null || score == undefined || score == " ");
-  return { code: 400, message: `Error, el campo score es inválido` };
-};
 
 // Obtener las calificaciones finales por curso
 const getEndRateByCourse = async (idCourse) => {
   const ratesByCourse = await getApi(
-    `courseStudent/getReportByCourse/${idCourse}`
+    `mentor/evaluationAssignature/${idCourse}`
   );
   if (ratesByCourse.status != 200)
     return {
@@ -50,7 +34,7 @@ const getEndRateByCourse = async (idCourse) => {
       message: `Error al cargar las calificaciones`,
       error: ratesByCourse.data.message,
     };
-  return { code: 200, data: ratesByCourse.data.data };
+  return { code: 200, data: ratesByCourse.data };
 };
 
 /**
@@ -190,3 +174,38 @@ const obtainRateByIdCourse = async (idCourse) => {
 };
 
 
+//Guardar calificaciones parciales de un alumno
+const saveRatebyStudentFinal = async (data) => {
+  const { idStudent, score, idCourse } = data;
+  if (
+    idCourse == "" ||
+    idCourse == null ||
+    idCourse == undefined ||
+    idCourse == " "
+  )
+    return { code: 400, message: `Error, el campo idCourse es inválido` };
+  if (
+    idStudent == "" ||
+    idStudent == null ||
+    idStudent == undefined ||
+    idStudent == " "
+  )
+    return { code: 400, message: `Error, el campo idStudent es inválido` };
+
+  if (score == "" || score == null || score == undefined || score == " ")
+  return { code: 400, message: `Error, el campo score es inválido` }
+
+  const rateFinal = await putApi("courseStudent/updateEndScore", {
+   idStudent,
+   score,
+   idCourse
+  });
+
+  if (rateFinal.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar la calificación`,
+      error: rateFinal.data.message,
+    };
+  return { code: 200, data: rateFinal.data.data };
+};
