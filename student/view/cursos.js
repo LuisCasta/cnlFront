@@ -12,13 +12,14 @@ async function loadCursosByStudent() {
     alert(`Error ${newCursosByStudent.message}`);
   } else {
     cursosByStudent.data.forEach((cursoByStudent) => {
-      const { name, description, idCourse } = cursoByStudent;
+      const { name, description, idCourse, score } = cursoByStudent;
       courseStudentHtml += `
       <div class="card-cursos">
       <div class="text-card">
         <h4>${name}</h4>
         <div class="hr"></div>
         <p>${description}</p>
+        <span class=${score == null || 0 ? 'none-score' : 'display-score'}>${score}</span>
         <a  href="../tareas/activas.html?idCourse=${idCourse}&idStudent=${idStudent}">Ver + </a>
       </div>
     </div>
