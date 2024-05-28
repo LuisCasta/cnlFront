@@ -10,10 +10,10 @@ const closeModalRate = obtainId("close-modal-rate");
 async function loadCursosById() {
   const cursoMentor = await getCourseByMentor(idMentor);
   if (cursoMentor.code != 200) {
-    alert(`Error ${newCursoMentor.message}`);
+    alert(`Error ${cursoMentor.message}`);
   } else {
     cursoMentor.data.forEach((curso) => {
-      const { id, name, description, task, proyect, exam } = curso;
+      const { id, name, description } = curso;
       //   const modalPonderacion = `<a data-tooltip="Ponderación" class="ponderaciones unidadConfig edit" id="${id}" name_${id}=${name} description_${id}=${description} task_${id}=${task} proyect_${id}=${proyect} exam_${id}=${exam} >
       //   <i class='bx bxs-cog' ></i>
       // </a>`;

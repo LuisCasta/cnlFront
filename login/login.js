@@ -39,15 +39,16 @@ login.addEventListener("click", async function loginCnl() {
         pass: mentorPassword,
       };
       const mentor = await getLogin(data);
-      console.log(mentor);
+      // console.log(mentor);
+      // console.log(mentor);
       if (mentor.code !== 200) {
         console.log(`Error de login ${mentorMail}`);
         alert("Usuario o contraseña incorrecta");
         correo.value = "";
         pw.value = "";
       } else {
-        const { id } = mentor.data;
-        location.href = `mentor/mentor/mentor.html?idMentor=${id}`;
+        const { id, name, firstName } = mentor.data;
+        location.href = `mentor/mentor/mentor.html?idMentor=${id}&name=${name}&secondName=${firstName}`;
       }
     } catch (error) {
       console.error("Error fetching mentor data:", error);

@@ -174,7 +174,7 @@
 .display-score{
     position: absolute;
     top: 0px;
-    right: 0;
+    right: 15px;
     border-radius: 100%;
     display: flex;
     color: #fff;

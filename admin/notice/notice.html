@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notificaciones</title>
   </head>
-  <body>
+  <body onload="cargarSideNav()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
@@ -26,6 +26,10 @@
       </div>
       <div class="card-header">
         <h2>Avisos</h2>
+        <div class="form-select">
+          <p>Escribe el aviso</p>
+          <textarea></textarea>
+        </div>
       </div>
     </main>
     <button class="responsive" id="btnResponsive">
@@ -35,3 +39,4 @@
     <script src="notice-admin.js"></script>
   </body>
 </html>
+
