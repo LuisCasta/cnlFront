@@ -9,7 +9,7 @@ async function loadCursosByStudent() {
   // const actividadLink =
   const cursosByStudent = await CourseStudGetByStudent(idStudent);
   if (cursosByStudent.code != 200) {
-    alert(`Error ${newCursosByStudent.message}`);
+    alert(`Error ${cursosByStudent.message}`);
   } else {
     cursosByStudent.data.forEach((cursoByStudent) => {
       const { name, description, idCourse, score } = cursoByStudent;
@@ -19,7 +19,9 @@ async function loadCursosByStudent() {
         <h4>${name}</h4>
         <div class="hr"></div>
         <p>${description}</p>
-        <span class=${score == null || 0 ? 'none-score' : 'display-score'}>${score}</span>
+        <span class=${
+          score == null || 0 ? "none-score" : "display-score"
+        }>${score}</span>
         <a  href="../tareas/activas.html?idCourse=${idCourse}&idStudent=${idStudent}">Ver + </a>
       </div>
     </div>
