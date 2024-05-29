@@ -61,6 +61,8 @@ h6 {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    z-index: 10;
 }
 
 .notification:hover .hiden-delete {
@@ -86,4 +88,28 @@ h6 {
 
 .name-notify {
     width: 70%;
+}
+
+
+@media (max-width:576px) {
+
+    .notification {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fecha {
+        width: 100%;
+        margin: auto;
+        align-items: center;
+    }
+
+    .name-notify {
+        width: 100%;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
 }

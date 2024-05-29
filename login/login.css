@@ -5,9 +5,10 @@
     height: 100vh;
     margin: auto;
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     justify-content: center;
     align-items: center;
+
 }
 
 .mensaje {
@@ -226,6 +227,10 @@ body {
 
     .container-login {
         padding: 0px;
+    }
+
+    .log-sidenav {
+        height: auto;
     }
 
 }

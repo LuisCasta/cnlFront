@@ -514,4 +514,41 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
     .container-foro {
         flex-direction: column;
     }
+
+    .card-btn-present {
+        flex-direction: column;
+    }
+
+    .card-header-2 {
+        padding: 0;
+    }
+
+    .content-static-2 {
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+    }
+
+    .container-foro {
+        padding-top: 10px;
+    }
+
+    .bx-bookmark-alt,
+    .bx-comment-add {
+        top: -300px;
+    }
+
+    .bxs-video-plus {
+        top: -10000px;
+    }
+
+    .content-static:hover .bxs-video-plus,
+    .content-static:hover .bx-comment-add,
+    .content-static:hover .bx-bookmark-alt {
+        display: none;
+        z-index: -1000;
+    }
+
+
+
 }
