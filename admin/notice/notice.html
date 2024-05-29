@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notificaciones</title>
   </head>
-  <body onload="cargarSideNav()">
+  <body onload="cargarSideNav(), loadNotices()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
@@ -26,17 +26,26 @@
       </div>
       <div class="card-header">
         <h2>Avisos</h2>
-        <div class="form-select">
-          <p>Escribe el aviso</p>
-          <textarea></textarea>
+        <div class="container-select">
+          <div class="form-select">
+            <p>Escribe el aviso</p>
+            <textarea id="mensaje"></textarea>
+          </div>
+          <button onclick="createMessage()">
+            Crear aviso
+            <i class="bx bx-bell-plus"></i>
+          </button>
         </div>
       </div>
+      <div class="card-header-2" id="asignaturas"></div>
+      <div id="succes-post"></div>
     </main>
     <button class="responsive" id="btnResponsive">
       <i class="bx bx-menu"></i>
     </button>
     <script src="../js/sidenav.js"></script>
+    <script src="../../api/post.js"></script>
+    <script src="../../api/notices.js"></script>
     <script src="notice-admin.js"></script>
   </body>
 </html>
-

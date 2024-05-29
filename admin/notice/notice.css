@@ -1,2 +1,89 @@
 @import url('../styles/style-generals.css');
 @import url('../styles/sidenav.css');
+
+.card-header-2 {
+    width: 90%;
+    background-color: transparent;
+    padding: 0;
+    gap: 10px;
+    box-shadow: none;
+}
+
+.notification {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    border-radius: 10px;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.fecha {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+}
+
+h6 {
+    color: var(--primary-color);
+}
+
+.span-notice {
+    font-size: 14px;
+}
+
+.new-date {
+    padding: 3px;
+    border: 2px solid #8a8a8a;
+    border-radius: 3px;
+    color: #8a8a8a;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+#mensaje {
+    width: 100%;
+    resize: none;
+}
+
+.hiden-delete {
+    height: 100%;
+    position: absolute;
+    right: -100px;
+    transition: .2s ease-in-out right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification:hover .hiden-delete {
+    right: 0;
+    background-color: #fff;
+    cursor: pointer;
+    width: 250px;
+}
+
+.form-selct p {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.form-selct p {
+    transition: .2s ease-in-out;
+}
+
+.bx-trash {
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.name-notify {
+    width: 70%;
+}

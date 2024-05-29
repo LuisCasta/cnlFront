@@ -29,7 +29,7 @@ function cargarSideNav() {
           </li>
           <li>
           <a href="../notice/notice.html">
-          <i class='bx bx-bell'></i>
+          <i class='bx bx-bell'></i> </a>
           <p class="tooltip">Avisos</p>
         </li>
         </ul>

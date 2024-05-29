@@ -7,7 +7,7 @@ async function loadCareers() {
   const tbody = document.getElementById("carreras");
   const careers = await getAll();
   if (careers.code != 200) {
-    alert(`Error ${newCareer.message}`);
+    alert(`Error ${careers.message}`);
   } else {
     const countCareers = document.getElementById("spanTitle");
     countCareers.textContent = careers.data.length;
