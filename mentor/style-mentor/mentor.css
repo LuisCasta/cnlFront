@@ -272,7 +272,8 @@ table {
     gap: 10px;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: #999 #f0f0f0
+    scrollbar-color: #999 #f0f0f0;
+    padding: 0;
 }
 
 .avisos::-webkit-scrollbar-thumb {
@@ -359,12 +360,6 @@ table {
 }
 
 
-.card-header-2 {
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
-    padding: 26px;
-}
-
 .tabs-reticula {
     display: flex;
     justify-content: right;
@@ -407,5 +402,10 @@ table {
 
     .fecha p {
         font-size: 12px;
+    }
+
+    .notification {
+        flex-direction: column;
+        text-align: center;
     }
 }

@@ -137,6 +137,7 @@ main {
     padding: 9px 11px;
     right: 20px;
     opacity: 0;
+    z-index: 100;
 }
 
 @media (max-width:768px) {
