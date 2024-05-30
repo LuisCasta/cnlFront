@@ -107,7 +107,7 @@ const derecho = {
       name: "METODOLOGÍA DE LA INVESTIGACIÓN",
       clave: "LDNE302",
       obligatorio: 1,
-      campo1:" CE0203",
+      campo1: " CE0203",
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
@@ -317,7 +317,7 @@ const derecho = {
       campo4: "H.I.",
     },
   ],
-  septimo: [
+  séptimo: [
     {
       name: "FILOSOFÍA JURÍDICA",
       clave: "LDNE701",
@@ -487,28 +487,34 @@ const derecho = {
   ],
 };
 
-Object.keys(derecho).forEach(semestre => {
-  const contenedor = document.getElementById('contenedor');
+Object.keys(derecho).forEach((semestre) => {
+  const contenedor = document.getElementById("contenedor");
   // Creamos un contenedor para el semestre
-  const semestreDiv = document.createElement('div');
+  const semestreDiv = document.createElement("div");
   //Materias
-  const divMateria = document.createElement('div');
-  divMateria.className = 'materias';
- // periodos
-  const divPeriodos = document.createElement('div');
-  divPeriodos.className = 'periodo';
+  const divMateria = document.createElement("div");
+  divMateria.className = "materias";
+  // periodos
+  const divPeriodos = document.createElement("div");
+  divPeriodos.className = "periodo";
 
-  semestreDiv.className = 'container-print-reticula';
+  semestreDiv.className = "container-print-reticula";
 
-  divPeriodos.innerHTML = `<h4>${semestre.charAt(0).toUpperCase() + semestre.slice(1)} Cuatrimestre</h>`;
-  contenedor.appendChild(semestreDiv).appendChild(divMateria).appendChild(divPeriodos);
+  divPeriodos.innerHTML = `<h4>${
+    semestre.charAt(0).toUpperCase() + semestre.slice(1)
+  } Cuatrimestre</h>`;
+  contenedor
+    .appendChild(semestreDiv)
+    .appendChild(divMateria)
+    .appendChild(divPeriodos);
 
   // Recorremos los cursos de cada semestre
-  derecho[semestre].forEach(curso => {
+  derecho[semestre].forEach((curso) => {
     // Creamos un contenedor para el curso
     const { name, clave, obligatorio, campo1, campo2, campo3, campo4 } = curso;
-    const cursoDiv = document.createElement('div');
-    cursoDiv.className = 'content-reticula';
+    console.log(name);
+    const cursoDiv = document.createElement("div");
+    cursoDiv.className = "content-reticula";
     cursoDiv.innerHTML = `
       <div class="claves">
         <div class="clave"><p>${clave}</p></div>
