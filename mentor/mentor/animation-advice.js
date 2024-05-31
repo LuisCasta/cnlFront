@@ -19,6 +19,8 @@ function changeAssigment() {
   cardtitle.style.display = "none";
   asignaturasContainer.style.display = "none";
   reticula.style.display = "block";
+  asignBtn.classList.remove("active");
+  reticulaBtn.classList.add("active");
 }
 
 function backAssigment() {
@@ -28,4 +30,6 @@ function backAssigment() {
   cardtitle.style.display = "flex";
   finder.style.display = "flex";
   cursos.style.display = "flex";
+  asignBtn.classList.add("active");
+  reticulaBtn.classList.remove("active");
 }
