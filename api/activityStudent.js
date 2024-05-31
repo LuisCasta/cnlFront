@@ -163,10 +163,10 @@ const chekActivityStudentById = async (data) => {
 
 const loadListActivityStudentCheck = async (idActivity) => {
   if (
-    actStudId == "" ||
-    actStudId == null ||
-    actStudId == undefined ||
-    actStudId == " "
+    idActivity == "" ||
+    idActivity == null ||
+    idActivity == undefined ||
+    idActivity == " "
   )
     return {
       code: 400,

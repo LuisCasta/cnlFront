@@ -5,7 +5,7 @@ function obtainId(id) {
 }
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const idActivity = urlParams.get("actStudId");
+const idActivity = urlParams.get("idActivity");
 // const actStudId = urlParams.get("actStudId");
 const idMentor = urlParams.get("idMentor");
 const idCourse = urlParams.get("idCurso");
@@ -77,8 +77,8 @@ async function actualizarAct(id) {
     const type = btn.getAttribute("data-type");
 
     const activityId = id;
-    console.log(activityId);
-    console.log(link);
+    // console.log(activityId);
+    // console.log(link);
     const updateData = await updateActivity({
       name,
       description,
@@ -92,7 +92,7 @@ async function actualizarAct(id) {
       link,
       activityId,
     });
-    console.log(updateData);
+    // console.log(updateData);
     if (updateData.code != 200) {
       alert(`Error al actualizar la actividad llamada: ${name}`);
     } else {
