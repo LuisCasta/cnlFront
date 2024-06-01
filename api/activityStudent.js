@@ -100,7 +100,7 @@ const getActivityStudentById = async (idActivity) => {
       message: `Error, el campo id: Actividad Estudiante es inválido`,
     };
 
-  const activity = await getApi(`activityStudent/about/${idActivity}`);
+  const activity = await getApi(`activityStudent/aboutActivity/${idActivity}`);
 
   if (activity.status != 200)
     return {

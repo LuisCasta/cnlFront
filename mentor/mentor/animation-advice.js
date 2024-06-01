@@ -18,6 +18,7 @@ function changeAssigment() {
   finder.style.display = "none";
   cardtitle.style.display = "none";
   asignaturasContainer.style.display = "none";
+  advices.style.display = "none";
   reticula.style.display = "block";
   asignBtn.classList.remove("active");
   reticulaBtn.classList.add("active");
