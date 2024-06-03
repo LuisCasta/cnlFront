@@ -56,7 +56,7 @@
     background-image: linear-gradient(to right, #fff, #c4d2e7);
 }
 
-.content-reticula2{
+.content-reticula2 {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -67,10 +67,12 @@
     justify-content: space-between;
     background-image: linear-gradient(to right, #afa4f687, #88a7d0);
 }
-.content-reticula2:hover{
+
+.content-reticula2:hover {
     box-shadow: rgba(75, 75, 75, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     cursor: pointer;
 }
+
 .content-reticula:hover {
     box-shadow: rgba(75, 75, 75, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     cursor: pointer;
@@ -118,6 +120,7 @@
 .reticula-button {
     border-radius: 50px;
 }
+
 
 .card-header-2 {
     width: 90%;

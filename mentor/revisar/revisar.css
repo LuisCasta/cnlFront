@@ -150,22 +150,18 @@
     color: var(--primary-color);
 }
 
-
 .content-stud {
     display: flex;
     background-color: #fff;
     flex-direction: column;
     gap: 10px;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    gap: 15px;
     box-shadow: var(--box-shadow);
     padding: 20px;
     border-radius: 10px;
     justify-content: center;
     text-align: left;
     align-items: center;
+    flex-direction: column;
     margin-top: 10px;
 }
 

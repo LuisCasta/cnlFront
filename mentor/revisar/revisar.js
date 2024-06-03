@@ -134,8 +134,16 @@ async function loadListCheck() {
     console.log(`Error ${revisarActStuList.message}`);
   } else {
     revisarActStuList.data.forEach((student) => {
-      const { estatus, name, secondName, idActStudent, score, firstName, link, commentStudent } =
-        student;
+      const {
+        estatus,
+        name,
+        secondName,
+        idActStudent,
+        score,
+        firstName,
+        link,
+        commentStudent,
+      } = student;
       // console.log(student);
       listActivStu += `
     <tr class="td-check">
@@ -203,9 +211,9 @@ revisarActividadBtn.addEventListener("click", async (e) => {
  `;
     succesPost.classList.add("aviso-click");
 
-    setTimeout(()=>{
+    setTimeout(() => {
       succesPost.innerHTML = "";
       succesPost.classList.remove("aviso-click");
-    }, 3000)
+    }, 3000);
   }
 });

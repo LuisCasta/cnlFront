@@ -32,6 +32,11 @@ function cargarSideNav() {
           <i class='bx bx-bell'></i> </a>
           <p class="tooltip">Avisos</p>
         </li>
+        <li>
+        <a href="../evaluacion/evaluacion.html">
+        <i class='bx bx-star'></i></a>
+        <p class="tooltip">Evaluación</p>
+      </li>
         </ul>
       </div>
       <!-- PERFIL -->
