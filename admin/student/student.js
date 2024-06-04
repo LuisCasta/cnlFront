@@ -130,8 +130,9 @@ function obtainId(id) {
 const selectCareer = obtainId("carrera");
 
 // Cargar las carreras
-let option = "";
+
 async function loadCareers() {
+  let option = "";
   option += `
   <option>Selecciona una Carrera</option>
       `;
@@ -180,24 +181,17 @@ async function changeCareer() {
 }
 
 async function changePeriod() {
-  console.log("entra");
   let groupsHtml = "";
-  groupsHtml += `
-      <option>Selecciona un Grupo</option>
-          `;
+  groupsHtml += `<option>Selecciona un Grupo</option>`;
   const selectorGroups = obtainId("groups");
-
   const selectorPeriod = obtainId("period").value;
-  console.log(selectorGroups, selectorPeriod);
   const groups = await getAllGroup(selectorPeriod);
   if (groups.code != 200) {
     alert(`Error ${groups.message}`);
   } else {
     groups.data.map((group) => {
       const { id, name } = group;
-      groupsHtml += `
-      <option value=${id}>${name}</option>
-          `;
+      groupsHtml += `<option value=${id}>${name}</option>`;
     });
 
     selectorGroups.innerHTML = groupsHtml;
@@ -207,11 +201,8 @@ async function changePeriod() {
 async function changeGroup() {
   console.log("entra");
   let cursosHtml = "";
-  cursosHtml += `
-  <option>Selecciona un Curso</option>
-      `;
+  cursosHtml += `<option>Selecciona un Curso</option>`;
   const selectorCursos = obtainId("cursos");
-
   const selectorGrupos = obtainId("groups").value;
   // console.log(selectorGroups, selectorPeriod);
   const cursos = await getAllCursos(selectorGrupos);
@@ -239,8 +230,8 @@ async function loadCheckBoxes() {
     }
   });
   const idCourse = obtainId("cursos").value;
-  console.log(idCourse);
-  console.log("IDs de alumnos seleccionados:", idStudents, "IdCurso", idCourse);
+  // console.log(idCourse);
+  // console.log("IDs de alumnos seleccionados:", idStudents, "IdCurso", idCourse);
   const data = await assigmentStudent(idCourse, idStudents);
   if (data.code == 200) {
     setTimeout(function () {

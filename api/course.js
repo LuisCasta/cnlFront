@@ -136,7 +136,7 @@ const getById = async (id) => {
 };
 
 const getCourseByMentor = async (idMentor) => {
-  const cursoMentor = await getApi(`course/AllMentor/${idMentor}:idMentor`);
+  const cursoMentor = await getApi(`course/AllMentor/${idMentor}`);
 
   if (cursoMentor.status != 200)
     return {

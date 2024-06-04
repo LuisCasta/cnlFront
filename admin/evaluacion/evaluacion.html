@@ -19,9 +19,9 @@
     ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
-    <title>Evalueciones</title>
+    <title>Evaluaciones</title>
   </head>
-  <body onload="loadCareers(), cargarSideNav()">
+  <body onload=" cargarSideNav(), loadMentors()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
@@ -38,6 +38,17 @@
         <div class="finder">
           <input type="search" placeholder="Buscar Carrera" />
         </div>
+        <div class="card-header-2">
+          <div class="form-select">
+            <p>Elige tutor</p>
+            <select onchange="loadCursosById()" id="selectIdMentor"></select>
+          </div>
+          <div class="form-select">
+            <p>Elige Asignatura</p>
+            <select id="selectIdCurso"></select>
+          </div>
+          <button class="search-rate">Ver calificaciones</button>
+        </div>
       </section>
       <div class="container-Table">
         <table>
@@ -48,13 +59,9 @@
                 <span id="spanTitle"></span>
               </div>
             </caption>
-            <tr>
-              <th>Licenciatura</th>
-              <th>Descripción</th>
-              <th>Configurar</th>
-            </tr>
+            <tr id="headers-rate"></tr>
           </thead>
-          <tbody id="carreras"></tbody>
+          <tbody id="table-rate-final"></tbody>
         </table>
       </div>
       <!-- ACEPTAR O DECLINAR BORRAR CARRERA -->
@@ -75,7 +82,8 @@
       </div>
     </section>
     <script src="../../api/post.js"></script>
-    <script src="../../api/career.js"></script>
+    <script src="../../api/course.js"></script>
+    <script src="../../api/rates.js"></script>
     <script src="evaluacion.js"></script>
     <script src="../js/sidenav.js"></script>
     <script src="../../api/getid.js"></script>

@@ -19,12 +19,9 @@ async function loadCursosById() {
       selectCourse.innerHTML = cursoMentorHtml;
     });
   }
-
- 
- 
   buttonSearch.addEventListener("click", async (e) => {
     let taBendRate = "";
-    const trHeaders = document.getElementById('headers-rate')
+    const trHeaders = document.getElementById("headers-rate");
     e.preventDefault(e);
     const courseSelect = selectCourse.value;
     // console.log(courseSelect);
@@ -34,15 +31,15 @@ async function loadCursosById() {
     } else {
       let countTA = [];
       let headersHtml = `<td>Nombre</td>`;
-      if (printCalif.data.headers.length > 0){
-        console.log('1');
-          printCalif.data.headers.forEach((header) => {
-          const {nameUnit, idUnit} = header;
+      if (printCalif.data.headers.length > 0) {
+        console.log("1");
+        printCalif.data.headers.forEach((header) => {
+          const { nameUnit, idUnit } = header;
           headersHtml += `
           <td data-cell="Nombre de Tarea Activa">${nameUnit}</td>
           `;
           countTA.push(idUnit);
-        })
+        });
       }
 
       headersHtml += `
@@ -50,55 +47,24 @@ async function loadCursosById() {
       <th>Calificación final</th>
       <th>Enviar Calificación</th>
       `;
-     console.log(headersHtml);
+      // console.log(headersHtml);
       trHeaders.innerHTML = headersHtml;
-      console.log(printCalif.data);
-     const data =  [
-        {
-            idStudent:8,
-            name: "Luis",
-            firstName: "Castañeda",
-            secondName: "Villalobos",
-            idCS: 21,
-            calif: 0,
-            fullname: "Castañeda Villalobos Luis",
-            califRecomend: 95,
-            listCalif: [
-                {
-                    id: 7,
-                    califRecomend: 90,
-                }
-            ]
-        },
-        {
-            idStudent: 9,
-            name: "alberto",
-            firstName: "sosa",
-            secondName: "ramirez",
-            idCS: 22,
-            calif: 0,
-            fullname: "sosa ramirez alberto",
-            califRecomend: 70,
-            listCalif: [
-                {
-                    id: 7,
-                    califRecomend: 60,
-                }
-            ]
-        }
-    ];
+      // console.log(printCalif.data);
       printCalif.data.data.forEach((rate) => {
-        const {idStudent,idCS,calif, fullname, califRecomend, listCalif} = rate;
+        const { idStudent, idCS, calif, fullname, califRecomend, listCalif } =
+          rate;
         taBendRate += `
             <tr>
                 <td data-cell="Nombre"><p>${fullname}</p></td>
             `;
-            console.log(countTA);
-          countTA.forEach((count)=>{
-            const aux = listCalif.filter((calif) => {return calif.id == count});
-            taBendRate += `<td data-cell="Nombre"><p>${aux[0].califRecomend}</p></td>`;
-            });
-            taBendRate += `
+        console.log(countTA);
+        countTA.forEach((count) => {
+          const aux = listCalif.filter((calif) => {
+            return calif.id == count;
+          });
+          taBendRate += `<td data-cell="Nombre"><p>${aux[0].califRecomend}</p></td>`;
+        });
+        taBendRate += `
             <td data-cell="Nombre"><p>${califRecomend}</p></td>
             <td data-cell="Nombre"><p id="califFinal_${idStudent}" contenteditable='true'>${calif}</p></td>
             <td data-cell="Nombre"><button onclick="btnGuardar(${idStudent},${idCS})">Enviar</button></td>
@@ -109,13 +75,15 @@ async function loadCursosById() {
   });
 }
 
-async function btnGuardar(idStudent,idCS){
+async function btnGuardar(idStudent, idCS) {
   if (confirm("¿Estás seguro de que deseas continuar?")) {
-    const score = document.getElementById(`califFinal_${idStudent}`).textContent;
+    const score = document.getElementById(
+      `califFinal_${idStudent}`
+    ).textContent;
     const updateRate = await saveRatebyStudentFinal({
       idStudent,
-      idCourse:idCS,
-      score
+      idCourse: idCS,
+      score,
     });
     console.log(updateRate);
     if (updateRate.code != 200) {

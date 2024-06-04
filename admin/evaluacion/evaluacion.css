@@ -1,0 +1,23 @@
+@import url("../styles/style-generals.css");
+@import url("../styles/sidenav.css");
+
+.card-header-2 {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.container-select {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .card-header-2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+}
