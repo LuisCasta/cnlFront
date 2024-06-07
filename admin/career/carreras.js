@@ -122,6 +122,7 @@ async function updateCareer(careerId) {
       <p>Operación Cancelada</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
+    outSucces();
   }
 }
 

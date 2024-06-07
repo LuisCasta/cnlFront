@@ -143,6 +143,10 @@ async function upSubject(subjectId) {
       succesPost.classList.add("aviso-click");
     }, 100);
   }
+  setTimeout(function () {
+    succesPost.innerHTML = "";
+    succesPost.classList.remove("aviso-click");
+  }, 5000);
 }
 
 async function delSubject(subjectId) {
@@ -172,6 +176,11 @@ async function delSubject(subjectId) {
       <p>Operación Cancelada</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
+
+    setTimeout(function () {
+      succesPost.innerHTML = "";
+      succesPost.classList.remove("aviso-click");
+    }, 5000);
   }
 
   location.reload();

@@ -133,12 +133,12 @@ async function updateUnit(unitId) {
     });
 
     if (updateData.code != 200) {
-      alert(`Error al actualizar la tarea Activa ${unitId} ${name} `);
+      alert(`Error al actualizar la tarea activa ${unitId} ${name}`);
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `
         <i class='bx bx-check-circle'></i>
-        <p>Tarea Activa actualizada con éxito</p>`;
+        <p>Tarea activa actualizada con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
       setTimeout(function () {
@@ -157,18 +157,18 @@ async function updateUnit(unitId) {
 }
 
 async function delUnit(unitId) {
-  if (confirm("¿Estás seguro de que deseas eliminar este Parcial?")) {
+  if (confirm("¿Estás seguro de que deseas eliminar la Tarea?")) {
     const deleteData = await deleteUnit({
       unitId,
     });
 
     if (deleteData.code != 200) {
-      alert(`Error al eliminar la carrera ${unitId}`);
+      alert(`Error al eliminar la tarea ${unitId}`);
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `
         <i class='bx bx-check-circle' ></i>
-        <p>Parcial eliminado con éxito</p>`;
+        <p>Tarea eliminada con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
       setTimeout(function () {

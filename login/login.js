@@ -38,6 +38,7 @@ login.addEventListener("click", async function loginCnl() {
         mail: mentorMail,
         pass: mentorPassword,
       };
+
       const mentor = await getLogin(data);
       // console.log(mentor);
       // console.log(mentor);
@@ -47,7 +48,22 @@ login.addEventListener("click", async function loginCnl() {
         correo.value = "";
         pw.value = "";
       } else {
-        const { id, name, firstName } = mentor.data;
+        const { id, name, firstName, mail, password } = mentor.data;
+        // console.log(mentor.data);
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ id, name, firstName, mail, password })
+        );
+        const storedUserData = localStorage.getItem("user");
+
+        if (storedUserData) {
+          const user = JSON.parse(storedUserData);
+          console.log(user); // Aquí tienes los datos del usuario
+          // Puedes usar `user` para lo que necesites en este módulo
+        } else {
+          // No hay datos del usuario en Local Storage
+          console.log("No user data found in Local Storage");
+        }
         location.href = `mentor/mentor/mentor.html?idMentor=${id}&name=${name}&secondName=${firstName}`;
       }
     } catch (error) {

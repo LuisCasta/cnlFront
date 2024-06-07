@@ -133,12 +133,12 @@ async function updateMaestro(mentorId) {
     });
 
     if (updateData.code != 200) {
-      alert(`Error al actualizar al alumno ${mentorId} ${name} `);
+      alert(`Error al actualizar al tutor ${name}`);
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `
         <i class='bx bx-check-circle'></i>
-        <p>Maestro actualizado con éxito</p>`;
+        <p>Tutor actualizado con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
       setTimeout(function () {
@@ -157,18 +157,18 @@ async function updateMaestro(mentorId) {
 }
 
 async function deleteMaestro(mentorId) {
-  if (confirm("¿Estás seguro de que deseas eliminar al alumno?")) {
+  if (confirm("¿Estás seguro de que deseas eliminar a este tutor?")) {
     const deleteData = await deleteMentor({
       mentorId,
     });
 
     if (deleteData.code != 200) {
-      alert(`Error al eliminar al alumno ${mentorId}`);
+      alert(`Error al eliminar al tutor ${mentorId}`);
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `
         <i class='bx bx-check-circle' ></i>
-        <p>Maestro eliminado con éxito</p>`;
+        <p>Tutor eliminado con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
       setTimeout(function () {

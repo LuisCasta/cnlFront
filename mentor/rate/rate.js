@@ -30,13 +30,13 @@ async function loadCursosById() {
       alert(`Error ${printCalif.message}`);
     } else {
       let countTA = [];
-      let headersHtml = `<td>Nombre</td>`;
+      let headersHtml = `<td>Nombre TA</td>`;
       if (printCalif.data.headers.length > 0) {
         console.log("1");
         printCalif.data.headers.forEach((header) => {
           const { nameUnit, idUnit } = header;
           headersHtml += `
-          <td data-cell="Nombre de Tarea Activa">${nameUnit}</td>
+          <td data-cell="TA">${nameUnit}</td>
           `;
           countTA.push(idUnit);
         });
@@ -55,19 +55,19 @@ async function loadCursosById() {
           rate;
         taBendRate += `
             <tr>
-                <td data-cell="Nombre"><p>${fullname}</p></td>
+                <td data-cell="Alumno"><p>${fullname}</p></td>
             `;
         console.log(countTA);
         countTA.forEach((count) => {
           const aux = listCalif.filter((calif) => {
             return calif.id == count;
           });
-          taBendRate += `<td data-cell="Nombre"><p>${aux[0].califRecomend}</p></td>`;
+          taBendRate += `<td data-cell="Tarea"><p>${aux[0].califRecomend}</p></td>`;
         });
         taBendRate += `
-            <td data-cell="Nombre"><p>${califRecomend}</p></td>
-            <td data-cell="Nombre"><p id="califFinal_${idStudent}" contenteditable='true'>${calif}</p></td>
-            <td data-cell="Nombre"><button onclick="btnGuardar(${idStudent},${idCS})">Enviar</button></td>
+            <td data-cell="Recomendada"><p>${califRecomend}</p></td>
+            <td data-cell="Final"><p id="califFinal_${idStudent}" contenteditable='true'>${calif}</p></td>
+            <td data-cell="Guardar"><button onclick="btnGuardar(${idStudent},${idCS})">Enviar</button></td>
             `;
         tabEnd.innerHTML = taBendRate;
       });

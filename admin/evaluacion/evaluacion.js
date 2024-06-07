@@ -23,9 +23,7 @@ async function loadMentors() {
 
 async function loadCursosById() {
   let cursoMentorHtml = "";
-  cursoMentorHtml += `
-  <option>Selecciona una asignatura</option>
-      `;
+  cursoMentorHtml += `<option>Selecciona una asignatura</option>`;
   const option = document.getElementById("selectIdCurso");
   // console.log(option);
   const idMentor = document.getElementById("selectIdMentor").value;

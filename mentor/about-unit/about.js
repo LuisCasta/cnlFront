@@ -14,46 +14,6 @@ const tableRate = obtainId("table-rate");
 // console.log(tableRate);
 const tableVideoCalls = obtainId("table-calls");
 const selectTypeActivity = obtainId("type-activity");
-// const hreMentor = document.getElementById("");
-
-// console.log(idUnit);
-
-// let lessonHtml = "";
-// async function loadAllLessonsByUnit() {
-//   const lessons = await getAllByUnit(idUnit);
-
-//   if (lessons.code != 200) {
-//     // console.log(`Error ${newLesson.message}`);
-//   } else {
-//     const countlessons = obtainId("spanTitle");
-//     countlessons.textContent = lessons.data.length;
-//     lessons.data.forEach((lesson) => {
-//       const { name, description, id } = lesson;
-//       hrefUnidad.href = `../unit/unit.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}`;
-//       lessonHtml += `
-//         <tr>
-//             <td data-cell="Nombre"><p>${name}</p></td>s
-//             <td data-cell="Descripción"><p>${description}</p></td>
-//             <td data-cell="Acciones">
-//             <div class="actions">
-//             <button data-id="${id}" data-tooltip="Editar" class="edit">
-//              <i class='bx bx-edit' ></i>
-//             </button>
-//             <button data-id="${id}" data-tooltip="Eliminar" class="edit">
-//               <i class='bx bx-trash'></i>
-//             </button>
-//               </div>
-//           </td>
-//         </tr>
-//         `;
-
-//       // selectLesson += `
-//       //       <option value="${id}">${name}</option>
-//       //  `;
-//     });
-//     tbody.innerHTML = lessonHtml;
-//   }
-// }
 
 // Mostrar en tabla las actividades
 
@@ -200,28 +160,6 @@ btnCreatCall.addEventListener("click", async (e) => {
   }, 4000);
 });
 
-//Listar los alumnos por Curso
-// let studentIdCourse = "";
-// async function loadStudentByIdCourse() {
-//   const studentsidCourse = await CourseStudGetByCourse(idCourse);
-//   if (studentsidCourse.code != 200) {
-//     // console.log(newStudentsIdCourse.message);
-//   } else {
-//     studentsidCourse.data.forEach((studentId) => {
-//       const { idStudent, name, firstName } = studentId;
-//       studentIdCourse += `
-//       <tr>
-//         <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
-//         <td data-cell="Acciones">
-//          <button><i class='bx bxs-user-check'></i></button>
-//         </td>
-//   </tr>
-//   `;
-//     });
-//     tableStudent.innerHTML = studentIdCourse;
-//   }
-// }
-
 //Calificaciones de alumnos por Curso
 let ratesStudentByCourse = "";
 async function guardarRate(idStudent) {
@@ -294,13 +232,13 @@ async function loadRateStudentByUnit() {
  * @descripction Eliminar Actividad
  */
 async function delActivity(activityId) {
-  if (confirm("¿Estás seguro de que deseas eliminar esta carrera?")) {
+  if (confirm("¿Estás seguro de que deseas eliminar esta Actividad?")) {
     const deleteData = await deleteActivity({
       activityId,
     });
 
     if (deleteData.code != 200) {
-      alert(`Error al eliminar la carrera ${activityId}`);
+      alert(`Error al eliminar la Actividad ${activityId}`);
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `

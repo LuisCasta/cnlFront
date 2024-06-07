@@ -118,15 +118,6 @@ async function actualizarAct(id) {
   }
 }
 
-// async function loadActivityStudentById() {
-//   const revisarActStu = await getActivityStudentById(idActivity);
-//   const commentStu = obtainId("coment-stu");
-//   const linkstu = obtainId("link-act");
-//   console.log(revisarActStu);
-//   commentStu.textContent = revisarActStu.data.commentStudent;
-//   linkstu.href = revisarActStu.data.link;
-// }
-
 let listActivStu = "";
 async function loadListCheck() {
   const revisarActStuList = await loadListActivityStudentCheck(idActivity);

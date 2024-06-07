@@ -2,11 +2,19 @@
 let cursoMentorHtml = "";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const idMentor = urlParams.get("idMentor");
+let user = localStorage.getItem("user");
+let idMentor = 0;
+if (user) {
+  user = JSON.parse(user);
+  idMentor = user.id;
+} else {
+  window.location.replace("../../index.html");
+}
+
+// urlParams.get("idMentor");
 const divCursos = obtainId("static-div");
 
 const closeModalRate = obtainId("close-modal-rate");
-
 async function loadCursosById() {
   const cursoMentor = await getCourseByMentor(idMentor);
   if (cursoMentor.code != 200) {
@@ -21,7 +29,7 @@ async function loadCursosById() {
       <div class="alumnos calificaciones content-static">
             <h5>${name}</h5>
             <p class="p-asign">${description}</p>
-            <a class="a-static" href="../tareas/activas.html?idCurso=${id}&idMentor=${idMentor}" 
+            <a class="a-static" href="../tareas/activas.html?idCurso=${id}" 
             data-id="${id}">
              entrar<i class='bx bx-customize'></i>
             </a>
