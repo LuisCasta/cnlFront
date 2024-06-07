@@ -3,11 +3,20 @@ function logOutSession() {
   window.location.replace("../../index.html");
 }
 function cargarSideNav() {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const name = urlParams.get("name");
-  const apellido = urlParams.get("secondName");
+  let user = localStorage.getItem("user");
+  let idMentor = 0;
+  let name = "";
+  let firstName = "";
 
+  console.log(name, firstName);
+  if (user) {
+    user = JSON.parse(user);
+    idMentor = user.id;
+    name = user.name;
+    firstName = user.firstName;
+  } else {
+    window.location.replace("../../index.html");
+  }
   const sidenav = document.getElementById("sidenavInsert");
   const sideInnerHtml = ` <div class="sidenav-content">
       <!-- LOGO NUEVA LAGUNA -->
@@ -39,7 +48,7 @@ function cargarSideNav() {
       <a style="color:#667085;" onclick=logOutSession()><i class="bx bx-log-out"></i></a>
         <i style="color:#667085;cursor:pointer;" class="bx bx-cog"></i>
         <img src="https://plus.unsplash.com/premium_photo-1661686687486-2329be3e383f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80" alt="" />
-        <h5 id="userName">${name} ${apellido}</h5>
+        <h5 id="userName">${name} ${firstName}</h5>
       </div>
       </div>`;
 

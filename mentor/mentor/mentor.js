@@ -1,7 +1,6 @@
 "use strict";
 let cursoMentorHtml = "";
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
+
 let user = localStorage.getItem("user");
 let idMentor = 0;
 if (user) {
