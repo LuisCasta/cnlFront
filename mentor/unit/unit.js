@@ -29,12 +29,12 @@ async function loadUnit() {
      <td data-cell="Porcentaje"><p id="percentage-${id}" contenteditable="true" spellcheck="false">${percentage}</p></td>
    
      <td data-cell="Descripción">
-      <button data-description='${description}' 
-      onclick="abrirDescripcion(${id})" id="description_${id}">Ver</button>
+      <button class="btn-show" data-tooltip="Ver" data-description='${description}' 
+      onclick="abrirDescripcion(${id})" id="description_${id}"><i class='bx bxs-show bx-sm'></i></button>
      </td>  
      <td data-cell="Gestionar parcial">
           <button data-tooltip='Gestionar' class="edit">
-          <a href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}&idMentor=${idMentor}">
+          <a href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}">
               <i class='bx bx-cog'></i>
             </a>
           </button>
@@ -144,15 +144,8 @@ async function updateUnit(unitId) {
       setTimeout(function () {
         succesPost.innerHTML = "";
         succesPost.classList.remove("aviso-click");
-      }, 7000);
+      }, 4000);
     }
-  } else {
-    setTimeout(function () {
-      succesPost.innerHTML = `
-      <i class='bx bx-x' ></i>
-      <p>Operación Cancelada</p>`;
-      succesPost.classList.add("aviso-click");
-    }, 100);
   }
 }
 

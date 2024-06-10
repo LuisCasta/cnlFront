@@ -125,7 +125,7 @@ async function loadNotices() {
   noticias.data.data.data.forEach((advice) => {
     const { notice, createdAt } = advice;
     const newDate = createdAt.slice(0, -14).replaceAll("-", "/");
-    noticesHtml = `
+    noticesHtml += `
     <div class="notification">
     <div class="name-notify">
       <h6>Aviso</h6>

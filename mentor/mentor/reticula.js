@@ -8,6 +8,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INFORMÁTICA",
@@ -17,6 +19,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "TEORÍA DEL DERECHO Y SUS FUNDAMENTOS",
@@ -26,6 +30,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CIVIL. PERSONAS Y FAMILIAS",
@@ -35,6 +41,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CIVIL. SUCESIONES",
@@ -44,6 +52,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   segundo: [
@@ -55,6 +65,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN APLICADA EN DERECHO",
@@ -64,6 +76,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "HISTORIA DEL DERECHO MEXICANO",
@@ -73,6 +87,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CIVIL. OBLIGACIONES Y CONTRATOS",
@@ -82,6 +98,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "RESPONSABILIDAD CIVIL",
@@ -91,6 +109,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   tercer: [
@@ -102,6 +122,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "METODOLOGÍA DE LA INVESTIGACIÓN",
@@ -111,6 +133,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO ROMANO",
@@ -120,6 +144,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL CIVIL",
@@ -129,6 +155,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "NEGOCIACIÓN Y MANEJO DEL CONFLICTO",
@@ -138,6 +166,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "PRÁCTICA FORENSE DEL DERECHO CIVIL Y FAMILIAR",
@@ -147,6 +177,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   cuarto: [
@@ -158,6 +190,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "MECANISMOS ALTERNOS DE SOLUCIÓN DE CONTROVERSIAS",
@@ -167,6 +201,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "TEORÍA GENERAL DEL PROCESO",
@@ -176,6 +212,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PENAL. TEORÍA GENERAL",
@@ -185,6 +223,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PENAL. DELITOS Y PENAS",
@@ -194,6 +234,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "CRIMINOLOGÍA",
@@ -203,6 +245,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   quinto: [
@@ -214,6 +258,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CONSTITUCIONAL",
@@ -223,6 +269,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL PENAL",
@@ -232,6 +280,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO LABORAL",
@@ -241,6 +291,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO SINDICAL",
@@ -250,6 +302,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "PRÁCTICA FORENSE DEL SISTEMA PENAL ACUSATORIO",
@@ -259,6 +313,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   sexto: [
@@ -270,6 +326,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO ADMINISTRATIVO SANCIONADOR",
@@ -279,6 +337,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO MERCANTIL",
@@ -288,6 +348,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL LABORAL",
@@ -297,6 +359,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS I",
@@ -306,6 +370,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PENITENCIARIO",
@@ -315,6 +381,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   séptimo: [
@@ -326,6 +394,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "MÉTODOS Y TÉCNICAS JURÍDICAS",
@@ -335,6 +405,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO FISCAL",
@@ -344,6 +416,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL CONSTITUCIONAL",
@@ -353,6 +427,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS II",
@@ -362,6 +438,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO FINANCIERO",
@@ -371,6 +449,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   octavo: [
@@ -382,6 +462,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "METODOLOGÍA DE LA INVESTIGACIÓN JURÍDICA",
@@ -391,6 +473,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO INTERNACIONAL PÚBLICO",
@@ -400,6 +484,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO DE AMPARO",
@@ -409,6 +495,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS III",
@@ -418,6 +506,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO NOTARIAL Y REGISTRAL",
@@ -427,6 +517,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   noveno: [
@@ -438,6 +530,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "SEMINARIO DE TITULACIÓN",
@@ -447,6 +541,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO INTERNACIONAL PRIVADO",
@@ -456,6 +552,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO AMBIENTAL",
@@ -465,6 +563,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS IV",
@@ -474,6 +574,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "PROPIEDAD INTELECTUAL",
@@ -483,6 +585,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
 };
@@ -496,6 +600,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INFORMÁTICA",
@@ -505,6 +611,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "TEORÍA DEL DERECHO Y SUS FUNDAMENTOS",
@@ -514,6 +622,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CIVIL. PERSONAS Y FAMILIAS",
@@ -523,6 +633,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CIVIL. SUCESIONES",
@@ -532,6 +644,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   segundo: [
@@ -543,6 +657,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN APLICADA EN DERECHO",
@@ -552,6 +668,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "HISTORIA DEL DERECHO MEXICANO",
@@ -561,6 +679,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CIVIL. OBLIGACIONES Y CONTRATOS",
@@ -570,6 +690,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "RESPONSABILIDAD CIVIL",
@@ -579,6 +701,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   tercer: [
@@ -590,6 +714,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "METODOLOGÍA DE LA INVESTIGACIÓN",
@@ -599,6 +725,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO ROMANO",
@@ -608,6 +736,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL CIVIL",
@@ -617,6 +747,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "NEGOCIACIÓN Y MANEJO DEL CONFLICTO",
@@ -626,6 +758,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "PRÁCTICA FORENSE DEL DERECHO CIVIL Y FAMILIAR",
@@ -635,6 +769,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   cuarto: [
@@ -646,6 +782,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "MECANISMOS ALTERNOS DE SOLUCIÓN DE CONTROVERSIAS",
@@ -655,6 +793,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "TEORÍA GENERAL DEL PROCESO",
@@ -664,6 +804,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PENAL. TEORÍA GENERAL",
@@ -673,6 +815,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PENAL. DELITOS Y PENAS",
@@ -682,6 +826,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "CRIMINOLOGÍA",
@@ -691,6 +837,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   quinto: [
@@ -702,6 +850,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CONSTITUCIONAL",
@@ -711,6 +861,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL PENAL",
@@ -720,6 +872,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO LABORAL",
@@ -729,6 +883,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO SINDICAL",
@@ -738,6 +894,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "PRÁCTICA FORENSE DEL SISTEMA PENAL ACUSATORIO",
@@ -747,6 +905,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   sexto: [
@@ -758,6 +918,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO ADMINISTRATIVO SANCIONADOR",
@@ -767,6 +929,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO MERCANTIL",
@@ -776,6 +940,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL LABORAL",
@@ -785,6 +951,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS I",
@@ -794,6 +962,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PENITENCIARIO",
@@ -803,6 +973,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   séptimo: [
@@ -814,6 +986,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "MÉTODOS Y TÉCNICAS JURÍDICAS",
@@ -823,6 +997,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO FISCAL",
@@ -832,6 +1008,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL CONSTITUCIONAL",
@@ -841,6 +1019,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS II",
@@ -850,6 +1030,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO FINANCIERO",
@@ -859,6 +1041,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   octavo: [
@@ -870,6 +1054,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "METODOLOGÍA DE LA INVESTIGACIÓN JURÍDICA",
@@ -879,6 +1065,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO INTERNACIONAL PÚBLICO",
@@ -888,6 +1076,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO DE AMPARO",
@@ -897,6 +1087,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS III",
@@ -906,6 +1098,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO NOTARIAL Y REGISTRAL",
@@ -915,6 +1109,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   noveno: [
@@ -926,6 +1122,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "SEMINARIO DE TITULACIÓN",
@@ -935,6 +1133,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO INTERNACIONAL PRIVADO",
@@ -944,6 +1144,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO AMBIENTAL",
@@ -953,6 +1155,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS IV",
@@ -962,6 +1166,8 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "PROPIEDAD INTELECTUAL",
@@ -971,19 +1177,23 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
 };
 const informatica = {
   primero: [
     {
-      name: "INTRODUCCIÓN AL INFORMÁTICA",
+      name: "INTRODUCCIÓN A LA INFORMÁTICA",
       clave: "LDNE101",
       obligatorio: 1,
       campo1: 0,
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INFORMÁTICA",
@@ -993,6 +1203,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "TEORÍA DEL DERECHO Y SUS FUNDAMENTOS",
@@ -1002,6 +1214,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CIVIL. PERSONAS Y FAMILIAS",
@@ -1011,6 +1225,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CIVIL. SUCESIONES",
@@ -1020,6 +1236,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   segundo: [
@@ -1031,6 +1249,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "TECNOLOGÍAS DE LA INFORMACIÓN Y COMUNICACIÓN APLICADA EN DERECHO",
@@ -1040,6 +1260,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "HISTORIA DEL DERECHO MEXICANO",
@@ -1049,6 +1271,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CIVIL. OBLIGACIONES Y CONTRATOS",
@@ -1058,6 +1282,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "RESPONSABILIDAD CIVIL",
@@ -1067,6 +1293,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   tercer: [
@@ -1078,6 +1306,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "METODOLOGÍA DE LA INVESTIGACIÓN",
@@ -1087,6 +1317,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO ROMANO",
@@ -1096,6 +1328,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL CIVIL",
@@ -1105,6 +1339,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "NEGOCIACIÓN Y MANEJO DEL CONFLICTO",
@@ -1114,6 +1350,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "PRÁCTICA FORENSE DEL DERECHO CIVIL Y FAMILIAR",
@@ -1123,6 +1361,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   cuarto: [
@@ -1134,6 +1374,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "MECANISMOS ALTERNOS DE SOLUCIÓN DE CONTROVERSIAS",
@@ -1143,6 +1385,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "TEORÍA GENERAL DEL PROCESO",
@@ -1152,6 +1396,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PENAL. TEORÍA GENERAL",
@@ -1161,6 +1407,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PENAL. DELITOS Y PENAS",
@@ -1170,6 +1418,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "CRIMINOLOGÍA",
@@ -1179,6 +1429,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   quinto: [
@@ -1190,6 +1442,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO CONSTITUCIONAL",
@@ -1199,6 +1453,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL PENAL",
@@ -1208,6 +1464,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO LABORAL",
@@ -1217,6 +1475,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO SINDICAL",
@@ -1226,6 +1486,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "PRÁCTICA FORENSE DEL SISTEMA PENAL ACUSATORIO",
@@ -1235,6 +1497,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   sexto: [
@@ -1246,6 +1510,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO ADMINISTRATIVO SANCIONADOR",
@@ -1255,6 +1521,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO MERCANTIL",
@@ -1264,6 +1532,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL LABORAL",
@@ -1273,6 +1543,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS I",
@@ -1282,6 +1554,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PENITENCIARIO",
@@ -1291,6 +1565,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   séptimo: [
@@ -1302,6 +1578,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "MÉTODOS Y TÉCNICAS JURÍDICAS",
@@ -1311,6 +1589,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO FISCAL",
@@ -1320,6 +1600,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO PROCESAL CONSTITUCIONAL",
@@ -1329,6 +1611,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS II",
@@ -1338,6 +1622,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO FINANCIERO",
@@ -1347,6 +1633,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   octavo: [
@@ -1358,6 +1646,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "METODOLOGÍA DE LA INVESTIGACIÓN JURÍDICA",
@@ -1367,6 +1657,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO INTERNACIONAL PÚBLICO",
@@ -1376,6 +1668,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO DE AMPARO",
@@ -1385,6 +1679,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS III",
@@ -1394,6 +1690,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO NOTARIAL Y REGISTRAL",
@@ -1403,6 +1701,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
   noveno: [
@@ -1414,6 +1714,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "SEMINARIO DE TITULACIÓN",
@@ -1423,6 +1725,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO INTERNACIONAL PRIVADO",
@@ -1432,6 +1736,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "DERECHO AMBIENTAL",
@@ -1441,6 +1747,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "INGLÉS IV",
@@ -1450,6 +1758,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
       name: "PROPIEDAD INTELECTUAL",
@@ -1459,6 +1769,8 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
+      document:
+        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
 };
@@ -1469,13 +1781,13 @@ const jsonMapping = {
   informatica,
 };
 
-const changeReticula = function (){
-   const selectReticula = document.getElementById('select-reticula').value;
-   const selectedJson = jsonMapping[selectReticula];
-   const contenedor = document.getElementById('contenedor')
-   contenedor.innerHTML = '';
+const changeReticula = function () {
+  const selectReticula = document.getElementById("select-reticula").value;
+  const selectedJson = jsonMapping[selectReticula];
+  const contenedor = document.getElementById("contenedor");
+  contenedor.innerHTML = "";
 
-   Object.keys(selectedJson).forEach((semestre) => { 
+  Object.keys(selectedJson).forEach((semestre) => {
     const contenedor = document.getElementById("contenedor");
     // Creamos un contenedor para el semestre
     const semestreDiv = document.createElement("div");
@@ -1485,9 +1797,9 @@ const changeReticula = function (){
     // periodos
     const divPeriodos = document.createElement("div");
     divPeriodos.className = "periodo";
-  
+
     semestreDiv.className = "container-print-reticula";
-  
+
     divPeriodos.innerHTML = `<h4>${
       semestre.charAt(0).toUpperCase() + semestre.slice(1)
     } Cuatrimestre</h>`;
@@ -1495,15 +1807,27 @@ const changeReticula = function (){
       .appendChild(semestreDiv)
       .appendChild(divMateria)
       .appendChild(divPeriodos);
-  
+
     // Recorremos los cursos de cada semestre
     selectedJson[semestre].forEach((curso) => {
       // Creamos un contenedor para el curso
-      const { name, clave, obligatorio, campo1, campo2, campo3, campo4 } = curso;
+      const {
+        name,
+        clave,
+        obligatorio,
+        campo1,
+        campo2,
+        campo3,
+        campo4,
+        document,
+      } = curso;
+      console.log(curso.document);
       const cursoDiv = document.createElement("div");
-      cursoDiv.className = ` ${curso.name.startsWith('D') || curso.name.startsWith('I')  ? 
-      'content-reticula' : 
-      'content-reticula2'}`;
+      cursoDiv.className = ` ${
+        curso.name.startsWith("D") || curso.name.startsWith("I")
+          ? "content-reticula"
+          : "content-reticula2"
+      }`;
       cursoDiv.innerHTML = `
         <div class="claves">
           <div class="clave"><p>${clave}</p></div>
@@ -1519,11 +1843,30 @@ const changeReticula = function (){
           <div class="clave"><p>${campo2}</p></div>
           <div class="clave"><p>${campo3}</p></div>
           <div class="clave"><p>${campo4}</p></div>
+          <div class="clave"  onclick="abrirpDF(${document})"><p>Ver</p></div>
         </div>
       `;
       semestreDiv.appendChild(cursoDiv);
     });
   });
-  
-}
+};
 
+function abrirPdf(url) {
+  function getDriveFileId(url) {
+    const regex = /\/d\/([a-zA-Z0-9_-]+)\//;
+    const match = document.match(regex);
+    return match ? match[1] : null;
+  }
+
+  function getPreviewLink(pdfUrl) {
+    const fileId = getDriveFileId(pdfUrl);
+    if (fileId) {
+      return `https://drive.google.com/file/d/${fileId}/preview`;
+    } else {
+      return null;
+    }
+  }
+  const directPdfLink = getPreviewLink(pdfUrl);
+  const pdfIframe = obtainId("pdf-iframe");
+  pdfIframe.src = directPdfLink;
+}

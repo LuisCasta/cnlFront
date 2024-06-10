@@ -30,13 +30,13 @@ function cargarSideNav() {
       <div class="navegacion-vista">
         <ul class="ul-navigate">
           <li>
-            <a href="../mentor/mentor.html?idMentor=${idMentor}">
+            <a href="../mentor/mentor.html">
               <i class='bx bx-book-open'></i>
             </a>
             <p class="tooltip">Cursos</p>
           </li>
           <li>
-          <a href="../rate/rate.html?idMentor=${idMentor}">
+          <a href="../rate/rate.html">
             <i class="bx bxs-star-half"></i>
           </a>
           <p class="tooltip">Calificaciones</p>

@@ -2,7 +2,6 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idUnit = urlParams.get("idUnit");
-const idMentor = urlParams.get("idMentor");
 const idCourse = urlParams.get("idCurso");
 const tbody = obtainId("table-lesson");
 const succesPost = obtainId("succes-post");
@@ -42,7 +41,7 @@ async function loadActivityByUnit() {
             <td data-cell="Finaliza"><p class="p-date"><i class='bx bx-calendar'></i>${endDate}</p></td>
             <td data-cell="Acciones">
             <div class='actions'>
-            <a data-tooltip="Revisar" class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}&idActivity=${id}">
+            <a data-tooltip="Revisar" class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idActivity=${id}">
             <i class='bx bx-check-double'></i>
             </a>
                 <button onclick="delActivity(${id})" class='edit'>

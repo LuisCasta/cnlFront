@@ -64,7 +64,7 @@ login.addEventListener("click", async function loginCnl() {
           // No hay datos del usuario en Local Storage
           console.log("No user data found in Local Storage");
         }
-        location.href = `mentor/mentor/mentor.html?idMentor=${id}&name=${name}&secondName=${firstName}`;
+        location.href = `mentor/mentor/mentor.html`;
       }
     } catch (error) {
       console.error("Error fetching mentor data:", error);

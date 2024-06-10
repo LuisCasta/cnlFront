@@ -1,10 +1,20 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const idMentor = urlParams.get("idMentor");
+
 const idUnit = urlParams.get("idUnit");
 const buttonSearch = document.querySelector(".search-rate");
 const selectCourse = document.getElementById("select-course");
 const tabEnd = document.getElementById("table-rate-final");
+let user = localStorage.getItem("user");
+let idMentor = 0;
+if (user) {
+  user = JSON.parse(user);
+  idMentor = user.id;
+} else {
+  window.location.replace("../../index.html");
+}
+const succesPost = document.getElementById("succes-post");
+
 let cursoMentorHtml = "";
 async function loadCursosById() {
   const cursoMentor = await getCourseByMentor(idMentor);
@@ -98,14 +108,7 @@ async function btnGuardar(idStudent, idCS) {
       setTimeout(function () {
         succesPost.innerHTML = "";
         succesPost.classList.remove("aviso-click");
-      }, 7000);
+      }, 4000);
     }
-  } else {
-    setTimeout(function () {
-      succesPost.innerHTML = `
-      <i class='bx bx-x' ></i>
-      <p>Operación Cancelada</p>`;
-      succesPost.classList.add("aviso-click");
-    }, 100);
   }
 }

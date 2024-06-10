@@ -1,6 +1,5 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const idMentor = urlParams.get("idMentor");
 const idCourse = urlParams.get("idCurso");
 
 const activeLink = document.getElementById("a-activity");
@@ -8,9 +7,17 @@ function obtainId(id) {
   const getId = document.getElementById(id);
   return getId;
 }
+let user = localStorage.getItem("user");
+let idMentor = 0;
+if (user) {
+  user = JSON.parse(user);
+  idMentor = user.id;
+} else {
+  window.location.replace("../../index.html");
+}
 // console.log(activeLink);
 
-activeLink.href = `../unit/unit.html?idCurso=${idCourse}&idMentor=${idMentor}`;
+activeLink.href = `../unit/unit.html?idCurso=${idCourse}`;
 
 // FORMATEAR LINK DE VIDEO
 
