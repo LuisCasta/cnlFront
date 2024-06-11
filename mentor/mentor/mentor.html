@@ -96,7 +96,16 @@
           <button class="btn-pond" id="close-modal-rate">Cancelar</button>
         </div>
       </div>
-      <iframe id="pdf-iframe" src="" frameborder="0"></iframe>
+      <div class="container-iframe">
+        <a id="close" onclick="cerrarModal()"
+          ><i class="bx bx-x-circle bx-sm"></i>Cerrar pdf</a
+        >
+        <iframe
+          class="iframe-absolute"
+          id="pdf-iframe"
+          frameborder="0"
+        ></iframe>
+      </div>
     </main>
     <button class="responsive" id="btnResponsive">
       <i class="bx bx-menu bx-tada-hover"></i>

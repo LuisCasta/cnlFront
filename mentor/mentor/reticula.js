@@ -8,7 +8,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -19,8 +19,8 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
-        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
+      documento:
+        "https://drive.google.com/file/d/1Nbv14BwCikmtzFwstbuRRfps5AsYRNi7/view?usp=sharing",
     },
     {
       name: "TEORÍA DEL DERECHO Y SUS FUNDAMENTOS",
@@ -30,7 +30,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -41,7 +41,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -52,7 +52,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -65,7 +65,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -76,7 +76,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -87,7 +87,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -98,7 +98,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -109,7 +109,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -122,7 +122,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -133,7 +133,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -144,7 +144,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -155,7 +155,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -166,7 +166,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -177,7 +177,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -190,7 +190,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -201,7 +201,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -212,7 +212,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -223,7 +223,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -234,7 +234,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -245,7 +245,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -258,7 +258,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -269,7 +269,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -280,7 +280,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -291,7 +291,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -302,7 +302,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -313,7 +313,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -326,7 +326,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -337,7 +337,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -348,7 +348,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -359,7 +359,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -370,7 +370,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -381,7 +381,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -394,7 +394,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -405,7 +405,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -416,7 +416,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -427,7 +427,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -438,7 +438,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -449,7 +449,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -462,7 +462,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -473,7 +473,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -484,7 +484,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -495,7 +495,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -506,7 +506,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -517,7 +517,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -530,7 +530,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -541,7 +541,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -552,7 +552,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -563,7 +563,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -574,7 +574,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -585,7 +585,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -600,7 +600,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -611,7 +611,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -622,7 +622,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -633,7 +633,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -644,7 +644,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -657,7 +657,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -668,7 +668,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -679,7 +679,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -690,7 +690,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -701,7 +701,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -714,7 +714,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -725,7 +725,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -736,7 +736,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -747,7 +747,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -758,7 +758,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -769,7 +769,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -782,7 +782,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -793,7 +793,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -804,7 +804,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -815,7 +815,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -826,7 +826,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -837,7 +837,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -850,7 +850,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -861,7 +861,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -872,7 +872,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -883,7 +883,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -894,7 +894,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -905,7 +905,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -918,7 +918,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -929,7 +929,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -940,7 +940,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -951,7 +951,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -962,7 +962,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -973,7 +973,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -986,7 +986,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -997,7 +997,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1008,7 +1008,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1019,7 +1019,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1030,7 +1030,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1041,7 +1041,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1054,7 +1054,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1065,7 +1065,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1076,7 +1076,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1087,7 +1087,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1098,7 +1098,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1109,7 +1109,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1122,7 +1122,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1133,7 +1133,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1144,7 +1144,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1155,7 +1155,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1166,7 +1166,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1177,7 +1177,7 @@ const educacion = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1192,7 +1192,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1203,7 +1203,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1214,7 +1214,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1225,7 +1225,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1236,7 +1236,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1249,7 +1249,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1260,7 +1260,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1271,7 +1271,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1282,7 +1282,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1293,7 +1293,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1306,7 +1306,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1317,7 +1317,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1328,7 +1328,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1339,7 +1339,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1350,7 +1350,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1361,7 +1361,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1374,7 +1374,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1385,7 +1385,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1396,7 +1396,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1407,7 +1407,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1418,7 +1418,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1429,7 +1429,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1442,7 +1442,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1453,7 +1453,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1464,7 +1464,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1475,7 +1475,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1486,7 +1486,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1497,7 +1497,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1510,7 +1510,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1521,7 +1521,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1532,7 +1532,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1543,7 +1543,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1554,7 +1554,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1565,7 +1565,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1578,7 +1578,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1589,7 +1589,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1600,7 +1600,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1611,7 +1611,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1622,7 +1622,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1633,7 +1633,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1646,7 +1646,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1657,7 +1657,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1668,7 +1668,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1679,7 +1679,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1690,7 +1690,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1701,7 +1701,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1714,7 +1714,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1725,7 +1725,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1736,7 +1736,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1747,7 +1747,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1758,7 +1758,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
     {
@@ -1769,7 +1769,7 @@ const informatica = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      document:
+      documento:
         "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
     },
   ],
@@ -1788,7 +1788,6 @@ const changeReticula = function () {
   contenedor.innerHTML = "";
 
   Object.keys(selectedJson).forEach((semestre) => {
-    const contenedor = document.getElementById("contenedor");
     // Creamos un contenedor para el semestre
     const semestreDiv = document.createElement("div");
     //Materias
@@ -1802,7 +1801,7 @@ const changeReticula = function () {
 
     divPeriodos.innerHTML = `<h4>${
       semestre.charAt(0).toUpperCase() + semestre.slice(1)
-    } Cuatrimestre</h>`;
+    } Cuatrimestre</h4>`;
     contenedor
       .appendChild(semestreDiv)
       .appendChild(divMateria)
@@ -1819,11 +1818,10 @@ const changeReticula = function () {
         campo2,
         campo3,
         campo4,
-        document,
+        documento,
       } = curso;
-      console.log(curso.document);
-      const cursoDiv = document.createElement("div");
-      cursoDiv.className = ` ${
+      let cursoDiv = document.createElement("div");
+      cursoDiv.className = `${
         curso.name.startsWith("D") || curso.name.startsWith("I")
           ? "content-reticula"
           : "content-reticula2"
@@ -1843,7 +1841,7 @@ const changeReticula = function () {
           <div class="clave"><p>${campo2}</p></div>
           <div class="clave"><p>${campo3}</p></div>
           <div class="clave"><p>${campo4}</p></div>
-          <div class="clave"  onclick="abrirpDF(${document})"><p>Ver</p></div>
+          <div class="clave" onclick=abrirPdf("${documento}")><p data-tooltip="Ver pdf"><i class='bx bx-show'></i></p></div>
         </div>
       `;
       semestreDiv.appendChild(cursoDiv);
@@ -1851,22 +1849,36 @@ const changeReticula = function () {
   });
 };
 
-function abrirPdf(url) {
-  function getDriveFileId(url) {
-    const regex = /\/d\/([a-zA-Z0-9_-]+)\//;
-    const match = document.match(regex);
-    return match ? match[1] : null;
-  }
+const getDriveFileId = function (url) {
+  const regex = /\/d\/([a-zA-Z0-9_-]+)\//;
+  const match = url.match(regex);
+  return match ? match[1] : null;
+};
 
-  function getPreviewLink(pdfUrl) {
-    const fileId = getDriveFileId(pdfUrl);
-    if (fileId) {
-      return `https://drive.google.com/file/d/${fileId}/preview`;
-    } else {
-      return null;
-    }
+function getPreviewLink(pdfUrl) {
+  const fileId = getDriveFileId(pdfUrl);
+  if (fileId) {
+    return `https://drive.google.com/file/d/${fileId}/preview`;
+  } else {
+    return null;
   }
-  const directPdfLink = getPreviewLink(pdfUrl);
-  const pdfIframe = obtainId("pdf-iframe");
-  pdfIframe.src = directPdfLink;
+}
+
+const conIframe = document.querySelector(".container-iframe");
+conIframe.classList.add("hidden");
+function abrirPdf(url) {
+  const directPdfLink = getPreviewLink(url); // Pasar url a getPreviewLink
+  if (directPdfLink) {
+    const pdfIframe = document.getElementById("pdf-iframe");
+    conIframe.classList.remove("hidden");
+    conIframe.classList.add("show");
+    pdfIframe.src = directPdfLink;
+  } else {
+    console.log("No se pudo obtener el enlace de previsualización del PDF");
+  }
+}
+
+function cerrarModal() {
+  conIframe.classList.add("hidden");
+  conIframe.classList.remove("show");
 }

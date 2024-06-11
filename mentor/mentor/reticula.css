@@ -134,3 +134,80 @@
     gap: 35px;
     background-color: #fff;
 }
+
+main {
+    position: relative;
+}
+
+.container-iframe {
+    position: fixed;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    padding: 30px;
+    background-color: #fff;
+    transition: .3 ease-in-out translate;
+}
+
+.hidden {
+    z-index: -4;
+    opacity: 0;
+}
+
+.iframe-absolute {
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    width: 90%;
+    margin: auto;
+    height: 70%;
+}
+
+.show {
+    z-index: 11;
+    animation: showPdf .2s ease-in-out;
+    opacity: 1;
+}
+
+#close {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    gap: 5px;
+    transition: .2s ease-in-out;
+    padding: 8px;
+
+}
+
+#close:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+    box-shadow: var(--box-shadow);
+    padding: 8px;
+    border-radius: 3px;
+}
+
+@keyframes showPdf {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@media(max-width:576px) {
+
+    .iframe-absolute {
+        width: 100%;
+    }
+
+    .container-iframe {
+        width: 100%;
+    }
+}
