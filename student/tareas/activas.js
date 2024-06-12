@@ -1,6 +1,8 @@
+"use strict";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idMentor = urlParams.get("idMentor");
+console.log(idMentor);
 const idCourse = urlParams.get("idCourse");
 const idStudent = urlParams.get("idStudent");
 
@@ -11,7 +13,7 @@ function obtainId(id) {
 }
 // console.log(activeLink);
 
-activeLink.href = `../activas/tarea-activa.html?idCourse=${idCourse}&idStudent=${idStudent}`;
+activeLink.href = `../activas/tarea-activa.html?idCourse=${idCourse}`;
 
 // FORMATEAR LINK DE VIDEO
 

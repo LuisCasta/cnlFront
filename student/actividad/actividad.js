@@ -7,7 +7,7 @@ const idUnit = urlParams.get("idUnit");
 
 const tEvent = obtainId("t-Activ");
 const tVideo = obtainId("t-videocall");
-const tCalif = obtainId('t-cali')
+const tCalif = obtainId("t-cali");
 
 const idCourse = urlParams.get("idCourse");
 
@@ -18,9 +18,9 @@ async function LoadActivitiesAgendaStudent() {
     alert(`Error ${activitiesStudent.message}`);
   } else {
     console.log(activitiesStudent.data);
-    const numberRate = obtainId('spanTitle')
-    if(activitiesStudent.data.length > 0){
-      numberRate.textContent = "0"
+    const numberRate = obtainId("spanTitle");
+    if (activitiesStudent.data.length > 0) {
+      numberRate.textContent = "0";
     } else if (activitiesStudent.data.length < 0) {
       numberRate.textContent = activitiesStudent.data.length;
     }
@@ -40,7 +40,7 @@ async function LoadActivitiesAgendaStudent() {
          <p class="date-Activity"><i class='bx bx-calendar'></i>${newDateEnd}</p></td>
         <td data-cell="Acciones">
            <div class="actions">
-              <a class="presentar" href="../presentar/presentar-actividad.html?idStudent=${idStudent}&idCourse=${idCourse}&idActivity=${id}&idUnit=${idUnit}">Presentar</a>
+              <a class="presentar" href="../presentar/presentar-actividad.html?&idCourse=${idCourse}&idActivity=${id}&idUnit=${idUnit}">Presentar<i class='bx bxs-edit' ></i></a>
             </div>
          </td>
      </tr>
@@ -59,13 +59,13 @@ async function videoCallByCourse() {
   if (videoCalls.code != 200) {
     alert(`Error ${videoCalls.message}`);
   } else {
-    const numberRate = obtainId('spanTitle-vc')
-    if(videoCalls.data.length >= 0){
-      numberRate.innerHTML = "<i class='bx bx-video-off' ></i>"
+    const numberRate = obtainId("spanTitle-vc");
+    if (videoCalls.data.length >= 0) {
+      numberRate.innerHTML = "<i class='bx bx-video-off' ></i>";
     } else if (videoCalls.data.length < 0) {
       numberRate.textContent = videoCalls.data.length;
     }
-   
+
     videoCalls.data.forEach((calls) => {
       const { name, link, description } = calls;
       tableVcHtml += `
@@ -90,15 +90,14 @@ async function videoCallByCourse() {
   }
 }
 
-
 async function RateByCourseStudent() {
   let tableRateHtml = "";
-  const rates = await obtainRateByIdStudent(idStudent,idCourse);
+  const rates = await obtainRateByIdStudent(idStudent, idCourse);
   if (rates.code != 200) {
     alert(`Error ${rates.message}`);
   } else {
     // console.log(rates.data);
-    const numberRate = obtainId('spanTitle-rate')
+    const numberRate = obtainId("spanTitle-rate");
     numberRate.textContent = rates.data.length;
     rates.data.forEach((calls) => {
       const { name, percentage, score } = calls;

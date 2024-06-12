@@ -1,8 +1,16 @@
 "use strict";
+let user = localStorage.getItem("user");
+let idStudent = 0;
+if (user) {
+  user = JSON.parse(user);
+  idStudent = user.id;
+} else {
+  window.location.replace("../../index.html");
+}
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idCourse = urlParams.get("idCourse");
-const idStudent = urlParams.get("idStudent");
 const contCursos = document.getElementById("container-cursos");
 let courseStudentHtml = "";
 async function loadCursosByStudent() {
@@ -12,7 +20,7 @@ async function loadCursosByStudent() {
     alert(`Error ${cursosByStudent.message}`);
   } else {
     cursosByStudent.data.forEach((cursoByStudent) => {
-      const { name, description, idCourse, score } = cursoByStudent;
+      const { name, description, idCourse, score, idMentor } = cursoByStudent;
       courseStudentHtml += `
       <div class="card-cursos">
       <div class="text-card">
@@ -22,7 +30,7 @@ async function loadCursosByStudent() {
         <span class=${
           score == null || 0 ? "none-score" : "display-score"
         }>${score}</span>
-        <a  href="../tareas/activas.html?idCourse=${idCourse}&idStudent=${idStudent}">Ver + </a>
+        <a  href="../tareas/activas.html?idCourse=${idCourse}&idMentor=${idMentor}">Ver +</a>
       </div>
     </div>
       `;
@@ -45,7 +53,7 @@ async function loadNotices() {
   noticias.data.data.data.forEach((advice) => {
     const { notice, createdAt } = advice;
     const newDate = createdAt.slice(0, -14).replaceAll("-", "/");
-    noticesHtml = `
+    noticesHtml += `
     <div class="notification">
     <div class="name-notify">
       <h6>Aviso</h6>

@@ -7,8 +7,6 @@ function cargarSideNav() {
   let idMentor = 0;
   let name = "";
   let firstName = "";
-
-  console.log(name, firstName);
   if (user) {
     user = JSON.parse(user);
     idMentor = user.id;

@@ -21,6 +21,11 @@
     color: #fff;
 }
 
+.ver {
+    background-color: transparent;
+    color: #4f70d4;
+}
+
 .form-select input {
     width: 100%;
 }
@@ -139,7 +144,7 @@
     border: 1px solid #fff;
     padding: 20px;
     width: 90%;
-    height: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,6 +153,8 @@
     border-radius: 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+
 
 .content-text-modal {
     display: flex;
@@ -228,6 +235,12 @@
 
 .card-header input {
     padding: 0;
+}
+
+.icon-special {
+    font-size: 14px !important;
+    color: #4f70d4 !important;
+    background-color: #4f70d476 !important;
 }
 
 @media (max-width:748px) {

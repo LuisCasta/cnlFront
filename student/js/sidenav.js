@@ -1,4 +1,22 @@
+function logOutSession() {
+  localStorage.removeItem("user");
+  window.location.replace("../../index.html");
+}
 function cargarSideNav() {
+  let user = localStorage.getItem("user");
+  let idStudent = 0;
+  let name = "";
+  let firstName = "";
+
+  // console.log(name, firstName);
+  if (user) {
+    user = JSON.parse(user);
+    idStudent = user.id;
+    name = user.name;
+    firstName = user.firstName;
+  } else {
+    window.location.replace("../../index.html");
+  }
   const sidenav = document.getElementById("sidenavInsert");
   const sideInnerHtml = ` <div class="sidenav-content">
       <!-- LOGO NUEVA LAGUNA -->
@@ -12,7 +30,7 @@ function cargarSideNav() {
       <div class="navegacion-vista">
         <ul class="ul-navigate">
           <li>
-            <a href="../view/curso-student.html?idStudent=${idStudent}">
+            <a href="../view/curso-student.html">
             <i class='bx bx-book-open bx-sm'></i></a>
             <p class="tooltip">Mis Cursos</p>
           </li>
@@ -25,10 +43,10 @@ function cargarSideNav() {
       </div>
       <!-- PERFIL -->
       <div class="perfil">
-      <a style="color:#667085;" href="../../index.html"><i class="bx bx-log-out"></i></a>
+      <a style="color:#667085;" onclick="logOutSession()" ><i class="bx bx-log-out"></i></a>
         <i style="color:#667085;cursor:pointer;" class="bx bx-cog"></i>
         <img src="https://plus.unsplash.com/premium_photo-1661686687486-2329be3e383f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80" alt="" />
-        <h5 id="userName">Margarita López</h5>
+        <h5 id="userName">${name} ${firstName}</h5>
       </div>
       </div>`;
 

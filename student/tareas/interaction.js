@@ -1,5 +1,11 @@
 "use strict";
-
+function obtainId(id) {
+  const getID = document.getElementById(id);
+  return getID;
+}
+// const queryString = window.location.search;
+// const urlParams = new URLSearchParams(queryString);
+// const idMentor = urlParams.get("idMentor");
 // OCULTAR Y MOSTRAR LOS ARCHIVOS pdf y video
 const containerVideo = obtainId("container-video");
 const containerForo = obtainId("comment-foro");

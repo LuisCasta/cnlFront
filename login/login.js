@@ -96,14 +96,27 @@ login.addEventListener("click", async function loginCnl() {
         correo.value = "";
         pwAlumno.value = ""; // Assuming pwAlumno is the student password field
       } else {
-        const { id } = student.data;
-        location.href = `student/view/curso-student.html?idStudent=${id}`;
+        const { id, name, firstName, mail, password } = student.data;
+        // console.log(mentor.data);
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ id, name, firstName, mail, password })
+        );
+        const storedUserData = localStorage.getItem("user");
+
+        if (storedUserData) {
+          const user = JSON.parse(storedUserData);
+          console.log(user); // Aquí tienes los datos del usuario
+          // Puedes usar `user` para lo que necesites en este módulo
+        } else {
+          // No hay datos del usuario en Local Storage
+          console.log("Inicia sesión de nuevo");
+        }
+        location.href = `student/view/curso-student.html`;
       }
     } catch (error) {
       console.error("Error fetching student data:", error);
       alert("Error al iniciar sesión. Intente nuevamente más tarde.");
     }
-  } else {
-    console.warn("Invalid user selection:", userSelection);
   }
 });

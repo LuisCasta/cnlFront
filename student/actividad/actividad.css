@@ -15,6 +15,7 @@ body {
     border-radius: 25px;
 }
 
+
 .send-act {
     background-color: #d1fadf;
     color: #039855;
@@ -155,9 +156,12 @@ body {
 .actions a {
     background-color: var(--primary-color);
     color: #fff;
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    padding: 3px;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 14px;
+    gap: 3px;
     text-decoration: none;
 }
 

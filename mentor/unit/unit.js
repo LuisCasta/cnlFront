@@ -41,8 +41,9 @@ async function loadUnit() {
         </td>
         <td data-cell="Acciones">
         <div class="actions">
-          <button id='btn_${id}' onclick='updateUnit(${id})' data-type="${percentage}" data-idcurso='${idCourse}'  data-tooltip='Guardar' data-id="${id}" class='edit'>
-           <i class='bx bx-edit' ></i>
+          <button id='btn_${id}' onclick='updateUnit(${id})' data-type="${percentage}" 
+          data-idcurso='${idCourse}'  data-tooltip='Guardar' data-id="${id}" class='edit'>
+           <i id="editBtn_${id}" class='bx bx-edit' ></i>
           </button>
           <button onclick='delUnit(${id})' data-tooltip='Eliminar'  class='edit'>
             <i class='bx bx-trash' ></i>
@@ -61,22 +62,54 @@ async function loadUnit() {
 const modalDescription = document.getElementById("modal-description");
 modalDescription.classList.add("ocultar");
 
+function changeIcon() {
+  const btnAddId = obtainId("btnAddId");
+  const id = btnAddId.dataset.id;
+  console.log(id);
+  const editBtn = obtainId(`editBtn_${id}`);
+  console.log(editBtn);
+  editBtn.classList.add("bx-edit");
+  editBtn.classList.remove("bx-save", "bx-tada");
+  editBtn.style.color = "";
+  editBtn.style.padding = "";
+  editBtn.style.borderRadius = "";
+  editBtn.style.backgroundColor = "";
+  editBtn.style.fontSize = "";
+}
+
 async function abrirDescripcion(id) {
+  const editBtn = obtainId(`editBtn_${id}`);
+  editBtn.classList.remove("bx-edit");
+  editBtn.classList.add("bx-save", "bx-tada");
+  editBtn.style.color = "#4f70d4";
+  editBtn.style.padding = "5px";
+  editBtn.style.borderRadius = "25px";
+  editBtn.style.backgroundColor = "#4f70d476";
+  editBtn.style.fontSize = "20px";
   const buttonId = obtainId(`description_${id}`);
   const description = buttonId.dataset.description;
   const modalDescription = obtainId("modal-description");
-  const save = document.querySelector(".save-description");
+  // const save = document.querySelector(".save-description");
   const parrafo = obtainId("descripcion-parrafo");
   parrafo.textContent = description;
   modalDescription.classList.remove("ocultar");
   modalDescription.classList.add("animaterate");
-  save.setAttribute("id", `${id}`);
+  const btnAddId = obtainId("btnAddId");
+  btnAddId.setAttribute("data-id", `${id}`);
+  // save.setAttribute("id", `${id}`);
   // console.log(description, modalDescription, save, parrafo);
 }
+function guardar() {
+  const modalDescription = obtainId("modal-description");
+  modalDescription.classList.add("ocultar");
+  modalDescription.classList.remove("animaterate");
+}
+
 function cancelar() {
   const modalDescription = obtainId("modal-description");
   modalDescription.classList.add("ocultar");
   modalDescription.classList.remove("animaterate");
+  changeIcon();
 }
 
 // CREAR UNA NUEVA UNIDAD
@@ -140,7 +173,8 @@ async function updateUnit(unitId) {
         <i class='bx bx-check-circle'></i>
         <p>Tarea activa actualizada con éxito</p>`;
         succesPost.classList.add("aviso-click");
-      }, 100);
+        changeIcon();
+      }, 1000);
       setTimeout(function () {
         succesPost.innerHTML = "";
         succesPost.classList.remove("aviso-click");

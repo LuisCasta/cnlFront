@@ -86,7 +86,12 @@
                 id="descripcion-parrafo"
               ></textarea>
               <div class="modal-buttons">
-                <button onclick="cancelar()">Continuar</button>
+                <button id="btnAddId" onclick="guardar()">
+                  <i class="bx bx-check-square"></i>Continuar
+                </button>
+                <button id="btnAddId" onclick="cancelar()">
+                  <i class="bx bxs-x-square"></i>Cancelar
+                </button>
               </div>
             </div>
           </div>
@@ -99,13 +104,6 @@
         <i class="bx bx-menu"></i>
       </button>
     </main>
-    <script>
-      ClassicEditor.create(document.querySelector("#txt-description")).catch(
-        (error) => {
-          console.error(error);
-        }
-      );
-    </script>
     <script src="../../api/post.js"></script>
     <script src="../../api/unit.js"></script>
     <script src="unit.js"></script>
