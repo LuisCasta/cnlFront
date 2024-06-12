@@ -209,5 +209,6 @@ main {
 
     .container-iframe {
         width: 100%;
+        flex-direction: column;
     }
 }

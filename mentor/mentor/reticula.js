@@ -30,8 +30,7 @@ const derecho = {
       campo2: 96,
       campo3: 6.0,
       campo4: "H.I.",
-      documento:
-        "https://drive.google.com/file/d/1TyzxRRNkoC9akCjSwocwkXt7r-hpiXGH/view?usp=sharing",
+      documento: "",
     },
     {
       name: "DERECHO CIVIL. PERSONAS Y FAMILIAS",
@@ -1874,11 +1873,19 @@ function abrirPdf(url) {
     conIframe.classList.add("show");
     pdfIframe.src = directPdfLink;
   } else {
-    console.log("No se pudo obtener el enlace de previsualización del PDF");
+    conIframe.classList.remove("hidden");
+    conIframe.classList.add("show");
+    const avisoPdf = document.getElementById("aviso");
+    avisoPdf.textContent =
+      "No se pudo obtener el enlace de previsualización del PDF";
+    const pdfIframe = document.getElementById("pdf-iframe");
+    pdfIframe.src = "";
   }
 }
 
 function cerrarModal() {
+  const avisoPdf = document.getElementById("aviso");
+  avisoPdf.textContent = "";
   conIframe.classList.add("hidden");
   conIframe.classList.remove("show");
 }
