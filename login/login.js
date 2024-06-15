@@ -2,12 +2,25 @@ const correo = document.getElementById("correo");
 const pw = document.getElementById("pw-login");
 const login = document.getElementById("Inicio-sesion");
 const selectUser = document.getElementById("selectUser");
+function loader() {
+  const loaderIcon = document.getElementById("loader");
+  loaderIcon.classList.add("bx", "bx-loader-circle", "bx-spin", "bx-lg");
+  loaderIcon.style.color = "#fff";
+  const containerLoader = document.getElementById("container-loader");
+  containerLoader.classList.add("showLoader");
+}
+
+function removeLoader() {
+  const loaderIcon = document.getElementById("loader");
+  loaderIcon.classList.remove("bx", "bx-loader-circle", "bx-spin");
+  const containerLoader = document.getElementById("container-loader");
+  containerLoader.classList.remove("showLoader");
+}
 
 login.addEventListener("click", async function loginCnl() {
+  loader();
   const userSelection = selectUser.value;
-
   if (userSelection === "1") {
-    // Admin Login
     if (
       pw.value === "@@admin123@" &&
       correo.value === "adminDemo@nuevalaguna.com"
@@ -16,6 +29,7 @@ login.addEventListener("click", async function loginCnl() {
     } else if (pw.value === "master" && correo.value === "master") {
       login.href = "admin/career/career.html";
     } else {
+      removeLoader();
       alert("Usuario o contraseña incorrecta");
       correo.value = "";
       pw.value = "";
@@ -26,10 +40,12 @@ login.addEventListener("click", async function loginCnl() {
     const mentorPassword = pw.value;
 
     if (!mentorMail) {
+      removeLoader();
       alert("falta usuario");
     }
 
     if (!mentorPassword) {
+      removeLoader();
       alert("falta contraseña");
     }
 
@@ -43,6 +59,7 @@ login.addEventListener("click", async function loginCnl() {
       // console.log(mentor);
       // console.log(mentor);
       if (mentor.code !== 200) {
+        removeLoader();
         console.log(`Error de login ${mentorMail}`);
         alert("Usuario o contraseña incorrecta");
         correo.value = "";
@@ -67,6 +84,7 @@ login.addEventListener("click", async function loginCnl() {
         location.href = `mentor/mentor/mentor.html`;
       }
     } catch (error) {
+      removeLoader();
       console.error("Error fetching mentor data:", error);
       alert("Error al iniciar sesión. Intente nuevamente más tarde.");
     }
@@ -76,10 +94,12 @@ login.addEventListener("click", async function loginCnl() {
     const studentPassword = pw.value;
 
     if (!studentMail) {
+      removeLoader();
       alert("colocar usuario");
     }
 
     if (!studentPassword) {
+      removeLoader();
       alert("colocar pw");
     }
 
@@ -89,8 +109,9 @@ login.addEventListener("click", async function loginCnl() {
         pass: studentPassword,
       };
       const student = await getLoginStudent(data);
-      console.log(student);
+
       if (student.code !== 200) {
+        removeLoader();
         console.log(`Error de login ${studentMail}`);
         alert("Usuario o contraseña incorrecta");
         correo.value = "";
@@ -115,6 +136,7 @@ login.addEventListener("click", async function loginCnl() {
         location.href = `student/view/curso-student.html`;
       }
     } catch (error) {
+      removeLoader();
       console.error("Error fetching student data:", error);
       alert("Error al iniciar sesión. Intente nuevamente más tarde.");
     }
