@@ -1228,9 +1228,170 @@ const educacion = {
   ],
 };
 
+const maestria = {
+  primero: [
+    {
+      name: "SISTEMAS EDUCATIVOS DE CLASE MUNDIAL",
+      clave: "MEBSI01",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/1qFAiWTuICp1QgbeLOBeRfYnj8QGs8vyy/view?usp=sharing",
+    },
+    {
+      name: "MODELOS DE PLANEACIÓN DE INSTITUCIONES EDUCATIVAS",
+      clave: "MEBSI02",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/1P1zJ6E_Lm7d0cURdWVKEAC2E0K4jx_xM/view?usp=drive_link",
+    },
+    {
+      name: "METODOLOGÍA DE LA INVESTIGACIÓN II",
+      clave: "MEBSI03",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/14Q8IiBfAWzcT5DuUylrk9LwTY4OMwSX9/view?usp=drive_link",
+    },
+  ],
+  segundo: [
+    {
+      name: "INVESTIGACIÓN E INNOVACIÓN DE LA PRÁCTICA DOCENTE",
+      clave: "MEBSI04",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/15Jz7BnuWC4BVvW3rGCedDh-hB2Xsf7tn/view?usp=sharing",
+    },
+    {
+      name: "PEDAGOGÍAS ALTERNATIVAS",
+      clave: "MEBSI05",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/146-FMgRol_5ac9vPf25bl0n3c2RJT0Jj/view?usp=sharing",
+    },
+    {
+      name: "PLANEACIÓN Y EVALUACIÓN DE LA INTERVENCIÓN DOCENTE",
+      clave: "MEBSI06",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/19Vq7ItAH_1bJ7nVcNtgpYfh_5zhrMByX/view?usp=sharing",
+    },
+  ],
+};
+
+const especialidad = {
+  primero: [
+    {
+      name: "DESARROLLO DE COMPETENCIAS Y HABILIDADES PARA EL SIGLO XXI",
+      clave: "EEBSI01",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/1OGIVA4uFRfirwa64UK88UC3z6usz3Qtq/view?usp=sharing",
+    },
+    {
+      name: "ENTORNO FAMILIAR Y SOCIAL DE LA NIÑA, EL NIÑO Y ADOLESCENTES",
+      clave: "EEBSI02",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/14Q8IiBfAWzcT5DuUylrk9LwTY4OMwSX9/view?usp=drive_link",
+    },
+    {
+      name: "SISTEMA EDUCATIVO MEXICANO",
+      clave: "EEBSI03",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/1ktUm6GxX1duNyBt44O-Gy7FHt6H5p1z-/view?usp=sharing",
+    },
+  ],
+  segundo: [
+    {
+      name: "ENFOQUE Y FUNDAMENTOS DE LOS PLANES Y PROGRAMAS DE EDUCACIÓN BÁSICA",
+      clave: "EEBSI04",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/1ka5Lreah0cBVUp8VS_HmycO6R8XUwFLF/view?usp=sharing",
+    },
+    {
+      name: "METODOLOGÍA DE LA INVESTIGACIÓN I",
+      clave: "EEBSI05",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/1kt-O1aIE6iV2BYSruKILeWK1oDgj6WZC/view?usp=sharing",
+    },
+    {
+      name: "AMBIENTES DE APRENDIZAJE",
+      clave: "EEBSI06",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/1QDS9ce1WDv4pcLpTd8TGmn0YgW6ppsIi/view?usp=sharing",
+    },
+  ],
+  tercer: [
+    {
+      name: "APRENDIZAJES BASADOS EN PROYECTOS",
+      clave: "EEBSI07",
+      obligatorio: 1,
+      campo1: 0,
+      campo2: 96,
+      campo3: 6.0,
+      campo4: "H.I.",
+      documento:
+        "https://drive.google.com/file/d/1kfVCehvstdTOT3is3TtorAi-ZC93igWP/view?usp=sharing",
+    },
+  ],
+};
+
 const jsonMapping = {
   derecho,
   educacion,
+  maestria,
+  especialidad,
 };
 const changeReticula = function () {
   const selectReticula = document.getElementById("select-reticula").value;

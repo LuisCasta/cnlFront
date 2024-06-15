@@ -120,7 +120,7 @@ function closerModal() {
 const asignaturas = obtainId("asignaturas");
 async function loadNotices() {
   const noticias = await getAllNotice();
-  console.log(noticias);
+  // console.log(noticias);
   let noticesHtml = "";
   noticias.data.data.data.forEach((advice) => {
     const { notice, createdAt } = advice;
