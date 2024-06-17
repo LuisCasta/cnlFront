@@ -1,5 +1,4 @@
 const notifications = document.querySelectorAll(".notification");
-console.log(notifications);
 const reticula = document.getElementById("reticula");
 reticula.style.display = "none";
 const asignaturasContainer = document.getElementById("asignaturas");

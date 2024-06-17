@@ -359,6 +359,9 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
   padding: 0;
 }
 
+.card-header-video {
+}
+
 .new-discu {
   box-sizing: border-box;
   /* flex: 1 1 auto; */

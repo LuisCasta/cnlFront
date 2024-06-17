@@ -25,12 +25,12 @@
         <p>Asignaturas</p>
       </div>
       <div class="tabs-reticula">
-        <button class="asignaturas-button" onclick="backAssigment()">
+        <a class="asignaturas-button" onclick="backAssigment()">
           Asignaturas
-        </button>
-        <button class="reticula-button" onclick="changeAssigment()">
+        </a>
+        <a class="reticula-button" onclick="changeAssigment()">
           Mapa curricular
-        </button>
+        </a>
       </div>
       <div class="card-header" id="card-title">
         <div class="text-header">
@@ -45,7 +45,10 @@
       <!-- TABLAS DE CURSOS -->
       <div id="reticula">
         <div class="card-header" class="container-reticula">
-          <h2>Aquí se muestra la retícula</h2>
+          <div class="text-header">
+            <h2>Retícula</h2>
+            <p>Aquí se muestra la retícula de las carreras</p>
+          </div>
         </div>
         <div class="card-header-2 elegir-reticula">
           <select name="" id="select-reticula">

@@ -43,9 +43,8 @@ function cargarSideNav() {
       </div>
       <!-- PERFIL -->
       <div class="perfil">
-      <a style="color:#667085;" onclick="logOutSession()" ><i class="bx bx-log-out"></i></a>
-        <i style="color:#667085;cursor:pointer;" class="bx bx-cog"></i>
-        <img src="https://plus.unsplash.com/premium_photo-1661686687486-2329be3e383f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2232&q=80" alt="" />
+      <a style="color:#667085;cursor:pointer;" onclick="logOutSession()" ><i class="bx bx-log-out"></i></a>
+         <h4 class="name-decor">${name.charAt(0)}${firstName.charAt(0)}</h4>
         <h5 id="userName">${name} ${firstName}</h5>
       </div>
       </div>`;
