@@ -23,7 +23,7 @@ async function loadUnit() {
       hrefMentor.href = `../mentor/mentor.html?idMentor=${idMentor}`;
       unitHtml += `
       <tr>
-        <td data-cell="Nombre del parcial">
+        <td data-cell="Nombre">
          <p data-tooltip="Editar" id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
         </td>
      <td data-cell="Porcentaje"><p id="percentage-${id}" contenteditable="true" spellcheck="false">${percentage}</p></td>
@@ -32,7 +32,7 @@ async function loadUnit() {
       <button class="btn-show" data-tooltip="Ver" data-description='${description}' 
       onclick="abrirDescripcion(${id})" id="description_${id}"><i class='bx bxs-show bx-sm'></i></button>
      </td>  
-     <td data-cell="Gestionar parcial">
+     <td data-cell="Gestionar">
           <button data-tooltip='Gestionar' class="edit">
           <a href="../about-unit/about.html?idCurso=${idCourse}&idUnit=${id}">
               <i class='bx bx-cog'></i>

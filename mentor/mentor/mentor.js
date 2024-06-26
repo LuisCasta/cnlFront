@@ -26,8 +26,8 @@ async function loadCursosById() {
       // </a>`;
       cursoMentorHtml += `
       <div class="alumnos calificaciones content-static">
-            <h5>${name}</h5>
-            <p class="p-asign">${description}</p>
+            <h5 style="margin-bottom:30px;font-size:25px">${name}</h5>
+          
             <a class="a-static" href="../tareas/activas.html?idCurso=${id}" 
             data-id="${id}">
              entrar<i class='bx bx-customize'></i>

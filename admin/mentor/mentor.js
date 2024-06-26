@@ -40,11 +40,7 @@ async function loadMentors() {
                 </td>
                 <td data-cell="Acciones"> 
                   <div class="actions">
-                    <button class="edit">
-                    <a data-tooltip="Agregar materias a Mentor">
-                    <i class='bx bx-cog'></i>
-                    </button>
-                    </a>
+                   
                     <button   onclick="updateMaestro(${id})" data-tooltip="Editar" class="edit">
                     <i class='bx bx-edit' ></i>
                   </button>
@@ -153,6 +149,10 @@ async function updateMaestro(mentorId) {
       <p>Operación Cancelada</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
+    setTimeout(function () {
+      succesPost.innerHTML = ``;
+      succesPost.classList.remove("aviso-click");
+    }, 3000);
   }
 }
 
