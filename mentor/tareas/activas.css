@@ -209,12 +209,13 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
   aspect-ratio: 16/9;
   border: none;
   outline: none;
-  border-radius: 25px;
+  border-radius: 10px;
   box-shadow: var(--box-shadow);
 }
 
 .iframe-pdf {
   height: 100vh;
+  border-radius: 10px;
 }
 
 .fadeOut {
@@ -276,6 +277,11 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
   top: 0;
   right: 20px;
   border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .bx-expand:hover {
@@ -360,6 +366,14 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
 }
 
 .card-header-video {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+
+.card-header-video iframe {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .new-discu {
