@@ -130,7 +130,7 @@ table {
 .content-static {
   backdrop-filter: blur(5px);
   width: 100%;
-  padding: 25px;
+  padding: 15px;
   border-radius: 5px;
   /* height: 150px; */
   box-shadow: var(--box-shadow);
