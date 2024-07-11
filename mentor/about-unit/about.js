@@ -14,6 +14,9 @@ const tableRate = obtainId("table-rate");
 const tableVideoCalls = obtainId("table-calls");
 const selectTypeActivity = obtainId("type-activity");
 
+const hrefTarea = document.getElementById("href-unidad");
+console.log(hrefTarea);
+hrefTarea.href = `../unit/unit.html?idCurso=${idCourse}`;
 // Mostrar en tabla las actividades
 
 let activityHtml = "";
@@ -114,7 +117,7 @@ async function loadVideoByIdCourse() {
       <td data-cell="Descripción"><p> ${
         description == null || undefined ? "Sin descripción" : description
       }</p></td>
-      <td data-cell="Link"><a class="check" style="color:white;" target="_blank" href="${link}">Entrar</a></td>
+      <td data-cell="Link"><a data-tooltip="Entrar" class="check" style="color:white;" target="_blank" href="${link}"><i class='bx bx-link-external'></i></a></td>
       </td>
   </tr>
   `;
@@ -211,7 +214,7 @@ async function loadRateStudentByUnit() {
       <tr>
          <td data-cell="Nombre"><p>${fullname}</p></td>
           <td data-cell="calificación recomendada"><p>${califRecomend}</p></td>
-          <td data-cell="Calificación"><input id=ide-${idStudent}  value=${calif} class="input-promf"/></td>
+          <td data-cell="Calificación"><input data-tooltip="editar" class="rateEdit" id=ide-${idStudent} value=${calif} class="input-promf"/></td>
           <td data-cell="Acciones">
             <a class="sendRate" onclick="guardarRate(${idStudent})";"><i class='bx bxs-user-check'></i>Guardar</a>
           </td>

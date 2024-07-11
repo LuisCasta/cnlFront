@@ -51,23 +51,22 @@
           </div>
         </div>
         <div class="card-header-2 elegir-reticula">
-          <select name="" id="select-reticula">
+          <select name="" id="select-reticula" onchange="changeReticula()">
             <option value="derecho">Derecho</option>
             <option value="educacion">Educación</option>
             <option value="maestria">
               Maestría en educación básica con atención a la segunda infancia
             </option>
             <option value="especialidad">
-              Especialidad en educación básica con atendión a la segunda
+              Especialidad en educación básica con atención a la segunda
               infancia
             </option>
           </select>
-          <button onclick="changeReticula()">Ver retícula</button>
         </div>
         <div id="contenedor"></div>
       </div>
-      <div class="card-header-2">
-        <div class="content-static-2 avisos" id="content-advices">
+      <div class="card-header-2" id="content-advices">
+        <div class="content-static-2 avisos">
           <h5><i class="bx bxs-bell-ring"></i>Avisos</h5>
 
           <div class="asignaturas" id="asignaturas"></div>

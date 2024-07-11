@@ -22,11 +22,11 @@ const fin = obtainId("fin-act");
 // console.log(`este es idCurso: ${idCourse}`);
 // console.log(`este es idUnit: ${idUnit}`);
 
-backLink.href = `../about-unit/about.html?idCurso=${idCourse}&idUnit=${idUnit}&idMentor=${idMentor}`;
+backLink.href = `../about-unit/about.html?idCurso=${idCourse}&idUnit=${idUnit}`;
 
 async function loadGetActivityStudentById() {
   const revisarAct = await getByIdActivity(idActivity);
-  console.log(revisarAct);
+  // console.log(revisarAct);
   if (revisarAct.code != 200) {
     alert(`Error ${revisarAct.message}`);
   } else {
@@ -168,7 +168,7 @@ async function mostrarDataActAlumno(
   score === null ? (score = 0) : (score = score);
   let nombre = obtainId("act-alumno");
   let commentStu = obtainId("coment-stu");
-  commentStu.textContent = commentStudent;
+  // commentStu.textContent = commentStudent;
   let linkStu = obtainId("link-act");
   linkStu.href = link;
   let califFinalAct = obtainId("link-revisar");
@@ -187,11 +187,16 @@ revisarActividadBtn.addEventListener("click", async (e) => {
   console.log(score, commentScore, idActalu);
   const data = { actStudId: idActalu, commentScore, score };
   // Succes Post
-  succesPost.innerHTML = `
-   <i class='bx bx-loader-circle bx-spin' ></i>
-   <p>Revisando Actividad ...</p>
- `;
-  succesPost.classList.add("aviso-click");
+  //   succesPost.innerHTML = `
+  //    <i class='bx bx-loader-circle bx-spin' ></i>
+  //    <p>Revisando Actividad ...</p>
+  //  `;
+  //   succesPost.classList.add("aviso-click");
+
+  //   setTimeout(() => {
+  //     succesPost.innerHTML = "";
+  //     succesPost.classList.remove("aviso-click");
+  //   }, 5000);
 
   const revisarActividad = await chekActivityStudentById(data);
   if (revisarActividad.code != 200) alert(`Error ${revisarActividad.message}`);

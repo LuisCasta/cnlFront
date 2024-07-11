@@ -16,8 +16,11 @@ if (user) {
   window.location.replace("../../index.html");
 }
 // console.log(activeLink);
-
 activeLink.href = `../unit/unit.html?idCurso=${idCourse}`;
+
+// const hrefBread = obtainId("href-mentor");
+// console.log(hrefBread);
+// hrefBread.href = `../mentor/mentor.html`;
 
 // FORMATEAR LINK DE VIDEO
 

@@ -201,7 +201,7 @@ async function changePeriod() {
 async function changeGroup() {
   console.log("entra");
   let cursosHtml = "";
-  cursosHtml += `<option>Selecciona un Curso</option>`;
+  cursosHtml += `<option>Selecciona una asignatura</option>`;
   const selectorCursos = obtainId("cursos");
   const selectorGrupos = obtainId("groups").value;
   // console.log(selectorGroups, selectorPeriod);
@@ -237,7 +237,7 @@ async function loadCheckBoxes() {
     setTimeout(function () {
       succesPost.innerHTML = `
       <i class='bx bx-check-circle' ></i>
-      <p>Alumnos agregados al Curso con éxito</p>`;
+      <p>Alumnos asignados a la Asignaturacon éxito</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
     succesPost.innerHTML = "";
@@ -245,7 +245,7 @@ async function loadCheckBoxes() {
     setTimeout(function () {
       succesPost.innerHTML = `
       <i class='bx bx-check-circle' ></i>
-      <p>Error al agregar alumnos al Curso</p>`;
+      <p>Error al asignar alumnos a la Asignatura</p>`;
       succesPost.classList.add("aviso-click");
     }, 100);
   } else {

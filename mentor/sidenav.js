@@ -20,7 +20,7 @@ function cargarSideNav() {
       <!-- LOGO NUEVA LAGUNA -->
       <div class="downNav">
         <img
-          src="https://universidadnuevalaguna.edu.mx/wp-content/uploads/2023/08/escudo.png"
+          src="https://colegionuevalaguna.edu.mx/wp-content/uploads/2022/03/Logo-1.jpg"
           alt=""
         />
       </div>
@@ -29,13 +29,13 @@ function cargarSideNav() {
         <ul class="ul-navigate">
           <li>
             <a href="../mentor/mentor.html">
-              <i class='bx bx-book-open'></i>
+             <i class='bx bx-home-alt-2'></i>
             </a>
-            <p class="tooltip">Cursos</p>
+            <p class="tooltip">Incio</p>
           </li>
           <li>
           <a href="../rate/rate.html">
-            <i class="bx bxs-star-half"></i>
+           <i class='bx bx-bookmark-plus'></i>
           </a>
           <p class="tooltip">Calificaciones</p>
         </li>
@@ -56,8 +56,21 @@ function cargarSideNav() {
   sidenav.innerHTML = sideInnerHtml;
   const btnResponsive = document.getElementById("btnResponsive");
   btnResponsive.addEventListener("click", abrirSideNav);
+
   function abrirSideNav() {
     const sideNav = document.querySelector(".sidenav-cln");
     sideNav.classList.toggle("mostrar-sidenav");
   }
+
+  function cerrar() {
+    sidenav.classList.remove("mostrar-sidenav");
+  }
+
+  document.addEventListener("click", function (event) {
+    var isClickInside =
+      sidenav.contains(event.target) || btnResponsive.contains(event.target);
+    if (!isClickInside && sidenav.classList.contains("mostrar-sidenav")) {
+      cerrar();
+    }
+  });
 }

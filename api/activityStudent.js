@@ -3,17 +3,10 @@
  *
  * */
 const getByCourseActivityStudent = async (idUnit) => {
-  if (
-    idUnit == "" ||
-    idUnit == null ||
-    idUnit == undefined ||
-    idUnit == " "
-  )
+  if (idUnit == "" || idUnit == null || idUnit == undefined || idUnit == " ")
     return { code: 400, message: `Error, el campo idCurso es inválido` };
 
-  const activities = await getApi(
-    `activity/aboutUnit/${idUnit}`
-  );
+  const activities = await getApi(`activity/aboutUnit/${idUnit}`);
 
   if (activities.status != 200)
     return {
@@ -56,7 +49,10 @@ const sendActivity = async (data) => {
       idStudent == undefined ||
       idStudent == " "
     )
-      return { code: 400, message: `Error, el campo id estudiante es inválido` };
+      return {
+        code: 400,
+        message: `Error, el campo id estudiante es inválido`,
+      };
 
     if (
       idActivity == "" ||
@@ -134,7 +130,7 @@ const chekActivityStudentById = async (data) => {
   )
     return {
       code: 400,
-      message: `Error, el campo commentScore es inválido`,
+      message: `Debes ingresar un comentario de retroalimentación para continuar`,
     };
 
   if (score == null || score == undefined || score == "" || score == " ")
@@ -285,7 +281,9 @@ const updateActivity = async (data) => {
 };
 
 const obtainRateByIdStudent = async (idStudent, idCourse) => {
-  const calificacionStudent = await getApi(`unitStudent/aboutStudent/${idStudent}/${idCourse}`);
+  const calificacionStudent = await getApi(
+    `unitStudent/aboutStudent/${idStudent}/${idCourse}`
+  );
   if (calificacionStudent.status != 200)
     return {
       code: 400,
@@ -294,7 +292,6 @@ const obtainRateByIdStudent = async (idStudent, idCourse) => {
     };
   return { code: 200, data: calificacionStudent.data.data };
 };
-
 
 // OBTENER ACTIVIDAD TUTOR EN PRESENTAR ACTIVIDAD ALUMNO
 
@@ -334,18 +331,20 @@ const getRateIntent = async (idStudent, idActivity) => {
       message: `Error, el campo id: Actividad Estudiante es inválido`,
     };
 
-    if (
-      idStudent == "" ||
-      idStudent == null ||
-      idStudent == undefined ||
-      idStudent == " "
-    )
-      return {
-        code: 400,
-        message: `Error, el campo id: Actividad Estudiante es inválido`,
-      };
+  if (
+    idStudent == "" ||
+    idStudent == null ||
+    idStudent == undefined ||
+    idStudent == " "
+  )
+    return {
+      code: 400,
+      message: `Error, el campo id: Actividad Estudiante es inválido`,
+    };
 
-  const activity = await getApi(`activityStudent/aboutStudent/${idStudent}/${idActivity}`);
+  const activity = await getApi(
+    `activityStudent/aboutStudent/${idStudent}/${idActivity}`
+  );
 
   if (activity.status != 200)
     return {

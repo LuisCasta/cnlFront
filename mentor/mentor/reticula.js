@@ -1453,8 +1453,9 @@ const changeReticula = function () {
           <div class="clave"><p>${campo2}</p></div>
           <div class="clave"><p>${campo3}</p></div>
           <div class="clave"><p>${campo4}</p></div>
-          <div class="clave" onclick=abrirPdf("${documento}")><p data-tooltip="Ver pdf"><i class='bx bx-show'></i></p></div>
+          <div class="clave"><p data-tooltip="Ver pdf"><i class='bx bx-show'></i></p></div>
         </div>
+         <div class="openBookPdf" onclick=abrirPdf("${documento}")></div>
       `;
       semestreDiv.appendChild(cursoDiv);
     });
