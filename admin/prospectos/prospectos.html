@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="prospectos.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
+      integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
+    <title>Prospectos</title>
+  </head>
+  <body onload=" cargarSideNav(), loadMentors()">
+    <div class="sidenav-cln" id="sidenavInsert"></div>
+    <main>
+      <div class="breadcumbs">
+        <p>Prospectos</p>
+      </div>
+      <!-- BUSCAR ELEMENTOS EN LA TABLA -->
+      <section>
+        <div class="card-header">
+          <div class="heading">
+            <h2>Prospectos</h2>
+            <p>Consulta aquí los registros de la página web</p>
+          </div>
+        </div>
+      </section>
+      <div class="container-Table">
+        <table>
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Prospectos</p>
+                <span id="spanTitle"></span>
+              </div>
+            </caption>
+            <tr id="headers-rate"></tr>
+          </thead>
+          <tbody id="table-rate-final"></tbody>
+        </table>
+      </div>
+      <!-- ACEPTAR O DECLINAR BORRAR CARRERA -->
+
+      <!-- MODIFICAR CARRERA -->
+      <div id="succes-post"></div>
+    </main>
+    <button class="responsive" id="btnResponsive">
+      <i class="bx bx-menu"></i>
+    </button>
+    <section class="confirm-cancelar">
+      <div class="content-confirm-cancel">
+        <h3 id="confrim-deny"></h3>
+        <div style="display: flex; gap: 10px">
+          <button onclick="confirmar(id)">Confirmar</button>
+          <button onclick="cancel()">Cancelar</button>
+        </div>
+      </div>
+    </section>
+    <script src="../../api/post.js"></script>
+    <script src="../../api/course.js"></script>
+    <script src="../../api/rates.js"></script>
+    <script src="evaluacion.js"></script>
+    <script src="../js/sidenav.js"></script>
+    <script src="../../api/getid.js"></script>
+  </body>
+</html>

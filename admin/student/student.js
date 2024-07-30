@@ -5,8 +5,9 @@ async function loadStudents() {
   let salida = "";
   const myTable = document.getElementById("tbody-data");
   const students = await getAllStudent();
+  console.log(students.data);
   if (students.code !== 200) {
-    alert(`Error ${newStudent.message}`);
+    alert(`Error ${students.message}`);
   } else {
     students.data.map((student) => {
       const amountStudents = document.getElementById("spanTitle");
@@ -15,19 +16,18 @@ async function loadStudents() {
 
       salida += `
       <tr>
-        <td data-cell="ID"><p>${id}</p></td>
         <td data-cell="Name">
-         <p id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
+         <p id='name_${id}' class="edit-input" contenteditable="true" data-tooltip="editar" spellcheck="false">${name}</p>
         </td>
         <td data-cell="FirstName">
-          <p id='first-name_${id}' contenteditable="true" spellcheck="false">${firstName}</p>
+          <p id='first-name_${id}' class="edit-input" data-tooltip="editar" contenteditable="true" spellcheck="false">${firstName}</p>
         </td>
         <td data-cell="Mail">
-          <p id='mail_${id}' contenteditable="true" spellcheck="false">${mail}</p>
+          <p id='mail_${id}' class="edit-input" data-tooltip="editar" contenteditable="true" spellcheck="false">${mail}</p>
         </td>
-        <td data-cell="PW">
-          <p id='password_${id}' class='text-pw-student' contenteditable="true" spellcheck="false">
-            ${password.slice(0, 6)}
+        <td data-cell="PW"> 
+          <p id='password_${id}' class="edit-input" data-tooltip="editar" class='text-pw-student' contenteditable="true" spellcheck="false">
+            ${password}
           </p>
         </td>
         <td class='td-select' data-cell="Seleccionar">
@@ -76,7 +76,8 @@ btnStudent.addEventListener("click", async (e) => {
   const name = document.getElementById("nameStud").value;
   const firstName = document.getElementById("fnameStud").value;
   const mail = document.getElementById("emailStud").value;
-  const password = document.getElementById("pwStud").value;
+  const passwordTxt = document.getElementById("pwStud").value;
+  const password = passwordTxt.trim();
   const secondName = document.getElementById("secondName").value;
   const birthdate = document.getElementById("birthDate").value;
   const mobilePhone = document.getElementById("mobile").value;
@@ -167,7 +168,7 @@ async function changeCareer() {
   console.log(careerValue);
   const periods = await getAllPeriod(careerValue);
   if (periods.code != 200) {
-    alert(`Error ${newPeriods.message}`);
+    alert(`Error ${periods.message}`);
   } else {
     periods.data.map((item) => {
       const { id, name } = item;
@@ -211,9 +212,7 @@ async function changeGroup() {
   } else {
     cursos.data.map((curso) => {
       const { idCourse, nameCourse } = curso;
-      cursosHtml += `
-      <option value=${idCourse}>${nameCourse}</option>
-          `;
+      cursosHtml += `<option value=${idCourse}>${nameCourse}</option>`;
     });
 
     selectorCursos.innerHTML = cursosHtml;
@@ -263,7 +262,8 @@ async function updateAlumno(studentId) {
     const name = obtainId(`name_${studentId}`).textContent;
     const firstName = obtainId(`first-name_${studentId}`).textContent;
     const mail = obtainId(`mail_${studentId}`).textContent;
-    const password = obtainId(`password_${studentId}`).textContent;
+    const passwordText = obtainId(`password_${studentId}`).textContent;
+    const password = passwordText.trim();
 
     const updateData = await updateStudent({
       studentId,
@@ -295,6 +295,7 @@ async function updateAlumno(studentId) {
       succesPost.classList.add("aviso-click");
     }, 100);
   }
+  await loadStudents();
 }
 
 async function deleteAlumno(studentId) {

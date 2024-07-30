@@ -117,7 +117,6 @@ const getById = async (id) => {
 
 const getLogin = async (data) => {
   const { mail, pass } = data;
-  console.log(data);
   if (mail == 0 || mail == "" || mail == undefined || mail == " ")
     return { code: 400, message: `Error, el campo mail es inválido` };
 
@@ -129,10 +128,9 @@ const getLogin = async (data) => {
   if (mentor.status != 200)
     return {
       code: 400,
-      message: `Error al logear al docente con el mail: ${mail}`,
+      message: `Error al logear al docente con el correo: ${mail}`,
       error: mentor.data.message,
     };
-
   return { code: 200, data: mentor.data.data };
 };
 

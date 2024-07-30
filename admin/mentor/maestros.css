@@ -1,21 +1,20 @@
-@import url('../styles/style-generals.css');
-@import url('../styles/sidenav.css');
+@import url("../styles/style-generals.css");
+@import url("../styles/sidenav.css");
 
 .edit {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .edit:hover {
-    background-color: transparent;
+  background-color: transparent;
 }
 
-.password-mentor {
-    padding: 5px;
+.edit-mentor {
+  padding: 5px;
 }
 
-.password-mentor:hover {
-
-    border: 1px solid gray;
-    cursor: pointer;
-    border-radius: 3px
+.edit-mentor:hover {
+  border: 1px solid gray;
+  cursor: pointer;
+  border-radius: 3px;
 }

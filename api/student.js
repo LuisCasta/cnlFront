@@ -97,7 +97,6 @@ const getByIdStudent = async (id) => {
 
 const getLoginStudent = async (data) => {
   const { mail, pass } = data;
-  console.log(data);
   if (mail == 0 || mail == "" || mail == undefined || mail == " ")
     return { code: 400, message: `Error, el campo mail es inválido` };
 
@@ -105,7 +104,7 @@ const getLoginStudent = async (data) => {
     return { code: 400, message: `Error, el campo pass es inválido` };
 
   const student = await postDataC(`student/login/`, data);
-  //console.log(mentor);
+
   if (student.status != 200)
     return {
       code: 400,

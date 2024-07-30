@@ -25,17 +25,17 @@ async function loadMentors() {
               <tr>
                 <td data-cell="ID"><p>${id}</p></td>
                 <td data-cell="Name" >
-                  <p id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
+                  <p id='name_${id}' class="edit-mentor" contenteditable="true" data-tooltip="editar" spellcheck="false">${name}</p>
                 </td>
                 <td data-cell="FirstName">
-                  <p id='first-name_${id}' contenteditable="true" spellcheck="false">${firstName}</p>
+                  <p id='first-name_${id}' class="edit-mentor" contenteditable="true" data-tooltip="editar" spellcheck="false">${firstName}</p>
                 </td>
                 <td data-cell="Mail">
-                <p id='mail_${id}' contenteditable="true" spellcheck="false">${mail}</p>
+                <p id='mail_${id}' class="edit-mentor" contenteditable="true" data-tooltip="editar" spellcheck="false">${mail}</p>
                 </td>
                 <td data-cell="PW">
-                  <p class="password-mentor" id='password_${id}' data-tooltip="click para editar" contenteditable="true" spellcheck="false">
-                  ${password.slice(0, 6)}
+                  <p class="edit-mentor" id='password_${id}' data-tooltip="editar" contenteditable="true">
+                  ${password}
                   </p>
                 </td>
                 <td data-cell="Acciones"> 
@@ -82,7 +82,8 @@ const btnMentor = document.getElementById("btnMentor");
 btnMentor.addEventListener("click", async (e) => {
   e.preventDefault();
   const mail = document.getElementById("mailMentor").value;
-  const password = document.getElementById("contrasenaMentor").value;
+  const passwordTxt = document.getElementById("contrasenaMentor").value;
+  const password = passwordTxt.trim();
   const firstName = document.getElementById("firstName").value;
   const name = document.getElementById("nameMentor").value;
   const secondName = document.getElementById("secondName").value;
@@ -101,8 +102,8 @@ btnMentor.addEventListener("click", async (e) => {
   if (newMentor.code != 200) alert(`Error ${newMentor.message}`);
   else {
     succesPost.innerHTML = `
-<i class='bx bx-check-circle bx-tada' ></i>
- <p>Docente: ${name} creado con éxito</p>
+     <i class='bx bx-check-circle bx-tada' ></i>
+     <p>Docente: ${name} creado con éxito</p>
 `;
     succesPost.classList.add("aviso-click");
   }
@@ -118,7 +119,8 @@ async function updateMaestro(mentorId) {
     const name = obtainId(`name_${mentorId}`).textContent;
     const firstName = obtainId(`first-name_${mentorId}`).textContent;
     const mail = obtainId(`mail_${mentorId}`).textContent;
-    const password = obtainId(`password_${mentorId}`).textContent;
+    const passwordTxt = obtainId(`password_${mentorId}`).textContent;
+    const password = passwordTxt.trim();
 
     const updateData = await updateMentor({
       mentorId,
@@ -154,6 +156,7 @@ async function updateMaestro(mentorId) {
       succesPost.classList.remove("aviso-click");
     }, 3000);
   }
+  await loadMentors();
 }
 
 async function deleteMaestro(mentorId) {

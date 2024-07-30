@@ -61,11 +61,18 @@ async function loadCursosById() {
       trHeaders.innerHTML = headersHtml;
       // console.log(printCalif.data);
       printCalif.data.data.forEach((rate) => {
-        const { idStudent, idCS, calif, fullname, califRecomend, listCalif } =
-          rate;
+        const {
+          idStudent,
+          idCS,
+          calif,
+          name,
+          firstName,
+          califRecomend,
+          listCalif,
+        } = rate;
         taBendRate += `
             <tr>
-                <td data-cell="Alumno"><p>${fullname}</p></td>
+                <td data-cell="Alumno"><p>${name} ${firstName}</p></td>
             `;
         console.log(countTA);
         countTA.forEach((count) => {

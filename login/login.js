@@ -66,7 +66,7 @@ login.addEventListener("click", async function loginCnl() {
         pw.value = "";
       } else {
         const { id, name, firstName, mail, password } = mentor.data;
-        // console.log(mentor.data);
+        console.log(mentor.data);
         localStorage.setItem(
           "user",
           JSON.stringify({ id, name, firstName, mail, password })
