@@ -205,15 +205,14 @@ async function loadRateStudentByUnit() {
   } else {
     allRates.data.forEach((rate) => {
       const { firstName, name, califRecomend, calif, idStudent } = rate;
-      // const obtainClass = function (pond) {
-      //   const classRate = pond == 0 || pond < 5 ? "rate-no-fit" : "rate";
-      //   return classRate;
-      // };
+      console.log(rate);
 
       ratesStudentByCourse += `
       <tr>
          <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
-          <td data-cell="calificación recomendada"><p>${califRecomend}</p></td>
+          <td data-cell="calificación recomendada"><p>${
+            califRecomend == undefined ? "sin recomendación" : califRecomend
+          }</p></td>
           <td data-cell="Calificación"><input data-tooltip="editar" class="rateEdit" id=ide-${idStudent} value=${calif} class="input-promf"/></td>
           <td data-cell="Acciones">
             <a class="sendRate" onclick="guardarRate(${idStudent})";"><i class='bx bxs-user-check'></i>Guardar</a>

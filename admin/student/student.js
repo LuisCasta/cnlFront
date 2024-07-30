@@ -13,9 +13,11 @@ async function loadStudents() {
       const amountStudents = document.getElementById("spanTitle");
       amountStudents.textContent = students.data.length;
       const { name, firstName, mail, password, id } = student;
-
       salida += `
       <tr>
+       <td data-cell="Matrícula">
+         <p id='matricula_${id}' class="edit-input" contenteditable="true" data-tooltip="editar" spellcheck="false">matrícula</p>
+        </td>
         <td data-cell="Name">
          <p id='name_${id}' class="edit-input" contenteditable="true" data-tooltip="editar" spellcheck="false">${name}</p>
         </td>
