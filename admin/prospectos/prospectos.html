@@ -21,7 +21,7 @@
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
     <title>Prospectos</title>
   </head>
-  <body onload=" cargarSideNav(), loadMentors()">
+  <body onload="cargarSideNav()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
@@ -34,6 +34,16 @@
             <h2>Prospectos</h2>
             <p>Consulta aquí los registros de la página web</p>
           </div>
+          <div class="form-select">
+            <select name="" id="status-prospect">
+              <option value="0">Todos</option>
+              <option value="1">Nuevos</option>
+              <option value="2">Pendientes</option>
+              <option value="3">Aceptados</option>
+              <option value="4">Rechazados</option>
+            </select>
+            <button id="btn-prospectos">Ver prospectos</button>
+          </div>
         </div>
       </section>
       <div class="container-Table">
@@ -45,9 +55,18 @@
                 <span id="spanTitle"></span>
               </div>
             </caption>
-            <tr id="headers-rate"></tr>
+            <tr>
+              <!-- <th>ID</th> -->
+              <th>Nombre</th>
+              <th>Primer Apellido</th>
+              <th>Segundo Apellido</th>
+              <th>Correo</th>
+              <th>Teléfono</th>
+              <th>Estatus</th>
+              <th>Acciones</th>
+            </tr>
           </thead>
-          <tbody id="table-rate-final"></tbody>
+          <tbody id="tbody-data"></tbody>
         </table>
       </div>
       <!-- ACEPTAR O DECLINAR BORRAR CARRERA -->
@@ -68,9 +87,8 @@
       </div>
     </section>
     <script src="../../api/post.js"></script>
-    <script src="../../api/course.js"></script>
-    <script src="../../api/rates.js"></script>
-    <script src="evaluacion.js"></script>
+    <script src="../../api/prospectos.js"></script>
+    <script src="prospectos.js"></script>
     <script src="../js/sidenav.js"></script>
     <script src="../../api/getid.js"></script>
   </body>

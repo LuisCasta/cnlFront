@@ -3,6 +3,7 @@ function obtainId(id) {
   const getID = document.getElementById(id);
   return getID;
 }
+// console.log(idStudent);
 // const queryString = window.location.search;
 // const urlParams = new URLSearchParams(queryString);
 // const idMentor = urlParams.get("idMentor");
@@ -82,15 +83,16 @@ async function showForo() {
   // containerForo.classList.remove("hide");
   // containerForo.classList.add("show-container");
 
-  console.log(idCourse);
+  // console.log(idCourse);
+  // console.log(idStudent, "3");
   const messages = await ListMessagesForo(idCourse);
   let containerMessage = "";
   const containerForo = obtainId("comment-foro");
-  console.log(messages);
+  // console.log(messages);
   messages.data.data.data.reverse();
   messages.data.data.data.forEach((foroMessage) => {
     const { createdAt, name, message, idStudent } = foroMessage;
-    console.log(idStudent);
+    // console.log(foroMessage);
     containerMessage += `
     <div class="content-static-2">
     <div class="text-name">
@@ -111,13 +113,13 @@ async function showForo() {
   });
   containerForo.innerHTML = containerMessage;
 }
-
+// console.log(idStudent, "2");
 async function sendMessageForo() {
   const messageValue = obtainId("message");
   // console.log(messageValue);
   const message = messageValue.value;
   const data = { idCourse, idStudent, message };
-  console.log(data);
+  // console.log(data);
 
   // Succes Post
   succesPost.innerHTML = `
@@ -125,21 +127,33 @@ async function sendMessageForo() {
    <p>Enviando Mensaje ...</p>
  `;
   succesPost.classList.add("aviso-click");
+  setTimeout(() => {
+    succesPost.innerHTML = "";
+    succesPost.classList.remove("aviso-click");
+  }, 3000);
 
   const sendMessageNow = await enviarMensaje(data);
   if (sendMessageNow.code != 200) {
-    console.log(code);
-    alert(`Error ${sendMessageNow.message}`);
-  } else {
-    succesPost.innerHTML = `
-  <i class='bx bx-check-circle bx-tada'></i>
-    <p>Mensaje enviado</p>
+    setTimeout(() => {
+      succesPost.innerHTML = `
+   <i class='bx bx-error-circle'  ></i>
+   <p>Ha habido un error al enviar mensaje, revisa que tu mensaje no esté vacío</p>
  `;
-    await showForo();
+      succesPost.classList.add("aviso-click");
+    }, 3000);
+    setTimeout(() => {
+      succesPost.innerHTML = "";
+      succesPost.classList.remove("aviso-click");
+      console.log(sendMessageNow.code);
+      // alert(`Error ${sendMessageNow.message}`);
+    }, 6000);
+  } else {
+    succesPost.innerHTML = ` <i class='bx bx-check-circle bx-tada'></i> <p>Mensaje enviado</p> `;
     succesPost.classList.add("aviso-click");
-
     setTimeout(() => {
       succesPost.classList.remove("aviso-click");
     }, 3000);
+
+    await showForo();
   }
 }

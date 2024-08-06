@@ -12,10 +12,14 @@ const createStudent = async (data) => {
     mobilePhone,
     mail,
     password,
+    tag,
   } = data;
 
   if (name == "" || name == null || name == undefined || name == " ")
     return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  if (tag == "" || tag == null || tag == undefined || tag == " ")
+    return { code: 400, message: `Error, el campo matrícula es inválido` };
 
   if (
     firstName == "" ||
@@ -44,6 +48,7 @@ const createStudent = async (data) => {
     secondName,
     birthdate,
     mobilePhone,
+    tag,
   });
 
   if (student.status != 200)
@@ -119,7 +124,7 @@ const getLoginStudent = async (data) => {
  * @description update a student by all params
  */
 const updateStudent = async (data) => {
-  const { name, firstName, mail, password, studentId } = data;
+  const { name, firstName, mail, password, studentId, tag } = data;
 
   if (name == "" || name == null || name == undefined || name == " ")
     return { code: 400, message: `Error, el campo nombre es inválido` };
@@ -150,6 +155,8 @@ const updateStudent = async (data) => {
     password == " "
   )
     return { code: 400, message: `Error, el campo password es inválido` };
+  if (tag == "" || tag == null || tag == undefined || tag == " ")
+    return { code: 400, message: `Error, el campo matrícula es inválido` };
 
   const student = await putApi("student/", {
     name,
@@ -160,6 +167,7 @@ const updateStudent = async (data) => {
     secondName: "0",
     birthdate: "1993-04-12",
     mobilePhone: "0",
+    tag,
   });
 
   if (student.status != 200)

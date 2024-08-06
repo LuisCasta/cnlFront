@@ -1,5 +1,12 @@
 "use strict";
-
+let user = localStorage.getItem("user");
+let idStudent = 0;
+if (user) {
+  user = JSON.parse(user);
+  idStudent = user.id;
+} else {
+  window.location.replace("../../index.html");
+}
 const succesPost = document.getElementById("succes-post");
 const enviarActividadBtn = document.getElementById("presentar-actividad");
 async function loadActivitiesPresentar() {
@@ -59,33 +66,30 @@ enviarActividadBtn.addEventListener("click", async (e) => {
   }
 });
 
-
-async function getRateIntentActivity(){
-  const rateIntent = await getRateIntent(idStudent, idActivity)
-  console.log(rateIntent.code, '1');
+async function getRateIntentActivity() {
+  const rateIntent = await getRateIntent(idStudent, idActivity);
+  console.log(rateIntent.code, "1");
   if (rateIntent.code != 200) {
-    console.log('no hay nada para mostrar');
-     
+    // console.log("no hay nada para mostrar");
   } else {
-    const keys = Object.keys(rateIntent.data)
-    if(keys.length > 0){
-      const {score}= rateIntent.data;
-       const messageCalif =  document.getElementById('calif-parrafo')
-      return messageCalif.textContent = score
-    } else{
-      console.log('No hay nada');
-      const messageCalif =  document.getElementById('calif-parrafo')
-      return messageCalif.textContent = 'No has presentado la Actividad'
+    const keys = Object.keys(rateIntent.data);
+    if (keys.length > 0) {
+      const { score, status } = rateIntent.data;
+      console.log(rateIntent.data);
+      const messageCalif = document.getElementById("calif-parrafo");
+      return (messageCalif.innerHTML = `
+          <p><i class="bx bx-message-detail"> 
+          </i>Ya presentaste esta acitividad. Estatus: "${status}"</p>
+       `);
+    } else {
+      // console.log("No hay nada");
+      const messageCalif = document.getElementById("calif-parrafo");
+      return (messageCalif.innerHTML = `
+          <p><i class="bx bx-message-detail"> </i>No has presentado la Actividad. </p>
+       `);
     }
-    // score
-    // intent
-    // sendDate
-    // id
-    // link
-    // status
   }
-} 
-
+}
 
 // {
 //   "message": "Success getEvaluation ",

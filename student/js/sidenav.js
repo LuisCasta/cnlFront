@@ -7,7 +7,7 @@ function cargarSideNav() {
   let idStudent = 0;
   let name = "";
   let firstName = "";
-
+  const originUrl = window.location.origin;
   // console.log(name, firstName);
   if (user) {
     user = JSON.parse(user);
@@ -22,7 +22,7 @@ function cargarSideNav() {
       <!-- LOGO NUEVA LAGUNA -->
       <div class="downNav">
         <img
-          src="https://universidadnuevalaguna.edu.mx/wp-content/uploads/2023/08/escudo.png"
+          src="${originUrl}/src/escudo.png"
           alt=""
         />
       </div>

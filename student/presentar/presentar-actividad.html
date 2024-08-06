@@ -17,7 +17,9 @@
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
     <title>Presentar Actividad</title>
   </head>
-  <body onload="cargarSideNav(),loadActivitiesPresentar(),getRateIntentActivity()">
+  <body
+    onload="cargarSideNav(),loadActivitiesPresentar(),getRateIntentActivity()"
+  >
     <div id="sidenavInsert" class="sidenav-cln"></div>
     <main>
       <!-- NAVEGACIÓN EN MIGAS DE PAN -->
@@ -42,7 +44,7 @@
           <div class="pautas">
             <h4>Descripción de la Actividad:</h4>
             <p id="descrip-act"></p>
-            <a id="help"
+            <a id="help" target="_blank"
               ><i class="bx bx-link-external"></i>Material de Apoyo</a
             >
           </div>
@@ -63,9 +65,8 @@
             número de intentos: <span class="bold-span" id="num-intent">0</span>
           </p>
         </div>
+        <div id="calif-parrafo" class="message-activa"></div>
       </div>
-    <div id="calif" class="card-header-2"><p id="calif-parrafo"></p></div>
-
     </main>
     <div id="succes-post"></div>
     <button class="responsive" id="btnResponsive">

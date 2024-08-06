@@ -53,7 +53,7 @@ async function loadGetActivityStudentById() {
     btn.setAttribute("data-idunit", `${idUnit}`);
     btn.setAttribute("onclick", `actualizarAct(${id})`);
     descAct.value = description;
-    linkAct.value = link;
+    linkAct.value = link === null ? "no hay Link para mostrar" : link;
     nameActivity.value = name;
     int.value = intent;
     const endFormat = dateEnd.slice(0, -14).replaceAll("-", "-");
@@ -121,6 +121,7 @@ async function actualizarAct(id) {
 let listActivStu = "";
 async function loadListCheck() {
   const revisarActStuList = await loadListActivityStudentCheck(idActivity);
+  console.log(revisarActStuList.data);
   if (revisarActStuList.code != 200) {
     console.log(`Error ${revisarActStuList.message}`);
   } else {
@@ -142,7 +143,7 @@ async function loadListCheck() {
       <td data-cell="Estatus"><p class="${
         estatus == "Pendiente" ? "pendiente" : ""
       }">${estatus}</p></td>
-      <td data-cell="Revisar">
+      <td data-cell="Revisar" class="check-status">
         <a data-tooltip="Revisar" onclick='mostrarDataActAlumno(${idActStudent},${score},"${name}","${firstName}","${secondName}","${link}","${commentStudent}");' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} 
         class="btn-check">
         <i class='bx bx-check-square'></i>
@@ -170,7 +171,17 @@ async function mostrarDataActAlumno(
   let commentStu = obtainId("coment-stu");
   // commentStu.textContent = commentStudent;
   let linkStu = obtainId("link-act");
-  linkStu.href = link;
+  console.log(linkStu);
+  // link === null ? (linkStu.style.display = "none") : (linkStu.href = link);
+  if (link === null || link === undefined || link === "") {
+    linkStu.style.display = "none";
+  } else {
+    console.log(link);
+    linkStu.style.display = "flex";
+    linkStu.href = link;
+    linkStu.textContent = "Link a la actividad";
+  }
+
   let califFinalAct = obtainId("link-revisar");
   nombre.textContent = name + " " + firstName + " " + secondName;
   califFinalAct.value = parseFloat(score);

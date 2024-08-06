@@ -1,118 +1,123 @@
-@import url('../../admin/styles/style-generals.css');
-@import url('../../mentor/style-mentor/sidenav.css');
+@import url("../../admin/styles/style-generals.css");
+@import url("../../mentor/style-mentor/sidenav.css");
 
 .separator {
-    background-color: var(--primary-color);
-    width: 90%;
-    height: 1px;
+  background-color: var(--primary-color);
+  width: 90%;
+  height: 1px;
 }
 
 .pautas {
-    margin: 30px auto;
-    box-shadow: var(--box-shadow);
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin: 30px auto;
+  box-shadow: var(--box-shadow);
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pautas a {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-radius: 5px;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
 }
 
 .pautas p {
-    line-height: 25px;
-    font-size: 16px;
+  line-height: 25px;
+  font-size: 16px;
 }
 
 .pautas h4 {
-    line-height: 45px;
+  line-height: 45px;
 }
 
 .pautas h5 {
-    line-height: 35px;
+  line-height: 35px;
 }
 
 .content-name {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 .content-name h3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content-name h3::before {
-    content: 'Nombre de la Actividad';
-    font-weight: normal;
-    font-size: 12px;
-    color: var(--primary-color);
+  content: "Nombre de la Actividad";
+  font-weight: normal;
+  font-size: 12px;
+  color: var(--primary-color);
 }
 
 .content-name p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .link-material {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    width: 80%;
-    margin: auto;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  text-align: center;
 }
 
 .card-header {
-    position: relative;
+  position: relative;
 }
 
 .num-intent {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .intentos-span {
-    background-color: var(--color-bk-opacity);
-    color: var(--primary-color);
-    padding: 10px;
-    border-radius: 20px;
+  background-color: var(--color-bk-opacity);
+  color: var(--primary-color);
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .bold-span {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .text-enviar {
-    padding: 10px;
-    border-radius: 10px;
-    border: 2px solid #bfbfbf;
-    font-size: 18px;
-    font-style: italic;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #bfbfbf;
+  font-size: 18px;
+  font-style: italic;
 }
 
-.presentar{
-    font-size: 12px;
+.presentar {
+  font-size: 12px;
 }
-
+/* 
 #calif p {
+  width: 100%;
+  text-align: center;
+} */
 
+.card-header-2 {
+  width: 90%;
 }
-
-.card-header-2{
-    width:90%;
+.message-activa {
+  display: flex;
+  justify-content: center;
 }

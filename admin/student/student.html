@@ -24,7 +24,6 @@
   <body onload="cargarSideNav(), loadStudents(), loadCareers()">
     <!-- sidenav -->
     <div class="sidenav-cln" id="sidenavInsert"></div>
-
     <main>
       <div class="breadcumbs">
         <p>Alumnos</p>
@@ -49,6 +48,12 @@
               <p>Agrega alumnos, consulta y configúralos</p>
             </div>
             <div class="form-header">
+              <input
+                type="text"
+                placeholder="Matrícula"
+                id="tag"
+                class="form-student"
+              />
               <input
                 type="text"
                 placeholder="Nombre"
@@ -91,7 +96,6 @@
                 id="pwStud"
                 class="form-student"
               />
-
               <button id="agregar-alumno">
                 <i class="bx bx-user-plus"></i>Agregar Alumno
               </button>
@@ -116,9 +120,14 @@
               <select name="" id="cursos">
                 <option value="">curso</option>
               </select>
-              <button onclick="loadCheckBoxes()" id="btn-mostrar-ids">
-                <i class="bx bx-save"></i> asignar
-              </button>
+              <div class="container-btn">
+                <button onclick="loadCheckBoxes()" id="btn-mostrar-ids">
+                  <i class="bx bx-save"></i>Asignar
+                </button>
+                <button onclick="filtrar()" id="btnFilter">
+                  <i class="bx bx-filter-alt"></i>Filtrar
+                </button>
+              </div>
             </div>
           </div>
         </div>

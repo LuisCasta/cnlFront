@@ -22,7 +22,6 @@ const getAllRatesPartialByUnit = async (idUnit) => {
   return { code: 200, data: rateByUnit.data.data };
 };
 
-
 // Obtener las calificaciones finales por curso
 const getEndRateByCourse = async (idCourse) => {
   const ratesByCourse = await getApi(
@@ -173,7 +172,6 @@ const obtainRateByIdCourse = async (idCourse) => {
   return { code: 200, data: calificacionFinal.data.data };
 };
 
-
 //Guardar calificaciones parciales de un alumno
 const saveRatebyStudentFinal = async (data) => {
   const { idStudent, score, idCourse } = data;
@@ -193,12 +191,12 @@ const saveRatebyStudentFinal = async (data) => {
     return { code: 400, message: `Error, el campo idStudent es inválido` };
 
   if (score == "" || score == null || score == undefined || score == " ")
-  return { code: 400, message: `Error, el campo score es inválido` }
+    return { code: 400, message: `Error, el campo score es inválido` };
 
   const rateFinal = await putApi("courseStudent/updateEndScore", {
-   idStudent,
-   score,
-   idCourse
+    idStudent,
+    score,
+    idCourse,
   });
 
   if (rateFinal.status != 200)

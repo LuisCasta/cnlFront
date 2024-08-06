@@ -1,10 +1,18 @@
-"use strict";
+// "use strict";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idMentor = urlParams.get("idMentor");
-console.log(idMentor);
+// console.log(idMentor);
 const idCourse = urlParams.get("idCourse");
-const idStudent = urlParams.get("idStudent");
+let user = localStorage.getItem("user");
+// console.log(user);
+let idStudent = 0;
+if (user) {
+  user = JSON.parse(user);
+  idStudent = user.id;
+} else {
+  window.location.replace("../../index.html");
+}
 
 const activeLink = document.getElementById("a-activity");
 function obtainId(id) {

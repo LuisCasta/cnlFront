@@ -206,7 +206,6 @@ async function loadRateStudentByUnit() {
     allRates.data.forEach((rate) => {
       const { firstName, name, califRecomend, calif, idStudent } = rate;
       console.log(rate);
-
       ratesStudentByCourse += `
       <tr>
          <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
@@ -217,8 +216,7 @@ async function loadRateStudentByUnit() {
           <td data-cell="Acciones">
             <a class="sendRate" onclick="guardarRate(${idStudent})";"><i class='bx bxs-user-check'></i>Guardar</a>
           </td>
-      </tr>
-  `;
+      </tr>`;
       tableRate.innerHTML = ratesStudentByCourse;
     });
   }

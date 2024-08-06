@@ -108,8 +108,8 @@ async function RateByCourseStudent() {
             <p><i class="bx bx-note"></i>${name}</p>
             </div>
         </td>
-        <td data-cell="Promedio"><p>${percentage}</p></td>
-        <td data-cell="Evaluación final"><p>${score}<p></td>
+       
+        <td data-cell="Evaluación tarea activa"><p>${score}<p></td>
          </td>
      </tr>
       `;
@@ -118,3 +118,5 @@ async function RateByCourseStudent() {
     tCalif.innerHTML = tableRateHtml;
   }
 }
+
+/* <td data-cell="Promedio"><p>${percentage}</p></td> */

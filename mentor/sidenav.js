@@ -16,11 +16,12 @@ function cargarSideNav() {
     window.location.replace("../../index.html");
   }
   const sidenav = document.getElementById("sidenavInsert");
+  const originUrl = window.location.origin;
   const sideInnerHtml = ` <div class="sidenav-content">
       <!-- LOGO NUEVA LAGUNA -->
       <div class="downNav">
         <img
-          src="https://colegionuevalaguna.edu.mx/wp-content/uploads/2022/03/Logo-1.jpg"
+          src="${originUrl}/src/escudo.png"
           alt=""
         />
       </div>
