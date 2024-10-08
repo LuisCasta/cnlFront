@@ -34,7 +34,7 @@
 }
 
 .pautas h4 {
-  line-height: 45px;
+  line-height: 35px;
 }
 
 .pautas h5 {
@@ -53,6 +53,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .content-name h3::before {
@@ -71,7 +72,6 @@
   flex-direction: column;
   gap: 10px;
   justify-content: center;
-  width: 80%;
   margin: auto;
   text-align: center;
 }
@@ -120,4 +120,19 @@
 .message-activa {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .num-intent {
+    position: static;
+  }
+
+  .intentos-span {
+    background-color: var(--color-bk-opacity);
+    color: var(--primary-color);
+    padding: 10px;
+    border-radius: 20px;
+  }
 }

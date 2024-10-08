@@ -93,15 +93,22 @@ async function showForo() {
   messages.data.data.data.forEach((foroMessage) => {
     const { createdAt, name, message, idStudent } = foroMessage;
     // console.log(foroMessage);
+    function capitalizeInitials(name) {
+      return name
+        .split(" ")
+        .map(
+          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        )
+        .join(" ");
+    }
     containerMessage += `
     <div class="content-static-2">
     <div class="text-name">
     <div class="image-h5" >
-    <p class="circle-p">${name[0].toUpperCase()}</p>
+    <p class="circle-p" style="color:white;">${name.trim()[0]}</p>
       <h5 id="name-forum" class=${
         idStudent == null ? "name-h5-tutor" : "name-h5-student"
-      }>
-      ${name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()}</h5>
+      }>${capitalizeInitials(name)}</h5>
      </div> 
       <p id="message-forum message-foro">${message}</p>
     </div>

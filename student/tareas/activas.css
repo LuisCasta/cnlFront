@@ -419,15 +419,26 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
 }
 
 .name-h5-tutor {
-  /* background-image: linear-gradient(to right, #4f70d4, var(--primary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
   position: relative;
   color: #4f70d4;
 }
 
 .name-h5-tutor::after {
   content: "Tutor";
+  position: absolute;
+  left: 0;
+  top: -15px;
+  font-size: 10px;
+  color: #4f70d4;
+}
+
+.name-h5-student {
+  position: relative;
+  color: #4f70d4;
+}
+
+.name-h5-student::after {
+  content: "Alumno";
   position: absolute;
   left: 0;
   top: -15px;

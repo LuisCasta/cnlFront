@@ -298,16 +298,16 @@ const deleteGroup = async (data) => {
   )
     return { code: 400, message: `Error, el campo nombre es inválido` };
 
-  const career = await putApi(`group/d/${courseId}`, {});
+  const group = await putApi(`course/d/${courseId}`, {});
 
-  if (career.status != 200) {
+  if (group.status != 200) {
     return {
       code: 400,
-      message: `Error al eliminar al Mentor`,
-      error: career.data.message,
+      message: `Error al eliminar el Grupo`,
+      error: group.data.message,
     };
   } else {
     location.reload();
-    return { code: 200, data: career.data.data };
+    return { code: 200, data: group.data.data };
   }
 };

@@ -215,6 +215,7 @@ async function upCurso(courseId) {
 
 async function delCurso(courseId) {
   if (confirm("¿Estás seguro de que deseas eliminar este Grupo?")) {
+    console.log(courseId);
     const deleteData = await deleteGroup({
       courseId,
     });
