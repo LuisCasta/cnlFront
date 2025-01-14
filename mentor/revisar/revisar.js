@@ -95,12 +95,21 @@ async function actualizarAct(id) {
     });
     // console.log(updateData);
     if (updateData.code != 200) {
-      alert(`Error al actualizar la actividad llamada: ${name}`);
+      setTimeout(function () {
+        succesPost.innerHTML = `
+        <i class='bx bx-x'></i>
+        <p>No se pudo actualizar la actividad ${name}</p>`;
+        succesPost.classList.add("aviso-click");
+      }, 100);
+      setTimeout(function () {
+        succesPost.innerHTML = "";
+        succesPost.classList.remove("aviso-click");
+      }, 7000);
     } else {
       setTimeout(function () {
         succesPost.innerHTML = `
         <i class='bx bx-check-circle'></i>
-        <p>Carrera actualizada con éxito</p>`;
+        <p>Actividad actualizada con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
       setTimeout(function () {
@@ -121,7 +130,7 @@ async function actualizarAct(id) {
 let listActivStu = "";
 async function loadListCheck() {
   const revisarActStuList = await loadListActivityStudentCheck(idActivity);
-  console.log(revisarActStuList.data);
+  // console.log(revisarActStuList.data);
   if (revisarActStuList.code != 200) {
     console.log(`Error ${revisarActStuList.message}`);
   } else {
@@ -171,12 +180,12 @@ async function mostrarDataActAlumno(
   let commentStu = obtainId("coment-stu");
   // commentStu.textContent = commentStudent;
   let linkStu = obtainId("link-act");
-  console.log(linkStu);
+  // console.log(linkStu);
   // link === null ? (linkStu.style.display = "none") : (linkStu.href = link);
   if (link === null || link === undefined || link === "") {
     linkStu.style.display = "none";
   } else {
-    console.log(link);
+    // console.log(link);
     linkStu.style.display = "flex";
     linkStu.href = link;
     linkStu.textContent = "Link a la actividad";

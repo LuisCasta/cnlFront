@@ -70,12 +70,13 @@ const sendActivity = async (data) => {
       idActivity,
       link,
     });
-
+    // console.log(activity);
     return { code: 200, data: activity.data.data };
   } catch (error) {
+    // console.log("error:", error.response.data);
     return {
-      code: 400,
-      message: `Error al enviar la actividad`,
+      code: error.response.data.code,
+      message: error.response.data.message,
       error,
     };
   }

@@ -142,7 +142,7 @@ async function loadCareers() {
   <option>Selecciona una Carrera</option>
       `;
   const careers = await getAllAssigmentCareers();
-  console.log("estas son las carreras:", careers.data);
+  // console.log("estas son las carreras:", careers.data);
   if (careers.code != 200) {
     alert(`Error ${careers.message}`);
   } else {

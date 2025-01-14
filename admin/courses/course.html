@@ -20,6 +20,14 @@
   <body onload="cargarSideNav(), loadCursos()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
+      <div id="list-student" class="opacity">
+        <h3>Alumnos de este curso</h3>
+        <div class="close" onclick="cerrarLista()">
+          <p>cerrar</p>
+          <i class="bx bx-x" style="color: #ec3b3c"></i>
+        </div>
+        <ul id="ul-student" class="ul-student"></ul>
+      </div>
       <div class="breadcumbs">
         <a href="../career/career.html" id="career-breadcumb"
           ><p>Carreras</p></a
@@ -40,7 +48,11 @@
         </div>
         <div class="form-select materia-select">
           <p>Escoge materia</p>
-          <select name="Materia" id="form-header"></select>
+          <select
+            class="escoge-materia"
+            name="Materia"
+            id="form-header"
+          ></select>
         </div>
         <div class="form-header">
           <div class="form-select">
@@ -87,11 +99,13 @@
     <button class="responsive" id="btnResponsive">
       <i class="bx bx-menu"></i>
     </button>
+
     <script src="../../api/post.js"></script>
     <script src="../../api/course.js"></script>
     <!-- <script src="../api/mentor.js"></script> -->
     <script src="course.js"></script>
     <script src="../js/sidenav.js"></script>
     <script src="../../api/getid.js"></script>
+    <script src="../../api/courseStudent.js"></script>
   </body>
 </html>

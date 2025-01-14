@@ -1,15 +1,72 @@
-@import url('../styles/style-generals.css');
-@import url('../styles/sidenav.css');
+@import url("../styles/style-generals.css");
+@import url("../styles/sidenav.css");
 
 .materia-select {
-    width: 100%;
+  width: 100%;
 }
 
 .materia-select p {
-    font-size: 11px;
-    position: absolute;
-    font-weight: 600;
-    top: -18px;
-    left: 8px;
-    transition: .2s ease;
+  font-size: 11px;
+  position: absolute;
+  font-weight: 600;
+  top: -18px;
+  left: 8px;
+  transition: 0.2s ease;
+}
+
+main {
+  position: relative;
+}
+
+.opacity {
+  display: none;
+}
+
+.list-student {
+  border-radius: 10px;
+  position: absolute;
+  width: 90%;
+  left: 76px;
+  z-index: 200;
+  overflow: hidden;
+  height: 100vh;
+  top: 0;
+  background-color: white;
+}
+
+.ul-student {
+  overflow-y: scroll;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  background-color: #ec3b3b6d;
+  padding: 4px;
+  align-items: center;
+  width: 90px;
+  justify-content: center;
+  cursor: pointer;
+}
+.close p {
+  color: #ec3b3c;
+}
+
+.escoge-materia {
+  width: 100%;
+}
+
+.check-list {
+  margin: 10px auto;
+}
+
+@media (max-width: 576px) {
+  .list-student {
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+  }
 }

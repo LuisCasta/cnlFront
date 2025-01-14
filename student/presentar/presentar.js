@@ -11,7 +11,7 @@ const succesPost = document.getElementById("succes-post");
 const enviarActividadBtn = document.getElementById("presentar-actividad");
 async function loadActivitiesPresentar() {
   const presentarAct = await getActivityMentorStudent(idActivity);
-  console.log(presentarAct.data);
+  // console.log(presentarAct.data);
   if (presentarAct.code != 200) {
     alert(`Error ${presentarAct.message}`);
   } else {
@@ -35,6 +35,7 @@ enviarActividadBtn.addEventListener("click", async (e) => {
 
   const presentarActividad = await sendActivity(data);
   if (presentarActividad.code != 200) {
+    // console.log(presentarActividad);
     console.log(
       `Error ${presentarActividad.message}, ${presentarActividad.code}`
     );
@@ -54,6 +55,7 @@ enviarActividadBtn.addEventListener("click", async (e) => {
     }, 6500);
   } else {
     let intentosToast = presentarActividad.data.attemptsAvailable;
+    // console.log(intentosToast);
     linkFirst.value = "";
     setTimeout(function () {
       succesPost.innerHTML = `
@@ -76,17 +78,45 @@ enviarActividadBtn.addEventListener("click", async (e) => {
       succesPost.classList.remove("aviso-click");
     }, 6500);
   }
+  await getRateIntentActivity();
 });
+
+function formatearFechaSimple(fechaString) {
+  // Cortar la parte de la fecha (los primeros 10 caracteres)
+  const fechaCortada = fechaString.split("T")[0];
+
+  // Separar en año, mes, y día
+  const [año, mes, día] = fechaCortada.split("-");
+
+  // Reconstruir en el formato deseado: día mes año, con espacios en lugar de guiones
+  const fechaFormateada = `${día}/${mes}/${año}`;
+
+  return fechaFormateada;
+}
+
+function obtenerHora(fechaString) {
+  // Cortar la parte de la hora (lo que está después de la "T")
+  const horaCortada = fechaString.split("T")[1];
+
+  // Separar la hora completa en horas, minutos y segundos
+  const [hora, minutos] = horaCortada.split(":");
+
+  // Retornar la hora en formato "HH:MM"
+  return `${hora}:${minutos}`;
+}
 
 async function getRateIntentActivity() {
   const rateIntent = await getRateIntent(idStudent, idActivity);
-  console.log(rateIntent.code, "1");
+  // console.log(rateIntent);
+  // console.log(rateIntent.code, "1");
   if (rateIntent.code != 200) {
     // console.log("no hay nada para mostrar");
   } else {
     const keys = Object.keys(rateIntent.data);
     if (keys.length > 0) {
-      const { score, status, commentScore, link } = rateIntent.data;
+      const { score, status, commentScore, link, sendDate, intent } =
+        rateIntent.data;
+
       const linkPresentar = document.getElementById("link-presentar");
       linkPresentar.value = link;
       const messageCalif = document.getElementById("calif-parrafo");
@@ -110,6 +140,22 @@ async function getRateIntentActivity() {
                 commentScore === ""
                   ? "No hay comentarios"
                   : commentScore
+              }"</p>
+          </div>
+          <div>
+              <p><i class='bx bx-check-square'></i></i>Intentos realizados: ${intent}</p>
+          </div>
+          <div>
+              <p><i class='bx bx-time'></i>Fecha y hora de último envío:</p>
+              <p class="p-hour-date">"${
+                sendDate === 0 ||
+                sendDate === undefined ||
+                sendDate === null ||
+                sendDate === ""
+                  ? "No hay fecha y hora aún"
+                  : formatearFechaSimple(sendDate) +
+                    ", a las " +
+                    obtenerHora(sendDate)
               }"</p>
           </div>
        `);

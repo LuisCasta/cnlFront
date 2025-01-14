@@ -142,3 +142,16 @@ login.addEventListener("click", async function loginCnl() {
     }
   }
 });
+
+const passwordField = document.getElementById("pw-login");
+const togglePassword = document.getElementById("togglePassword");
+
+togglePassword.addEventListener("click", function () {
+  // Cambia el tipo de input entre password y text
+  const type = passwordField.type === "password" ? "text" : "password";
+  passwordField.type = type;
+
+  // Opcional: Cambia el icono según el estado
+  this.classList.toggle("bx-hide");
+  this.classList.toggle("bx-show");
+});

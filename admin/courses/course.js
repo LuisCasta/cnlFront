@@ -65,6 +65,9 @@ async function loadCursos() {
                     <button onclick="delCurso(${idCourse})" data-tooltip='Eliminar' class='edit' 
                      data-id="${idCourse}" class="eliminar"><i class='bx bx-trash'></i>
                     </button>
+                    <button onclick="showStudents(${idCourse})" data-tooltip='Ver alumnos' class='edit' 
+                     data-id="${idCourse}" class="eliminar"><i class='bx bx-group' style='color:#4ba070'></i>
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -72,6 +75,31 @@ async function loadCursos() {
     });
     tbody.innerHTML = cursoHtml;
   }
+}
+
+async function showStudents(idCourse) {
+  const alumnos = await CourseStudGetByCourse(idCourse);
+  const container = document.getElementById("list-student");
+  container.classList.add("card-header-2", "list-student");
+  container.classList.remove("opacity");
+  const ulHtml = document.getElementById("ul-student");
+  document.body.style.overflow = "hidden";
+  let html = "";
+  alumnos.data.map((alumno) => {
+    const { name, firstName, secondName } = alumno;
+    // console.log(name, firstName, secondName);
+    html += `<li><i class='bx bx-check check-list'></i> ${name} ${firstName} ${secondName}</li>`;
+    ulHtml.innerHTML = html;
+  });
+}
+
+function cerrarLista() {
+  document.body.style.overflow = "";
+  const container = document.getElementById("list-student");
+  container.classList.remove("card-header-2", "list-student");
+  container.classList.add("opacity");
+  const ulHtml = document.getElementById("ul-student");
+  ulHtml.innerHTML = "";
 }
 
 async function buildSelectSubjects(subjects) {

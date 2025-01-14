@@ -1,31 +1,42 @@
-@import url('../style-mentor/sidenav.css');
-@import url('../../admin/styles/style-generals.css');
+@import url("../style-mentor/sidenav.css");
+@import url("../../admin/styles/style-generals.css");
 
 .enviar-calificacion {
-    width: fit-content;
+  width: fit-content;
 }
 
 .cal-final {
-    font-size: 14px;
-    width: fit-content;
+  font-size: 14px;
+  width: fit-content;
 }
 
 select {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 select option {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .text-Header {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .view-rate {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hiddenBtn {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: 0.4s ease-in-out;
+}
+.showbtn {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: 0.4s ease-in-out;
 }

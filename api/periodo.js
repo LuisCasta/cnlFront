@@ -120,7 +120,7 @@ const deletePeriod = async (data) => {
   )
     return { code: 400, message: `Error, el campo nombre es inválido` };
 
-  const period = await putApi(`career/d/${periodId}`, {});
+  const period = await putApi(`period/d/${periodId}`, {});
 
   if (period.status != 200)
     return {

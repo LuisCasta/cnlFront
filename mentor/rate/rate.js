@@ -30,6 +30,7 @@ async function loadCursosById() {
     });
   }
   buttonSearch.addEventListener("click", async (e) => {
+    transferButton.classList.add("showbtn");
     let taBendRate = "";
     const trHeaders = document.getElementById("headers-rate");
     e.preventDefault(e);
@@ -42,7 +43,7 @@ async function loadCursosById() {
       let countTA = [];
       let headersHtml = `<td>Nombre TA</td>`;
       if (printCalif.data.headers.length > 0) {
-        console.log("1");
+        // console.log("1");
         printCalif.data.headers.forEach((header) => {
           const { nameUnit, idUnit } = header;
           headersHtml += `
@@ -74,7 +75,7 @@ async function loadCursosById() {
             <tr>
                 <td data-cell="Alumno"><p>${name} ${firstName}</p></td>
             `;
-        console.log(countTA);
+        // console.log(countTA);
         countTA.forEach((count) => {
           const aux = listCalif.filter((calif) => {
             return calif.id == count;
@@ -82,13 +83,28 @@ async function loadCursosById() {
           taBendRate += `<td data-cell="Tarea"><p>${aux[0].califRecomend}</p></td>`;
         });
         taBendRate += `
-            <td data-cell="Recomendada"><p>${califRecomend}</p></td>
-            <td data-cell="Final"><p id="califFinal_${idStudent}" contenteditable='true'>${calif}</p></td>
+            <td data-cell="Recomendada" ><p class="promedio-calculado" >${califRecomend}</p></td>
+            <td data-cell="Final" ><p class="calificacion-final" id="califFinal_${idStudent}" contenteditable='true'>${calif}</p></td>
             <td data-cell="Guardar"><button onclick="btnGuardar(${idStudent},${idCS})">Enviar</button></td>
             `;
         tabEnd.innerHTML = taBendRate;
       });
     }
+  });
+
+  const transferButton = document.getElementById("btn-promedio");
+
+  transferButton.addEventListener("click", () => {
+    const rows = document.querySelectorAll("tbody tr"); // Selecciona todas las filas del cuerpo de la tabla
+
+    rows.forEach((row) => {
+      const promedioCell = row.querySelector(".promedio-calculado"); // Encuentra la celda de Promedio Calculado
+      const calificacionFinalCell = row.querySelector(".calificacion-final"); // Encuentra la celda de Calificación Final
+
+      if (promedioCell && calificacionFinalCell) {
+        calificacionFinalCell.textContent = promedioCell.textContent; // Transfiere el valor
+      }
+    });
   });
 }
 

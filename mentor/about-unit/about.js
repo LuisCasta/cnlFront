@@ -15,7 +15,7 @@ const tableVideoCalls = obtainId("table-calls");
 const selectTypeActivity = obtainId("type-activity");
 
 const hrefTarea = document.getElementById("href-unidad");
-console.log(hrefTarea);
+// console.log(hrefTarea);
 hrefTarea.href = `../unit/unit.html?idCurso=${idCourse}`;
 // Mostrar en tabla las actividades
 
@@ -127,45 +127,73 @@ async function loadVideoByIdCourse() {
 }
 
 // Crear la videollamada
+
+function validateGoogleMeetLink(link) {
+  // Expresión regular para validar enlaces de Google Meet
+  const googleMeetRegex = /^https:\/\/meet\.google\.com\/[a-zA-Z0-9-]+$/;
+
+  // Verificar si el enlace cumple con el patrón
+  if (googleMeetRegex.test(link)) {
+    return true; // Es un enlace válido de Google Meet
+  } else {
+    return false; // No es un enlace válido de Google Meet
+  }
+}
+
+// Ejemplo de uso
+// // Reemplazar con el input del usuario
+
 const btnCreatCall = obtainId("btn-createCall");
 btnCreatCall.addEventListener("click", async (e) => {
   e.preventDefault();
   const name = obtainId("name-call").value;
   const description = obtainId("call-desc").value;
   const link = obtainId("link-call").value;
+  if (!validateGoogleMeetLink(link)) {
+    succesPost.innerHTML = `
+      <i class='bx bx-error-alt' style='color:#ec2828'  ></i>
+      <p>El link de Videollamada no tiene el formato de Google Meet requerido</p>
+      `;
+    succesPost.classList.add("aviso-click");
+    setTimeout(function () {
+      succesPost.innerHTML = "";
+      succesPost.classList.remove("aviso-click");
+    }, 4000);
+  } else {
+    const data = {
+      link,
+      name,
+      description,
+      idCourse,
+    };
 
-  const data = {
-    link,
-    name,
-    description,
-    idCourse,
-  };
-  // Succes Post
-  succesPost.innerHTML = `
+    // Succes Post
+    succesPost.innerHTML = `
  <i class='bx bx-loader-circle bx-spin' ></i>
  <p>Creando nueva Videollamada...</p>
 `;
-  succesPost.classList.add("aviso-click");
+    succesPost.classList.add("aviso-click");
 
-  const newCall = await createVideoCall(data);
-  if (newCall.code != 200) alert(`Error ${newCall.message}`);
-  else {
-    succesPost.innerHTML = `
+    const newCall = await createVideoCall(data);
+    if (newCall.code != 200) alert(`Error ${newCall.message}`);
+    else {
+      succesPost.innerHTML = `
       <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
       <p>Videollamada: ${name} creada con éxito</p>
       `;
-    succesPost.classList.add("aviso-click");
-  }
+      succesPost.classList.add("aviso-click");
+    }
 
-  setTimeout(function () {
-    location.reload();
-  }, 4000);
+    setTimeout(function () {
+      location.reload();
+    }, 4000);
+  }
 });
 
 //Calificaciones de alumnos por Curso
 let ratesStudentByCourse = "";
 async function guardarRate(idStudent) {
-  const score = document.getElementById(`ide-${idStudent}`).value;
+  const score = document.getElementById(`ide-${idStudent}`).textContent;
   console.log(score);
   if (score == "" || score == undefined || score == null) {
     succesPost.innerText = "Error, la calificación es inválida";
@@ -205,14 +233,14 @@ async function loadRateStudentByUnit() {
   } else {
     allRates.data.forEach((rate) => {
       const { firstName, name, califRecomend, calif, idStudent } = rate;
-      console.log(rate);
+      // console.log(rate);
       ratesStudentByCourse += `
       <tr>
          <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
-          <td data-cell="calificación recomendada"><p>${
-            califRecomend == undefined ? "sin recomendación" : califRecomend
+          <td data-cell="calificación recomendada"><p contenteditable="true" class="promedio-calculado">${
+            califRecomend == undefined ? "0" : califRecomend
           }</p></td>
-          <td data-cell="Calificación"><input data-tooltip="editar" class="rateEdit" id=ide-${idStudent} value=${calif} class="input-promf"/></td>
+          <td data-cell="Calificación"><p data-tooltip="editar"  id=ide-${idStudent} contenteditable="true"  class="rateEdit input-promf calificacion-final">${calif}</p></td>
           <td data-cell="Acciones">
             <a class="sendRate" onclick="guardarRate(${idStudent})";"><i class='bx bxs-user-check'></i>Guardar</a>
           </td>
@@ -220,6 +248,20 @@ async function loadRateStudentByUnit() {
       tableRate.innerHTML = ratesStudentByCourse;
     });
   }
+  const transferButton = document.getElementById("btn-promedio");
+
+  transferButton.addEventListener("click", () => {
+    const rows = document.querySelectorAll("tbody tr"); // Selecciona todas las filas del cuerpo de la tabla
+
+    rows.forEach((row) => {
+      const promedioCell = row.querySelector(".promedio-calculado"); // Encuentra la celda de Promedio Calculado
+      const calificacionFinalCell = row.querySelector(".calificacion-final"); // Encuentra la celda de Calificación Final
+
+      if (promedioCell && calificacionFinalCell) {
+        calificacionFinalCell.textContent = promedioCell.textContent; // Transfiere el valor
+      }
+    });
+  });
 }
 
 //Guarda Calificaciones Parciales de un curso
