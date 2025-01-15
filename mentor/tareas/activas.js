@@ -1,12 +1,11 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idCourse = urlParams.get("idCurso");
-console.log(idCourse);
 
 async function updateSchedule() {
   console.log("click");
   const schedule = obtainId("horario").value;
-  console.log(schedule);
+  // console.log(schedule);
   const data = {
     idCourse,
     schedule,

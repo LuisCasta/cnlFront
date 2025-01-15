@@ -4,6 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 const idMentor = urlParams.get("idMentor");
 // console.log(idMentor);
 const idCourse = urlParams.get("idCourse");
+console.log(idCourse);
 let user = localStorage.getItem("user");
 // console.log(user);
 let idStudent = 0;

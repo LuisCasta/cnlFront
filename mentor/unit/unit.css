@@ -225,4 +225,10 @@
   .cards-actividad-unit {
     flex-direction: column;
   }
+  .container-modal {
+    height: 50%;
+  }
+  .parrafo-modal {
+    height: 300px;
+  }
 }

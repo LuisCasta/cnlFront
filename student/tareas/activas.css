@@ -487,6 +487,12 @@ ESTILOAS PARA LOS CARDS DE UNIDAD TAREAS, FORO, APOYO VISUAL
   color: #fff;
 }
 
+/* styles para horario */
+.container-schedule {
+  width: 90%;
+  margin: auto;
+}
+
 @media (max-width: 748px) {
   .form-header {
     flex-direction: column;

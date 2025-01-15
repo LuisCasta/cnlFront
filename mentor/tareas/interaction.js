@@ -7,7 +7,6 @@ const containerPdf = obtainId("containerPdf");
 const cardDocs = obtainId("card-docs");
 const foro = obtainId("foro");
 const schedule = obtainId("containerSchedule");
-console.log(schedule);
 
 const succesPost = obtainId("succes-post");
 
@@ -61,11 +60,16 @@ function abrirDocs() {
   // containerForo.classList.remove("show-container");
 }
 
-function showSchedule() {
+async function showSchedule() {
   schedule.classList.remove("hide");
   schedule.classList.add("show-card");
   cardDocs.classList.add("hide");
   foro.classList.add("hide");
+  const id = idCourse;
+  const cursoHorario = await courseGetById(id);
+  console.log(cursoHorario.data.schedule);
+  const textArea = obtainId("horario");
+  textArea.value = cursoHorario.data.schedule;
 }
 
 async function showForo() {

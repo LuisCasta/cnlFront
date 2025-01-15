@@ -3,6 +3,7 @@ function obtainId(id) {
   const getID = document.getElementById(id);
   return getID;
 }
+console.log(idCourse);
 // console.log(idStudent);
 // const queryString = window.location.search;
 // const urlParams = new URLSearchParams(queryString);
@@ -13,6 +14,7 @@ const containerForo = obtainId("comment-foro");
 const containerPdf = obtainId("containerPdf");
 const cardDocs = obtainId("card-docs");
 const foro = obtainId("foro");
+const schedule = obtainId("containerSchedule");
 
 const succesPost = obtainId("succes-post");
 
@@ -21,7 +23,45 @@ foro.classList.add("hide");
 containerVideo.classList.add("fadeOut");
 containerPdf.classList.add("fadeOut");
 cardDocs.classList.add("hide");
+schedule.classList.add("hide");
 // console.log(cardDocs, foro);
+
+async function showSchedule() {
+  //Abrir Foro
+  schedule.classList.remove("hide");
+  schedule.classList.add("show-card");
+
+  foro.classList.add("hide");
+  foro.classList.remove("show-card");
+
+  // cerrar docs
+  cardDocs.classList.add("hide");
+  cardDocs.classList.remove("show-card");
+
+  //cerrar pdf
+  containerPdf.classList.remove("show-container");
+  containerPdf.classList.add("fadeOut");
+
+  //cerrar video
+
+  containerVideo.classList.remove("show-container");
+  containerVideo.classList.add("fadeOut");
+
+  const id = idCourse;
+  const cursoHorario = await courseGetById(id);
+  console.log(cursoHorario.data);
+  const textArea = obtainId("horario");
+  console.log(textArea);
+  if (
+    cursoHorario.data.schedule == null ||
+    cursoHorario.data.schedule == undefined ||
+    cursoHorario.data.schedule == ""
+  ) {
+    textArea.value = "Aún no hay horario para mostrar";
+  } else {
+    textArea.value = cursoHorario.data.schedule;
+  }
+}
 
 function verPdf() {
   containerPdf.classList.add("show-container");
@@ -31,9 +71,9 @@ function verPdf() {
   containerVideo.classList.remove("show-container");
   containerVideo.classList.add("fadeOut");
 
-  //cerrar mensajes del foro
-  // containerForo.classList.add("hide");
-  // containerForo.classList.remove("show-container");
+  //cerrar horario
+  schedule.classList.add("hide");
+  schedule.classList.remove("show-card");
 }
 
 function reproducirVideo() {
@@ -46,8 +86,8 @@ function reproducirVideo() {
 
   //cerrar mensajes del foro
 
-  // containerForo.classList.add("hide");
-  // containerForo.classList.remove("show-container");
+  schedule.classList.add("hide");
+  schedule.classList.remove("show-card");
 }
 
 function abrirDocs() {
@@ -58,8 +98,8 @@ function abrirDocs() {
   foro.classList.remove("show-card");
 
   //cerrar mensajes del foro
-  // containerForo.classList.add("hide");
-  // containerForo.classList.remove("show-container");
+  schedule.classList.add("hide");
+  schedule.classList.remove("show-card");
 }
 
 async function showForo() {
@@ -80,8 +120,8 @@ async function showForo() {
   containerVideo.classList.add("fadeOut");
 
   //Abrir Foro
-  // containerForo.classList.remove("hide");
-  // containerForo.classList.add("show-container");
+  schedule.classList.add("hide");
+  schedule.classList.remove("show-card");
 
   // console.log(idCourse);
   // console.log(idStudent, "3");

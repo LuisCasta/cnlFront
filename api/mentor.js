@@ -293,3 +293,19 @@ const updateScheduleCourse = async (data) => {
 /**
  * @descripcion Delete a student by id
  */
+
+const courseGetById = async (id) => {
+  if (id == 0 || id == "" || id == undefined)
+    return { code: 400, message: `Error, el campo id es inválido` };
+
+  const curso = await getApi(`course/about/${id}`);
+
+  if (curso.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener el curso con el id: ${id}`,
+      error: curso.data.message,
+    };
+
+  return { code: 200, data: curso.data.data };
+};
