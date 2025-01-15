@@ -1,6 +1,46 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const idCourse = urlParams.get("idCurso");
+console.log(idCourse);
+
+async function updateSchedule() {
+  console.log("click");
+  const schedule = obtainId("horario").value;
+  console.log(schedule);
+  const data = {
+    idCourse,
+    schedule,
+  };
+  const updateHorario = await updateScheduleCourse(data);
+  // console.log(data);
+  console.log(`is Updated ${updateHorario}`);
+  if (updateHorario.code != 200) {
+    succesPost.classList.add("aviso-click");
+    succesPost.innerHTML = `
+  <i class='bx bx-error-alt' style='color:#d61717'  ></i>
+    <p>Hubo un problema con el horario, revisa que no esté vacío</p>
+ `;
+    // await showForo();
+
+    setTimeout(() => {
+      succesPost.classList.remove("aviso-click");
+      succesPost.innerHTML = `
+        <p></p>
+     `;
+    }, 5000);
+    alert(`Error ${updateHorario.message}`);
+  } else {
+    succesPost.innerHTML = `
+  <i class='bx bx-check-circle bx-tada'></i>
+    <p>Horario actualizado</p>
+ `;
+    succesPost.classList.add("aviso-click");
+
+    setTimeout(() => {
+      succesPost.classList.remove("aviso-click");
+    }, 3000);
+  }
+}
 
 const activeLink = document.getElementById("a-activity");
 function obtainId(id) {

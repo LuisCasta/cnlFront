@@ -28,15 +28,11 @@
         <i id="expandir" onclick="expandir()" class="bx bx-expand"></i>
         <div class="card-content-info-unit">
           <div id="click" class="content-static descripcion-unit">
-            <i class="bx bx-text"></i>
-            <i class="bx bx-bookmark-alt"></i>
             <h3 class="title">Tareas Activas</h3>
             <p class="label-unit">Agrega y gestiona tareas activas.</p>
             <a id="a-activity" class="a-unit-card-2">Entrar</a>
           </div>
           <div class="content-static presentacion">
-            <i class="bx bx-slideshow"></i>
-            <i class="bx bxs-video-plus"></i>
             <h3>Presentación del Tutor</h3>
             <p>
               Da click en el botón para mostrar abajo los documentos de la
@@ -45,13 +41,19 @@
             <a onclick="abrirDocs()" class="a-unit-card">Mostrar</a>
           </div>
           <div class="content-static foro descripcion-unit">
-            <i class="bx bx-chat"></i>
-            <i class="bx bx-comment-add"></i>
             <h3>Foro</h3>
             <p class="p-forum">
               Da click en el botón para mostrar los mensajes de Foro
             </p>
             <a class="a-unit-card-2" onclick="showForo()">Mostrar</a>
+          </div>
+          <!-- ACTUALIZAR HORARIO -->
+          <div class="content-static foro presentacion">
+            <h3>Horario</h3>
+            <p class="p-forum">
+              Da click en el botón para mostrar el horario de esta materia
+            </p>
+            <a class="a-unit-card" onclick="showSchedule()">Mostrar</a>
           </div>
         </div>
       </div>
@@ -81,7 +83,7 @@
                   ><i class="bx bx-save"></i> Guardar</a
                 >
                 <a onclick="verPdf()" class="a-tutor-presentation"
-                  ><i class="bx bx-show"></i> Ver</a
+                  ><i class="bx bx-show"></i>Ver</a
                 >
               </div>
             </div>
@@ -122,6 +124,16 @@
           id="pdf-iframe"
           frameborder="0"
         ></iframe>
+      </div>
+      <!-- container schedule  -->
+      <div id="containerSchedule" class="container-schedule card-header-2">
+        <textarea
+          class="message-TA-horario"
+          name=""
+          placeholder="Copia y pega el Horario de tu materia"
+          id="horario"
+        ></textarea>
+        <button onclick="updateSchedule()">Actualizar horario</button>
       </div>
     </main>
     <div id="succes-post"></div>

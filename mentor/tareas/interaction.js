@@ -6,6 +6,8 @@ const containerForo = obtainId("comment-foro");
 const containerPdf = obtainId("containerPdf");
 const cardDocs = obtainId("card-docs");
 const foro = obtainId("foro");
+const schedule = obtainId("containerSchedule");
+console.log(schedule);
 
 const succesPost = obtainId("succes-post");
 
@@ -14,6 +16,7 @@ foro.classList.add("hide");
 containerVideo.classList.add("fadeOut");
 containerPdf.classList.add("fadeOut");
 cardDocs.classList.add("hide");
+schedule.classList.add("hide");
 // console.log(cardDocs, foro);
 
 function verPdf() {
@@ -50,9 +53,19 @@ function abrirDocs() {
   foro.classList.add("hide");
   foro.classList.remove("show-card");
 
+  // cerrar horario
+  schedule.classList.add("hide");
+  schedule.classList.remove("show-card");
   //cerrar mensajes del foro
   // containerForo.classList.add("hide");
   // containerForo.classList.remove("show-container");
+}
+
+function showSchedule() {
+  schedule.classList.remove("hide");
+  schedule.classList.add("show-card");
+  cardDocs.classList.add("hide");
+  foro.classList.add("hide");
 }
 
 async function showForo() {
@@ -68,9 +81,12 @@ async function showForo() {
   containerPdf.classList.add("fadeOut");
 
   //cerrar video
-
   containerVideo.classList.remove("show-container");
   containerVideo.classList.add("fadeOut");
+
+  // cerrar horario
+  schedule.classList.add("hide");
+  schedule.classList.remove("show-card");
 
   //Abrir Foro
   // containerForo.classList.remove("hide");

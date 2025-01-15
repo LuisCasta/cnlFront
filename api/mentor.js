@@ -259,6 +259,37 @@ const updateTutorPresentation = async (data) => {
 
   return { code: 200, data: turorPresentation.data.data };
 };
+
+const updateScheduleCourse = async (data) => {
+  const { schedule, idCourse } = data;
+
+  if (schedule == "" || schedule == null || schedule == undefined)
+    return {
+      code: 400,
+      message: `Error, el campo schedule es inválido o está vacío`,
+    };
+
+  if (idCourse == "" || idCourse == null || idCourse == undefined)
+    return {
+      code: 400,
+      message: `Error, el campo courseId es inválido`,
+    };
+
+  const course = await putApi("course/schedule", {
+    courseId: idCourse,
+    schedule,
+  });
+
+  if (course.status != 200)
+    return {
+      code: 400,
+      message: `Error al actualizar el schedule.`,
+      error: course.data.message,
+    };
+
+  return { code: 200, data: course.data.data };
+};
+
 /**
  * @descripcion Delete a student by id
  */
