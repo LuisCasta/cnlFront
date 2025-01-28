@@ -13,7 +13,7 @@ async function loadMentors() {
   let salida = "";
   const tbody = document.getElementById("mentors");
   const mentors = await getAll();
-  console.log(mentors.data);
+  // console.log(mentors.data);
   if (mentors.code != 200) {
     alert(`Error ${newMentor.message}`);
   } else {

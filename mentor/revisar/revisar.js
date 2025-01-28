@@ -153,9 +153,13 @@ async function loadListCheck() {
         estatus == "Pendiente" ? "pendiente" : ""
       }">${estatus}</p></td>
       <td data-cell="Revisar" class="check-status">
-        <a data-tooltip="Revisar" onclick='mostrarDataActAlumno(${idActStudent},${score},"${name}","${firstName}","${secondName}","${link}","${commentStudent}");' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} 
+        <a data-tooltip="Revisar" onclick='mostrarDataActAlumno(this,${idActStudent},${score},"${name}","${firstName}","${secondName}","${link}","${commentStudent}");' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} 
         class="btn-check">
-        <i class='bx bx-check-square'></i>
+         <div class="icon-square checkbox-btn">
+        <i class="i-btn bx bx-sm ${
+          estatus == "Pendiente" ? "bx-check" : "bx-check-square"
+        }"></i>
+        </div>
         </a>
       </td>
     </tr>
@@ -163,6 +167,26 @@ async function loadListCheck() {
     });
 
     tabListStu.innerHTML = listActivStu;
+    // Seleccionar todos los elementos con la clase btn-checkbox
+    // Seleccionar el contenedor principal (puede ser <tbody>)
+    // Escuchar el evento click en el contenedor
+    const allIcons = tabListStu.querySelectorAll(".i-btn");
+    allIcons.forEach((icon) => icon.classList.add("inactive"));
+    tabListStu.addEventListener("click", (event) => {
+      // Verificar si el clic ocurrió en una fila o en un elemento dentro de ella
+      const clickedRow = event.target.closest("tr");
+
+      if (clickedRow) {
+        // Remover la clase 'active' de todos los íconos en la tabla
+        allIcons.forEach((icon) => icon.classList.remove("active"));
+
+        // Agregar la clase 'active' solo al ícono de la fila clickeada
+        const icon = clickedRow.querySelector(".i-btn");
+        if (icon) {
+          icon.classList.add("active");
+        }
+      }
+    });
   }
 }
 

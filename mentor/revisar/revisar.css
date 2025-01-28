@@ -26,6 +26,23 @@
   align-items: center;
 }
 
+.icon-square {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inactive {
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+}
+
 .pautas a {
   background-color: var(--primary-color);
   color: #fff;

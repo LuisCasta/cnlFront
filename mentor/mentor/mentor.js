@@ -44,8 +44,8 @@ async function loadCursosById() {
       btnCourseConfig.forEach((el) => {
         el.addEventListener("click", (e) => {
           modalCourse.classList.add("animaterate");
-          openModal(e.target.id);
-          console.log(e.target.id);
+          // openModal(e.target.id);
+          // console.log(e.target.id);
           // console.log(e.target.id);
         });
       });
@@ -100,7 +100,7 @@ async function loadCursosById() {
             proyect,
           };
           const isUpdated = await updateCourse(data);
-          console.log(`is Updated ${isUpdated.status}`);
+          // console.log(`is Updated ${isUpdated.status}`);
 
           setTimeout(() => {
             location.reload();
