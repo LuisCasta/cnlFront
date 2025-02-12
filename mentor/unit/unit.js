@@ -28,7 +28,7 @@ async function loadUnit() {
         <td data-cell="Nombre">
          <p data-tooltip="Editar" id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
         </td>
-     <td data-cell="Porcentaje"><p id="percentage-${id}" contenteditable="true" spellcheck="false">${percentage}</p></td>
+     <td data-cell="Porcentaje"><p id="percentage-${id}" contenteditable="true" spellcheck="false">${percentage}%</p></td>
    
      <td data-cell="Descripción">
       <button class="btn-show" data-tooltip="Ver" data-description='${description}' 

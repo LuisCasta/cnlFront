@@ -136,28 +136,36 @@ async function loadListCheck() {
   } else {
     revisarActStuList.data.forEach((student) => {
       const {
-        estatus,
+        status,
         name,
         secondName,
         idActStudent,
         score,
         firstName,
         link,
-        commentStudent,
+        commentScore,
       } = student;
       // console.log(student);
       listActivStu += `
     <tr class="td-check">
       <td data-cell="Nombre"><p>${name}</p></td>
       <td data-cell="Estatus"><p class="${
-        estatus == "Pendiente" ? "pendiente" : ""
-      }">${estatus}</p></td>
+        status == null
+          ? "pendiente"
+          : status == "Revisado"
+          ? "checked-task"
+          : status == "Enviado"
+          ? "enviada"
+          : ""
+      }">${status == null ? "no enviado" : status}</p></td>
       <td data-cell="Revisar" class="check-status">
-        <a data-tooltip="Revisar" onclick='mostrarDataActAlumno(this,${idActStudent},${score},"${name}","${firstName}","${secondName}","${link}","${commentStudent}");' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} 
+        <a data-tooltip="Revisar" onclick='mostrarDataActAlumno(${idActStudent},${score},"${name}","${firstName}","${secondName}","${link}",${JSON.stringify(
+        commentScore
+      )});' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} 
         class="btn-check">
          <div class="icon-square checkbox-btn">
         <i class="i-btn bx bx-sm ${
-          estatus == "Pendiente" ? "bx-check" : "bx-check-square"
+          status == "Pendiente" ? "bx-check" : "bx-check-square"
         }"></i>
         </div>
         </a>
@@ -197,12 +205,14 @@ async function mostrarDataActAlumno(
   firstName,
   secondName,
   link,
-  commentStudent
+  commentScore
 ) {
+  console.log(idActAlu, score, name, firstName, secondName, link, commentScore);
   score === null ? (score = 0) : (score = score);
   let nombre = obtainId("act-alumno");
-  let commentStu = obtainId("coment-stu");
-  // commentStu.textContent = commentStudent;
+  let commentStu = obtainId("comments");
+  commentStu.textContent =
+    commentScore === "null" ? "No hay comentarios" : commentScore;
   let linkStu = obtainId("link-act");
   // console.log(linkStu);
   // link === null ? (linkStu.style.display = "none") : (linkStu.href = link);

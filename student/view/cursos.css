@@ -2,200 +2,459 @@
 @import url("../../mentor/style-mentor/sidenav.css");
 
 .container-cursos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    width: 90%;
-    margin: auto;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 90%;
+  margin: auto;
+  gap: 20px;
 }
 
 .card-cursos {
-    box-shadow: var(--box-shadow);
-    padding: 25px;
-    border-radius: 10px;
-    position: relative;
-    background-image: linear-gradient(to right, #4f70d4, var(--primary-color));
-    transition: .3s ease-in-out;
+  box-shadow: var(--box-shadow);
+  padding: 25px;
+  border-radius: 10px;
+  position: relative;
+  background-image: linear-gradient(to right, #4f70d4, var(--primary-color));
+  transition: 0.3s ease-in-out;
 }
 
 .card-cursos:hover {
-    transition: .3s ease-in-out;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    cursor: pointer;
+  transition: 0.3s ease-in-out;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  cursor: pointer;
 }
 
 .text-card {
-    margin: 10px auto;
+  margin: 10px auto;
 }
 
 .text-card h4 {
-    color: #fff;
+  color: #fff;
 }
 
 .text-card a {
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-    padding: 5px 8px;
-    font-size: 14px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: .2s ease-in;
-    font-weight: 600;
-    background-color: #22387d50;
-    color: #fff;
-    border: 1px solid #fff;
-    width: 70px;
-    display: flex;
-    justify-content: center;
-    transition: .3s ease-in-out width;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  padding: 5px 8px;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.2s ease-in;
+  font-weight: 600;
+  background-color: #22387d50;
+  color: #fff;
+  border: 1px solid #fff;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  transition: 0.3s ease-in-out width;
 }
 
 .text-card p {
-    color: #fff;
+  color: #fff;
 }
 
 .text-card a:hover {
-    background-color: var(--primary-color);
-    width: 80px;
+  background-color: var(--primary-color);
+  width: 80px;
 }
 
 .hr {
-    width: 90%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 1px;
-    background-color: var(--primary-color);
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 1px;
+  background-color: var(--primary-color);
 }
-
 
 /* NOTIFICACIONES */
 
 .card-header-2 {
-    padding: 0;
-    margin: auto;
-    width: 90%;
-    background-color: transparent;
-    box-shadow: none;
-    height: 200px;
+  padding: 0;
+  margin: auto;
+  width: 90%;
+  background-color: transparent;
+  box-shadow: none;
+  height: 200px;
 }
 
 .avisos {
-    background-color: #e5e5e5;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow-y: auto;
-    border-radius: 10px;
+  background-color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  border-radius: 10px;
 }
 
 .avisos::-webkit-scrollbar-thumb {
-    background-color: #999;
+  background-color: #999;
 }
 
 .avisos::-webkit-scrollbar-track {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .avisos {
-    scrollbar-width: none;
+  scrollbar-width: none;
 }
 
 .notification {
-    background-image: linear-gradient(to right, #4f70d4, #219ebc);
-    backdrop-filter: blur(5px);
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-    width: 90%;
-    margin: auto;
+  background-image: linear-gradient(to right, #4f70d4, #219ebc);
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  width: 90%;
+  margin: 10px auto;
 }
 
 .notification p {
-    color: #fff;
-    font-size: 12px;
-    text-align: right;
+  color: #fff;
+  font-size: 12px;
+  text-align: right;
 }
 
 .fecha {
-    justify-content: right;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: flex-end;
+  justify-content: right;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: flex-end;
 }
 
 .fecha h6 {
-    color: #fff;
-    text-align: right;
-    font-size: 10px;
+  color: #fff;
+  text-align: right;
+  font-size: 10px;
 }
 
 .avisos h5 {
-    color: #4f70d4;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: sticky;
-    top: 0px;
-    z-index: 20;
-    padding: 15px;
-    background-color: #e5e5e59e;
-    backdrop-filter: blur(6px);
-    display: flex;
-    justify-content: center;
+  color: #4f70d4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  top: 0px;
+  z-index: 20;
+  padding: 15px;
+  background-color: #e5e5e59e;
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
 }
 
 .avisos h5::before {
-    content: '';
-    width: 95%;
-    position: absolute;
-    top: -30px;
-    z-index: 10;
-    height: 30px;
-    background-color: #e5e5e5;
+  content: "";
+  width: 95%;
+  position: absolute;
+  top: -30px;
+  z-index: 10;
+  height: 30px;
+  background-color: #e5e5e5;
 }
 
 .name-notify label {
-    color: #fff;
-    font-size: 14px;
-    line-height: 20px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .name-notify h6 {
-    color: #fff;
+  color: #fff;
 }
 
 .bx-x {
-    color: #dadada;
+  color: #dadada;
 }
 
 .none-score {
-    display: none;
+  display: none;
 }
 
 .display-score {
-    position: absolute;
-    top: 0px;
-    right: 15px;
-    border-radius: 100%;
-    display: flex;
-    color: #fff;
-    justify-content: center;
-    border: 2px solid #fff;
-    padding: 5px;
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-    align-items: center;
-    /* border-image: linear-gradient(to right, #fff,#9d9d9d); */
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  border-radius: 100%;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  border: 2px solid #fff;
+  padding: 5px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  /* border-image: linear-gradient(to right, #fff,#9d9d9d); */
 }
 
 #asignaturas {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* RETÍCULA STYLES */
+.materias {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reticulas-semestre {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.periodo,
+.container-print-reticula {
+  /* background-color: #fff; */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.periodo {
+  color: #fff;
+  background-image: linear-gradient(
+    to right,
+    var(--primary-color),
+    rgb(24, 24, 113)
+  );
+}
+
+.container-print-reticula {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.card-header {
+  flex-direction: column;
+  height: 150px;
+}
+
+.claves {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+.content-reticula {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.2s ease-in-out;
+  justify-content: space-between;
+  background-image: linear-gradient(to right, #fff, #c4d2e7);
+  position: relative;
+}
+
+.content-reticula2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  transition: 0.2s ease-in-out;
+  justify-content: space-between;
+  background-image: linear-gradient(to right, #afa4f687, #88a7d0);
+  position: relative;
+}
+
+.content-reticula2:hover {
+  box-shadow: rgba(75, 75, 75, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  cursor: pointer;
+}
+
+.content-reticula:hover {
+  box-shadow: rgba(75, 75, 75, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  cursor: pointer;
+}
+
+.clave {
+  padding: 5px;
+}
+
+.nombre-materia {
+  text-align: center;
+}
+
+.periodo {
+  text-align: center;
+}
+
+.tabs-reticula {
+  display: flex;
+  justify-content: right;
+  width: 90%;
+  margin: auto;
+}
+
+/* //Tab retícula */
+
+.tabs-reticula {
+  display: flex;
+  gap: 10px;
+  border: 1px solid #4f70d45e;
+  width: fit-content;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.tabs-reticula button {
+  color: #4f70d4;
+}
+
+.active {
+  border-radius: 50px;
+  border-color: #88a7d0;
+  transition: 0.2s ease-in-out;
+  font-weight: 400;
+  background-color: #4f70d4;
+  color: #fff;
+}
+
+.blueGrey {
+  background-color: grey;
+}
+
+.blueligth {
+  background-color: blue;
+}
+
+#contenedor {
+  width: 90%;
+  margin: auto;
+}
+
+.tabs-reticula {
+  border-radius: 50px;
+}
+
+.asignaturas-button,
+.reticula-button {
+  cursor: pointer;
+  width: 120px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.card-header-2 {
+  width: 90%;
+  display: flex;
+  border-radius: var(--border-radius);
+  flex-direction: column;
+  padding: 26px;
+  margin: 15px auto;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  gap: 35px;
+  background-color: #fff;
+}
+
+main {
+  position: relative;
+}
+
+.container-iframe {
+  position: fixed;
+  top: 0;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  margin: auto;
+  padding: 30px;
+  background-color: #fff;
+  transition: 0.3 ease-in-out translate;
+}
+
+.hidden {
+  z-index: -4;
+  opacity: 0;
+}
+
+.iframe-absolute {
+  border-radius: 20px;
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  margin: auto;
+  height: 70%;
+}
+
+.show {
+  z-index: 11;
+  animation: showPdf 0.2s ease-in-out;
+  opacity: 1;
+}
+
+#close {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 50px;
+  gap: 5px;
+  transition: 0.2s ease-in-out;
+  padding: 8px;
+}
+
+#close:hover {
+  cursor: pointer;
+  color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.openBookPdf {
+  position: absolute;
+  top: 0;
+  /* border: 1px solid #4f70d4; */
+  width: 100%;
+  left: 0;
+  height: 100%;
+}
+
+@keyframes showPdf {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 576px) {
+  .iframe-absolute {
+    width: 100%;
+  }
+
+  .container-iframe {
+    width: 100%;
     flex-direction: column;
-    gap: 10px;
+  }
 }

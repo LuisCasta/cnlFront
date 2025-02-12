@@ -49,21 +49,42 @@ async function loadNotices() {
   const noticias = await getAllNotice();
   console.log(noticias);
   let noticesHtml = "";
-  noticias.data.data.data.forEach((advice) => {
-    const { notice, createdAt } = advice;
-    const newDate = createdAt.slice(0, -14).replaceAll("-", "/");
-    noticesHtml += `
-    <div class="notification">
-    <div class="name-notify">
-      <h6>Aviso</h6>
-      <label>${notice}</label>
-    </div>
-    <div class="fecha">
-      <h6>fecha de publicación</h6>
-      <p>${newDate}</p>
-    </div>
-  </div>
-    `;
-  });
+
+  // Verificar si la respuesta es válida y si el array de noticias está vacío
+  if (
+    !noticias ||
+    !noticias.data ||
+    !noticias.data.data ||
+    noticias.data.data.data.length === 0
+  ) {
+    noticesHtml = ` <div class="notification">
+          <div class="name-notify">
+            <h6>Aviso</h6>
+            <label>No hay avisos en este momento</label>
+          </div>
+        </div>
+      `;
+  } else {
+    // Si hay avisos, recorrerlos y generar el HTML
+    noticias.data.data.data.forEach((advice) => {
+      const { notice, createdAt } = advice;
+      const newDate = createdAt.slice(0, -14).replaceAll("-", "/");
+
+      noticesHtml += `
+        <div class="notification">
+          <div class="name-notify">
+            <h6>Aviso</h6>
+            <label>${notice}</label>
+          </div>
+          <div class="fecha">
+            <h6>fecha de publicación</h6>
+            <p>${newDate}</p>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  // Inserta el contenido generado en el HTML
   asignaturas.innerHTML = noticesHtml;
 }

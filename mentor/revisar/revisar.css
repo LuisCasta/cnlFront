@@ -122,6 +122,23 @@
   font-size: 10px;
   line-height: 7px;
 }
+.checked-task {
+  background-color: #03892430;
+  color: #079a09f5;
+  padding: 5px;
+  border-radius: 25px;
+  font-size: 10px;
+  line-height: 7px;
+}
+
+.enviada {
+  background-color: var(--color-bk-opacity);
+  color: var(--primary-color);
+  padding: 5px;
+  border-radius: 25px;
+  font-size: 10px;
+  line-height: 7px;
+}
 
 .checkRevisar {
   width: 100%;
@@ -232,6 +249,7 @@
   font-size: 14px;
   font-style: italic;
   resize: none;
+  height: 200px;
 }
 
 .container-present {
@@ -263,6 +281,8 @@
   font-size: 12px;
   border-radius: 3px;
   color: var(--primary-color);
+  display: flex;
+  justify-content: center;
 }
 
 .bx-check-square {
@@ -282,6 +302,11 @@ td {
 
 table {
   width: 100%;
+}
+
+.textarea-check {
+  height: 200px;
+  resize: none;
 }
 
 @media (max-width: 574px) {

@@ -18,7 +18,7 @@ async function loadprospects() {
     prospects.data.map((prospect) => {
       const amountprospects = document.getElementById("spanTitle");
       amountprospects.textContent = prospects.data.length;
-      const { name, firstName, email, id, phone, secondName, status } =
+      const { name, firstName, email, id, phone, secondName, status, career } =
         prospect;
       salida += `
       <tr>
@@ -36,6 +36,11 @@ async function loadprospects() {
         </td>
          <td data-cell="email">
           <p id='phone_${id}' class="edit-input" data-tooltip="editar" contenteditable="true" spellcheck="false">${phone}</p>
+        </td>
+         <td data-cell="email">
+          <p id='carrera_${id}' class="edit-input" data-tooltip="editar" contenteditable="true" spellcheck="false">${
+        career == null ? "Sin carrera" : career
+      }</p>
         </td>
         <td data-cell="status">
           <p id='status_${id}' class="edit-input" data-tooltip="editar" contenteditable="true" spellcheck="false">${

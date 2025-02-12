@@ -23,12 +23,42 @@
       <div class="breadcumbs">
         <p>Asignaturas</p>
       </div>
-      <div class="card-header">
+      <div class="tabs-reticula">
+        <a class="asignaturas-button" onclick="backAssigment()">
+          Asignaturas
+        </a>
+        <a class="reticula-button" onclick="changeAssigment()">
+          Mapa curricular
+        </a>
+      </div>
+      <div id="reticula">
+        <div class="card-header" class="container-reticula">
+          <div class="text-header">
+            <h2>Retícula</h2>
+            <p>Aquí se muestra la retícula de las carreras</p>
+          </div>
+        </div>
+        <div class="card-header-2 elegir-reticula">
+          <select name="" id="select-reticula" onchange="changeReticula()">
+            <option value="derecho">Derecho</option>
+            <option value="educacion">Educación</option>
+            <option value="maestria">
+              Maestría en educación básica con atención a la segunda infancia
+            </option>
+            <option value="especialidad">
+              Especialidad en educación básica con atención a la segunda
+              infancia
+            </option>
+          </select>
+        </div>
+        <div id="contenedor"></div>
+      </div>
+      <div class="card-header" id="card-title">
         <div class="text-Header">
           <h2>Tus asignaturas</h2>
         </div>
       </div>
-      <div class="card-header-2">
+      <div class="card-header-2" id="content-advices">
         <div class="content-static-2 avisos">
           <h5><i class="bx bxs-bell-ring"></i>Avisos</h5>
           <div id="asignaturas"></div>
@@ -36,6 +66,17 @@
         <div class="grid-container" id="static-div"></div>
       </div>
       <div class="container-cursos" id="container-cursos"></div>
+      <div class="container-iframe">
+        <p id="aviso"></p>
+        <a id="close" onclick="cerrarModal()"
+          ><i class="bx bx-x-circle bx-sm"></i>Cerrar pdf</a
+        >
+        <iframe
+          class="iframe-absolute"
+          id="pdf-iframe"
+          frameborder="0"
+        ></iframe>
+      </div>
     </main>
     <button class="responsive" id="btnResponsive">
       <i class="bx bx-menu"></i>
@@ -45,5 +86,7 @@
     <script src="cursos.js"></script>
     <script src="../js/sidenav.js"></script>
     <script src="../../api/notices.js"></script>
+    <script src="animation-advice.js"></script>
+    <script src="reticula.js"></script>
   </body>
 </html>

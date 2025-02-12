@@ -1,7 +1,6 @@
 "use strict";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const idStudent = urlParams.get("idStudent");
 const idActivity = urlParams.get("idActivity");
 const idUnit = urlParams.get("idUnit");
 
@@ -10,7 +9,9 @@ const tVideo = obtainId("t-videocall");
 const tCalif = obtainId("t-cali");
 
 const idCourse = urlParams.get("idCourse");
-
+const userData = localStorage.getItem("user"); // Obtiene el valor guardado con la clave "user"
+const user = JSON.parse(userData); // Convierte el JSON a objeto
+const idStudent = user.id;
 async function LoadActivitiesAgendaStudent() {
   let tableHtml = "";
   const activitiesStudent = await getByCourseActivityStudent(idUnit);
