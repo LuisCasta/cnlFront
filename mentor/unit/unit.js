@@ -155,7 +155,9 @@ async function updateUnit(unitId) {
   if (confirm("¿Estás seguro de que deseas continuar?")) {
     const name = obtainId(`name_${unitId}`).textContent;
     const btn = obtainId(`btn_${unitId}`);
-    const percentage = obtainId(`percentage-${unitId}`).textContent;
+    const percentageWith = obtainId(`percentage-${unitId}`).textContent;
+    const percentage = percentageWith.replace("%", "");
+    console.log(percentage);
     const idCourse = btn.getAttribute("data-idcurso");
     const description = obtainId("descripcion-parrafo").value;
     const updateData = await updateUnitMentor({
