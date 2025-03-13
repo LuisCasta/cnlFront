@@ -107,9 +107,8 @@ async function btnGuardar(idStudent, idCS) {
       `califFinal_${idStudent}`
     ).textContent;
     const updateRate = await saveRatebyStudentFinal({
-      idStudent,
-      idCourse: idCS,
-      score,
+      idCourseStudent: idCS,
+      score: parseFloat(score),
     });
     // console.log(updateRate);
     if (updateRate.code != 200) {
