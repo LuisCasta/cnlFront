@@ -18,10 +18,6 @@ const int = obtainId("int-act");
 const inicio = obtainId("init-act");
 const fin = obtainId("fin-act");
 
-// console.log(backLink);
-// console.log(`este es idCurso: ${idCourse}`);
-// console.log(`este es idUnit: ${idUnit}`);
-
 backLink.href = `../about-unit/about.html?idCurso=${idCourse}&idUnit=${idUnit}`;
 
 async function loadGetActivityStudentById() {
@@ -69,7 +65,7 @@ async function actualizarAct(id) {
     const description = obtainId("descrip-act").value;
     const link = obtainId("link-act-up").value;
     const intent = int.value;
-    const dateEnd = fin.value;
+    const dateEnd = `${fin.value}T23:59:59.999`;
     const dateStart = inicio.value;
     const btn = obtainId("data-act");
     const idLesson = btn.getAttribute("data-idlesson");
@@ -144,8 +140,9 @@ async function loadListCheck() {
         firstName,
         link,
         commentScore,
+        id,
       } = student;
-      // console.log(student);
+
       listActivStu += `
     <tr class="td-check">
       <td data-cell="Nombre"><p>${name}</p></td>
@@ -161,7 +158,7 @@ async function loadListCheck() {
       <td data-cell="Revisar" class="check-status">
         <a data-tooltip="Revisar" onclick='mostrarDataActAlumno(${idActStudent},${score},"${name}","${firstName}","${secondName}","${link}",${JSON.stringify(
         commentScore
-      )});' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} 
+      )}, "${id}");' id="revisar_${idActStudent}" data-score=${score} data-sname=${secondName} data-idas=${idActStudent} 
         class="btn-check">
          <div class="icon-square checkbox-btn">
         <i class="i-btn bx bx-sm ${
@@ -205,21 +202,19 @@ async function mostrarDataActAlumno(
   firstName,
   secondName,
   link,
-  commentScore
+  commentScore,
+  id
 ) {
-  console.log(idActAlu, score, name, firstName, secondName, link, commentScore);
   score === null ? (score = 0) : (score = score);
   let nombre = obtainId("act-alumno");
   let commentStu = obtainId("comments");
   commentStu.textContent =
     commentScore === "null" ? "No hay comentarios" : commentScore;
   let linkStu = obtainId("link-act");
-  // console.log(linkStu);
-  // link === null ? (linkStu.style.display = "none") : (linkStu.href = link);
+
   if (link === null || link === undefined || link === "") {
     linkStu.style.display = "none";
   } else {
-    // console.log(link);
     linkStu.style.display = "flex";
     linkStu.href = link;
     linkStu.textContent = "Link a la actividad";
@@ -229,6 +224,14 @@ async function mostrarDataActAlumno(
   nombre.textContent = name + " " + firstName + " " + secondName;
   califFinalAct.value = parseFloat(score);
   revisarActividadBtn.setAttribute("data-idact", `${idActAlu}`);
+
+  const data = { idStudent: id, idActivity, link: "" };
+  try {
+    const obtenerDatos = await sendActivity(data);
+    console.log(obtenerDatos);
+  } catch (error) {
+    alert(error);
+  }
 }
 
 revisarActividadBtn.addEventListener("click", async (e) => {
@@ -238,19 +241,9 @@ revisarActividadBtn.addEventListener("click", async (e) => {
   const score = obtainId("link-revisar").value;
   const commentScore = obtainId("comments").value;
 
-  console.log(score, commentScore, idActalu);
+  // console.log(score, commentScore, idActalu);
   const data = { actStudId: idActalu, commentScore, score };
-  // Succes Post
-  //   succesPost.innerHTML = `
-  //    <i class='bx bx-loader-circle bx-spin' ></i>
-  //    <p>Revisando Actividad ...</p>
-  //  `;
-  //   succesPost.classList.add("aviso-click");
-
-  //   setTimeout(() => {
-  //     succesPost.innerHTML = "";
-  //     succesPost.classList.remove("aviso-click");
-  //   }, 5000);
+  // console.log(idActalu);
 
   const revisarActividad = await chekActivityStudentById(data);
   if (revisarActividad.code != 200) alert(`Error ${revisarActividad.message}`);

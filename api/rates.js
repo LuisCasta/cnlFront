@@ -174,29 +174,21 @@ const obtainRateByIdCourse = async (idCourse) => {
 
 //Guardar calificaciones parciales de un alumno
 const saveRatebyStudentFinal = async (data) => {
-  const { idStudent, score, idCourse } = data;
+  const { score, idCourseStudent } = data;
   if (
-    idCourse == "" ||
-    idCourse == null ||
-    idCourse == undefined ||
-    idCourse == " "
+    idCourseStudent == "" ||
+    idCourseStudent == null ||
+    idCourseStudent == undefined ||
+    idCourseStudent == " "
   )
     return { code: 400, message: `Error, el campo idCourse es inválido` };
-  if (
-    idStudent == "" ||
-    idStudent == null ||
-    idStudent == undefined ||
-    idStudent == " "
-  )
-    return { code: 400, message: `Error, el campo idStudent es inválido` };
 
   if (score == "" || score == null || score == undefined || score == " ")
     return { code: 400, message: `Error, el campo score es inválido` };
 
   const rateFinal = await putApi("courseStudent/updateEndScore", {
-    idStudent,
     score,
-    idCourse,
+    idCourseStudent,
   });
 
   if (rateFinal.status != 200)

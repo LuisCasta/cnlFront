@@ -41,7 +41,7 @@ async function loadActivityByUnit() {
             <td data-cell="Nombre"><p class="name-activity">${name}</p></td>
             <td data-cell="Descripción"><p>${description}</p></td>
             <td data-cell="Inicio"><p class="p-date"><i class='bx bx-calendar'></i>${newDate}</p></td>
-            <td data-cell="Finaliza"><p class="p-date"><i class='bx bx-calendar'></i>${endDate}</p></td>
+            <td data-cell="Finaliza"><p class="p-date"><i class='bx bx-calendar'></i>${`${endDate}T23:59:59.999`}</p></td>
             <td data-cell="Acciones">
             <div class='actions'>
             <a data-tooltip="Revisar" class='check' href="../revisar/revisar.html?idCurso=${idCourse}&idUnit=${idUnit}&idActivity=${id}">
@@ -66,9 +66,12 @@ btnCreateActivity.addEventListener("click", async (e) => {
   const name = document.getElementById("name-activ").value;
   const description = obtainId("des-actividad").value;
   const dateStart = obtainId("inicio-act").value;
-  const dateEnd = obtainId("fin-act").value;
+  let dateEnd = obtainId("fin-act").value;
   const intent = obtainId("intentos").value;
   const link = obtainId("link-activity").value;
+  if (dateEnd) {
+    dateEnd = `${dateEnd}T23:59:59.999`;
+  }
   const data = {
     idLesson: 6,
     name,

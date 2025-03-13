@@ -249,7 +249,7 @@
   font-size: 14px;
   font-style: italic;
   resize: none;
-  height: 200px;
+  height: 100px;
 }
 
 .container-present {
@@ -305,7 +305,7 @@ table {
 }
 
 .textarea-check {
-  height: 200px;
+  height: 100px;
   resize: none;
 }
 
