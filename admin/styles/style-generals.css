@@ -31,6 +31,14 @@ p {
 }
 
 
+.showTable{
+    opacity: 1;
+}
+
+.hideTable{
+    opacity: 0;
+}
+
 .bx-cog,
 .bx-list-plus,
 .bx-calendar-plus,
@@ -39,7 +47,8 @@ p {
 .bx-book,
 .bxs-star-half,
 .bx-video,
-.bxs-watch {
+.bxs-watch,
+.bx-task {
     color: #1b4332;
     background-color: #1b433230;
     padding: 5px;

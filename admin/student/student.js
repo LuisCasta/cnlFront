@@ -228,7 +228,6 @@ async function changeGroup() {
 }
 
 function filtrar() {
-  console.log("ok");
   const idCourse = obtainId("cursos").value;
   console.log(idCourse);
 }
@@ -359,24 +358,137 @@ async function deleteAlumno(studentId) {
     location.reload();
   }
 }
+const btnAlumno = document.getElementById("alumnos-id");
+const btnAsig = document.getElementById("asignacion");
+const btnTask = document.getElementById("tasks");
 
-const btnAlumno = obtainId("alumnos-id");
-const btnAsig = obtainId("asignacion");
+const alumnosList = document.getElementById("alumnos-list");
+const asignados = document.getElementById("asignados");
+const contentTask = document.getElementById("task-content");
+const myTable = document.getElementById("myTable");
+const finder = document.getElementById("finder");
+contentTask.classList.add("hide");
 
-const alumnosList = obtainId("alumnos-list");
-const asignados = obtainId("asignados");
+function toggleVisibility(showElement) {
+  [alumnosList, asignados, contentTask].forEach((el) => {
+    el.classList.toggle("show", el === showElement);
+    el.classList.toggle("hide", el !== showElement);
+  });
 
-function ocultarAsignacion() {
-  asignados.classList.add("hide");
-  alumnosList.classList.add("show");
-  asignados.classList.remove("show");
+  if (showElement === contentTask) {
+    async function loadStudentsTask() {
+      let salida = "";
+      const taskSelect = document.getElementById("taskSelect");
+      const students = await getAllStudent();
+      // console.log(students.data);
+      if (students.code !== 200) {
+        alert(`Error ${students.message}`);
+      } else {
+        students.data.map((student) => {
+          const { name, firstName, id } = student;
+          salida += `
+          <option value=${id}>${name} ${firstName}</option>
+      `;
+          taskSelect.innerHTML = salida;
+        });
+      }
+    }
+    loadStudentsTask();
+
+    async function printTask() {
+      const taskSelect = document.getElementById("taskSelect");
+      const idStudent = taskSelect.value;
+      const tbodyTask = document.getElementById("tbody-task");
+      tbodyTask.innerHTML = "";
+      console.log(idStudent);
+      const taskByStudent = await getAllTaskStudent(idStudent);
+      const spanTitle = document.getElementById("spanTitle-2");
+      console.log(spanTitle);
+      spanTitle.textContent = taskByStudent.data.length;
+      console.log(taskByStudent.data.length);
+      if (taskByStudent.code !== 200) {
+        alert(`Error ${taskByStudent.message}`);
+      } else {
+        taskByStudent.data.forEach((student) => {
+          const {
+            idActivityStudent,
+            nameTA,
+            linkOfStudent,
+            score,
+            commentScore,
+            nameCourse,
+            nameActivity,
+          } = student;
+          console.log(student);
+          tbodyTask.innerHTML += `
+      <tr>
+       <td data-cell="Tarea Activa">
+         <p id='asign_${idActivityStudent}'>${nameCourse}</p>
+        </td>
+        <td data-cell="Tarea Activa">
+         <p id='nameTA_${idActivityStudent}'>${nameTA}</p>
+        </td>
+         <td data-cell="Tarea Activa">
+         <p id='nameActivity_${idActivityStudent}'>${nameActivity}</p>
+        </td>
+        <td data-cell="Link">
+          <p id='link_${idActivityStudent}'>${linkOfStudent}</p>
+        </td>
+        <td data-cell="Evaluación"> 
+          <p id='score_${idActivityStudent}' class="edit-input" data-tooltip="editar" contenteditable="true" spellcheck="false">
+            ${score}
+          </p>
+        </td>
+        <td data-cell="Actualizar">
+            <div class="actions">
+            <button onclick="updateAlumnoScore(${idActivityStudent}, '${commentScore}')" data-tooltip="actualizar" class="edit">
+            <i class='bx bx-edit' ></i>
+            </button>
+            </div>
+        </td>
+       </tr>
+  `;
+        });
+      }
+    }
+    const btnViewTask = obtainId("view-task");
+    btnViewTask.addEventListener("click", printTask);
+    myTable.classList.add("hide");
+    finder.classList.add("hide");
+  } else {
+    myTable.classList.remove("hide");
+    finder.classList.remove("hide");
+  }
 }
 
-function ocultarAlumnosLista() {
-  asignados.classList.add("show");
-  alumnosList.classList.add("hide");
-  alumnosList.classList.remove("show");
-}
+btnAsig.addEventListener("click", () => toggleVisibility(asignados));
+btnAlumno.addEventListener("click", () => toggleVisibility(alumnosList));
+btnTask.addEventListener("click", () => toggleVisibility(contentTask));
 
-btnAsig.addEventListener("click", ocultarAlumnosLista);
-btnAlumno.addEventListener("click", ocultarAsignacion);
+async function updateAlumnoScore(idActivityStudent, commentScore) {
+  const score = obtainId(`score_${idActivityStudent}`).textContent;
+  const commentScoreString = String(commentScore);
+  console.log("ID:", idActivityStudent, typeof idActivityStudent);
+  console.log("Score:", score, typeof score);
+  console.log("Comment:", commentScore, typeof commentScore);
+  const data = {
+    actStudId: idActivityStudent,
+    score: Number(score),
+    commentScore: commentScoreString,
+  };
+
+  const revisarActividad = await chekActivityStudentById(data);
+  if (revisarActividad.code != 200) alert(`Error ${revisarActividad.message}`);
+  else {
+    succesPost.innerHTML = `
+ <i class='bx bx-check-circle bx-tada' style="color:#38b000"></i>
+   <p>Actividad Actualizada</p>
+ `;
+    succesPost.classList.add("aviso-click");
+
+    setTimeout(() => {
+      succesPost.innerHTML = "";
+      succesPost.classList.remove("aviso-click");
+    }, 3000);
+  }
+}

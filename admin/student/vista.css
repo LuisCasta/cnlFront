@@ -34,14 +34,15 @@
 }
 
 .bx-list-plus,
-.bx-group {
+.bx-group,
+.bx-task {
   background-color: var(--primary-color);
   color: #fff;
 }
 
 .choose {
   border-radius: 50px;
-  background-color: #fff;
+  background-color: #f0f1f2;
 }
 
 .choose:hover {

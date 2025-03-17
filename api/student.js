@@ -78,6 +78,29 @@ const getAllStudent = async () => {
   return { code: 200, data: student.data.data };
 };
 
+const getAllTaskStudent = async (idStudent) => {
+  if (
+    idStudent == 0 ||
+    idStudent == "" ||
+    idStudent == undefined ||
+    idStudent == " "
+  )
+    return { code: 400, message: `Error, el campo idStudent es inválido` };
+
+  const taskStudent = await getApi(
+    `activityStudent/getAllActivitiesByStudent/${idStudent}`
+  );
+
+  if (taskStudent.status != 200)
+    return {
+      code: 400,
+      message: `Error al cargar tareas del estudiante`,
+      error: taskStudent.data.message,
+    };
+
+  return { code: 200, data: taskStudent.data.data };
+};
+
 /**
  * Obtiene todas las carreras
  *

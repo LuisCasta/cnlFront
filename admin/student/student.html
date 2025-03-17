@@ -39,9 +39,15 @@
             <i class="bx bx-list-plus"></i>
           </button>
         </div>
+        <div id="tasks" class="tab-alumn">
+          <button class="choose" data-tooltip="Actividades de alumnos">
+            <i class="bx bx-task"></i>
+          </button>
+        </div>
       </header>
       <div class="card-header">
         <div class="container-alumnos-asignaciones">
+          <!-- ALUMNOS LIST -->
           <div id="alumnos-list" class="alumnos-list show">
             <div class="heading">
               <h2>Alumnos</h2>
@@ -130,12 +136,20 @@
               </div>
             </div>
           </div>
+          <!-- TAREAS CONTAINER -->
+          <div id="task-content">
+            <h1>Gestiona todas las tareas por alumno</h1>
+            <p>Selecciona al alumno</p>
+            <select name="" id="taskSelect"></select>
+            <button id="view-task">Consultar</button>
+          </div>
+          <!-- aquí termina container-alumnos-asignaciones -->
         </div>
       </div>
 
       <!-- BUSCAR ELEMENTOS EN LA TABLA -->
       <section>
-        <div class="finder">
+        <div class="finder" id="finder">
           <input
             type="search"
             onkeyup="filterSearch()"
@@ -162,10 +176,32 @@
               <th>Correo</th>
               <th>Contraseña</th>
               <th id="seleccion">Seleccionar</th>
-              <th>Acciones</th>
+              <th>Actualizar</th>
             </tr>
           </thead>
           <tbody class="datos" id="tbody-data"></tbody>
+        </table>
+      </div>
+      <!-- Cargar tabla -->
+      <div class="container-table">
+        <table class="table" id="taskTable">
+          <thead>
+            <caption>
+              <div class="caption">
+                <p id="tableTitle">Todos las actividades</p>
+                <span id="spanTitle-2"></span>
+              </div>
+            </caption>
+            <tr>
+              <th>Asignatura</th>
+              <th>Tarea Activa</th>
+              <th>Actividad</th>
+              <th>Link</th>
+              <th>Evaluación</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody class="datos" id="tbody-task"></tbody>
         </table>
       </div>
     </main>
@@ -176,6 +212,7 @@
   </body>
   <script src="../../api/post.js"></script>
   <script src="../../api/student.js"></script>
+  <script src="../../api/activityStudent.js"></script>
   <script src="../../api/assigmentsStudents.js"></script>
   <script src="student.js"></script>
   <script src="../js/sidenav.js"></script>
