@@ -223,29 +223,33 @@ const deleteMentor = async (data) => {
  * @description update a student by all params
  */
 const updateTutorPresentation = async (data) => {
-  const { videolink, cvlink, mentorId } = data;
+  console.log('entro a funcion', data);
+  const { videolink, cvlink, courseId } = data;
 
-  if (
+  /* if (
     videolink == "" ||
     videolink == null ||
     videolink == undefined ||
     videolink == " "
   )
-    return { code: 400, message: `Error, el campo videolink es inválido` };
+    return { code: 400, message: `Error, el campo videolink es inválido` }; */
 
   if (
-    mentorId == "" ||
-    mentorId == null ||
-    mentorId == undefined ||
-    mentorId == ""
+    courseId == "" ||
+    courseId == null ||
+    courseId == undefined ||
+    courseId == ""
   )
-    return { code: 400, message: `Error, el campo mentorId es inválido` };
+    return { code: 400, message: `Error, el campo courseId es inválido` };
 
-  if (cvlink == "" || cvlink == null || cvlink == undefined || cvlink == " ")
-    return { code: 400, message: `Error, el campo cvlink es inválido` };
+  /* if (cvlink == "" || cvlink == null || cvlink == undefined || cvlink == " ")
+    return { code: 400, message: `Error, el campo cvlink es inválido` }; */
 
-  const turorPresentation = await putApi("mentor/profile", {
-    mentorId,
+  console.log('data to presentation mnetor course update');
+  console.log(cvlink, videolink, courseId);
+
+  const turorPresentation = await putApi("course/profile", {
+    courseId,
     videolink,
     cvlink,
   });
@@ -257,6 +261,37 @@ const updateTutorPresentation = async (data) => {
       error: turorPresentation.data.message,
     };
 
+  return { code: 200, data: turorPresentation.data.data };
+};
+
+const showTutorPresentation = async (data) => {
+  console.log('entro a funcion', data);
+  const { courseId } = data;
+
+  if (
+    courseId == "" ||
+    courseId == null ||
+    courseId == undefined ||
+    courseId == ""
+  )
+    return { code: 400, message: `Error, el campo courseId es inválido` };
+
+
+  console.log('courseeee presentation', courseId);
+
+  // este debe hacer get ala api que trae los datos del curso,
+  // deje estatico el 32 porque estoy probando con ese curso
+  const turorPresentation = await getApi("course/about/32");
+  console.log('courseeee presentation', turorPresentation);
+
+  if (turorPresentation.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener los datos del curso`,
+      error: turorPresentation.data.message,
+    };
+
+  // esto deberia devolver los datos del curso
   return { code: 200, data: turorPresentation.data.data };
 };
 

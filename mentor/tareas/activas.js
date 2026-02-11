@@ -102,6 +102,13 @@ async function LoadGetTutorById() {
   } else {
     // console.log(tutor.data);
 
+    console.log('CURSO IDD: ',idCourse);
+    // aqui es donde se consume la función que llama a la api
+    const course = await showTutorPresentation(idCourse);
+    console.log('CURSOOOOOOO '+course);
+
+    // DEBE MOSTRAR EL CVLINK Y VIDEOLINK EN SUS RESPECTIVOS INPUTS
+
     const { videolink, cvlink } = tutor.data;
     const inputVideo = obtainId("link-video");
     const InputCv = obtainId("link-cv");
@@ -130,16 +137,17 @@ async function savePresentation() {
   const data = {
     cvlink,
     videolink,
-    mentorId: idMentor,
+    courseId: idCourse,
   };
 
   const updatePresentation = await updateTutorPresentation(data);
   // console.log(data);
-  console.log(`is Updated ${updatePresentation}`);
+  console.log(`is Updated ${updatePresentation.code}`);
 
+  /*
   setTimeout(() => {
     location.reload();
-  }, 1000);
+  }, 1000); */
 }
 
 function expandir() {
