@@ -73,10 +73,13 @@ const getById = async (id) => {
  * @description update a student by all params
  */
 const updateCarrera = async (data) => {
-  const { name, description, careerId, code } = data;
+  const { name, description, careerId, code, totalCourses, estatus } = data;
 
   if (name == "" || name == null || name == undefined || name == " ")
     return { code: 400, message: `Error, el campo nombre es inválido` };
+
+  if (totalCourses == "" || totalCourses == null || totalCourses == undefined || totalCourses == " ")
+    return { code: 400, message: `Error, el campo total de cursos es inválido` };
 
   if (code == "" || code == null || code == undefined || code == "")
     if (
@@ -100,17 +103,20 @@ const updateCarrera = async (data) => {
     name,
     description,
     code,
+    totalCourses,
   });
 
   if (career.status != 200)
     return {
       code: 400,
-      message: `Error al actualizar los datos del Maestro`,
+      message: `Error al actualizar los datos de la carrera`,
       error: career.data.message,
     };
 
   return { code: 200, data: career.data.data };
 };
+
+
 /**
  * @descripcion Delete a student by id
  */

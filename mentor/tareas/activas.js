@@ -63,14 +63,15 @@ activeLink.href = `../unit/unit.html?idCurso=${idCourse}`;
 
 // FORMATEAR LINK DE VIDEO
 
-function getDriveVideoId(url) {
+async function getDriveVideoId(url) {
   const regex = /\/d\/([a-zA-Z0-9_-]+)\//;
   const match = url.match(regex);
   return match ? match[1] : null;
 }
 
-function getPreviewLink(driveUrl) {
-  const videoId = getDriveVideoId(driveUrl);
+async function getPreviewVideoLink(driveUrl) {
+  if(!driveUrl) return
+  const videoId = await getDriveVideoId(driveUrl);
   if (videoId) {
     return `https://drive.google.com/file/d/${videoId}/preview`;
   } else {
@@ -80,22 +81,24 @@ function getPreviewLink(driveUrl) {
 
 // FORMATEAR LINK DE PDF PARA VISUALIZARLO
 
-function getDriveFileId(url) {
+async function getDriveFileId(url) {
   const regex = /\/d\/([a-zA-Z0-9_-]+)\//;
+  console.log(url, regex)
   const match = url.match(regex);
   return match ? match[1] : null;
 }
 
-function getPreviewLink(pdfUrl) {
-  const fileId = getDriveFileId(pdfUrl);
+async function getPreviewLink(pdfUrl) {
+  console.log(pdfUrl)
+  if(!pdfUrl)return 
+  const fileId = await getDriveFileId(pdfUrl);
   if (fileId) {
     return `https://drive.google.com/file/d/${fileId}/preview`;
   } else {
     return null;
   }
 }
-
-async function LoadGetTutorById() {
+ async function LoadGetTutorById() {
   const tutor = await getMentorById(idMentor);
   if (tutor.code != 200) {
     console.log(`Error ${tutor.message}`);
@@ -105,17 +108,21 @@ async function LoadGetTutorById() {
     console.log('CURSO IDD: ',idCourse);
     // aqui es donde se consume la función que llama a la api
     const course = await showTutorPresentation(idCourse);
-    console.log('CURSOOOOOOO '+course);
+    console.log('CURSOOOOOOO '+ Object.keys(course.data.data.data));
+    console.log(course.data.data.data.cvlink)
 
     // DEBE MOSTRAR EL CVLINK Y VIDEOLINK EN SUS RESPECTIVOS INPUTS
 
-    const { videolink, cvlink } = tutor.data;
+    // const { videolink, cvlink } = course.data.data.data;
+    const videolink = course.data.data.data.videolink
+    const cvlink = course.data.data.data.cvlink
+    console.log(cvlink, videolink)
     const inputVideo = obtainId("link-video");
     const InputCv = obtainId("link-cv");
     const driveUrl = videolink; // Reemplaza con tu URL de Google Drive
-    const directLink = getPreviewLink(driveUrl);
+    const directLink = await getPreviewVideoLink(videolink);
     const pdfUrl = cvlink;
-    const directPdfLink = getPreviewLink(pdfUrl);
+    const directPdfLink = await getPreviewLink(cvlink);
     const pdfIframe = obtainId("pdf-iframe");
     pdfIframe.src = directPdfLink;
     // console.log(inputVideo, InputCv);
@@ -144,10 +151,9 @@ async function savePresentation() {
   // console.log(data);
   console.log(`is Updated ${updatePresentation.code}`);
 
-  /*
   setTimeout(() => {
     location.reload();
-  }, 1000); */
+  }, 1000); 
 }
 
 function expandir() {

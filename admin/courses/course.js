@@ -36,8 +36,9 @@ async function loadCursos() {
         task,
         exam,
         firstName,
+        status
       } = curso;
-      console.log(curso);
+  
       cursoHtml += `
               <tr>
                 <td data-cell="Nombre de la asignatura">
@@ -49,6 +50,13 @@ async function loadCursos() {
                 <td data-cell="Descripción">
                   <p id='description_${idCourse}' contenteditable='true' spellcheck='false'>${description}</p>
                 </td>
+                   <td data-cell="Estatus">
+                      <select id="status_${idCourse}" value=${status}> 
+                        <option value="open">open</option>
+                        <option value="finished">finished</option>
+                        <option value="read-only">readonly</option>
+                      </select>
+                   </td>
                 <td data-cell="Acciones">
                   <div class="actions">
                     <button class='edit'  onclick="upCurso(${idCourse})" 
@@ -57,10 +65,10 @@ async function loadCursos() {
                       data-proyect=${proyect}  
                       data-task=${task}  
                       data-exam=${exam}  
-                      data-tooltip='Editar' 
+                      data-tooltip='Actualizar' 
                       id='btn_${idCourse}' 
                       class="editar">
-                      <i class='bx bx-edit'></i>
+                      <i class='bx bx-refresh'></i>
                     </button>
                     <button onclick="delCurso(${idCourse})" data-tooltip='Eliminar' class='edit' 
                      data-id="${idCourse}" class="eliminar"><i class='bx bx-trash'></i>
@@ -204,6 +212,7 @@ async function upCurso(courseId) {
     const idMentor = btn.getAttribute("data-idmentor");
     const proyect = btn.getAttribute("data-proyect");
     const exam = btn.getAttribute("data-exam");
+    const status = obtainId(`status_${courseId}`).value;
     const updateData = await updateCourseAdmin({
       courseId,
       name: nameCourse,
@@ -213,9 +222,10 @@ async function upCurso(courseId) {
       proyect,
       idGroup,
       idMentor,
+      status
     });
 
-    console.log(updateData);
+    
 
     if (updateData.code != 200) {
       alert(`Error al actualizar el grupo ${courseId} ${nameCourse} `);
@@ -223,7 +233,7 @@ async function upCurso(courseId) {
       setTimeout(function () {
         succesPost.innerHTML = `
         <i class='bx bx-check-circle'></i>
-        <p>Grupo actualizado con éxito</p>`;
+        <p>Asignatura actualizada con éxito</p>`;
         succesPost.classList.add("aviso-click");
       }, 100);
       setTimeout(function () {

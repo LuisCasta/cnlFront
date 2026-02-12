@@ -17,7 +17,7 @@
     <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
     <title>Asignaturas</title>
   </head>
-  <body onload="cargarSideNav(),loadCursosByStudent(),loadNotices()">
+  <body onload="cargarSideNav(),loadCursosByStudent(),loadNotices(),obtainTotalCourses()">
     <div class="sidenav-cln" id="sidenavInsert"></div>
     <main>
       <div class="breadcumbs">
@@ -45,7 +45,7 @@
             <option value="maestria">
               Maestría en educación básica con atención a la segunda infancia
             </option>
-            <option value="especialidad">
+                 <option value="especialidad">
               Especialidad en educación básica con atención a la segunda
               infancia
             </option>
@@ -53,11 +53,34 @@
         </div>
         <div id="contenedor"></div>
       </div>
-      <div class="card-header" id="card-title">
-        <div class="text-Header">
-          <h2>Tus asignaturas</h2>
+      <div class="container-asignatura-grafic">
+      <div class="asignatura-card" id="card-title">
+        <div class="text-Header asignatura-flex">
+          <h2 style="font-size: 50px;">Tus asignaturas</h2>
+        <div class="parrafo-asigantura">
+         <p >Tu avance del curso</p> 
+         <i class='bx bx-lg bxs-right-arrow-alt bx-tada' ></i> 
+         </div>
         </div>
       </div>
+        <div>
+         <!-- Avance Académico Circular -->
+          <div class="academic-progress-card">
+
+  <div class="academic-progress-circle-wrapper">
+      
+    <div class="academic-progress-circle" id="progressCircle">
+      <div class="academic-progress-inner">
+        <span id="circlePercent">0%</span>
+        <small id="circleText"></small>
+      </div>
+    </div>
+  </div>
+
+</div>
+          </div>
+</div>
+
       <div class="card-header-2" id="content-advices">
         <div class="content-static-2 avisos">
           <h5><i class="bx bxs-bell-ring"></i>Avisos</h5>
@@ -81,6 +104,12 @@
     <button class="responsive" id="btnResponsive">
       <i class="bx bx-menu"></i>
     </button>
+
+    <script>
+  
+</script>
+
+
     <script src="../../api/post.js"></script>
     <script src="../../api/courseStudent.js"></script>
     <script src="cursos.js"></script>

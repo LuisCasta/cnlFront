@@ -72,7 +72,8 @@ p {
 }
 
 .bx-edit,
-.bx-edit-alt {
+.bx-edit-alt,
+.bx-refresh {
     color: var(--primary-color);
     background-color: var(--color-primary-opacity);
     padding: 5px;

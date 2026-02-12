@@ -68,3 +68,19 @@ const CourseStudGetByStudent = async (idStudent) => {
 
   return { code: 200, data: courseStudent.data.data };
 };
+
+/** Obtiene el avance de los cursos**/
+const getTotalCourses = async (idStudent) => {
+  const curso = await getApi(`courseStudent/totalCourses/${idStudent}`);
+
+  if (curso.status != 200)
+    return {
+      code: 400,
+      message: `Error al obtener el total de cursos`,
+      error: curso.data.message,
+    };
+
+  return { code: 200, data: curso.data };
+};
+
+
