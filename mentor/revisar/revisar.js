@@ -123,8 +123,9 @@ async function actualizarAct(id) {
   }
 }
 
-let listActivStu = "";
+
 async function loadListCheck() {
+  let listActivStu = "";
   const revisarActStuList = await loadListActivityStudentCheck(idActivity);
   // console.log(revisarActStuList.data);
   if (revisarActStuList.code != 200) {
@@ -225,13 +226,6 @@ async function mostrarDataActAlumno(
   califFinalAct.value = parseFloat(score);
   revisarActividadBtn.setAttribute("data-idact", `${idActAlu}`);
 
-  const data = { idStudent: id, idActivity, link: "" };
-  try {
-    const obtenerDatos = await sendActivity(data);
-    console.log(obtenerDatos);
-  } catch (error) {
-    alert(error);
-  }
 }
 
 revisarActividadBtn.addEventListener("click", async (e) => {
