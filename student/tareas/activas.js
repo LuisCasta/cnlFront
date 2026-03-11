@@ -32,7 +32,8 @@ function getDriveVideoId(url) {
   return match ? match[1] : null;
 }
 
-function getPreviewLink(driveUrl) {
+function getPreviewVideoLink(driveUrl) {
+  if(!driveUrl) return
   const videoId = getDriveVideoId(driveUrl);
   if (videoId) {
     return `https://drive.google.com/file/d/${videoId}/preview`;
@@ -50,6 +51,7 @@ function getDriveFileId(url) {
 }
 
 function getPreviewLink(pdfUrl) {
+   if(!pdfUrl) return
   const fileId = getDriveFileId(pdfUrl);
   if (fileId) {
     return `https://drive.google.com/file/d/${fileId}/preview`;
@@ -64,12 +66,13 @@ async function LoadGetTutorById() {
     console.log(`Error ${tutor.message}`);
   } else {
     // console.log(tutor.data);
+    const course = await showTutorPresentation(idCourse)
 
-    const { videolink, cvlink } = tutor.data;
+    const { videolink, cvlink } = course.data.data.data;
     const inputVideo = obtainId("link-video");
     const InputCv = obtainId("link-cv");
     const driveUrl = videolink; // Reemplaza con tu URL de Google Drive
-    const directLink = getPreviewLink(driveUrl);
+    const directLink = getPreviewVideoLink(driveUrl);
     const pdfUrl = cvlink;
     const directPdfLink = getPreviewLink(pdfUrl);
     const pdfIframe = obtainId("pdf-iframe");

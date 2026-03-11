@@ -9,6 +9,102 @@
   gap: 20px;
 }
 
+
+/*PROGRESS BAR*/
+.container-asignatura-grafic{
+    width: 90%;
+    border-top: 5px solid var(--primary-color);
+    display: flex;
+    border-radius: var(--border-radius);
+    padding-top: 10px;
+    margin: 15px auto;
+    /* box-shadow: var(--box-shadow); */
+    position: relative;
+    gap: 35px;
+    justify-content: space-between;
+    align-items: center;
+     border-radius: var(--border-radius);
+}
+
+.academic-progress-circle-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+}
+
+.asignatura-card {
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    background-color: white;
+    width: 100%;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+.asignatura-flex{
+  
+}
+
+.parrafo-asigantura{
+  position: absolute;
+  right: 10px;
+}
+
+/* Círculo principal */
+.academic-progress-circle {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: conic-gradient(#2563eb 0%, #e5e7eb 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centro blanco */
+.academic-progress-inner {
+  width: 120px;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.academic-progress-inner span {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.academic-progress-inner small {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .academic-progress-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .academic-progress-inner {
+    width: 105px;
+    height: 105px;
+  }
+}
+
 .card-cursos {
   box-shadow: var(--box-shadow);
   padding: 25px;
@@ -17,6 +113,8 @@
   background-image: linear-gradient(to right, #4f70d4, var(--primary-color));
   transition: 0.3s ease-in-out;
 }
+
+
 
 .card-cursos:hover {
   transition: 0.3s ease-in-out;
@@ -241,10 +339,7 @@
   gap: 10px;
 }
 
-.card-header {
-  flex-direction: column;
-  height: 150px;
-}
+
 
 .claves {
   display: flex;
@@ -437,6 +532,8 @@ main {
   left: 0;
   height: 100%;
 }
+
+
 
 @keyframes showPdf {
   from {

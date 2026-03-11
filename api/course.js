@@ -148,7 +148,7 @@ const getCourseByMentor = async (idMentor) => {
 };
 
 const updateCourse = async (data) => {
-  const { courseId, name, description, task, exam, proyect } = data;
+  const { courseId, name, description, task, exam, proyect,  } = data;
 
   if (
     courseId == "" ||
@@ -157,6 +157,7 @@ const updateCourse = async (data) => {
     courseId == " "
   )
     return { code: 400, message: `Error, el campo courseId es inválido` };
+ 
 
   if (name == "" || name == null || name == undefined || name == " ")
     return { code: 400, message: `Error, el campo name es inválido` };
@@ -212,7 +213,16 @@ const updateCourseAdmin = async (data) => {
     proyect,
     idGroup,
     idMentor,
+    status
   } = data;
+
+   if (
+    status == "" ||
+    status == null ||
+    status == undefined ||
+    status == " "
+  )
+    return { code: 400, message: `Error, el campo estatus es inválido` }; 
 
   if (
     idGroup == "" ||
@@ -272,12 +282,13 @@ const updateCourseAdmin = async (data) => {
     proyect,
     idGroup,
     idMentor,
+    status
   });
 
   if (course.status != 200)
     return {
       code: 400,
-      message: `Error al actualizar el course.`,
+      message: `Error al actualizar el curso.`,
       error: course.data.message,
     };
 
@@ -311,3 +322,7 @@ const deleteGroup = async (data) => {
     return { code: 200, data: group.data.data };
   }
 };
+
+
+
+

@@ -15,23 +15,40 @@ async function loadCareers() {
       return b.id - a.id;
     });
     careers.data.map((carrer) => {
-      const { id, name, description, code } = carrer;
+      const { id, name, description, code, totalCourses } = carrer;
       salida += `
-              <tr>
-                <td data-cell="Licenciatura"><p id='name_${id}' contenteditable="true" spellcheck="false">${name}</p></td>
-                <td data-cell="Descripción"><p id='description_${id}' contenteditable="true" spellcheck="false" >${description}</p></td>
-                <td class="not-show" data-cell="Code"><p id='code_${id}' contenteditable="true" spellcheck="false">${code}</p></td>
-                <td data-cell="Acciones">
-                  <div class="actions">
-                    <a data-tooltip="Gestionar" href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera">
-                      <button class="edit"><i class='bx bx-calendar-plus'></i></button>
-                    </a>
-                    <button onclick="updateCareer(${id})" data-tooltip="Editar" data-id="${id}" class="edit"><i class='bx bx-edit' ></i></button>
-                    <button onclick="deleteCareer(${id})" data-tooltip="Eliminar" data-id="${id}" class="edit"><i class='bx bx-trash'></i></button>
-                  </div>
-                </td>
-              </tr>
-            `;
+                  <tr>
+                    <td data-cell="Licenciatura">
+                      <p id='name_${id}' contenteditable="true" spellcheck="false">${name}</p>
+                    </td>
+
+                    <td data-cell="Descripción">
+                      <p id='description_${id}' contenteditable="true" spellcheck="false">${description}</p>
+                    </td>
+
+                    <td data-cell="Total Asignaturas">
+                        <p id='totalCourses_${id}' spellcheck="false">${totalCourses}</p>
+                    </td>
+                    <td class="not-show" data-cell="Code">
+                      <p id='code_${id}' contenteditable="true" spellcheck="false">${code}</p>
+                    </td>
+
+                    <td data-cell="Acciones">
+                      <div class="actions">
+                        <a data-tooltip="Gestionar" href="../periodo/periodo.html?idCarrera=${id}&nameCareer=${name}" class="gestionCarrera">
+                          <button class="edit"><i class='bx bx-calendar-plus'></i></button>
+                        </a>
+                        <button onclick="updateCareer(${id})" data-tooltip="Editar" data-id="${id}" class="edit">
+                          <i class='bx bx-edit'></i>
+                        </button>
+                        <button onclick="deleteCareer(${id})" data-tooltip="Eliminar" data-id="${id}" class="edit">
+                          <i class='bx bx-trash'></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                `;
+
     });
     tbody.innerHTML = salida;
   }
@@ -93,12 +110,14 @@ async function updateCareer(careerId) {
     const name = obtainId(`name_${careerId}`).textContent;
     const description = obtainId(`description_${careerId}`).textContent;
     const code = obtainId(`code_${careerId}`).textContent;
+    const totalCourses = obtainId(`totalCourses_${careerId}`).textContent;
 
     const updateData = await updateCarrera({
       careerId,
       name,
       description,
       code,
+      totalCourses,
     });
 
     if (updateData.code != 200) {

@@ -264,9 +264,9 @@ const updateTutorPresentation = async (data) => {
   return { code: 200, data: turorPresentation.data.data };
 };
 
-const showTutorPresentation = async (data) => {
-  console.log('entro a funcion', data);
-  const { courseId } = data;
+const showTutorPresentation = async (courseId) => {
+  console.log('entro a funcion', courseId);
+  // const { courseId } = data;
 
   if (
     courseId == "" ||
@@ -281,7 +281,7 @@ const showTutorPresentation = async (data) => {
 
   // este debe hacer get ala api que trae los datos del curso,
   // deje estatico el 32 porque estoy probando con ese curso
-  const turorPresentation = await getApi("course/about/32");
+  const turorPresentation =  await getApi(`course/about/${courseId}`);
   console.log('courseeee presentation', turorPresentation);
 
   if (turorPresentation.status != 200)
@@ -292,7 +292,8 @@ const showTutorPresentation = async (data) => {
     };
 
   // esto deberia devolver los datos del curso
-  return { code: 200, data: turorPresentation.data.data };
+  console.log(turorPresentation.data.data.cvlink)
+  return { code: 200, data: turorPresentation };
 };
 
 const updateScheduleCourse = async (data) => {
