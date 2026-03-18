@@ -25,14 +25,41 @@ login.addEventListener("click", async function loginCnl() {
       pw.value === "@@admin123@" &&
       correo.value === "adminDemo@nuevalaguna.com"
     ) {
+      localStorage.setItem("userRole", "admin");
       login.href = "admin/career/career.html";
     } else if (pw.value === "master" && correo.value === "master") {
+      localStorage.setItem("userRole", "admin");
       login.href = "admin/career/career.html";
     } else {
-      removeLoader();
-      alert("Usuario o contraseña incorrecta");
-      correo.value = "";
-      pw.value = "";
+      // Intentar login vía API para coordinador/director
+      try {
+        const data = { mail: correo.value, pass: pw.value };
+        const mentor = await getLogin(data);
+        if (mentor.code !== 200) {
+          removeLoader();
+          alert("Usuario o contraseña incorrecta");
+          correo.value = "";
+          pw.value = "";
+        } else {
+          const { id, name, firstName, mail, password, role } = mentor.data;
+          if (role === "coordinador" || role === "director") {
+            localStorage.setItem("user", JSON.stringify({ id, name, firstName, mail, password, role }));
+            localStorage.setItem("userRole", role);
+            location.href = "coordinacion/index.html";
+          } else {
+            removeLoader();
+            alert("Usuario o contraseña incorrecta");
+            correo.value = "";
+            pw.value = "";
+          }
+        }
+      } catch (error) {
+        removeLoader();
+        alert("Usuario o contraseña incorrecta");
+        correo.value = "";
+        pw.value = "";
+      }
+      return;
     }
   } else if (userSelection === "2") {
     // Mentor Login

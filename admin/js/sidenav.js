@@ -1,4 +1,71 @@
 function cargarSideNav() {
+  const userRole = localStorage.getItem("userRole");
+  if (userRole === "coordinador" || userRole === "director") {
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    const label = userRole === "director" ? "Dirección" : "Coordinación";
+    const baseUrl = window.location.origin;
+    const sidenav = document.getElementById("sidenavInsert");
+    sidenav.innerHTML = `<div class="sidenav-content">
+      <div class="downNav"><img src="${baseUrl}/src/escudo.png" alt="" /></div>
+      <div class="navegacion-vista">
+        <ul class="ul-navigate">
+          <li><a href="${baseUrl}/frontend/cnlFront/admin/student/student.html"><i class="bx bx-group"></i></a><p class="tooltip">Alumnos</p></li>
+          <li><a href="${baseUrl}/frontend/cnlFront/admin/mentor/mentor.html"><i class="bx bxs-graduation"></i></a><p class="tooltip">Tutores</p></li>
+          <li><a href="${baseUrl}/frontend/cnlFront/admin/career/career.html"><i class="bx bx-run"></i></a><p class="tooltip">Carreras</p></li>
+          <li><a href="${baseUrl}/frontend/cnlFront/coordinacion/index.html"><i class="bx bx-bell"></i></a><p class="tooltip">Avisos</p></li>
+          <li><a href="${baseUrl}/frontend/cnlFront/admin/evaluacion/evaluacion.html"><i class="bx bx-star"></i></a><p class="tooltip">Evaluación</p></li>
+        </ul>
+      </div>
+      <div class="perfil">
+        <a data-tooltip="Cerrar sesión" style="color:#667085;" href="${baseUrl}/frontend/cnlFront/index.html" onclick="localStorage.removeItem('user');localStorage.removeItem('userRole');"><i class="bx bx-log-out"></i></a>
+        <img src="${baseUrl}/src/admin.png" alt="" />
+        <h5>${label}</h5>
+      </div>
+    </div>`;
+    const btnResponsive = document.getElementById("btnResponsive");
+    btnResponsive.addEventListener("click", () => {
+      document.querySelector(".sidenav-cln").classList.toggle("mostrar-sidenav");
+    });
+
+    // Inyectar CSS para ocultar botones de editar/eliminar y formularios de agregar
+    const style = document.createElement("style");
+    style.innerHTML = `
+      .card-header .form-header,
+      .card-header .form-select,
+      .card-header button,
+      .card-header-2 .form-header,
+      .card-header-2 button,
+      .section-modificar,
+      .confirm-cancelar { display: none !important; }
+      [contenteditable="true"] { pointer-events: none !important; outline: none !important; }
+      select { pointer-events: none !important; }
+    `;
+    document.head.appendChild(style);
+
+    // Ocultar botones de trash y refresh en tabla (contenido dinámico)
+    function ocultarBotonesAdmin() {
+      document.querySelectorAll(".bx-trash, .bxs-trash, .bx-refresh, .bx-edit").forEach(icon => {
+        const btn = icon.closest("button, a");
+        if (btn) btn.style.display = "none";
+      });
+      // Eliminar edición inline en celdas
+      document.querySelectorAll("[contenteditable='true']").forEach(el => {
+        el.setAttribute("contenteditable", "false");
+      });
+      // Bloquear selects de tabla
+      document.querySelectorAll("tbody select").forEach(sel => {
+        sel.disabled = true;
+      });
+    }
+
+    ocultarBotonesAdmin();
+    // Observar cambios dinámicos (tablas que cargan después)
+    const observer = new MutationObserver(ocultarBotonesAdmin);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return;
+  }
+
   const baseUrl = window.location.origin;
   const sidenav = document.getElementById("sidenavInsert");
   const sideInnerHtml = ` <div class="sidenav-content">
@@ -38,6 +105,11 @@ function cargarSideNav() {
         <i class='bx bx-star'></i></a>
         <p class="tooltip">Evaluación</p>
       </li>
+          <li>
+            <a href="../actividades/actividades.html">
+            <i class='bx bxs-watch'></i></a>
+            <p class="tooltip">Actividades</p>
+          </li>
           <li>
             <a href="../prospectos/prospectos.html">
             <i class='bx bx-list-plus'></i></a>

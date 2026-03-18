@@ -117,6 +117,15 @@ const getTypeActivity = async () => {
   return { code: 200, data: activity.data.data };
 };
 
+const updateActivityIntent = async (activityId, intent) => {
+  if (!activityId) return { code: 400, message: `Error, activityId es inválido` };
+  if (intent === "" || intent == null || intent == undefined) return { code: 400, message: `Error, intent es inválido` };
+
+  const res = await putApi("activity/intent", { activityId, intent });
+  if (res.status != 200) return { code: 400, message: `Error al actualizar los intentos`, error: res.data.message };
+  return { code: 200 };
+};
+
 const deleteActivity = async (data) => {
   const { activityId } = data;
 

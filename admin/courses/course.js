@@ -73,9 +73,12 @@ async function loadCursos() {
                     <button onclick="delCurso(${idCourse})" data-tooltip='Eliminar' class='edit' 
                      data-id="${idCourse}" class="eliminar"><i class='bx bx-trash'></i>
                     </button>
-                    <button onclick="showStudents(${idCourse})" data-tooltip='Ver alumnos' class='edit' 
+                    <button onclick="showStudents(${idCourse})" data-tooltip='Ver alumnos' class='edit'
                      data-id="${idCourse}" class="eliminar"><i class='bx bx-group' style='color:#4ba070'></i>
                     </button>
+                    <a href="../../mentor/unit/unit.html?idCurso=${idCourse}" data-tooltip='Ver actividades' class='edit' style='display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#eef2ff;'>
+                      <i class='bx bxs-watch' style='color:#4361ee'></i>
+                    </a>
                   </div>
                 </td>
               </tr>

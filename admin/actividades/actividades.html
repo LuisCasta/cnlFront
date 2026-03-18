@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../career/carreras.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="../../src/logo.svg" />
+    <title>Actividades</title>
+  </head>
+  <body onload="cargarSideNav()">
+    <div class="sidenav-cln" id="sidenavInsert"></div>
+    <main>
+      <div class="breadcumbs"><p>Actividades</p></div>
+      <div class="card-header">
+        <div class="heading">
+          <h2>Modificar intentos de actividad</h2>
+          <p>Ingresa el ID de la actividad y el nuevo número de intentos</p>
+        </div>
+        <div class="form-header">
+          <input type="number" id="activityId" placeholder="ID de actividad" class="input-form" />
+          <input type="number" id="intentos" placeholder="Número de intentos" class="input-form" min="1" />
+          <button id="btnGuardarIntent">Guardar <i class="bx bx-check-circle"></i></button>
+        </div>
+      </div>
+      <div id="succes-post"></div>
+    </main>
+    <button class="responsive" id="btnResponsive"><i class="bx bx-menu"></i></button>
+    <script src="../../api/post.js"></script>
+    <script src="../../api/activity.js"></script>
+    <script src="actividades.js"></script>
+    <script src="../js/sidenav.js"></script>
+    <script src="../../api/getid.js"></script>
+    <script src="../js/succes-post.js"></script>
+  </body>
+</html>

@@ -82,10 +82,11 @@ async function loadCursosById() {
           });
           taBendRate += `<td data-cell="Tarea"><p>${aux[0].califRecomend}</p></td>`;
         });
+        const yaCalificadoFinal = calif > 0;
         taBendRate += `
             <td data-cell="Recomendada" ><p class="promedio-calculado" >${califRecomend}</p></td>
-            <td data-cell="Final" ><p class="calificacion-final" id="califFinal_${idStudent}" contenteditable='true'>${calif}</p></td>
-            <td data-cell="Guardar"><button onclick="btnGuardar(${idStudent},${idCS})">Enviar</button></td>
+            <td data-cell="Final" ><p class="calificacion-final" id="califFinal_${idStudent}" ${yaCalificadoFinal ? '' : "contenteditable='true'"} ${yaCalificadoFinal ? 'style="background:#f0f0f0;"' : ''}>${calif}</p></td>
+            <td data-cell="Guardar">${yaCalificadoFinal ? '<span style="color:#888;font-size:0.85em;">Calificado</span>' : `<button onclick="btnGuardar(${idStudent},${idCS})">Enviar</button>`}</td>
             `;
         tabEnd.innerHTML = taBendRate;
       });

@@ -236,16 +236,16 @@ async function loadRateStudentByUnit() {
   } else {
     allRates.data.forEach((rate) => {
       const { firstName, name, califRecomend, calif, idStudent } = rate;
-      // console.log(rate);
+      const yaCalificado = calif > 0;
       ratesStudentByCourse += `
       <tr>
          <td data-cell="Nombre"><p>${name} ${firstName}</p></td>
           <td data-cell="calificación recomendada"><p contenteditable="true" class="promedio-calculado">${
             califRecomend == undefined ? "0" : califRecomend
           }</p></td>
-          <td data-cell="Calificación"><p data-tooltip="editar"  id=ide-${idStudent} contenteditable="true"  class="rateEdit input-promf calificacion-final">${calif}</p></td>
+          <td data-cell="Calificación"><p ${yaCalificado ? '' : 'data-tooltip="editar" contenteditable="true"'} id=ide-${idStudent} class="rateEdit input-promf calificacion-final" ${yaCalificado ? 'style="background:#f0f0f0;"' : ''}>${calif}</p></td>
           <td data-cell="Acciones">
-            <a class="sendRate" onclick="guardarRate(${idStudent})";"><i class='bx bxs-user-check'></i>Guardar</a>
+            ${yaCalificado ? '<span style="color:#888;font-size:0.85em;">Calificado</span>' : `<a class="sendRate" onclick="guardarRate(${idStudent})"><i class='bx bxs-user-check'></i>Guardar</a>`}
           </td>
       </tr>`;
       tableRate.innerHTML = ratesStudentByCourse;

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../admin/notice/notice.css" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="../src/logo.svg" />
+    <title>Coordinación CNL</title>
+  </head>
+  <body onload="checkSession(), cargarSideNav(), loadNotices()">
+    <div class="sidenav-cln" id="sidenavInsert"></div>
+    <main>
+      <div class="breadcumbs"><p>Avisos</p></div>
+      <div class="card-header">
+        <div class="heading">
+          <h2>Publicar aviso</h2>
+          <p>Crea y consulta los avisos de la plataforma</p>
+        </div>
+        <div class="form-header">
+          <textarea id="mensaje" placeholder="Escribe el aviso..." style="width:100%;min-height:80px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
+          <button onclick="createMessage()"><i class='bx bx-bell-plus'></i> Publicar aviso</button>
+        </div>
+      </div>
+      <div id="asignaturas"></div>
+      <div id="succes-post"></div>
+    </main>
+    <button class="responsive" id="btnResponsive"><i class="bx bx-menu bx-tada-hover"></i></button>
+    <script src="../api/post.js"></script>
+    <script src="../api/notices.js"></script>
+    <script src="sidenav.js"></script>
+    <script src="../admin/notice/notice-admin.js"></script>
+  </body>
+</html>
