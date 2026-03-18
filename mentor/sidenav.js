@@ -7,22 +7,23 @@ function cargarSideNav() {
   const userRole = localStorage.getItem("userRole");
   if (userRole === "coordinador" || userRole === "director") {
     const label = userRole === "director" ? "Dirección" : "Coordinación";
-    const originUrl = window.location.origin;
+    // Rutas relativas desde mentor/xxx/ (dos niveles dentro)
+    const base = "../../";
     const sidenav = document.getElementById("sidenavInsert");
     sidenav.innerHTML = `<div class="sidenav-content">
-      <div class="downNav"><img src="${originUrl}/src/escudo.png" alt="" /></div>
+      <div class="downNav"><img src="${base}src/escudo.png" alt="" /></div>
       <div class="navegacion-vista">
         <ul class="ul-navigate">
-          <li><a href="${originUrl}/frontend/cnlFront/admin/student/student.html"><i class="bx bx-group"></i></a><p class="tooltip">Alumnos</p></li>
-          <li><a href="${originUrl}/frontend/cnlFront/admin/mentor/mentor.html"><i class="bx bxs-graduation"></i></a><p class="tooltip">Tutores</p></li>
-          <li><a href="${originUrl}/frontend/cnlFront/admin/career/career.html"><i class="bx bx-run"></i></a><p class="tooltip">Carreras</p></li>
-          <li><a href="${originUrl}/frontend/cnlFront/coordinacion/index.html"><i class="bx bx-bell"></i></a><p class="tooltip">Avisos</p></li>
-          <li><a href="${originUrl}/frontend/cnlFront/admin/evaluacion/evaluacion.html"><i class="bx bx-star"></i></a><p class="tooltip">Evaluación</p></li>
+          <li><a href="${base}admin/student/student.html"><i class="bx bx-group"></i></a><p class="tooltip">Alumnos</p></li>
+          <li><a href="${base}admin/mentor/mentor.html"><i class="bx bxs-graduation"></i></a><p class="tooltip">Tutores</p></li>
+          <li><a href="${base}admin/career/career.html"><i class="bx bx-run"></i></a><p class="tooltip">Carreras</p></li>
+          <li><a href="${base}coordinacion/index.html"><i class="bx bx-bell"></i></a><p class="tooltip">Avisos</p></li>
+          <li><a href="${base}admin/evaluacion/evaluacion.html"><i class="bx bx-star"></i></a><p class="tooltip">Evaluación</p></li>
         </ul>
       </div>
       <div class="perfil">
-        <a style="color:#667085;cursor:pointer;" onclick="localStorage.removeItem('user');localStorage.removeItem('userRole');window.location.replace('${originUrl}/frontend/cnlFront/index.html');"><i class="bx bx-log-out"></i></a>
-        <img src="${originUrl}/src/admin.png" alt="" />
+        <a style="color:#667085;cursor:pointer;" onclick="localStorage.removeItem('user');localStorage.removeItem('userRole');window.location.replace('${base}index.html');"><i class="bx bx-log-out"></i></a>
+        <img src="${base}src/admin.png" alt="" />
         <h5>${label}</h5>
       </div>
     </div>`;

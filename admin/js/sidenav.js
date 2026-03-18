@@ -1,24 +1,24 @@
 function cargarSideNav() {
   const userRole = localStorage.getItem("userRole");
   if (userRole === "coordinador" || userRole === "director") {
-    const user = JSON.parse(localStorage.getItem("user") || "{}");
     const label = userRole === "director" ? "Dirección" : "Coordinación";
-    const baseUrl = window.location.origin;
+    // Rutas relativas desde admin/xxx/ (todas las páginas admin están un nivel dentro de admin/)
+    const base = "../";
     const sidenav = document.getElementById("sidenavInsert");
     sidenav.innerHTML = `<div class="sidenav-content">
-      <div class="downNav"><img src="${baseUrl}/src/escudo.png" alt="" /></div>
+      <div class="downNav"><img src="${base}../src/escudo.png" alt="" /></div>
       <div class="navegacion-vista">
         <ul class="ul-navigate">
-          <li><a href="${baseUrl}/frontend/cnlFront/admin/student/student.html"><i class="bx bx-group"></i></a><p class="tooltip">Alumnos</p></li>
-          <li><a href="${baseUrl}/frontend/cnlFront/admin/mentor/mentor.html"><i class="bx bxs-graduation"></i></a><p class="tooltip">Tutores</p></li>
-          <li><a href="${baseUrl}/frontend/cnlFront/admin/career/career.html"><i class="bx bx-run"></i></a><p class="tooltip">Carreras</p></li>
-          <li><a href="${baseUrl}/frontend/cnlFront/coordinacion/index.html"><i class="bx bx-bell"></i></a><p class="tooltip">Avisos</p></li>
-          <li><a href="${baseUrl}/frontend/cnlFront/admin/evaluacion/evaluacion.html"><i class="bx bx-star"></i></a><p class="tooltip">Evaluación</p></li>
+          <li><a href="${base}student/student.html"><i class="bx bx-group"></i></a><p class="tooltip">Alumnos</p></li>
+          <li><a href="${base}mentor/mentor.html"><i class="bx bxs-graduation"></i></a><p class="tooltip">Tutores</p></li>
+          <li><a href="${base}career/career.html"><i class="bx bx-run"></i></a><p class="tooltip">Carreras</p></li>
+          <li><a href="${base}../coordinacion/index.html"><i class="bx bx-bell"></i></a><p class="tooltip">Avisos</p></li>
+          <li><a href="${base}evaluacion/evaluacion.html"><i class="bx bx-star"></i></a><p class="tooltip">Evaluación</p></li>
         </ul>
       </div>
       <div class="perfil">
-        <a data-tooltip="Cerrar sesión" style="color:#667085;" href="${baseUrl}/frontend/cnlFront/index.html" onclick="localStorage.removeItem('user');localStorage.removeItem('userRole');"><i class="bx bx-log-out"></i></a>
-        <img src="${baseUrl}/src/admin.png" alt="" />
+        <a data-tooltip="Cerrar sesión" style="color:#667085;" href="${base}../index.html" onclick="localStorage.removeItem('user');localStorage.removeItem('userRole');"><i class="bx bx-log-out"></i></a>
+        <img src="${base}../src/admin.png" alt="" />
         <h5>${label}</h5>
       </div>
     </div>`;
