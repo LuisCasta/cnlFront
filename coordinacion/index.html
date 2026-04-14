@@ -18,9 +18,14 @@
           <h2>Publicar aviso</h2>
           <p>Crea y consulta los avisos de la plataforma</p>
         </div>
-        <div class="form-header">
-          <textarea id="mensaje" placeholder="Escribe el aviso..." style="width:100%;min-height:80px;padding:8px;border-radius:6px;border:1px solid #ccc;"></textarea>
-          <button onclick="createMessage()"><i class='bx bx-bell-plus'></i> Publicar aviso</button>
+        <div class="compose-area">
+          <div class="compose-input">
+            <i class='bx bx-bell compose-icon'></i>
+            <textarea id="mensaje" placeholder="Escribe el aviso para los estudiantes..."></textarea>
+          </div>
+          <div class="compose-actions">
+            <button onclick="createMessage()"><i class='bx bx-send'></i> Publicar aviso</button>
+          </div>
         </div>
       </div>
       <div id="asignaturas"></div>

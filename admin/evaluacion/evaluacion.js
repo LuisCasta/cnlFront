@@ -50,10 +50,30 @@ buttonSearch.addEventListener("click", async (e) => {
   const trHeaders = document.getElementById("headers-rate");
   e.preventDefault(e);
   const courseSelect = document.getElementById("selectIdCurso").value;
-  // console.log(courseSelect);
-  const printCalif = await getEndRateByCourse(courseSelect);
+
+  buttonSearch.disabled = true;
+  buttonSearch.innerHTML = `<i class='bx bx-loader-circle bx-spin'></i> Consultando...`;
+
+  let printCalif;
+  try {
+    printCalif = await getEndRateByCourse(courseSelect);
+  } catch (err) {
+    buttonSearch.disabled = false;
+    buttonSearch.innerHTML = `<i class='bx bx-search'></i> Ver calificaciones`;
+    succesPost.innerHTML = `<i class='bx bx-error-circle'></i><p>Error de conexión. Intenta de nuevo.</p>`;
+    succesPost.classList.add("aviso-click");
+    setTimeout(() => { succesPost.innerHTML = ""; succesPost.classList.remove("aviso-click"); }, 5000);
+    return;
+  }
+
+  buttonSearch.disabled = false;
+  buttonSearch.innerHTML = `<i class='bx bx-search'></i> Ver calificaciones`;
+
   if (printCalif.code != 200) {
-    alert(`Error ${printCalif.message}`);
+    succesPost.innerHTML = `<i class='bx bx-error-circle'></i><p>Error al cargar calificaciones: ${printCalif.message}</p>`;
+    succesPost.classList.add("aviso-click");
+    setTimeout(() => { succesPost.innerHTML = ""; succesPost.classList.remove("aviso-click"); }, 5000);
+    return;
   } else {
     let countTA = [];
     let headersHtml = `<td>Nombre</td>`;

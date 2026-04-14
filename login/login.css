@@ -204,43 +204,62 @@ body {
     width: 100%;
 }
 
-@media (max-width:600px) {
-    .side-Nav {
-        display: none;
-    }
-
-    .container-login img {
-        width: 70px;
-    }
-
+@media (max-width: 900px) {
     .log-sidenav {
         flex-direction: column;
-    }
-
-    .bk-img::after {
-        background-image: linear-gradient(to bottom, #22397de5, rgba(255, 255, 255, 0.885))
+        gap: 20px;
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+        justify-content: center;
     }
 
     .mensaje {
         text-align: center;
+        align-items: center;
     }
 
-    .mensaje img {
-        width: 50px;
-        margin: auto;
+    .mensaje h2 {
+        font-size: 32px;
+    }
+
+    .bk-img::after {
+        background-image: linear-gradient(to bottom, #22397de5 40%, rgba(255, 255, 255, 0.9));
     }
 
     .bk-img img {
         aspect-ratio: 9/16;
+        height: 100%;
+        width: 100%;
         object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .log-sidenav {
+        padding: 30px 16px;
+        gap: 16px;
+    }
+
+    .mensaje img {
+        width: 60px;
+    }
+
+    .mensaje h2 {
+        font-size: 24px;
+    }
+
+    .mensaje p {
+        font-size: 14px;
     }
 
     .container-login {
-        padding: 0px;
+        width: 100%;
+        padding: 10px;
     }
 
-    .log-sidenav {
-        height: auto;
+    .login-content {
+        padding: 12px;
+        gap: 16px;
     }
-
 }

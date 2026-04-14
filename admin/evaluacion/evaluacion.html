@@ -29,37 +29,39 @@
       </div>
       <!-- BUSCAR ELEMENTOS EN LA TABLA -->
       <section>
-        <div class="card-header">
+        <div class="eval-card">
           <div class="heading">
             <h2>Evaluaciones</h2>
-            <p>Consulta aquí las evaluaciones</p>
+            <p>Consulta las calificaciones por tutor y asignatura</p>
           </div>
-        </div>
-        <div class="card-header-2">
-          <div class="form-select">
-            <p>Elige tutor</p>
-            <select onchange="loadCursosById()" id="selectIdMentor"></select>
+          <div class="eval-filters">
+            <div class="form-select">
+              <p>Tutor</p>
+              <select onchange="loadCursosById()" id="selectIdMentor"></select>
+            </div>
+            <div class="form-select">
+              <p>Asignatura</p>
+              <select id="selectIdCurso"></select>
+            </div>
+            <button class="search-rate"><i class='bx bx-search'></i> Ver calificaciones</button>
           </div>
-          <div class="form-select">
-            <p>Elige Asignatura</p>
-            <select id="selectIdCurso"></select>
-          </div>
-          <button class="search-rate">Ver calificaciones</button>
         </div>
       </section>
       <div class="container-Table">
-        <table>
-          <thead>
-            <caption>
-              <div class="caption">
-                <p id="tableTitle">Evaluaciones</p>
-                <span id="spanTitle"></span>
-              </div>
-            </caption>
-            <tr id="headers-rate"></tr>
-          </thead>
-          <tbody id="table-rate-final"></tbody>
-        </table>
+        <div class="table-scroll-wrapper">
+          <table>
+            <thead>
+              <caption>
+                <div class="caption">
+                  <p id="tableTitle">Evaluaciones</p>
+                  <span id="spanTitle"></span>
+                </div>
+              </caption>
+              <tr id="headers-rate"></tr>
+            </thead>
+            <tbody id="table-rate-final"></tbody>
+          </table>
+        </div>
       </div>
       <!-- ACEPTAR O DECLINAR BORRAR CARRERA -->
 

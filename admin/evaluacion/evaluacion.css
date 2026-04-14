@@ -1,23 +1,161 @@
 @import url("../styles/style-generals.css");
 @import url("../styles/sidenav.css");
 
-.card-header-2 {
+/* ── Card principal ─────────────────────────────── */
+.eval-card {
   width: 90%;
-  margin: auto;
+  margin: 15px auto;
+  background-color: #fff;
+  border-top: 5px solid var(--primary-color);
+  border-radius: 0 0 10px 10px;
+  padding: 26px;
+  box-shadow: var(--box-shadow);
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-}
-.container-select {
-  display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 24px;
 }
 
+/* ── Fila de filtros ────────────────────────────── */
+.eval-filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 20px 24px;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #eaecf0;
+}
+
+.eval-filters .form-select {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.eval-filters .form-select p {
+  font-size: 12px;
+  font-weight: 600;
+  color: #344054;
+  position: static;
+  top: unset;
+  left: unset;
+}
+
+.eval-filters select {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d0d5dd;
+  border-bottom: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-style: normal;
+  color: #344054;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.eval-filters select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px #22387d15;
+}
+
+.search-rate {
+  white-space: nowrap;
+  padding: 9px 18px;
+  font-size: 14px;
+  border-radius: 8px;
+  align-self: flex-end;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.search-rate:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--primary-color);
+}
+
+/* ── Tabla con scroll horizontal ────────────────── */
+.container-Table {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.table-scroll-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid #eaecf0;
+}
+
+.table-scroll-wrapper table {
+  width: 100%;
+  min-width: 700px;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+
+/* Cabeceras: máximo 2 líneas, ancho controlado */
+#headers-rate td,
+#headers-rate th {
+  font-size: 12px;
+  font-weight: 600;
+  color: #667085;
+  background-color: #f9fafb;
+  padding: 10px 14px;
+  border-bottom: 1px solid #eaecf0;
+  white-space: normal;
+  max-width: 130px;
+  min-width: 90px;
+  vertical-align: bottom;
+  line-height: 1.4;
+}
+
+/* Primera columna (Nombre): ancho fijo, sin partir */
+#headers-rate td:first-child,
+#headers-rate th:first-child {
+  min-width: 150px;
+  max-width: 150px;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 10px 14px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/* Nombres en la tabla: no partir palabras */
+tbody td:first-child p,
+tbody td[data-cell="Alumno"] p {
+  white-space: nowrap;
+  word-break: normal;
+  font-size: 14px;
+}
+
+tbody td p {
+  font-size: 14px;
+  width: auto;
+}
+
+/* ── Responsive ─────────────────────────────────── */
 @media (max-width: 768px) {
-  .card-header-2 {
+  .eval-filters {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
+  }
+
+  .eval-filters .form-select {
+    min-width: unset;
+  }
+
+  .search-rate {
+    width: 100%;
     justify-content: center;
   }
 }

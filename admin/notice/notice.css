@@ -48,9 +48,66 @@ h6 {
   font-size: 12px;
 }
 
+.compose-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1.5px solid #e0e4ef;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff;
+}
+
+.compose-area:focus-within {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px #22387d18;
+}
+
+.compose-input {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+}
+
+.compose-icon {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-top: 4px;
+  flex-shrink: 0;
+  background-color: var(--color-bk-opacity);
+  padding: 6px;
+  border-radius: 50%;
+}
+
 #mensaje {
   width: 100%;
   resize: none;
+  min-height: 90px;
+  border: none;
+  border-bottom: none;
+  outline: none;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.6;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #344054;
+}
+
+#mensaje::placeholder {
+  color: #98a2b3;
+}
+
+.compose-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 16px;
+  border-top: 1px solid #f0f1f2;
+  background-color: #f9fafb;
 }
 
 .hiden-delete {

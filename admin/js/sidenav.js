@@ -34,11 +34,10 @@ function cargarSideNav() {
       .card-header .form-select,
       .card-header button,
       .card-header-2 .form-header,
-      .card-header-2 button,
       .section-modificar,
       .confirm-cancelar { display: none !important; }
       [contenteditable="true"] { pointer-events: none !important; outline: none !important; }
-      select { pointer-events: none !important; }
+      tbody button { display: none !important; }
     `;
     document.head.appendChild(style);
 
